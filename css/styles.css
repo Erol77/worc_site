@@ -236,6 +236,7 @@ position: relative;
 	top: 12px;
 	left: 15px;
 }
+/***************************/
 .select_item {
 	width: 220px;
 	padding-left: 10px;
@@ -396,6 +397,7 @@ select {
 	color: #000;
 	padding-left: 10px;
 }
+/**************************/
 .form_bottom_row {
 	padding-bottom: 30px;
 	align-items: center;

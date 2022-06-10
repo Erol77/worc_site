@@ -99,7 +99,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
 document.addEventListener('click', (e) => {
     if (!e.target.closest('.jq-selectbox')) {
-        document.querySelector('.jq - selectbox .opened').forEach(select => {
+        document.querySelector('.jq - selectbox.opened').forEach(select => {
             select.classList.remove('opened');
 
         });
