@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+	<meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="keywords" content="">
+	<title>Главная</title>
+	<link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="fonts/stylesheet.css">
+    <link rel="stylesheet" href="css/media.css">
+    <link rel="stylesheet" href="css/slick.min.css">
+    <link rel="stylesheet" href="css/jquery-ui.css">
+    <link rel="stylesheet" href="css/magnific-popup.css">
+</head>
+	<body>
+        <main class="main">
+            <!-- header -->
+            <header class="header">
+                <div class="container header_container">
+                    <div class="header_tools">
+                        <a href="#" class="notification">Уведомления <span>(1)</span></a>
+                        <a href="#" class="messages">Сообщения</a>
+                        <a href="#" class="favorites">Избранное</a>
+                    </div>
+                    <div class="header_tools">
+                        <a href="#" class="compare">Сравнить</a>
+                        <a href="#" class="sign_in">Войти</a>
+                        <a href="#" class="registration">Регистрация</a>
+                    </div>
+                </div>
+                <div class="header_line"></div>
+                <div class="container header_container">
+                    <a href="#" class="header_logo"><img src="img/header-logo.png" alt=""></a>
+                    <div class="nav_block">
+                        <nav class="nav">
+                            <ul>
+                                <li><a href="#">Архив газеты</a></li>
+                                <li><a href="#">Подать объявление</a></li>
+                                <li><a href="#">Мои обьявления</a></li>
+                                <li><a href="#">Статьи</a></li>
+                            </ul>
+                        </nav>
+                    </div>
+                    <div class="burger">
+                        <span class="bar bar1"></span>
+                        <span class="bar bar2"></span>
+                        <span class="bar bar3"></span>
+                        <span class="bar bar4"></span>
+                        <span class="bar bar5"></span>
+                    </div>
+                </div>
+            </header>
+            <!-- конец шапки -->
+            <div class="container main_content">
+                <h1 class="main_content_title">Соискатели с открытыми контактами</h1>
+                <div class="bread_crumbs">
+                    <ul>
+                        <li><a href="#">Главная</a></li>
+                        <li class="active"><a href="#">Соискатели с открытыми контактами</a></li>
+                    </ul>
+                </div>
+
+                <!-- поиск -->
+                <form action="">
+                    <div class="form_top_row">
+                        <div class="form_search">
+                            <input type="text" class="form_search_input" placeholder="Поиск" required>
+                            <input type="submit" class="form_search_submit" value="">
+                        </div>
+                        <div class="select_item">
+                            <ul class="checkselect checkselect1">
+                                <li>
+                                    <input type="checkbox" id="c1" name="cc">
+                                    <label for="c1"><span></span>Агроном</label>
+                                </li>
+                                <li>
+                                    <input type="checkbox" id="c2" name="cc">
+                                    <label for="c2"><span></span>Плотник</label>
+                                </li>
+                                <li>
+                                    <input type="checkbox" id="c3" name="cc">
+                                    <label for="c3"><span></span>Столяр</label>
+                                </li>
+                                <li>
+                                    <input type="checkbox" id="c4" name="cc">
+                                    <label for="c4"><span></span>Штукатур</label>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="select_item">
+                            <select class="select">
+                                <option>По статусу</option>
+                                <option>Безработный</option>
+                                <option>Работает</option>
+                            </select>
+                        </div>
+                        <div class="select_item">
+                            <select class="select">
+                                <option>По Региону(ам)</option>
+                                <option>Населенному(ым) пункту(ам)</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form_bottom_row">
+                        <div class="datepicker_row">
+                            <input type="text" placeholder="01 Апрель 2022" class="datepicker" id="alternate">
+                            <span>до</span>
+                            <input type="text" placeholder="03 Апрель 2022" class="datepicker" id="alternate2">
+                            <div class="datepicker_windows">
+                                <div class="datepicker_windows_row">
+                                    <div class="datepicker_windows_item" id="datepicker"></div>
+                                    <div class="datepicker_windows_item" id="datepicker2"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="select_item">
+                            <ul class="checkselect checkselect2">
+                                <li>
+                                    <input type="checkbox" id="z1" name="zz">
+                                    <label for="z1">По всем значениям</label>
+                                </li>
+                                <li>
+                                    <div class="row_select">
+                                        <div>  
+                                            <span>От</span>
+                                            <input type="text">
+                                        </div>
+                                        <div>  
+                                            <span>До</span>
+                                            <input type="text">
+                                        </div>
+                                    </div>
+                                </li>
+                                <li>
+                                    <input type="checkbox" id="z2" name="zz">
+                                    <label for="z2">от 14 лет</label>
+                                </li>
+                                <li>
+                                    <input type="checkbox" id="z3" name="zz">
+                                    <label for="z3">от 15 лет</label>
+                                </li>
+                                <li>
+                                    <input type="checkbox" id="z4" name="zz">
+                                    <label for="z4">от 16 лет</label>
+                                </li>
+                                <li>
+                                    <input type="checkbox" id="z5" name="zz">
+                                    <label for="z5">от 17 лет</label>
+                                </li>
+                                <li>
+                                    <input type="checkbox" id="z6" name="zz">
+                                    <label for="z6">от 18 лет</label>
+                                </li>
+                                <li>
+                                    <input type="checkbox" id="z7" name="zz">
+                                    <label for="z7">от 25 лет</label>
+                                </li>
+                                <li>
+                                    <input type="checkbox" id="z8" name="zz">
+                                    <label for="z8">от 30 лет</label>
+                                </li>
+                                <li>
+                                    <input type="checkbox" id="z9" name="zz">
+                                    <label for="z9">от 40 лет</label>
+                                </li>
+                                <li>
+                                    <input type="checkbox" id="z10" name="zz">
+                                    <label for="z10">от 50 лет</label>
+                                </li>
+                                <li>
+                                    <input type="checkbox" id="z11" name="zz">
+                                    <label for="z11">от 60 лет</label>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="select_item">
+                            <select class="select">
+                                <option>По типу добавления</option>
+                                <option>Отклик</option>
+                                <option>Подбор от ВВН</option>
+                                <option>Подбор по подписке</option>
+                            </select>
+                        </div>
+                        <div class="select_item">
+                            <select class="select">
+                                <option>По комментарию</option>
+                                <option>По типу добавления</option>
+                                <option>Есть комментарий</option>
+                                <option>Нет комментарий</option>
+                            </select>
+                        </div>
+                        <div class="select_item">
+                            <select class="select">
+                                <option>Наличие диалога</option>
+                                <option>Есть диалог</option>
+                                <option>Диалог не велся</option>
+                            </select>
+                        </div>
+                    </div>
+                </form>
+                <!-- конец поиска -->
+                <!-- таблица -->
+                <div class="table_scroll">
+                    <div class="table_header">
+                        <p class="table_header_text">ФИО</p>
+                        <p class="table_header_text">Возраст/<br>Год рождение</p>
+                        <p class="table_header_text">Вакансию на которую откликнулся/ Последнее активное резюме</p>
+                        <p class="table_header_text">Дата добавления</p>
+                        <p class="table_header_text">Телефон</p>
+                        <p class="table_header_text">Статус</p>
+                        <p class="table_header_text">Регион и район проживания</p>
+                        <p class="table_header_text">Кто добавил</p>
+                        <p class="table_header_text">Есть диалог</p>
+                        <p class="table_header_text">Избранное/ Черный список</p>
+                        <p class="table_header_text">Мои комментарии</p>
+                    </div>
+                    <div class="table_body">
+                        <div class="table_body_row">
+                            <div class="table_body_item">
+                                <p class="table_fio" data-text="Герасемчукова Максимилиана">Герасемчукова Максимилиана</p>
+                            </div>
+                            <div class="table_body_item">45 лет/1973</div>
+                            <div class="table_body_item">Плотник</div>
+                            <div class="table_body_item">25.06.2019</div>
+                            <div class="table_body_item">
+                                <a href="tel:+79527779999" class="table_phone">+79527779999</a>
+                            </div>
+                            <div class="table_body_item">Безработный</div>
+                            <div class="table_body_item">Нижний Новгород/ Сормовский район</div>
+                            <div class="table_body_item">Отклик</div>
+                            <div class="table_body_item">
+                                <a href="#" class="link_table">Да</a>
+                            </div>
+                            <div class="table_body_item">
+                                <p>В черном списке</p>
+                                <a href="#" class="link_table">Убрать из черного списка</a>
+                                <a href="#" class="link_table">Добавить в избранное</a>
+                            </div>
+                            <div class="table_body_item">
+                                <a href="#" class="link_table">Добавить комментарий</a>
+                            </div>
+                        </div>
+                        <div class="table_body_row">
+                            <div class="table_body_item">
+                                <p class="table_fio" data-text="Егоров Сергей">Егоров Сергей</p>
+                            </div>
+                            <div class="table_body_item">33 года/1983</div>
+                            <div class="table_body_item"><p>Плотник/<a href="#">Слесарь-сантехник</a></p></div>
+                            <div class="table_body_item">25.06.2019</div>
+                            <div class="table_body_item">
+                                <a href="tel:+79527779999" class="table_phone">+79527779999</a>
+                            </div>
+                            <div class="table_body_item">Безработный</div>
+                            <div class="table_body_item">Нижний Новгород/ Сормовский район</div>
+                            <div class="table_body_item"><p>Подбор по <a href="#" class="link_table">подписке</a></p></div>
+                            <div class="table_body_item"><p>Нет/<a href="#" class="link_table">Написать</a></p></div>
+                            <div class="table_body_item">
+                                <a href="#" class="link_table">Убрать из черного списка</a>
+                                <a href="#" class="link_table">Добавить в избранное</a>
+                            </div>
+                            <div class="table_body_item">
+                                <a href="#" class="link_table">Добавить комментарий</a>
+                            </div>
+                        </div>
+                        <div class="table_body_row">
+                            <div class="table_body_item">
+                                <p class="table_fio" data-text="Егоров Сергей">Егоров Сергей</p>
+                            </div>
+                            <div class="table_body_item">33 года/1983</div>
+                            <div class="table_body_item"><p>Плотник/<a href="#">Слесарь-сантехник</a></p></div>
+                            <div class="table_body_item">25.06.2019</div>
+                            <div class="table_body_item">
+                                <a href="tel:+79527779999" class="table_phone">+79527779999</a>
+                            </div>
+                            <div class="table_body_item">Безработный</div>
+                            <div class="table_body_item">Нижний Новгород/ Сормовский район</div>
+                            <div class="table_body_item"><p>Подбор от ВВН</p></div>
+                            <div class="table_body_item"><a href="#" class="link_table">Да</a></div>
+                            <div class="table_body_item">
+                                <a href="#" class="link_table">Убрать из черного списка</a>
+                                <a href="#" class="link_table">Добавить в избранное</a>
+                            </div>
+                            <div class="table_body_item">
+                                <div class="add_comments_wrap">
+                                    <div class="add_comments">
+                                        <p>01.07.2019 14:50 Lorem ipsum dolor sit amet, consecte...</p>
+                                        <a href="#" class="add_comments_link" data-text="Редактировать"></a>
+                                    </div>
+                                    <a href="#" class="link_table">Добавить ещё комментарий</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="table_body_row">
+                            <div class="table_body_item">
+                                <p class="table_fio" data-text="Егоров Сергей">Егоров Сергей</p>
+                            </div>
+                            <div class="table_body_item">33 года/1983</div>
+                            <div class="table_body_item"><p>Плотник/<a href="#">Слесарь-сантехник</a></p></div>
+                            <div class="table_body_item">25.06.2019</div>
+                            <div class="table_body_item">
+                                <a href="tel:+79527779999" class="table_phone">+79527779999</a>
+                            </div>
+                            <div class="table_body_item">Безработный</div>
+                            <div class="table_body_item">Нижний Новгород/ Сормовский район</div>
+                            <div class="table_body_item"><p>Подбор по <a href="#" class="link_table">подписке</a></p></div>
+                            <div class="table_body_item"><p>Нет/<a href="#" class="link_table">Написать</a></p></div>
+                            <div class="table_body_item">
+                                <a href="#" class="link_table">Убрать из черного списка</a>
+                                <a href="#" class="link_table">Добавить в избранное</a>
+                            </div>
+                            <div class="table_body_item">
+                                <div class="add_comments_wrap">
+                                    <div class="add_comments">
+                                        <p>01.07.2019 14:50 Lorem ipsum dolor sit amet, consecte...</p>
+                                        <a href="#" class="add_comments_link" data-text="Редактировать"></a>
+                                    </div>
+                                    <a href="#" class="link_table">Добавить ещё комментарий</a>
+                                </div>
+                                <div class="add_comments_wrap">
+                                    <div class="add_comments">
+                                        <p>01.07.2019 14:50 Lorem ipsum dolor sit amet, consecte...</p>
+                                        <a href="#" class="add_comments_link" data-text="Редактировать"></a>
+                                    </div>
+                                    <a href="#" class="link_table">Добавить ещё комментарий</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- конец таблицы -->
+            </div>
+            <!-- подвал -->
+            <footer class="footer">
+                <div class="container footer_container">
+                    <div class="footer_item">
+                        <h3 class="footer_item_title">Инструменты для вас</h3>
+                        <ul class="footer_nav">
+                            <li><a href="#">Найти работу</a></li>
+                            <li><a href="#">Найти соискателя</a></li>
+                            <li><a href="#">Подать объявление</a></li>
+                            <li><a href="#">Оформить подписку</a></li>
+                            <li><a href="#">Мои объявления</a></li>
+                            <li><a href="#">Наши услуги продвижения</a></li>
+                            <li><a href="#">Производственный календарь</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer_item">
+                        <h3 class="footer_item_title">Информация</h3>
+                        <ul class="footer_nav">
+                            <li><a href="#">Статистика зарплат</a></li>
+                            <li><a href="#">Каталог компаний</a></li>
+                            <li><a href="#">Работа по профессиям</a></li>
+                            <li><a href="#">Работа рядом с метро</a></li>
+                            <li><a href="#">Работа в других города</a></li>
+                            <li><a href="#">Работа по отраслям</a></li>
+                            <li><a href="#">Работа по регионам</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer_item">
+                        <h3 class="footer_item_title">О vsevn.ru</h3>
+                        <ul class="footer_nav">
+                            <li><a href="#">Правила сайта</a></li>
+                            <li><a href="#">Служба поддержки</a></li>
+                            <li><a href="#">Помощь</a></li>
+                            <li><a href="#">Карта сайта</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer_item">
+                        <h3 class="footer_item_title">Vsevn также доступен на</h3>
+                        <div class="footer_media">
+                            <div><a href="#"><img src="img/footer-media/1.png" alt=""></a></div>
+                            <div><a href="#"><img src="img/footer-media/2.png" alt=""></a></div>
+                        </div>
+                        <div class="footer_social">
+                            <a href="#" target="_blank"><img src="img/footer-social/1.png" alt=""></a>
+                            <a href="#" target="_blank"><img src="img/footer-social/2.png" alt=""></a>
+                            <a href="#" target="_blank"><img src="img/footer-social/3.png" alt=""></a>
+                            <a href="#" target="_blank"><img src="img/footer-social/4.png" alt=""></a>
+                            <a href="#" target="_blank"><img src="img/footer-social/5.png" alt=""></a>
+                            <a href="#" target="_blank"><img src="img/footer-social/6.png" alt=""></a>
+                            <a href="#" target="_blank"><img src="img/footer-social/7.png" alt=""></a>
+                        </div>
+                    </div>
+                </div>
+            </footer>
+            <!-- конец подвала -->
+        </main>
+        <script type="text/javascript" src="js/jquery-3.3.1.min.js"></script>   
+        <script type="text/javascript" src="js/slick.min.js"></script>   
+        <script type="text/javascript" src="js/jquery.magnific-popup.js"></script>
+        <script type="text/javascript" src="js/jquery-ui.js"></script>   
+        <script type="text/javascript" src="js/datepiker-ru.js"></script>   
+        <script type="text/javascript" src="js/jquery.formstyler.js"></script>   
+        <script type="text/javascript" src="js/scripts.js"></script>   
+	</body>
+</html>

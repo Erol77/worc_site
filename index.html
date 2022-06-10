@@ -1,0 +1,755 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <!--    <meta http-equiv="X-UA-Compatible" content="IE=edge">-->
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="keywords" content="">
+    <title>Соискатели с открытыми контактами</title>
+    <link rel="stylesheet" href="./css/styles.css">
+    <link rel="stylesheet" href="./css/reset.css">
+    <link rel="stylesheet" href="./fonts/stylesheet.css">
+    <link rel="stylesheet" href="./css/media.css">
+    <!-- <link rel="stylesheet" href="css/slick.min.css"> -->
+    <link rel="stylesheet" href="./css/jquery-ui.css">
+    <link rel="stylesheet" href="./css/magnific-popup.css">
+    <link rel="stylesheet" href="./css/modal.css">
+    <link rel="stylesheet" href="./css/main.css">
+    <!--    <link rel="stylesheet" href="./css/datepicker.css">-->
+</head>
+
+<body>
+
+    <!-- header -->
+    <header class="header">
+        <div class="container header_container">
+            <div class="header_tools">
+                <a href="#" class="notification">Уведомления <span>(1)</span></a>
+                <a href="#" class="messages">Сообщения</a>
+                <a href="#" class="favorites">Избранное</a>
+            </div>
+            <div class="header_tools">
+                <a href="#" class="compare">Сравнить</a>
+                <a href="#" class="sign_in">Войти</a>
+                <a href="#" class="registration">Регистрация</a>
+            </div>
+        </div>
+        <div class="header_line"></div>
+        <div class="container header_container">
+            <a href="#" class="header_logo"><img src="img/header-logo.png" alt="Vsevn.ru"></a>
+            <div class="nav_block">
+                <nav class="nav">
+                    <ul>
+                        <li><a href="#">Архив газеты</a></li>
+                        <li><a href="#">Подать объявление</a></li>
+                        <li><a href="#">Мои обьявления</a></li>
+                        <li><a href="#">Статьи</a></li>
+                    </ul>
+                </nav>
+            </div>
+            <div class="burger">
+                <span class="bar bar1"></span>
+                <span class="bar bar2"></span>
+                <span class="bar bar3"></span>
+                <span class="bar bar4"></span>
+                <span class="bar bar5"></span>
+            </div>
+        </div>
+    </header>
+    <!-- end header -->
+    <div class="container content">
+        <h1 class="content__title">Соискатели с открытыми контактами</h1>
+
+        <div class="bread_crumbs">
+            <ul>
+                <li><a href="#">Главная</a></li>
+                <li class="active"><a href="#">Соискатели с открытыми контактами</a></li>
+            </ul>
+        </div>
+
+        <!-- find -->
+        <form action="">
+            <div class="form_top_row">
+                <div class="content__search">
+                    <input type="text" class="search__input" placeholder="Поиск" required>
+                    <input type="submit" class="search__submit" value="">
+                </div>
+                <div class=" select_item ">
+                    <!--form_search
+
+-->
+<div class="select" id="select-2">
+    <button type="button" class="select__toggle line" name="car" value="ford" data-select="toggle"
+        data-index="1">Все Типы</button>
+    <input type="hidden" name="type_id" id="type_id">
+    <div class="select__dropdown">
+        <ul class="select__options">
+            <li class="select__option" data-select="option" data-value="volkswagen" data-index="0">Активные</li>
+            <li class="select__option select__option_selected" data-select="option" data-value="ford" data-index="1">
+                Неактивные</li>
+            <li class="select__option" data-select="option" data-value="toyota" data-index="2">На модерации</li>
+            <li class="select__option" data-select="option" data-value="nissan" data-index="3">Завершенные</li>
+<li class="select__option" data-select="option" data-value="nissan" data-index="3">Ещё не опубликованны</li>
+<li class="select__option" data-select="option" data-value="nissan" data-index="3">Принудительно завершенные</li>
+        </ul>
+    </div>
+</div>
+                    <div class="jq-selectbox jqselect select dropdown" style="display: inline-block; position: relative; z-index: 100;">
+
+<select class="select" style="margin: 0px; padding: 0px; position: absolute; left: 0px; top: 0px; width: 100%; height: 100%; opacity: 0;">
+                            <option>Все Типы</option>
+                            <option>Активные</option>
+                            <option>Неактивные</option>
+                            <option>На модерации</option>
+                            <option>Завершенные</option>
+                            <option>Ещё не опубликованные</option>
+                            <option>Принудительно завершенные</option>
+                        </select>
+
+
+                        <div class="jq-selectbox__select" style="position: relative">
+                            <div class="jq-selectbox__select-text">Все Типы</div>
+                            <div class="jq-selectbox__trigger">
+                                <div class="jq-selectbox__trigger-arrow"></div>
+                            </div>
+                        </div>
+                        <div class="jq-selectbox__dropdown" style="position: absolute; display: none;">
+                            <div class="jq-selectbox__search" style="display: none;"><input type="search" autocomplete="off" placeholder="Поиск..."></div>
+                            <div class="jq-selectbox__not-found" style="display: none;">Совпадений не найдено</div>
+                            <ul style="position: relative; list-style: none; overflow: auto; overflow-x: hidden">
+                                <li class="selected sel" style="">Активные</li>
+                                <li style="">Неактивные</li>
+                                <li style="">На модерации</li>
+                                <li>Завершенные</li>
+                                <li>Ещё не опубликованные</li>
+                                <li>Принудительно завершенные</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <!--
+                    <select class="select">
+                        <option>Все Типы</option>
+                        <option>Активные</option>
+                        <option>Неактивные</option>
+                        <option>На модерации</option>
+                        <option>Завершенные</option>
+                        <option>Ещё не опубликованные</option>
+                        <option>Принудительно завершенные</option>
+                    </select>
+                    -->
+                </div>
+                <div class="select_item">
+                    <ul class="checkselect checkselect2">
+                        <div class="checkselect-control">
+                               <select class="form-control">
+                                <option>По возрасту</option>
+                            </select>
+                            <div class="checkselect-over"></div>
+                            <button class="input-reset hide" type="button">×</button>
+                        </div>
+                        <div class="checkselect-popup">
+                            <li>
+                                <input type="checkbox" id="z1" name="zz">
+                                <label for="z1">По всем значениям</label>
+                            </li>
+                            <li>
+                                <div class="row_select">
+                                    <div>
+                                        <span>От</span>
+                                        <input type="text">
+                                    </div>
+                                    <div>
+                                        <span>До</span>
+                                        <input type="text">
+                                    </div>
+                                </div>
+                            </li>
+                            <li>
+                                <input type="checkbox" id="z2" name="zz">
+                                <label for="z2">от 14 лет</label>
+                            </li>
+                            <li>
+                                <input type="checkbox" id="z3" name="zz">
+                                <label for="z3">от 15 лет</label>
+                            </li>
+                            <li>
+                                <input type="checkbox" id="z4" name="zz">
+                                <label for="z4">от 16 лет</label>
+                            </li>
+                            <li>
+                                <input type="checkbox" id="z5" name="zz">
+                                <label for="z5">от 17 лет</label>
+                            </li>
+                            <li>
+                                <input type="checkbox" id="z6" name="zz">
+                                <label for="z6">от 18 лет</label>
+                            </li>
+                            <li>
+                                <input type="checkbox" id="z7" name="zz">
+                                <label for="z7">от 25 лет</label>
+                            </li>
+                            <li>
+                                <input type="checkbox" id="z8" name="zz">
+                                <label for="z8">от 30 лет</label>
+                            </li>
+                            <li>
+                                <input type="checkbox" id="z9" name="zz">
+                                <label for="z9">от 40 лет</label>
+                            </li>
+                            <li>
+                                <input type="checkbox" id="z10" name="zz">
+                                <label for="z10">от 50 лет</label>
+                            </li>
+                            <li>
+                                <input type="checkbox" id="z11" name="zz">
+                                <label for="z11">от 60 лет</label>
+                            </li>
+                            <button class="apply hide" type="button">Применить</button>
+                        </div>
+                        
+                    </ul>
+                </div>
+                <!--
+                <div class="select_item">
+                    <div class="jq-selectbox jqselect select" style="display: inline-block; position: relative; z-index: 100;">
+                        <select class="select" style="">
+                            <option>По статусу</option>
+                            <option>Безработный</option>
+                            <option>Работает</option>
+                        </select>
+                        <div class="jq-selectbox__select" style="position: relative">
+                            <div class="jq-selectbox__select-text">По статусу</div>
+                            <div class="jq-selectbox__trigger">
+                                <div class="jq-selectbox__trigger-arrow"></div>
+                            </div>
+                        </div>
+                        <div class="jq-selectbox__dropdown" style="position: absolute; height: auto; bottom: auto; top: 30px; display: none;">
+                            <div class="jq-selectbox__search" style="display: none;"><input type="search" autocomplete="off" placeholder="Поиск..."></div>
+                            <div class="jq-selectbox__not-found" style="display: none;">Совпадений не найдено</div>
+                            <ul style="position: relative; list-style: none; overflow: hidden auto; max-height: 494px;">
+                                <li class="selected sel" style="">По статусу</li>
+                                <li style="" class="">Безработный</li>
+                                <li style="">Работает</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+-->
+                <div class="select_item">
+                    <ul class="checkselect checkselect1">
+                        <div class="checkselect-control">
+                            <select class="form-control">
+                                <option>По вакансии</option>
+                            </select>
+                            <div class="checkselect-over"></div>
+                            <button class="input-reset hide" type="button">×</button>
+                        </div>
+                        <div class="checkselect-popup" style="display: none;">
+                            <li>
+                                <input type="checkbox" id="c1" name="cc">
+                                <label for="c1"><span></span>Агроном</label>
+                            </li>
+                            <li>
+                                <input type="checkbox" id="c2" name="cc">
+                                <label for="c2"><span></span>Плотник</label>
+                            </li>
+                            <li>
+                                <input type="checkbox" id="c3" name="cc">
+                                <label for="c3"><span></span>Столяр</label>
+                            </li>
+                            <li>
+                                <input type="checkbox" id="c4" name="cc">
+                                <label for="c4"><span></span>Штукатур</label>
+                            </li>
+                            <button class="apply hide" type="button">Применить</button>
+                        </div>
+                        
+                    </ul>
+                </div>
+                <div class="select_item">
+                    <div class="jq-selectbox jqselect select dropdown" style="display: inline-block; position: relative; z-index: 100;"><select class="select" style="margin: 0px; padding: 0px; position: absolute; left: 0px; top: 0px; width: 100%; height: 100%; opacity: 0;">
+                            <option>По статусу</option>
+                            <option>Безработный</option>
+                            <option>Работает</option>
+                        </select>
+                        <div class="jq-selectbox__select" style="position: relative">
+                            <div class="jq-selectbox__select-text">По статусу</div>
+                            <div class="jq-selectbox__trigger">
+                                <div class="jq-selectbox__trigger-arrow"></div>
+                            </div>
+                        </div>
+                        <div class="jq-selectbox__dropdown" style="position: absolute; display: none;">
+                            <ul style="position: relative; list-style: none; overflow: auto; overflow-x: hidden">
+                                <li class="selected sel" style="">По статусу</li>
+                                <li style="">Безработный</li>
+                                <li style="">Работает</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <!--  <div class="jq-selectbox jqselect select dropdown opened" style="display: inline-block; position: relative; z-index: 100;"><select class="select" style="margin: 0px; padding: 0px; position: absolute; left: 0px; top: 0px; width: 100%; height: 100%; opacity: 0;">
+                            <option>По статусу</option>
+                            <option>Безработный</option>
+                            <option>Работает</option>
+                        </select>
+                        <div class="jq-selectbox__select" style="position: relative">
+                            <div class="jq-selectbox__select-text">По статусу</div>
+                            <div class="jq-selectbox__trigger">
+                                <div class="jq-selectbox__trigger-arrow"></div>
+                            </div>
+                        </div>
+                        <div class="jq-selectbox__dropdown" style="position: absolute; height: auto; bottom: auto; top: 30px;">
+                            <div class="jq-selectbox__search" style="display: none;"><input type="search" autocomplete="off" placeholder="Поиск..."></div>
+                            <div class="jq-selectbox__not-found" style="display: none;">Совпадений не найдено</div>
+                            <ul style="position: relative; list-style: none; overflow: hidden auto; max-height: 494px;">
+                                <li class="sel selected" style="">По статусу</li>
+                                <li style="" class="">Безработный</li>
+                                <li style="">Работает</li>
+                            </ul>
+                        </div>
+                    </div>-->
+                </div>
+
+                <div class="select_item">
+                    <div class="jq-selectbox jqselect select dropdown" style="display: inline-block; position: relative; z-index: 100;"><select class="select" style="margin: 0px; padding: 0px; position: absolute; left: 0px; top: 0px; width: 100%; height: 100%; opacity: 0;">
+                            <option>По Региону(ам)</option>
+                            <option>Населенному(ым) пункту(ам)</option>
+                        </select>
+                        <div class="jq-selectbox__select" style="position: relative">
+                            <div class="jq-selectbox__select-text">По Региону(ам)</div>
+                            <div class="jq-selectbox__trigger">
+                                <div class="jq-selectbox__trigger-arrow"></div>
+                            </div>
+                        </div>
+                        <div class="jq-selectbox__dropdown" style="position: absolute; display: none;">
+                            <div class="jq-selectbox__search" style="display: none;"><input type="search" autocomplete="off" placeholder="Поиск..."></div>
+                            <div class="jq-selectbox__not-found" style="display: none;">Совпадений не найдено</div>
+                            <ul style="position: relative; list-style: none; overflow: auto; overflow-x: hidden">
+                                <li class="selected sel" style="">По Региону(ам)</li>
+                                <li style="">Населенному(ым) пункту(ам)</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="form_bottom_row">
+                <div class="datepicker_row">
+                    <!--
+                   <div id="date1"></div>
+                   <span>до</span>
+                   <div id="date2"></div>
+-->
+                    <input type="text" placeholder="01 Апрель 2022" onClick="xCal()" onKeyUp="xCal()" oninput="xCal()">
+                    <span>до</span>
+                    <input type="text" placeholder="03 Апрель 2022">
+                    <!--                    <style>#date1,#date2{position: static}</style>-->
+                    <div class="datepicker_windows">
+                        <div class="datepicker_windows_row">
+                            <!--                           class="datepicker" -->
+                            <div class="datepicker_windows_item" id="datepicker1" onClick="xCal()" onKeyUp="xCal()" oninput="xCal()"></div>
+                            <div class="datepicker_windows_item" id="datepicker2" onClick="xCal()" onKeyUp="xCal()" oninput="xCal()"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="select_item">
+                    <div class="jq-selectbox jqselect select dropdown" style="display: inline-block; position: relative; z-index: 100;"><select class="select" style="margin: 0px; padding: 0px; position: absolute; left: 0px; top: 0px; width: 100%; height: 100%; opacity: 0;">
+                            <option>По типу добавления</option>
+                            <option>Отклик</option>
+                            <option>Подбор от ВВН</option>
+                            <option>Подбор по подписке</option>
+                        </select>
+                        <div class="jq-selectbox__select" style="position: relative">
+                            <div class="jq-selectbox__select-text">По типу добавления</div>
+                            <div class="jq-selectbox__trigger">
+                                <div class="jq-selectbox__trigger-arrow"></div>
+                            </div>
+                        </div>
+                        <div class="jq-selectbox__dropdown" style="position: absolute; display: none;">
+                            <div class="jq-selectbox__search" style="display: none;"><input type="search" autocomplete="off" placeholder="Поиск..."></div>
+                            <div class="jq-selectbox__not-found" style="display: none;">Совпадений не найдено</div>
+                            <ul style="position: relative; list-style: none; overflow: auto; overflow-x: hidden">
+                                <li class="selected sel" style="">По типу добавления</li>
+                                <li style="">Отклик</li>
+                                <li style="">Подбор от ВВН</li>
+                                <li style="">Подбор по подписке</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="select_item">
+                    <div class="jq-selectbox jqselect select dropdown" style="display: inline-block; position: relative; z-index: 100;"><select class="select" style="margin: 0px; padding: 0px; position: absolute; left: 0px; top: 0px; width: 100%; height: 100%; opacity: 0;">
+                            <option>По комментарию</option>
+                            <option>По типу добавления</option>
+                            <option>Есть комментарий</option>
+                            <option>Нет комментарий</option>
+                        </select>
+                        <div class="jq-selectbox__select" style="position: relative">
+                            <div class="jq-selectbox__select-text">По комментарию</div>
+                            <div class="jq-selectbox__trigger">
+                                <div class="jq-selectbox__trigger-arrow"></div>
+                            </div>
+                        </div>
+                        <div class="jq-selectbox__dropdown" style="position: absolute; display: none;">
+                            <div class="jq-selectbox__search" style="display: none;"><input type="search" autocomplete="off" placeholder="Поиск..."></div>
+                            <div class="jq-selectbox__not-found" style="display: none;">Совпадений не найдено</div>
+                            <ul style="position: relative; list-style: none; overflow: auto; overflow-x: hidden">
+                                <li class="selected sel" style="">По комментарию</li>
+                                <li style="">По типу добавления</li>
+                                <li style="">Есть комментарий</li>
+                                <li style="">Нет комментарий</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="select_item">
+                    <div class="jq-selectbox jqselect select dropdown" style="display: inline-block; position: relative; z-index: 100;"><select class="select" style="margin: 0px; padding: 0px; position: absolute; left: 0px; top: 0px; width: 100%; height: 100%; opacity: 0;">
+                            <option>Наличие диалога</option>
+                            <option>Есть диалог</option>
+                            <option>Диалог не велся</option>
+                        </select>
+                        <div class="jq-selectbox__select" style="position: relative">
+                            <div class="jq-selectbox__select-text">Наличие диалога</div>
+                            <div class="jq-selectbox__trigger">
+                                <div class="jq-selectbox__trigger-arrow"></div>
+                            </div>
+                        </div>
+                        <div class="jq-selectbox__dropdown" style="position: absolute; display: none;">
+                            <div class="jq-selectbox__search" style="display: none;"><input type="search" autocomplete="off" placeholder="Поиск..."></div>
+                            <div class="jq-selectbox__not-found" style="display: none;">Совпадений не найдено</div>
+                            <ul style="position: relative; list-style: none; overflow: auto; overflow-x: hidden">
+                                <li class="selected sel" style="">Наличие диалога</li>
+                                <li style="">Есть диалог</li>
+                                <li style="">Диалог не велся</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </form>
+        <!-- конец поиска -->
+        <!-- таблица -->
+        <section class="table">
+            <div class="table_scroll">
+                <div class="table_header">
+                    <p class="table_header_text">ФИО</p>
+                    <p class="table_header_text">Возраст/<br>Год рождение</p>
+                    <p class="table_header_text">Вакансию на которую откликнулся/ Последнее активное резюме</p>
+                    <p class="table_header_text">Дата добавления</p>
+                    <p class="table_header_text">Телефон</p>
+                    <p class="table_header_text">Статус</p>
+                    <p class="table_header_text">Регион и район проживания</p>
+                    <p class="table_header_text">Кто добавил</p>
+                    <p class="table_header_text">Есть диалог</p>
+                    <p class="table_header_text">Избранное/ Черный список</p>
+                    <p class="table_header_text">Мои комментарии</p>
+                </div>
+                <div class="table_body">
+                    <div class="table_body_row">
+                        <div class="table_body_item">
+                            <p class="table_fio" data-text="Герасемчукова Максимилиана">Герасемчукова Максимилиана</p>
+                        </div>
+                        <div class="table_body_item">45 лет/1973</div>
+                        <div class="table_body_item">Плотник</div>
+                        <div class="table_body_item">25.06.2019</div>
+                        <div class="table_body_item">
+                            <a href="tel:+79527779999" class="table_phone">+79527779999</a>
+                        </div>
+                        <div class="table_body_item">Безработный</div>
+                        <div class="table_body_item">Нижний Новгород/ Сормовский район</div>
+                        <div class="table_body_item">Отклик</div>
+                        <div class="table_body_item">
+                            <a href="#" class="link_table">Да</a>
+                        </div>
+                        <div class="table_body_item">
+                            <p>В черном списке</p>
+                            <a href="#" class="link_table">Убрать из черного списка</a>
+                            <a href="#" class="link_table">Добавить в избранное</a>
+                        </div>
+                        <div data-modal class="table_body_item">
+                            <a href="#" class="link_table">Добавить комментарий</a>
+                        </div>
+                    </div>
+                    <div class="table_body_row">
+                        <div class="table_body_item">
+                            <p class="table_fio" data-text="Егоров Сергей">Егоров Сергей</p>
+                        </div>
+                        <div class="table_body_item">33 года/1983</div>
+                        <div class="table_body_item">
+                            <p>Плотник/<a href="#">Слесарь-сантехник</a></p>
+                        </div>
+                        <div class="table_body_item">25.06.2019</div>
+                        <div class="table_body_item">
+                            <a href="tel:+79527779999" class="table_phone">+79527779999</a>
+                        </div>
+                        <div class="table_body_item">Безработный</div>
+                        <div class="table_body_item">Нижний Новгород/ Сормовский район</div>
+                        <div class="table_body_item">
+                            <p>Подбор по <a href="#" class="link_table">подписке</a></p>
+                        </div>
+                        <div class="table_body_item">
+                            <p>Нет/<a href="#" class="link_table">Написать</a></p>
+                        </div>
+                        <div class="table_body_item">
+                            <a href="#" class="link_table">Убрать из черного списка</a>
+                            <a href="#" class="link_table">Добавить в избранное</a>
+                        </div>
+                        <div data-modal class="table_body_item">
+                            <a href="#" class="link_table">Добавить комментарий</a>
+                        </div>
+                    </div>
+                    <div class="table_body_row">
+                        <div class="table_body_item">
+                            <p class="table_fio" data-text="Егоров Сергей">Егоров Сергей</p>
+                        </div>
+                        <div class="table_body_item">33 года/1983</div>
+                        <div class="table_body_item">
+                            <p>Плотник/<a href="#">Слесарь-сантехник</a></p>
+                        </div>
+                        <div class="table_body_item">25.06.2019</div>
+                        <div class="table_body_item">
+                            <a href="tel:+79527779999" class="table_phone">+79527779999</a>
+                        </div>
+                        <div class="table_body_item">Безработный</div>
+                        <div class="table_body_item">Нижний Новгород/ Сормовский район</div>
+                        <div class="table_body_item">
+                            <p>Подбор от ВВН</p>
+                        </div>
+                        <div class="table_body_item"><a href="#" class="link_table">Да</a></div>
+                        <div class="table_body_item">
+                            <a href="#" class="link_table">Убрать из черного списка</a>
+                            <a href="#" class="link_table">Добавить в избранное</a>
+                        </div>
+                        <div data-modal class="table_body_item">
+                            <div class="add_comments_wrap">
+                                <div class="add_comments">
+                                    <p class="comments-date">01.07.2019 14:50 </p>
+                                    <p class="comments-text">Lorem ipsum dolor sit amet, consecte...</p>
+                                    <a href="#" class="add_comments_link" data-text="Редактировать"></a>
+                                </div>
+                                <a href="#" class="link_table">Добавить ещё комментарий</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="table_body_row">
+                        <div class="table_body_item">
+                            <p class="table_fio" data-text="Егоров Сергей">Егоров Сергей</p>
+                        </div>
+                        <div class="table_body_item">33 года/1983</div>
+                        <div class="table_body_item">
+                            <p>Плотник/<a href="#">Слесарь-сантехник</a></p>
+                        </div>
+                        <div class="table_body_item">25.06.2019</div>
+                        <div class="table_body_item">
+                            <a href="tel:+79527779999" class="table_phone">+79527779999</a>
+                        </div>
+                        <div class="table_body_item">Безработный</div>
+                        <div class="table_body_item">Нижний Новгород/ Сормовский район</div>
+                        <div class="table_body_item">
+                            <p>Подбор по <a href="#" class="link_table">подписке</a></p>
+                        </div>
+                        <div class="table_body_item">
+                            <p>Нет/<a href="#" class="link_table">Написать</a></p>
+                        </div>
+                        <div class="table_body_item">
+                            <a href="#" class="link_table">Убрать из черного списка</a>
+                            <a href="#" class="link_table">Добавить в избранное</a>
+                        </div>
+                        <div data-modal class="table_body_item">
+                            <div class="add_comments_wrap">
+                                <div class="add_comments">
+                                    <p class="comments-date">01.07.2019 14:50 </p>
+                                    <p class="comments-text">Lorem ipsum dolor sit amet, consecte...</p>
+                                    <a href="#" class="add_comments_link" data-text="Редактировать"></a>
+                                </div>
+                                <a href="#" class="link_table">Добавить ещё комментарий</a>
+                            </div>
+                            <div class="add_comments_wrap">
+                                <div class="add_comments">
+                                    <p class="comments-date">01.07.2019 14:50 </p>
+                                    <p class="comments-text">Lorem ipsum dolor sit amet, consecte...</p>
+                                    <a href="#" class="add_comments_link" data-text="Редактировать"></a>
+                                </div>
+                                <a href="#" class="link_table">Добавить ещё комментарий</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- конец таблицы -->
+    </div>
+    <!-- footer -->
+    <footer class="footer">
+        <div class="container footer_container">
+            <div class="footer_item">
+                <h3 class="footer_item_title">Инструменты для вас</h3>
+                <ul class="footer_nav">
+                    <li><a href="#">Найти работу</a></li>
+                    <li><a href="#">Найти соискателя</a></li>
+                    <li><a href="#">Подать объявление</a></li>
+                    <li><a href="#">Оформить подписку</a></li>
+                    <li><a href="#">Мои объявления</a></li>
+                    <li><a href="#">Наши услуги продвижения</a></li>
+                    <li><a href="#">Производственный календарь</a></li>
+                </ul>
+            </div>
+            <div class="footer_item">
+                <h3 class="footer_item_title">Информация</h3>
+                <ul class="footer_nav">
+                    <li><a href="#">Статистика зарплат</a></li>
+                    <li><a href="#">Каталог компаний</a></li>
+                    <li><a href="#">Работа по профессиям</a></li>
+                    <li><a href="#">Работа рядом с метро</a></li>
+                    <li><a href="#">Работа в других города</a></li>
+                    <li><a href="#">Работа по отраслям</a></li>
+                    <li><a href="#">Работа по регионам</a></li>
+                </ul>
+            </div>
+            <div class="footer_item">
+                <h3 class="footer_item_title">О vsevn.ru</h3>
+                <ul class="footer_nav">
+                    <li><a href="#">Правила сайта</a></li>
+                    <li><a href="#">Служба поддержки</a></li>
+                    <li><a href="#">Помощь</a></li>
+                    <li><a href="#">Карта сайта</a></li>
+                </ul>
+            </div>
+            <div class="footer_item">
+                <h3 class="footer_item_title">Vsevn также доступен на</h3>
+                <div class="footer_media">
+                    <div><a href="#"><img src="img/footer-media/1.png" alt=""></a></div>
+                    <div><a href="#"><img src="img/footer-media/2.png" alt=""></a></div>
+                </div>
+                <div class="footer_social">
+                    <a href="#" target="_blank"><img src="img/footer-social/1.png" alt=""></a>
+                    <a href="#" target="_blank"><img src="img/footer-social/2.png" alt=""></a>
+                    <a href="#" target="_blank"><img src="img/footer-social/3.png" alt=""></a>
+                    <a href="#" target="_blank"><img src="img/footer-social/4.png" alt=""></a>
+                    <a href="#" target="_blank"><img src="img/footer-social/5.png" alt=""></a>
+                    <a href="#" target="_blank"><img src="img/footer-social/6.png" alt=""></a>
+                    <a href="#" target="_blank"><img src="img/footer-social/7.png" alt=""></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!-- end footer show hide-->
+    <div class="modal show">
+        <div class="modal__dialog">
+            <div class="modal__content">
+                <h3 class="modal__title">Комментарии</h3>
+                <hr>
+                <form action="#" class="modal__form">
+                    <label for="comments" class="modal__label-comments">Добавить свой комментарий</label>
+                    <textarea type="textarea" id="comments" rows="15" cols="15" required class="modal__add-comments" placeholder="Введите комментарий"></textarea>
+                    <button type="reset" class="btn btn-danger modal__form-btn">Отмена</button>
+                    <button type="submit" class="btn btn-warning modal__form-btn">Сохранить изменения</button>
+                </form>
+                <div class="modal__comments">
+                    <div class="modal__comments-item">
+                        <p class="modal__comments-date">01.07.2019 14:50</p>
+                        <button class="btn btn__edit"><i class="icon__edit"></i></button>
+                        <button class="btn btn__delete">
+                            <!--                        <i class="icon__delete"></i>-->
+                        </button>
+                        <p class="modal__comments-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse
+                            odio blanditiis veritatis commodi explicabo tempore nesciunt omnis fugit? Tempora
+                            repellendus ea odit magnam commodi alias! Maiores, beatae! Voluptate, molestiae fuga! Lorem
+                            ipsum dolor sit amet consectetur, adipisicing elit. Dolorum alias reiciendis perspiciatis
+                            vero illum recusandae ex veritatis itaque tempore. Quisquam perspiciatis asperiores aliquid.
+                            Dolor, sunt? Velit odio a eligendi facere.</p>
+                    </div>
+                    <hr>
+                    <div class="modal__comments-item">
+                        <p class="modal__comments-date">01.07.2019 14:50</p>
+                        <button class="btn btn__edit"><i class="icon__edit"></i></button>
+                        <button class="btn btn__delete"></button>
+                        <p class="modal__comments-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse odio
+                            blanditiis veritatis commodi explicabo tempore nesciunt omnis fugit? Tempora repellendus ea
+                            odit magnam commodi alias! Maiores, beatae! Voluptate, molestiae fuga! Lorem ipsum dolor sit
+                            amet consectetur, adipisicing elit. Dolorum alias reiciendis perspiciatis vero illum
+                            recusandae ex veritatis itaque tempore. Quisquam perspiciatis asperiores aliquid. Dolor,
+                            sunt? Velit odio a eligendi facere.</p>
+                    </div>
+                    <!-- &lt; &gt; \270E-->
+
+                    <button class="modal__comments-btn-left">
+                        <svg viewBox="0 0 9.15 18" width="0" height="0" class="arrow-icon">
+                            <path fill="currentColor" d="M7.51 15.51a.63.63 0 0 1-.46-.19L1.18 9.46C1.06 9.34.99 9.17.99 9s.07-.34.19-.46l5.86-5.86c.25-.25.67-.25.92 0s.25.67 0 .92L2.56 9l5.4 5.4c.25.25.25.67 0 .92a.61.61 0 0 1-.45.19z">
+                            </path>
+                        </svg></button>
+                    <button class="modal__comments-btn-right">
+                        <svg viewBox="0 0 9.15 18" width="0" height="0" class="arrow-icon">
+                            <path fill="currentColor" d="M1.64 15.51a.63.63 0 0 1-.46-.19.66.66 0 0 1 0-.92L6.59 9l-5.4-5.4c-.25-.25-.25-.67 0-.92s.67-.25.92 0l5.86 5.86c.12.12.19.29.19.46 0 .17-.07.34-.19.46L2.1 15.32a.62.62 0 0 1-.46.19z">
+                            </path>
+                        </svg>
+                    </button>
+
+
+
+                    <div class="pagination">
+                        <button class="pagination__button pagination__button--previous pagination__button--disabled" data-page="false" data-event-action="click: pagination-previous">
+                            <svg viewBox="0 0 9.15 18" width="0" height="0" class="arrow-icon">
+                                <path fill="currentColor" d="M7.51 15.51a.63.63 0 0 1-.46-.19L1.18 9.46C1.06 9.34.99 9.17.99 9s.07-.34.19-.46l5.86-5.86c.25-.25.67-.25.92 0s.25.67 0 .92L2.56 9l5.4 5.4c.25.25.25.67 0 .92a.61.61 0 0 1-.45.19z">
+                                </path>
+                            </svg>
+                        </button>
+                        <button class="pagination__button pagination__button--previous" data-page="false" data-event-action="click: pagination-previous">
+                            <svg viewBox="0 0 9.15 18" width="0" height="0" class="arrow-icon">
+                                <path fill="currentColor" d="M1.64 15.51a.63.63 0 0 1-.46-.19.66.66 0 0 1 0-.92L6.59 9l-5.4-5.4c-.25-.25-.25-.67 0-.92s.67-.25.92 0l5.86 5.86c.12.12.19.29.19.46 0 .17-.07.34-.19.46L2.1 15.32a.62.62 0 0 1-.46.19z">
+                                </path>
+                            </svg>
+                        </button>
+
+                        <!--                        <input type="text" class="pagination__item" value="1">-->
+                        <p class="modal__pagination-list">1 из 94</p>
+
+                        <button class="pagination__button pagination__button--next pagination__button--available" data-event-action="click: pagination-next">
+                            <svg viewBox="0 0 9.14 18" width="0" height="0" class="arrow-icon ">
+                                <path fill="currentColor" d="M1.64 15.51a.63.63 0 0 1-.46-.19.66.66 0 0 1 0-.92L6.59 9l-5.4-5.4c-.25-.25-.25-.67 0-.92s.67-.25.92 0l5.86 5.86c.12.12.19.29.19.46 0 .17-.07.34-.19.46L2.1 15.32a.62.62 0 0 1-.46.19z">
+                                </path>
+                            </svg>
+                        </button>
+                        <p class="pagination__title">перейти на страницу</p>
+                        <input type="text" class="pagination__item" value="1">
+
+                        <button class="pagination__button pagination__button--previous" data-page="false" data-event-action="click: pagination-goTo">
+                            OK
+                        </button>
+
+                    </div>
+                </div>
+                <div data-close class="modal__close">&times;</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- <script type="text/javascript" src="js/jquery-3.3.1.min.js"></script>    -->
+    <!-- <script type="text/javascript" src="js/slick.min.js"></script>    -->
+    <!-- <script type="text/javascript" src="js/jquery.magnific-popup.js"></script> -->
+    <!-- <script type="text/javascript" src="js/jquery-ui.js"></script>    -->
+
+    <!-- <script type="text/javascript" src="js/jquery.formstyler.js"></script>    -->
+ <script type="text/javascript" src="./js/datepicker.js"></script>
+    <script type="text/javascript" src="./js/script.js"></script>
+    <script src="./js/modal.js"></script>
+   
+    <script>
+        /*  xCal("alternate", {
+            id: "cssworldru8", // Set a unique ID
+            "class": "xcalend", // CSS class defines the appearance of the caledar
+            hide: 0, // Do not hide the calendar
+            x: 1, // Disable calendar closure button
+            //autoOn: 0,
+            autoOff: 0, // Disable auto-hide
+            to: "date8", // Place a calendar inside an element with an id=date8
+            fn: "console.log", // Cal the function with the specified name, the selection result will be transferred to it
+            // hide: 0
+        });*/
+        // xCal.all("datepicker");
+
+    </script>
+</body>
+
+</html>

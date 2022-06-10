@@ -1,0 +1,182 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Modern CSS</title>
+  
+  <link rel="stylesheet" href="1custom-select.css">
+<style type="text/css">
+
+h1 {
+  display: flex;
+  justify-content: center;
+}
+@media (max-width: 500px) {
+* {
+      box-sizing: border-box;
+}
+  .select__options{
+    position: fixed;
+    height: 100%;
+    overflow-y: scroll;
+    top: 0;
+    left: 0;
+    background: white;
+    width: 100vw;
+    padding: 20px;
+  }
+}
+
+.text-field__icon {
+  position: relative;
+}
+.text-field__icon input {
+  padding-right: 2.5rem;
+}
+.text-field__aicon {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  top: 0;
+  bottom: 0;
+  right: 0.875rem;
+  width: 1rem;
+  cursor: pointer;
+  color: #bdbdbd;
+  transition: color 0.15s ease-in-out;
+}
+.text-field__aicon:hover {
+  color: #212529;
+}
+.arrow {
+    content: '';
+    width: 0.75rem;
+    height: 0.75rem;
+    flex-shrink: 1;
+    z-index: 1050;
+    margin-left: 1rem;
+    background-size: cover;
+    background-image: url(data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" height="100" width="100"%3E%3Cpath d="M97.625 25.3l-4.813-4.89c-1.668-1.606-3.616-2.41-5.84-2.41-2.27 0-4.194.804-5.777 2.41L50 52.087 18.806 20.412C17.223 18.805 15.298 18 13.03 18c-2.225 0-4.172.804-5.84 2.41l-4.75 4.89C.813 26.95 0 28.927 0 31.23c0 2.346.814 4.301 2.439 5.865l41.784 42.428C45.764 81.174 47.689 82 50 82c2.268 0 4.215-.826 5.84-2.476l41.784-42.428c1.584-1.608 2.376-3.563 2.376-5.865 0-2.26-.792-4.236-2.375-5.932z"/%3E%3C/svg%3E);
+    top: 10px;
+}
+ .line {
+     border: none;
+        border-right: 1px solid #ccc; /* Цвет линии справа 
+        border-right-style: ;  Стиль линии dotted
+        border-right-width:;  Толщина линии */
+       /* border-left-color: #ef40b0;  Цвет линии слева 
+        border-left-style: dotted;  Стиль линии 
+        border-left-width: 3px;  Толщина линии 
+        padding: 0 10px;  Расстояние между линией и текстом 
+        margin: 0 50px;  Отступы справа и слева */
+      }
+
+</style>
+<body class="line">
+
+<form>
+  <div class="content">
+    <h3 class="title">Описание 0 пункта</h3>
+
+    <input id="selectName0" type="radio" value="0" name="selectName" />
+    <label for="selectName0">Описание 0 пункта</label>
+    <input id="selectName1" type="radio" value="1" name="selectName" />
+    <label for="selectName1">Описание 1 пункта</label>
+    <input id="selectName2" type="radio" value="2" name="selectName" />
+    <label for="selectName2">Описание 2 пункта</label>
+  </div>
+</form>
+
+<form>
+  <div class="content">
+    <input id="selectName0" type="checkbox" value="0" name="selectName" />
+    <label for="selectName0">Описание 0 пункта</label>
+    <input id="selectName1" type="checkbox" value="1" name="selectName" />
+    <label for="selectName1">Описание 1 пункта</label>
+    <input id="selectName2" type="checkbox" value="2" name="selectName" />
+    <label for="selectName2">Описание 2 пункта</label>
+  </div>
+</form>
+
+<h1>Single select - with CSS reset</h1>
+<form>
+  <input type="reset" class="reset" value="Clear it!" />
+  <div class="__select" data-state="">
+      <div class="__select__title"></div>
+    <div class="__select__content">
+      <input id="singleSelect0" class="__select__input" type="radio" name="singleSelect" checked />
+      <label for="singleSelect0" tabindex="0" class="__select__label" data-value="Option 0"></label>
+      <input id="singleSelect1" class="__select__input" type="radio" name="singleSelect" />
+      <label for="singleSelect1" tabindex="0" class="__select__label" data-value="Option 1"></label>
+      
+   
+<div class="select " id="select-1">
+ 
+ 
+    <div class="text-field__icon">
+    <input type="button" id="select-car" class="select__toggle" name="car" value="Выберите из списка" data-select="toggle" data-index="-1"/> 
+    <span class="text-field__aicon">
+      
+       <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16"><path d="M97.625 25.3l-4.813-4.89c-1.668-1.606-3.616-2.41-5.84-2.41-2.27 0-4.194.804-5.777 2.41L50 52.087 18.806 20.412C17.223 18.805 15.298 18 13.03 18c-2.225 0-4.172.804-5.84 2.41l-4.75 4.89C.813 26.95 0 28.927 0 31.23c0 2.346.814 4.301 2.439 5.865l41.784 42.428C45.764 81.174 47.689 82 50 82c2.268 0 4.215-.826 5.84-2.476l41.784-42.428c1.584-1.608 2.376-3.563 2.376-5.865 0-2.26-.792-4.236-2.375-5.932z"/></svg>
+    </span>
+  </div>
+  <!-- Выберите из списка</button>-->
+  
+  <div class="select__dropdown">
+    <ul class="select__options">
+      <li class="select__option" data-select="option" data-value="volkswagen" data-index="0">Volkswagen</li>
+      <li class="select__option" data-select="option" data-value="ford" data-index="1">Ford</li>
+      <li class="select__option" data-select="option" data-value="toyota" data-index="2">Toyota</li>
+      <li class="select__option" data-select="option" data-value="nissan" data-index="3">Nissan</li>
+    </ul>
+  </div>
+</div>
+
+<div class="select" id="select-2">
+  <button type="button" class="select__toggle line" name="car" value="ford" data-select="toggle" data-index="1">Выберите из списка</button>
+ <input type="hidden" name="category_id" id="category_id">
+  <div class="select__dropdown">
+    <ul class="select__options">
+      <li class="select__option" data-select="option" data-value="volkswagen" data-index="0">Volkswagen</li>
+      <li class="select__option select__option_selected" data-select="option" data-value="ford" data-index="1">Ford</li>
+      <li class="select__option" data-select="option" data-value="toyota" data-index="2">Toyota</li>
+      <li class="select__option" data-select="option" data-value="nissan" data-index="3">Nissan</li>
+    </ul>
+  </div>
+</div>
+
+<div class="select" id="select-4">
+  <input type="button" id="4"class="select__toggle" name="car" value="Выберите из списка" data-select="toggle" data-index="1"/><label for="4" class="arrow"></label>
+  <div class="select__dropdown">
+    <ul class="select__options">
+      <li class="select__option" data-select="option" data-value="volkswagen" data-index="0">Volkswagen</li>
+      <li class="select__option select__option_selected" data-select="option" data-value="ford" data-index="1">Ford</li>
+      <li class="select__option" data-select="option" data-value="toyota" data-index="2">Toyota</li>
+      <li class="select__option" data-select="option" data-value="nissan" data-index="3">Nissan</li>
+    </ul>
+  </div>
+</div>
+
+
+<div id="select-3"></div>
+
+<!-- подключаем JS селекта -->
+<script src="custom-select.js"></script>
+      
+<script type="text/javascript">
+const select1 = new CustomSelect('#select-1');
+const select2 = new CustomSelect('#select-2');
+
+const select4 = new CustomSelect('#select-4');
+
+const select3 = new CustomSelect('#select-3', {
+  name: 'car', // значение атрибута name у кнопки
+  targetValue: 'ford', // значение по умолчанию
+  options: [['volkswagen', 'Volkswagen'], ['ford', 'Ford'], ['toyota', 'Toyota'], ['nissan', 'Nissan']], // опции
+});
+const cid = document.querySelector('#category_id');
+console.log(cid.value);
+</script>
+<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16"><path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z" /></svg>
+</body>
+</html>
