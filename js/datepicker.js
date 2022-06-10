@@ -119,7 +119,7 @@ for(var i=0; i<(months.length-1); i++) {
 	if(j>2) {ca += '</tr><tr>'; j=0}
 }
 Del(document.querySelector("#"+a.id+" tbody"));
-HTM(a.id, '<tbody><tr><th rowspan=4 valign=bottom><a href="http://cssworld.ru/en/datepicker/" target="_blank">?</a></th>'+ca+'</tr></tbody>');
+HTM(a.id, '<tbody><tr><th rowspan=4 valign=bottom>?</th>' + ca + '</tr></tbody>'); //<a " target="_blank">href="http://cssworld.ru/en/datepicker/</a>
 var k = document.querySelectorAll("#"+a.id+" tbody td");
 for(var i=0; i<k.length; i++) {
 	k[i].onclick = function() {

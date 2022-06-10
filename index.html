@@ -15,6 +15,7 @@
     <link rel="stylesheet" href="./css/jquery-ui.css">
     <link rel="stylesheet" href="./css/magnific-popup.css">
     <link rel="stylesheet" href="./css/modal.css">
+<link rel="stylesheet" href="./css/custom-select.css">
     <link rel="stylesheet" href="./css/main.css">
     <!--    <link rel="stylesheet" href="./css/datepicker.css">-->
 </head>
@@ -80,22 +81,22 @@
 
 -->
 <div class="select" id="select-2">
-    <button type="button" class="select__toggle line" name="car" value="ford" data-select="toggle"
+    <button type="button" class="select__toggle line" name="type" value="all type" data-select="toggle"
         data-index="1">Все Типы</button>
     <input type="hidden" name="type_id" id="type_id">
     <div class="select__dropdown">
         <ul class="select__options">
-            <li class="select__option" data-select="option" data-value="volkswagen" data-index="0">Активные</li>
-            <li class="select__option select__option_selected" data-select="option" data-value="ford" data-index="1">
-                Неактивные</li>
-            <li class="select__option" data-select="option" data-value="toyota" data-index="2">На модерации</li>
-            <li class="select__option" data-select="option" data-value="nissan" data-index="3">Завершенные</li>
-<li class="select__option" data-select="option" data-value="nissan" data-index="3">Ещё не опубликованны</li>
-<li class="select__option" data-select="option" data-value="nissan" data-index="3">Принудительно завершенные</li>
+            <li class="select__option" data-select="option" data-value="all type" data-index="0">Все Типы</li>
+            <li class="select__option" data-select="option" data-value="active" data-index="1">Активные</li>
+            <li class="select__option" data-select="option" data-value="no-active" data-index="2">Неактивные</li>
+            <li class="select__option" data-select="option" data-value="toyota" data-index="3">На модерации</li>
+            <li class="select__option" data-select="option" data-value="nissan" data-index="4">Завершенные</li>
+<li class="select__option" data-select="option" data-value="nissan" data-index="5">Ещё не опубликованны</li>
+<li class="select__option" data-select="option" data-value="nissan" data-index="6">Принудительно завершенные</li>
         </ul>
     </div>
 </div>
-                    <div class="jq-selectbox jqselect select dropdown" style="display: inline-block; position: relative; z-index: 100;">
+                    <!-- <div class="jq-selectbox jqselect select dropdown" style="display: inline-block; position: relative; z-index: 100;"> select__option_selected"
 
 <select class="select" style="margin: 0px; padding: 0px; position: absolute; left: 0px; top: 0px; width: 100%; height: 100%; opacity: 0;">
                             <option>Все Типы</option>
@@ -126,7 +127,7 @@
                                 <li>Принудительно завершенные</li>
                             </ul>
                         </div>
-                    </div>
+                    </div> -->
                     <!--
                     <select class="select">
                         <option>Все Типы</option>
@@ -268,7 +269,8 @@
                     </ul>
                 </div>
                 <div class="select_item">
-                    <div class="jq-selectbox jqselect select dropdown" style="display: inline-block; position: relative; z-index: 100;"><select class="select" style="margin: 0px; padding: 0px; position: absolute; left: 0px; top: 0px; width: 100%; height: 100%; opacity: 0;">
+                    <div class="jq-selectbox jqselect select dropdown" style="display: inline-block; position: relative; z-index: 0;">
+                        <select class="select" style="margin: 0px; padding: 0px; position: absolute; left: 0px; top: 0px; width: 100%; height: 100%; opacity: 0;">
                             <option>По статусу</option>
                             <option>Безработный</option>
                             <option>Работает</option>
@@ -311,7 +313,7 @@
                 </div>
 
                 <div class="select_item">
-                    <div class="jq-selectbox jqselect select dropdown" style="display: inline-block; position: relative; z-index: 100;"><select class="select" style="margin: 0px; padding: 0px; position: absolute; left: 0px; top: 0px; width: 100%; height: 100%; opacity: 0;">
+                    <div class="jq-selectbox jqselect select dropdown" style="display: inline-block; position: relative; z-index: 0;"><select class="select" style="margin: 0px; padding: 0px; position: absolute; left: 0px; top: 0px; width: 100%; height: 100%; opacity: 0;">
                             <option>По Региону(ам)</option>
                             <option>Населенному(ым) пункту(ам)</option>
                         </select>
@@ -354,7 +356,7 @@
                 </div>
 
                 <div class="select_item">
-                    <div class="jq-selectbox jqselect select dropdown" style="display: inline-block; position: relative; z-index: 100;"><select class="select" style="margin: 0px; padding: 0px; position: absolute; left: 0px; top: 0px; width: 100%; height: 100%; opacity: 0;">
+                    <div class="jq-selectbox jqselect select dropdown" style="display: inline-block; position: relative; z-index: 0;"><select class="select" style="margin: 0px; padding: 0px; position: absolute; left: 0px; top: 0px; width: 100%; height: 100%; opacity: 0;">
                             <option>По типу добавления</option>
                             <option>Отклик</option>
                             <option>Подбор от ВВН</option>
@@ -379,7 +381,7 @@
                     </div>
                 </div>
                 <div class="select_item">
-                    <div class="jq-selectbox jqselect select dropdown" style="display: inline-block; position: relative; z-index: 100;"><select class="select" style="margin: 0px; padding: 0px; position: absolute; left: 0px; top: 0px; width: 100%; height: 100%; opacity: 0;">
+                    <div class="jq-selectbox jqselect select dropdown" style="display: inline-block; position: relative; z-index: 0;"><select class="select" style="margin: 0px; padding: 0px; position: absolute; left: 0px; top: 0px; width: 100%; height: 100%; opacity: 0;">
                             <option>По комментарию</option>
                             <option>По типу добавления</option>
                             <option>Есть комментарий</option>
@@ -404,7 +406,7 @@
                     </div>
                 </div>
                 <div class="select_item">
-                    <div class="jq-selectbox jqselect select dropdown" style="display: inline-block; position: relative; z-index: 100;"><select class="select" style="margin: 0px; padding: 0px; position: absolute; left: 0px; top: 0px; width: 100%; height: 100%; opacity: 0;">
+                    <div class="jq-selectbox jqselect select dropdown" style="display: inline-block; position: relative; z-index: 0;"><select class="select" style="margin: 0px; padding: 0px; position: absolute; left: 0px; top: 0px; width: 100%; height: 100%; opacity: 0;">
                             <option>Наличие диалога</option>
                             <option>Есть диалог</option>
                             <option>Диалог не велся</option>
@@ -635,7 +637,7 @@
         </div>
     </footer>
     <!-- end footer show hide-->
-    <div class="modal show">
+    <div class="modal hide">
         <div class="modal__dialog">
             <div class="modal__content">
                 <h3 class="modal__title">Комментарии</h3>
@@ -732,10 +734,12 @@
 
     <!-- <script type="text/javascript" src="js/jquery.formstyler.js"></script>    -->
  <script type="text/javascript" src="./js/datepicker.js"></script>
-    <script type="text/javascript" src="./js/script.js"></script>
+ <script src="./js/custom-select.js"></script>
     <script src="./js/modal.js"></script>
+   <script type="text/javascript" src="./js/script.js"></script>
    
     <script>
+const select2 = new CustomSelect('#select-2');
         /*  xCal("alternate", {
             id: "cssworldru8", // Set a unique ID
             "class": "xcalend", // CSS class defines the appearance of the caledar

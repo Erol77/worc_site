@@ -160,10 +160,10 @@ position: relative;
 	bottom: 13.5px;
     background-color: transparent; 
 }
-.main_content {
+.content {
 	padding: 45px 15px 280px;
 }
-.main_content_title {
+.content__title {
 	font-family: 'GeometriaMedium';
 	font-size: 30px;
 	line-height: 38px;
@@ -211,11 +211,11 @@ position: relative;
 	display: flex;
 /* position: relative; */
 }
-.form_search {
+/* .form_search {
 	width: 48.6%;
 	position: relative;
-}
-.form_search_input {
+} */
+.search__input {
 	background: #fff;
 	border: 1px solid #e3e5ea;
 	border-radius: 20px;
@@ -225,10 +225,10 @@ position: relative;
 	color: #000;
 	padding: 0 20px 0 40px;
 }
-.form_search_input::placeholder {
+.search__input::placeholder {
 	color: #000;
 }
-.form_search_submit {
+.search__submit {
 	background: url(../img/submit.png);
 	width: 9px;
 	height: 9px;

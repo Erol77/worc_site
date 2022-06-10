@@ -114,10 +114,11 @@
 
 .content__search {
     /*    float: right;*/
-    width: 440px;
+    width: 460px;
+/* width: 46%; */
     position: absolute;
-    top: 0px;
-    right: 0;
+    top: 50px;
+    right: 13px;
 }
 
 .select__item select {
@@ -132,7 +133,7 @@
 }
 
 .datepicker_row{
-    max-width: 420px;
+    max-width: 630px;
 }
 
 

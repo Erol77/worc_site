@@ -48,6 +48,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 closeBtn[i].classList.add('hide');
                 applyBtn[i].classList.add('hide');applyBtn[i].classList.remove('show')
                 checkselect[i].classList.remove('open');
+                checkselect[i].style.display = 'none';
             }
 // if (e.target.closest('.popup') === null) {
 //     popup.style.display = 'none';
@@ -78,14 +79,36 @@ document.addEventListener('DOMContentLoaded', () => {
 
     //открыть селекты
 
-    const selectDropdawn = Array.from(document.querySelectorAll('.jq-selectbox .jqselect'));
+    const selectDropdown = Array.from(document.querySelectorAll('.jq-selectbox'));
     // const navBlock = document.querySelector('.nav_block');
-    selectDropdawn.map((e, i) => e.addEventListener('click', function () {
-        //const target = selectDropdawn[i].querySelector('.jq-selectbox.jqselect');
-        //jq-selectbox__dropdown
-        selectDropdawn[i].classList.toggle('opened');
+    selectDropdown.map((e, i) => e.addEventListener('click', function (el) {
+        if (el.target === selectDropdown[i] && selectDropdown[i].classList.contains('opened')){
+         selectDropdown[i].style = "display: inline-block; position: relative; z-index: 0;";
+         selectDropdown[i].classList.toggle('opened');
+         selectDropdown[i].querySelector('.jq-selectbox__dropdown').style = "position: absolute; display: none;";
+         selectDropdown[i].querySelector('ul').style = "position: relative; list-style: none; overflow: auto; overflow-x: hidden";
+
+
+}else{
+            selectDropdown[i].style = "display: inline-block; position: relative; z-index: 100;";
+                    selectDropdown[i].classList.toggle('opened');
+            selectDropdown[i].querySelector('.jq-selectbox__dropdown').style="position: absolute; height: auto; bottom: auto; top: 30px; ";
+            selectDropdown[i].querySelector('ul').style="position: relative; list-style: none; overflow: hidden auto; max-height: 312px;";
+}
     }));
 
+document.addEventListener('click', (e) => {
+    if (!e.target.closest('.jq-selectbox')) {
+        document.querySelector('.jq - selectbox .opened').forEach(select => {
+            select.classList.remove('opened');
+
+        });
+    }
+});
+
+
+/******       class="jq-selectbox__dropdown" style="position: absolute; height: auto; bottom: auto; top: 30px;       
+style="position: relative; list-style: none; overflow: hidden auto; max-height: 312px;"     */
     //        if (!(e.target)&& e.classList.contains('open')) {
     //		e.target.classList.remove('open'); console.log('click',e.target);e.stopPropagation();}
     //	$(document).on('click', function(e) {
