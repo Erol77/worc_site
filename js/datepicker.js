@@ -167,7 +167,7 @@ var mm, y=a.year, m=a.month, dat=a.dat,
 if(DNfirst != 0) j = DNfirst-1;
 else j = 6;
 
-HTM(a.id, '<thead><tr><td class="cal-l" title="'+lang[a.lang].pre+'">‹</td><td colspan=3 class="cal-m"></td><td colspan=2 class="cal-y"></td><td class="cal-r" title="'+lang[a.lang].nex+'">›</td></tr><tr><td>'+lang[a.lang].w+'</td></tr></thead>');
+HTM(a.id, '<thead><tr><td class="cal-l" title="' + lang[a.lang].pre + '">&lt;</td><td colspan=3 class="cal-m"></td><td colspan=2 class="cal-y"></td><td class="cal-r" title="' + lang[a.lang].nex + '">&gt;</td></tr><tr><td>' + lang[a.lang].w + '</td></tr></thead>');
 
 if(j>0) {// ‹ &larr;
 	if(m==0) mm = 11; else mm = m-1;

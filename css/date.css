@@ -82,11 +82,9 @@ line-height: 1.8em;
 /* border:2px solid red; zagolovok */
 }
 .xcalend2 tbody td {
-  color: #025;
+  color: #665800;
 }
 
-.xcalend1 tbody td:hover,
-.xcalend1 td:hover,
 .xcalend2 tbody td:hover,
 .xcalend2 td:hover {
   /* background: #025; */
@@ -113,10 +111,13 @@ line-height: 1.8em;
 .xcalend2 tbody td.cal-l b,
 .xcalend2 tbody td.cal-r b {
   display: none;
+
 }
 .xcalend2 tbody td.cal-l:hover b,
 .xcalend2 tbody td.cal-r:hover b {
   display: inline;
+ /* border:2px solid red; */
+
 }
 .xcalend2 a {
   text-decoration: none;
@@ -125,4 +126,9 @@ line-height: 1.8em;
   color: #ccc;
   display: block;
   padding: 5px 0;
+
+}
+
+.xcalend2 thead td.cal-l {
+line-height: 20px;
 }
