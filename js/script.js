@@ -157,15 +157,14 @@ function insertDate2(e = new Date().toLocaleString()) {
     document.querySelector('#date-2').value = e;
 }
 insertDate2();
-    // const datePiker = document.querySelector('.datepicker_row');
-    // datePiker.addEventListener('click', function () {
-    //     datePiker.querySelector(".datepicker_windows").style.display = 'block';
-
-    //     datePiker.querySelector(".datepicker_windows").addEventListener('mouseout', function () {
-    //         datePiker.querySelector(".datepicker_windows").style.display = 'none';
-    //     });
-
-    // });
+    const datePiker = document.querySelector('.datepicker_row');
+    datePiker.addEventListener('click', function () {
+        datePiker.querySelector(".datepicker_windows").style.display = 'block';
+        // datePiker.querySelector(".datepicker_windows_row").addEventListener('mouseout', function () {
+    });
+datePiker.querySelector(".datepicker_windows_row").addEventListener('mouseout', function () {
+    datePiker.querySelector(".datepicker_windows").style.display = 'none';
+});
     /****************datepicker end*/
     /*document.addEventListener('click', function(e) {
          console.log(e,'  click  ',e.target);
