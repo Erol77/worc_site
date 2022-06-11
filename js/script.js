@@ -157,16 +157,15 @@ document.addEventListener('DOMContentLoaded', () => {
         console.log(e);
         document.querySelector('#date-2').value = e;
     }
+
     insertDate2();
+
     const datePiker = document.querySelector('.datepicker_row');
+
     datePiker.addEventListener('click', function () {
         datePiker.querySelector(".datepicker_windows").style.display = 'block';
-        // datePiker.querySelector(".datepicker_windows_row").addEventListener('mouseout', function () {
+        //  datePiker.querySelector(".datepicker_windows_row").style.display = 'block';
     });
-    // datePiker.querySelector(".datepicker_windows_row").addEventListener('mouseout', function () {
-    //     datePiker.querySelector(".datepicker_windows").style.display = 'none';
-
-
 
     /****************datepicker end*/
     /*document.addEventListener('click', function(e) {
@@ -200,11 +199,9 @@ document.addEventListener('DOMContentLoaded', () => {
         checked.addEventListener('click', () => {
             var checkedNum = checked.querySelectorAll('input[type="checkbox"]:checked');
 
-            //console.log(chekedNum.length, ' - ', chekedSel.textContent);
             if (checkedNum.length) {
                 checkedSel.textContent = name + ' (выбрано: ' + checkedNum.length + ')';
                 closeBtn.classList.toggle('hide');
-                //cheked.append(``);
             } else {
                 checkedSel.textContent = name;
             }
@@ -212,13 +209,10 @@ document.addEventListener('DOMContentLoaded', () => {
         closeBtn.addEventListener('click', () => {
 
             closeBtn.classList.add('hide');
-            //  applyBtn[i].classList.add('hide');
-            //  applyBtn[i].classList.remove('show')
-            //  checkselect[i].classList.remove('open');
             const clear = Array.from(checked.querySelectorAll('input[type="checkbox"]:checked'));
             clear.map(e => e.checked = false);
         });
-    }; //.querySelector('select option') По вакансии (выбрано:2)», 
+    };
 
     setChecked('.checkselect1');
 
@@ -233,21 +227,20 @@ document.addEventListener('DOMContentLoaded', () => {
         if (!e.target.closest('.checkselect')) {
             document.querySelectorAll('.checkselect').forEach(select => {
                 select.classList.remove('open');
+//   e.stopPropagation();
             });
         }
 
-        if (!e.target.closest('.datepicker_windows')) {
-
-            datePiker.style.display = 'none';
-
+        if (!e.target.closest('.datepicker_row')) {
+            datePiker.querySelector('.datepicker_windows').style.display = 'none';
         }
+  e.stopPropagation();
 
     });
     checkselect.map((e, i) => {
 
         e.addEventListener('click', function () {
             this.classList.toggle('open');
-            //   closeBtn[i].classList.toggle('hide');
             applyBtn[i].classList.toggle('hide');
             applyBtn[i].classList.toggle('show');
         });
@@ -261,19 +254,17 @@ document.addEventListener('DOMContentLoaded', () => {
                 const clear = Array.from(checkselect[i].querySelectorAll('input[type="checkbox"]:checked'));
                 clear.map(e => e.checked = false);
 
-                if (el.target === checkselect[i] || el.target === applyBtn[i] || el.target.closest('.checkselect') === null) { // document.querySelector("body") e.target.getAttribute('.data-close') == ''      closeModal();
+                if (el.target === checkselect[i] || el.target === applyBtn[i] || el.target.closest('.checkselect') === null) {
                     closeBtn[i].classList.add('hide');
                     applyBtn[i].classList.add('hide');
                     applyBtn[i].classList.remove('show')
                     checkselect[i].classList.remove('open');
                     checkselect[i].style.display = 'none';
                 }
-                // if (e.target.closest('.popup') === null) {
-                //     popup.style.display = 'none';
-                // }
+
 
             }
-           });
+        });
 
         document.addEventListener('keydown', (e) => {
             if (e.code === "Escape" && checkselect[i].classList.contains('open')) {
