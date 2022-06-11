@@ -432,7 +432,7 @@ select {
 .datepicker_windows_item {
 	padding: 0 5px;
 }
-.datepicker_windows_row .ui-datepicker {
+.datepicker_windows_row {
 	transform: none;
 }
 .datepicker_row > span {
