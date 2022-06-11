@@ -143,7 +143,8 @@
                 <div class="select_item">
                     <ul class="checkselect checkselect2">
                         <div class="checkselect-control">
-                               <select class="form-control">
+                               <select class="form-control"
+                                   style="margin: 0px; padding: 0px; position: absolute; left: 0px; top: 0px; width: 100%; height: 100%; opacity: 0;">
                                 <option>По возрасту</option>
                             </select>
                             <div class="checkselect-over"></div>
@@ -269,25 +270,13 @@
                     </ul>
                 </div>
                 <div class="select_item">
-                    <div class="jq-selectbox jqselect select dropdown" style="display: inline-block; position: relative; z-index: 0;">
+                    <div id="select-3">
                         <select class="select" style="margin: 0px; padding: 0px; position: absolute; left: 0px; top: 0px; width: 100%; height: 100%; opacity: 0;">
                             <option>По статусу</option>
                             <option>Безработный</option>
                             <option>Работает</option>
                         </select>
-                        <div class="jq-selectbox__select" style="position: relative">
-                            <div class="jq-selectbox__select-text">По статусу</div>
-                            <div class="jq-selectbox__trigger">
-                                <div class="jq-selectbox__trigger-arrow"></div>
-                            </div>
-                        </div>
-                        <div class="jq-selectbox__dropdown" style="position: absolute; display: none;">
-                            <ul style="position: relative; list-style: none; overflow: auto; overflow-x: hidden">
-                                <li class="selected sel" style="">По статусу</li>
-                                <li style="">Безработный</li>
-                                <li style="">Работает</li>
-                            </ul>
-                        </div>
+                       
                     </div>
                     <!--  <div class="jq-selectbox jqselect select dropdown opened" style="display: inline-block; position: relative; z-index: 100;"><select class="select" style="margin: 0px; padding: 0px; position: absolute; left: 0px; top: 0px; width: 100%; height: 100%; opacity: 0;">
                             <option>По статусу</option>
@@ -313,24 +302,12 @@
                 </div>
 
                 <div class="select_item">
-                    <div class="jq-selectbox jqselect select dropdown" style="display: inline-block; position: relative; z-index: 0;"><select class="select" style="margin: 0px; padding: 0px; position: absolute; left: 0px; top: 0px; width: 100%; height: 100%; opacity: 0;">
+                    <div id="select-region">
+<select class="select" style="margin: 0px; padding: 0px; position: absolute; left: 0px; top: 0px; width: 100%; height: 100%; opacity: 0;">
                             <option>По Региону(ам)</option>
                             <option>Населенному(ым) пункту(ам)</option>
                         </select>
-                        <div class="jq-selectbox__select" style="position: relative">
-                            <div class="jq-selectbox__select-text">По Региону(ам)</div>
-                            <div class="jq-selectbox__trigger">
-                                <div class="jq-selectbox__trigger-arrow"></div>
-                            </div>
-                        </div>
-                        <div class="jq-selectbox__dropdown" style="position: absolute; display: none;">
-                            <div class="jq-selectbox__search" style="display: none;"><input type="search" autocomplete="off" placeholder="Поиск..."></div>
-                            <div class="jq-selectbox__not-found" style="display: none;">Совпадений не найдено</div>
-                            <ul style="position: relative; list-style: none; overflow: auto; overflow-x: hidden">
-                                <li class="selected sel" style="">По Региону(ам)</li>
-                                <li style="">Населенному(ым) пункту(ам)</li>
-                            </ul>
-                        </div>
+                        
                     </div>
                 </div>
             </div>
@@ -356,76 +333,38 @@
                 </div>
 
                 <div class="select_item">
-                    <div class="jq-selectbox jqselect select dropdown" style="display: inline-block; position: relative; z-index: 0;"><select class="select" style="margin: 0px; padding: 0px; position: absolute; left: 0px; top: 0px; width: 100%; height: 100%; opacity: 0;">
+                    <div id="select-type">
+<select class="select"
+    style="margin: 0px; padding: 0px; position: absolute; left: 0px; top: 0px; width: 100%; height: 100%; opacity: 0;">
                             <option>По типу добавления</option>
                             <option>Отклик</option>
                             <option>Подбор от ВВН</option>
                             <option>Подбор по подписке</option>
                         </select>
-                        <div class="jq-selectbox__select" style="position: relative">
-                            <div class="jq-selectbox__select-text">По типу добавления</div>
-                            <div class="jq-selectbox__trigger">
-                                <div class="jq-selectbox__trigger-arrow"></div>
-                            </div>
-                        </div>
-                        <div class="jq-selectbox__dropdown" style="position: absolute; display: none;">
-                            <div class="jq-selectbox__search" style="display: none;"><input type="search" autocomplete="off" placeholder="Поиск..."></div>
-                            <div class="jq-selectbox__not-found" style="display: none;">Совпадений не найдено</div>
-                            <ul style="position: relative; list-style: none; overflow: auto; overflow-x: hidden">
-                                <li class="selected sel" style="">По типу добавления</li>
-                                <li style="">Отклик</li>
-                                <li style="">Подбор от ВВН</li>
-                                <li style="">Подбор по подписке</li>
-                            </ul>
-                        </div>
+                        
+                  
                     </div>
                 </div>
                 <div class="select_item">
-                    <div class="jq-selectbox jqselect select dropdown" style="display: inline-block; position: relative; z-index: 0;"><select class="select" style="margin: 0px; padding: 0px; position: absolute; left: 0px; top: 0px; width: 100%; height: 100%; opacity: 0;">
+                    <div id="select-comment">
+<select class="select" style="margin: 0px; padding: 0px; position: absolute; left: 0px; top: 0px; width: 100%; height: 100%; opacity: 0;">
                             <option>По комментарию</option>
                             <option>По типу добавления</option>
                             <option>Есть комментарий</option>
                             <option>Нет комментарий</option>
-                        </select>
-                        <div class="jq-selectbox__select" style="position: relative">
-                            <div class="jq-selectbox__select-text">По комментарию</div>
-                            <div class="jq-selectbox__trigger">
-                                <div class="jq-selectbox__trigger-arrow"></div>
-                            </div>
-                        </div>
-                        <div class="jq-selectbox__dropdown" style="position: absolute; display: none;">
-                            <div class="jq-selectbox__search" style="display: none;"><input type="search" autocomplete="off" placeholder="Поиск..."></div>
-                            <div class="jq-selectbox__not-found" style="display: none;">Совпадений не найдено</div>
-                            <ul style="position: relative; list-style: none; overflow: auto; overflow-x: hidden">
-                                <li class="selected sel" style="">По комментарию</li>
-                                <li style="">По типу добавления</li>
-                                <li style="">Есть комментарий</li>
-                                <li style="">Нет комментарий</li>
-                            </ul>
-                        </div>
+                        </select>                    
+        
                     </div>
                 </div>
                 <div class="select_item">
-                    <div class="jq-selectbox jqselect select dropdown" style="display: inline-block; position: relative; z-index: 0;"><select class="select" style="margin: 0px; padding: 0px; position: absolute; left: 0px; top: 0px; width: 100%; height: 100%; opacity: 0;">
+                    <div id="select-dialog">
+<select class="select" style="margin: 0px; padding: 0px; position: absolute; left: 0px; top: 0px; width: 100%; height: 100%; opacity: 0;">
                             <option>Наличие диалога</option>
                             <option>Есть диалог</option>
                             <option>Диалог не велся</option>
                         </select>
-                        <div class="jq-selectbox__select" style="position: relative">
-                            <div class="jq-selectbox__select-text">Наличие диалога</div>
-                            <div class="jq-selectbox__trigger">
-                                <div class="jq-selectbox__trigger-arrow"></div>
-                            </div>
-                        </div>
-                        <div class="jq-selectbox__dropdown" style="position: absolute; display: none;">
-                            <div class="jq-selectbox__search" style="display: none;"><input type="search" autocomplete="off" placeholder="Поиск..."></div>
-                            <div class="jq-selectbox__not-found" style="display: none;">Совпадений не найдено</div>
-                            <ul style="position: relative; list-style: none; overflow: auto; overflow-x: hidden">
-                                <li class="selected sel" style="">Наличие диалога</li>
-                                <li style="">Есть диалог</li>
-                                <li style="">Диалог не велся</li>
-                            </ul>
-                        </div>
+                   
+               
                     </div>
                 </div>
             </div>

@@ -22,89 +22,90 @@ document.addEventListener('DOMContentLoaded', () => {
         navBlock.slideToggle();
     })
 
-    const checkselect = Array.from(document.querySelectorAll('.checkselect'));
-           const closeBtn = Array.from(document.querySelectorAll('.input-reset'));
-        const applyBtn = Array.from(document.querySelectorAll('.apply'));
-    // открыть чекбоксы
-    checkselect.map((e,i) => {
+/************************* select */
 
-        e.addEventListener('click', function () {
-            this.classList.toggle('open');
-            //   closeBtn[i].classList.toggle('hide');
-                applyBtn[i].classList.toggle('hide');
-                applyBtn[i].classList.toggle('show');
-        });
-               
-        document.addEventListener('click', (el) => { 
-            if (el.target === closeBtn[i]) {
-                closeBtn[i].classList.add('hide');
-                applyBtn[i].classList.add('hide');
-                applyBtn[i].classList.remove('show')
-                checkselect[i].classList.remove('open');
-                const clear = Array.from(checkselect[i].querySelectorAll('input[type="checkbox"]:checked'));
-                clear.map(e => e.checked = false);
+const selectStatus = new CustomSelect('#select-3', {
+    name: 'status', // значение атрибута name у кнопки
+    targetValue: 'status', // значение по умолчанию
+    options: [
+        ['status', 'По статусу'],
+        ['no-work', 'Безработный'],
+        ['work', 'Работает'],
 
-            if (el.target === checkselect[i] || el.target === applyBtn[i] || el.target.closest('.checkselect') === null) { // document.querySelector("body") e.target.getAttribute('.data-close') == ''      closeModal();
-                closeBtn[i].classList.add('hide');
-                applyBtn[i].classList.add('hide');applyBtn[i].classList.remove('show')
-                checkselect[i].classList.remove('open');
-                checkselect[i].style.display = 'none';
-            }
-// if (e.target.closest('.popup') === null) {
-//     popup.style.display = 'none';
-// }
-
-            }
-// if (!el[i].target !== checkselect[i] && checkselect[i].classList.contains('open')) { //&& checkselect.classList.contains('open')
-// closeBtn[i].classList.add('hide');
-// applyBtn[i].classList.add('hide');
-// applyBtn[i].classList.remove('show')
-// checkselect[i].classList.remove('open');
-// };mouseup  .replace('hide', 'show');
- 
-        });
-  document.addEventListener('keydown', (e) => {
-      if (e.code === "Escape" && checkselect[i].classList.contains('open')) {
-           closeBtn[i].classList.add('hide');
-           applyBtn[i].classList.add('hide');
-           applyBtn[i].classList.remove('show')
-           checkselect[i].classList.remove('open');
-      }
-  });
-
-
-    });
-
-
-
-    //открыть селекты
-
-    const selectDropdown = Array.from(document.querySelectorAll('.jq-selectbox'));
-    // const navBlock = document.querySelector('.nav_block');
-    selectDropdown.map((e, i) => e.addEventListener('click', function (el) {
-        if (el.target === selectDropdown[i] && selectDropdown[i].classList.contains('opened')){
-         selectDropdown[i].style = "display: inline-block; position: relative; z-index: 0;";
-         selectDropdown[i].classList.toggle('opened');
-         selectDropdown[i].querySelector('.jq-selectbox__dropdown').style = "position: absolute; display: none;";
-         selectDropdown[i].querySelector('ul').style = "position: relative; list-style: none; overflow: auto; overflow-x: hidden";
-
-
-}else{
-            selectDropdown[i].style = "display: inline-block; position: relative; z-index: 100;";
-                    selectDropdown[i].classList.toggle('opened');
-            selectDropdown[i].querySelector('.jq-selectbox__dropdown').style="position: absolute; height: auto; bottom: auto; top: 30px; ";
-            selectDropdown[i].querySelector('ul').style="position: relative; list-style: none; overflow: hidden auto; max-height: 312px;";
-}
-    }));
-
-document.addEventListener('click', (e) => {
-    if (!e.target.closest('.jq-selectbox')) {
-        document.querySelector('.jq - selectbox.opened').forEach(select => {
-            select.classList.remove('opened');
-
-        });
-    }
+    ], // опции
 });
+
+const selectRegion = new CustomSelect('#select-region', {
+    name: 'region', // значение атрибута name у кнопки
+    targetValue: 'region', // значение по умолчанию
+    options: [
+        ['region', 'По Региону(ам)'],
+         ['city', 'Населенному(ым) пункту(ам)'],
+
+    ], // опции
+});
+
+const selectType = new CustomSelect('#select-type', {
+    name: 'type', // значение атрибута name у кнопки
+    targetValue: 'type', // значение по умолчанию
+    options: [
+        ['type', 'По типу добавления'],
+        ['response', 'Отклик'],
+     ['selection-vvn', 'Подбор от ВВН'],
+     ['selection-subscription', 'Подбор по подписке'],
+
+    ], // опции
+});
+
+const selectComment = new CustomSelect('#select-comment', {
+    name: 'comment', // значение атрибута name у кнопки
+    targetValue: 'comment', // значение по умолчанию
+    options: [
+        ['comment', 'По комментарию'],
+        ['type-add', 'По типу добавления'],
+        ['have-comment', 'Есть комментарий'],
+        ['no-comment', 'Нет комментарий'],
+
+    ], // опции
+});
+
+const selectDialog = new CustomSelect('#select-dialog', {
+    name: 'dialog', // значение атрибута name у кнопки
+    targetValue: 'dialog', // значение по умолчанию
+    options: [
+        ['dialog', 'Наличие диалога'],
+        ['have-dialog', 'Есть диалог'],
+        ['no-dialog', 'Диалог не велся'],
+
+    ], // опции
+});
+
+/****************end select */
+//     const selectDropdown = Array.from(document.querySelectorAll('.jq-selectbox'));
+//     // const navBlock = document.querySelector('.nav_block');
+//     selectDropdown.map((e, i) => e.addEventListener('click', function (el) {
+//         if (el.target === selectDropdown[i] && selectDropdown[i].classList.contains('opened')){
+//          selectDropdown[i].style = "display: inline-block; position: relative; z-index: 0;";
+//          selectDropdown[i].classList.toggle('opened');
+//          selectDropdown[i].querySelector('.jq-selectbox__dropdown').style = "position: absolute; display: none;";
+//          selectDropdown[i].querySelector('ul').style = "position: relative; list-style: none; overflow: auto; overflow-x: hidden";
+
+
+// }else{
+//             selectDropdown[i].style = "display: inline-block; position: relative; z-index: 100;";
+//                     selectDropdown[i].classList.toggle('opened');
+//             selectDropdown[i].querySelector('.jq-selectbox__dropdown').style="position: absolute; height: auto; bottom: auto; top: 30px; ";
+//             selectDropdown[i].querySelector('ul').style="position: relative; list-style: none; overflow: hidden auto; max-height: 312px;";
+// }
+//     }));
+/*******************************no worc */
+// document.addEventListener('click', (e) => {
+//     if (!e.target.closest('.checkselect checkselect1') &&
+// document.querySelector('.jq-selectbox').closestMy('opened')) {
+//         document.querySelector('.jq-selectbox .checkselect1 .opened').select.classList.remove('opened');
+// // forEach(select => {            select.classList.remove('opened');        });
+//     }
+// });
 
 
 /******       class="jq-selectbox__dropdown" style="position: absolute; height: auto; bottom: auto; top: 30px;       
@@ -120,7 +121,7 @@ style="position: relative; list-style: none; overflow: hidden auto; max-height: 
     //		e.stopPropagation();
     //	});
 
-
+/****************datepicker */
     xCal('datepicker1', {
         id: "date1",
         hide: 0,
@@ -146,7 +147,7 @@ style="position: relative; list-style: none; overflow: hidden auto; max-height: 
         });
 
     });
-
+/****************datepicker end*/
     /*document.addEventListener('click', function(e) {
          console.log(e,'  click  ',e.target);
 		if (!(e.target).closestMy(".datepicker_row")) {datePiker.style.display='none';
@@ -167,6 +168,7 @@ style="position: relative; list-style: none; overflow: hidden auto; max-height: 
     //document.querySelector(".open_popup").magnificPopup({removalDelay:300,type:"inline"});
     //document.querySelector(".open_popup").magnificPopup({removalDelay:300,type:"inline"});
 
+/****************** checked */
     function setChecked(target, name = 'По вакансии') {
 
         var checked = document.querySelector(target),
@@ -196,9 +198,63 @@ closeBtn.addEventListener('click', () => {
      clear.map(e => e.checked = false);
  });
     }; //.querySelector('select option') По вакансии (выбрано:2)», 
+
     setChecked('.checkselect1');
 
     setChecked('.checkselect2', 'По возрасту');
+
+const checkselect = Array.from(document.querySelectorAll('.checkselect'));
+const closeBtn = Array.from(document.querySelectorAll('.input-reset'));
+const applyBtn = Array.from(document.querySelectorAll('.apply'));
+// открыть чекбоксы
+checkselect.map((e, i) => {
+
+    e.addEventListener('click', function () {
+        this.classList.toggle('open');
+        //   closeBtn[i].classList.toggle('hide');
+        applyBtn[i].classList.toggle('hide');
+        applyBtn[i].classList.toggle('show');
+    });
+
+    document.addEventListener('click', (el) => {
+        if (el.target === closeBtn[i]) {
+            closeBtn[i].classList.add('hide');
+            applyBtn[i].classList.add('hide');
+            applyBtn[i].classList.remove('show')
+            checkselect[i].classList.remove('open');
+            const clear = Array.from(checkselect[i].querySelectorAll('input[type="checkbox"]:checked'));
+            clear.map(e => e.checked = false);
+
+            if (el.target === checkselect[i] || el.target === applyBtn[i] || el.target.closest('.checkselect') === null) { // document.querySelector("body") e.target.getAttribute('.data-close') == ''      closeModal();
+                closeBtn[i].classList.add('hide');
+                applyBtn[i].classList.add('hide');
+                applyBtn[i].classList.remove('show')
+                checkselect[i].classList.remove('open');
+                checkselect[i].style.display = 'none';
+            }
+            // if (e.target.closest('.popup') === null) {
+            //     popup.style.display = 'none';
+            // }
+
+        }
+        // if (!el[i].target !== checkselect[i] && checkselect[i].classList.contains('open')) { //&& checkselect.classList.contains('open')
+        // closeBtn[i].classList.add('hide');
+        // applyBtn[i].classList.add('hide');
+        // applyBtn[i].classList.remove('show')
+        // checkselect[i].classList.remove('open');
+        // };mouseup  .replace('hide', 'show');
+
+    });
+    document.addEventListener('keydown', (e) => {
+        if (e.code === "Escape" && checkselect[i].classList.contains('open')) {
+            closeBtn[i].classList.add('hide');
+            applyBtn[i].classList.add('hide');
+            applyBtn[i].classList.remove('show')
+            checkselect[i].classList.remove('open');
+        }
+    });
+});
+
 });
 
    
