@@ -1,18 +1,18 @@
 document.addEventListener('DOMContentLoaded', () => {
 
-    if (window.Element && !Element.prototype.closestMy) {
-        Element.prototype.closestMy =
-            function (s) {
-                var matches = (this.document || this.ownerDocument).querySelectorAll(s),
-                    i,
-                    el = this;
-                do {
-                    i = matches.length;
-                    while (--i >= 0 && matches.item(i) !== el) {};
-                } while ((i < 0) && (el = el.parentElement));
-                return el;
-            };
-    }
+    // if (window.Element && !Element.prototype.closestMy) {
+    //     Element.prototype.closestMy =
+    //         function (s) {
+    //             var matches = (this.document || this.ownerDocument).querySelectorAll(s),
+    //                 i,
+    //                 el = this;
+    //             do {
+    //                 i = matches.length;
+    //                 while (--i >= 0 && matches.item(i) !== el) {};
+    //             } while ((i < 0) && (el = el.parentElement));
+    //             return el;
+    //         };
+    // }
 
     const burger = document.querySelector('.burger');
     const navBlock = document.querySelector('.nav_block');
@@ -128,18 +128,18 @@ document.addEventListener('DOMContentLoaded', () => {
         hide: 0,
         x: 0,
         autoOff: 0,
-autoOn: 0,
+        autoOn: 0,
         now: 0,
         to: "datepicker1",
         fn: insertDate1,
     });
 
-function insertDate1(e){
-console.log([...e]);
-document.querySelector('#date-1').value = e;
-}
+    function insertDate1(e) {
+        console.log([...e]);
+        document.querySelector('#date-1').value = e;
+    }
 
-// insertDate1('21.11.1953');
+    // insertDate1('21.11.1953');
 
     xCal('datepicker2', {
         id: "date2",
@@ -147,35 +147,38 @@ document.querySelector('#date-1').value = e;
         hide: 0,
         x: 0,
         autoOff: 0,
-autoOn: 0,
- now: 0,
+        autoOn: 0,
+        now: 0,
         to: "datepicker2",
         fn: insertDate2
     });
-function insertDate2(e = new Date().toLocaleString()) {
-    console.log(e);
-    document.querySelector('#date-2').value = e;
-}
-insertDate2();
+
+    function insertDate2(e = new Date().toLocaleString()) {
+        console.log(e);
+        document.querySelector('#date-2').value = e;
+    }
+    insertDate2();
     const datePiker = document.querySelector('.datepicker_row');
     datePiker.addEventListener('click', function () {
         datePiker.querySelector(".datepicker_windows").style.display = 'block';
         // datePiker.querySelector(".datepicker_windows_row").addEventListener('mouseout', function () {
     });
-datePiker.querySelector(".datepicker_windows_row").addEventListener('mouseout', function () {
-    datePiker.querySelector(".datepicker_windows").style.display = 'none';
-});
+    // datePiker.querySelector(".datepicker_windows_row").addEventListener('mouseout', function () {
+    //     datePiker.querySelector(".datepicker_windows").style.display = 'none';
+
+
+
     /****************datepicker end*/
     /*document.addEventListener('click', function(e) {
-         console.log(e,'  click  ',e.target);
-		if (!(e.target).closestMy(".datepicker_row")) {datePiker.style.display='none';
-		 // document.querySelector('.datepicker_windows').hide();
-		}
-         if (!(e.target).closestMy(".checkselect")) {
-			if(checkselect.classList.contains('open'))checkselect.classList.toggle('open');                
-			}
-		e.stopPropagation();
-	  });*/
+             console.log(e,'  click  ',e.target);
+    		if (!(e.target).closestMy(".datepicker_row")) {datePiker.style.display='none';
+    		 // document.querySelector('.datepicker_windows').hide();
+    		}
+             if (!(e.target).closestMy(".checkselect")) {
+    			if(checkselect.classList.contains('open'))checkselect.classList.toggle('open');                
+    			}
+    		e.stopPropagation();
+    	  });*/
     //document.querySelector
     // $("#datepicker").datepicker({dateFormat: 'dd MM yy', inline:true, altField: "#alternate",});
     //const date2 = document.querySelector("#datepicker2");
@@ -225,6 +228,21 @@ datePiker.querySelector(".datepicker_windows_row").addEventListener('mouseout', 
     const closeBtn = Array.from(document.querySelectorAll('.input-reset'));
     const applyBtn = Array.from(document.querySelectorAll('.apply'));
     // открыть чекбоксы
+    /*********************close to un enabled */
+    document.addEventListener('click', (e) => {
+        if (!e.target.closest('.checkselect')) {
+            document.querySelectorAll('.checkselect').forEach(select => {
+                select.classList.remove('open');
+            });
+        }
+
+        if (!e.target.closest('.datepicker_windows')) {
+
+            datePiker.style.display = 'none';
+
+        }
+
+    });
     checkselect.map((e, i) => {
 
         e.addEventListener('click', function () {
@@ -255,14 +273,8 @@ datePiker.querySelector(".datepicker_windows_row").addEventListener('mouseout', 
                 // }
 
             }
-            // if (!el[i].target !== checkselect[i] && checkselect[i].classList.contains('open')) { //&& checkselect.classList.contains('open')
-            // closeBtn[i].classList.add('hide');
-            // applyBtn[i].classList.add('hide');
-            // applyBtn[i].classList.remove('show')
-            // checkselect[i].classList.remove('open');
-            // };mouseup  .replace('hide', 'show');
+           });
 
-        });
         document.addEventListener('keydown', (e) => {
             if (e.code === "Escape" && checkselect[i].classList.contains('open')) {
                 closeBtn[i].classList.add('hide');
