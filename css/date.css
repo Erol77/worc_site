@@ -1,13 +1,13 @@
 .datepicker_windows {
     background: #fff;
     border: 1px solid #e3e5ea;
-    width: 460px;
+    width: 450px;
     padding: 20px;
     position: absolute;
     top: 100%;
     left: 0;
     z-index: 999;
-  /* display: none; */
+  display: none;
   /* display: block; */
 font: inherit;
 }

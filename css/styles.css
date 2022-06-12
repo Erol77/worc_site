@@ -340,7 +340,7 @@ position: relative;
 	position: relative;
 	display: block;
 	padding: 7px 6px 7px 35px;
-	font-size: 14px;
+	font-size: 15px;
 	line-height: 12px;
 	color: #000;
 	cursor: pointer;
@@ -392,7 +392,7 @@ select {
 	appearance: none;
 }
 .jq-selectbox li {
-	font-size: 14px;
+	font-size: 15px;
 	line-height: 25px;
 	color: #000;
 	padding-left: 10px;
@@ -406,14 +406,14 @@ select {
 }
 .datepicker_row {
 	background: url(../img/datepicker.png) no-repeat;
-	width: 330px;
+	width: 450px;
 	padding: 0 10px 0 20px;
 	align-items: center;
 	justify-content: space-between;
 	display: flex;
 	position: relative;
 }
-.datepicker_windows {
+/* .datepicker_windows {
 	background: #fff;
 	border: 1px solid #e3e5ea;
 	width: 460px;
@@ -424,11 +424,11 @@ select {
 	z-index: 999;
 	display: none;
 }
-.datepicker_windows_row {
+.datepicker_windows_row { 
 	margin: 0 -5px;
 	justify-content: space-between;
 	display: flex;
-}
+}*/
 .datepicker_windows_item {
 	padding: 0 5px;
 }
@@ -436,15 +436,15 @@ select {
 	transform: none;
 }
 .datepicker_row > span {
-	font-size: 14px;
+	font-size: 15px;
 	color: #000;
 	padding: 0 8px;
 }
 .datepicker {
 	background: none;
 	width: 125px;
-	height: 14px;
-	font-size: 14px;
+	height: 15px;
+	font-size: 15px;
 	color: #000;
 }
 .datepicker::placeholder {
@@ -555,7 +555,7 @@ select {
 }
 .table_header_text,
 .table_body_item {
-	font-size: 14px;
+	font-size: 15px;
 	line-height: 16px;
 	padding-right: 5px;
 }
