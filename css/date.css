@@ -1,23 +1,23 @@
 .datepicker_windows {
-    background: #fff;
-    border: 1px solid #e3e5ea;
-    width: 450px;
-    padding: 20px;
-    position: absolute;
-    top: 100%;
-    left: 0;
-    z-index: 999;
+  background: #fff;
+  border: 1px solid #e3e5ea;
+  width: 450px;
+  /* padding:0 20px 20px; */
+  position: absolute;
+  top: 100%;
+  left: 0;
+  z-index: 999;
   display: none;
   /* display: block; */
-font: inherit;
+  font: inherit;
 }
 .datepicker_windows_row {
-    margin: 0 -5px;
-    justify-content: space-between;
-    display: flex;
+  margin: 0 ;
+  justify-content: center;
+  display: flex;
 }
 
-.xcalend1, .xcalend2  {
+.xcalend2 {
   /* position: absolute; */
   z-index: 999;
   /* width: 150px; */
@@ -35,51 +35,60 @@ font: inherit;
     left: 0;
     z-index: 999; */
   /* width: 100%; */
-  font-size: 0.9em;
+  /* font-size: 0.9em; */
+font: inherit;
   border-collapse: collapse;
   margin: 0 0 0.4em;
   /* height: 100%; */
 
   margin-bottom: 0;
-    /* transform: translateY(10px); */
-    width: 195px !important;
-    background-color: #fff !important;
-    padding: 0 !important;
-    border: 1px solid #e3dcb2 !important;
-    -webkit-border-radius: 3px;
-    -moz-border-radius: 3px;
-    border-radius: 3px;
-    /* overflow: hidden; */
-    z-index: 110 !important;
-
+  /* transform: translateY(10px); */
+  width: 225px !important;
+  background-color: #fff !important;
+  padding: 0 !important;
+  border: 1px solid #e3dcb2 !important;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  border-radius: 3px;
+  /* overflow: hidden; */
+  z-index: 110 !important;
 }
-
 
 .xcalend2 td {
   cursor: pointer;
- 
+
   border: 1px solid #e3dcb2; /*!important;*/
   color: #665800;
-line-height: 1.8em;
- padding: 0 !important;
+  line-height: 1.8em;
+  padding: 0 !important;
 }
 .xcalend2 thead td {
   color: #333;
- border:none;
- font-size: 12px;
- padding: 6px;
-line-height: 1.8em;
-
+  border: none;
+  /* font-size: 12px; */
+  padding: 6px;
+  line-height: 1.8em;
 }
+.xcalend2 thead tr:first-child {
+border-bottom: 1px solid #e3dcb2;
+}
+
+.xcalend2 thead:first-child{
+/* display: flex; */
+
+    /* grid-template-columns: 1fr 1fr 1fr; */
+}
+
+
 .xcalend2 thead tr:last-child td {
   /* font-size: 12px; */
   background: #fff;
   color: #555;
   cursor: default;
- /* padding: 6px; */
-    border: 1px solid #e3dcb2;
-/* line-height: 1.8em; */
-/* border:2px solid red; zagolovok */
+  /* padding: 6px; */
+  border: 1px solid #e3dcb2;
+  /* line-height: 1.8em; */
+  /* border:2px solid red; zagolovok */
 }
 .xcalend2 tbody td {
   color: #665800;
@@ -111,13 +120,11 @@ line-height: 1.8em;
 .xcalend2 tbody td.cal-l b,
 .xcalend2 tbody td.cal-r b {
   display: none;
-
 }
 .xcalend2 tbody td.cal-l:hover b,
 .xcalend2 tbody td.cal-r:hover b {
   display: inline;
- /* border:2px solid red; */
-
+  /* border:2px solid red; */
 }
 .xcalend2 a {
   text-decoration: none;
@@ -126,9 +133,12 @@ line-height: 1.8em;
   color: #ccc;
   display: block;
   padding: 5px 0;
-
 }
 
 .xcalend2 thead td.cal-l {
-line-height: 20px;
+  line-height: 20px;
 }
+/* #datepicker1.datepicker_windows_item{
+padding: 0 -2px; 
+padding: 0 -2px;
+} */

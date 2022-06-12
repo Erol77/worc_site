@@ -122,6 +122,22 @@ document.addEventListener('DOMContentLoaded', () => {
     //	});
 
     /****************datepicker */
+
+
+    // insertDate1('21.11.1953');
+
+    function insertDate(selector, e = new Date().toLocaleString()) {
+        let date = e.split('.')
+        let month = {
+            mo: ["Января", "Февраля", "Марта", "Апреля", "Мая", "Июня", "Июля", "Августа", "Сентября", "Октября", "Ноября", "Декабря"]
+        }
+        console.log(date, parseInt(date[1]) + '    ' + month.mo[parseInt(date[1]) - 1]);
+        document.querySelector('#' + selector).value = date[0] + '  ' + month.mo[parseInt(date[1]) - 1] + '  ' + date[2];
+    }
+    const insertDate1 = (e) => insertDate('date-1', e);
+    const insertDate2 = (e) => insertDate('date-2', e);
+insertDate1('27.10.2020');
+insertDate2();
     xCal('datepicker1', {
         id: "date1",
         "class": "xcalend2",
@@ -134,38 +150,28 @@ document.addEventListener('DOMContentLoaded', () => {
         fn: insertDate1,
     });
 
-    function insertDate1(e) {
-        console.log([...e]);
-        document.querySelector('#date-1').value = e;
-    }
-
-    // insertDate1('21.11.1953');
 
     xCal('datepicker2', {
         id: "date2",
         "class": "xcalend2",
         hide: 0,
-        x: 0,
+        x: 1,
         autoOff: 0,
         autoOn: 0,
         now: 0,
         to: "datepicker2",
         fn: insertDate2
     });
-
-    function insertDate2(e = new Date().toLocaleString()) {
-        console.log(e);
-        document.querySelector('#date-2').value = e;
-    }
-
-    insertDate2();
-
     const datePiker = document.querySelector('.datepicker_row');
 
     datePiker.addEventListener('click', function () {
         datePiker.querySelector(".datepicker_windows").style.display = 'block';
         //  datePiker.querySelector(".datepicker_windows_row").style.display = 'block';
     });
+  datePiker.querySelector('.bold').addEventListener('click', function () {
+      datePiker.querySelector(".datepicker_windows").style.display = 'none';
+      //  datePiker.querySelector(".datepicker_windows_row").style.display = 'block';
+  });
 
     /****************datepicker end*/
     /*document.addEventListener('click', function(e) {
@@ -217,7 +223,7 @@ document.addEventListener('DOMContentLoaded', () => {
     setChecked('.checkselect1');
 
     setChecked('.checkselect2', 'По возрасту');
-setChecked('.checkselect3', 'По региону(ам)/по городу(ам)');
+    setChecked('.checkselect3', 'По региону(ам)/по городу(ам)');
 
     const checkselect = Array.from(document.querySelectorAll('.checkselect'));
     const closeBtn = Array.from(document.querySelectorAll('.input-reset'));
@@ -228,14 +234,15 @@ setChecked('.checkselect3', 'По региону(ам)/по городу(ам)')
         if (!e.target.closest('.checkselect')) {
             document.querySelectorAll('.checkselect').forEach(select => {
                 select.classList.remove('open');
-//   e.stopPropagation();
+                //   e.stopPropagation();
             });
         }
 
-        if (!e.target.closest('.datepicker_row')) {
+        if (!e.target.closest('.datepicker_row') && !e.target.closest('.xcalend2')) {
             datePiker.querySelector('.datepicker_windows').style.display = 'none';
         }
-  e.stopPropagation();
+
+        e.stopPropagation();
 
     });
     checkselect.map((e, i) => {

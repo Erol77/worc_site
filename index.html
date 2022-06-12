@@ -315,7 +315,8 @@
 <ul class="checkselect checkselect3">
     <div class="checkselect-control">
         <select class="form-control">
-            <option data-text="По региону(ам)/по городу(ам)">По региону(ам)/по городу(ам)</option>
+            <option title=" По региону(ам)/по городу(ам)" data-text="По региону(ам)/по городу(ам)">По региону(ам)/по
+                городу(ам)</option>
         </select>
         <div class="checkselect-over"></div>
         <button class="input-reset hide" type="button">×</button>
@@ -323,7 +324,7 @@
     <div class="checkselect-popup">
         <li>
             <input type="checkbox" id="rergion" name="region">
-            <label for="region">По региону(ам)/по городу(ам)</label>
+            <label title=" По региону(ам)/по городу(ам)" for="region">По региону(ам)/по городу(ам)</label>
         </li>
 
        
@@ -334,12 +335,12 @@
     <path
         d="M15.826 8.12l-2.414-2.055a.25.25 0 0 0-.412.19V7.5h-3c-1.654 0-3 1.346-3 3V15a1 1 0 0 0 2 0v-4.5c0-.551.449-1 1-1h3v1.245c0 .213.25.329.412.19l2.414-2.054a.5.5 0 0 0 0-.762M6 7.5H3V6.3a.25.25 0 0 0-.41-.192L.182 8.116a.5.5 0 0 0 0 .768l2.408 2.008A.25.25 0 0 0 3 10.7V9.5h3c.044 0 .086.007.128.013a3.99 3.99 0 0 1 1-1.79A2.983 2.983 0 0 0 6 7.5m-.435-4.912L7.619.174a.5.5 0 0 1 .762 0l2.055 2.414a.25.25 0 0 1-.19.412H9v3.632a3.96 3.96 0 0 0-.992.414A3.954 3.954 0 0 0 7 6.632V3H5.755a.25.25 0 0 1-.19-.412"
         fill="#000" fill-rule="evenodd" fill-opacity=".38"></path>
-</svg>
+</svg><span></span>
 Нижний Новгород (3)</label>
         </li>
             <li>
                 <input type="checkbox" id="rergion-2" name="rergion">
-                <label for="rergion-2">Москва (1)</label>
+                <label for="rergion-2"><span></span>Москва (1)</label>
             </li>      
         <button class="apply hide" type="button">Применить</button>
     </div>
@@ -357,8 +358,9 @@
                 </div>
                 <div class="form_bottom_row">
                     <div class="datepicker_row">
+<span>С</span>
                         <input type="text" value="06.10.2021" class="datepicker" id="date-1" />
-                        <span>до</span>
+                        <span>По</span>
                         <input type="text" class="datepicker" placeholder="03 Апрель 2022" id="date-2">
                         <!--                    <style>#date1,#date2{position: static}</style>-->
                         <div class="datepicker_windows">
@@ -368,7 +370,11 @@
                                 <div class="datepicker_windows_item" id="datepicker1" onClick="xCal()" onKeyUp="xCal()"
                                     oninput="xCal()"></div>
                                 <div class="datepicker_windows_item" id="datepicker2" onClick="xCal()" onKeyUp="xCal()"
-                                    oninput="xCal()"></div>
+                                    oninput="xCal()">
+
+
+</div>
+
                             </div>
                         </div>
                     </div>
