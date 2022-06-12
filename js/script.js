@@ -35,15 +35,15 @@ document.addEventListener('DOMContentLoaded', () => {
         ], // опции
     });
 
-    const selectRegion = new CustomSelect('#select-region', {
-        name: 'region', // значение атрибута name у кнопки
-        targetValue: 'region', // значение по умолчанию
-        options: [
-            ['region', 'По Региону(ам)'],
-            ['city', 'Населенному(ым) пункту(ам)'],
+    // const selectRegion = new CustomSelect('#select-region', {
+    //     name: 'region', // значение атрибута name у кнопки
+    //     targetValue: 'region', // значение по умолчанию
+    //     options: [
+    //         ['region', 'По Региону(ам)'],
+    //         ['city', 'Населенному(ым) пункту(ам)'],
 
-        ], // опции
-    });
+    //     ], // опции
+    // });
 
     const selectType = new CustomSelect('#select-type', {
         name: 'type', // значение атрибута name у кнопки
@@ -217,6 +217,7 @@ document.addEventListener('DOMContentLoaded', () => {
     setChecked('.checkselect1');
 
     setChecked('.checkselect2', 'По возрасту');
+setChecked('.checkselect3', 'По региону(ам)/по городу(ам)');
 
     const checkselect = Array.from(document.querySelectorAll('.checkselect'));
     const closeBtn = Array.from(document.querySelectorAll('.input-reset'));

@@ -234,3 +234,10 @@ color:#707070;
 color:#665800;
 }
 
+/*svg donor*/
+.checkselect-popup  svg path {
+    fill: #a7c42a;
+}
+.checkselect-popup path {
+    fill-opacity: 1;
+}
