@@ -172,3 +172,11 @@ z-index: 100;
 /* ul.checkselect.open::before{
 
 } */
+
+.table_body_item-type{
+color:#707070;
+}
+
+.table_body_item-online{
+color: #6aa527;
+}

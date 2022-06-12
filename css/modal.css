@@ -466,3 +466,12 @@ background-color:#f5f5f7;
 .iconDropdown .close {
   animation: dropdownToggle 0.2s reverse;
 }
+
+[data-element="2"] {
+  padding: 2rem;
+  font-size: 125%;
+}
+[data-emoji]::before {
+  content: attr(data-emoji); /* Возвращает ':-)' */
+  margin-right: 5px;
+}

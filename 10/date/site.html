@@ -845,10 +845,19 @@ padding: 5px 0;
 
 
 
-
-
+<tr data-id="12345">
+	<td>Селиван Сталлоне</td>
+</tr>
+<tr data-id="12346">
+	<td>Галина Гадот</td>
+</tr>
+<script>
+var ids = querySelectorAll('tr[data]');
+cosnsole.log( ids[0].dataset.id ); // 12345
+</script>
 
 		<script src="/js/site.js"></script>
+
 
 
 	</body>
