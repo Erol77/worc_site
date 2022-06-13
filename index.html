@@ -362,12 +362,18 @@
                 <div class="form_bottom_row">
                     <div class="datepicker_row">
                         <span>С</span>
-                        <input type="text" value="06.10.2021" class="datepicker" id="date-1" onKeyUp="xCal()"
-                            oninput="xCal()" />
+                        <input type="text" value="06.10.2021" class="datepicker" id="date-1"
+                            onclick="datepickerOpen()"
+       onKeyUp="datepickerOpen()"
+       oninput="datepickerOpen()"
+                             />
                         <span>По</span>
-                        <input type="text" class="datepicker" placeholder="03 Апрель 2022" id="date-2" onKeyUp="xCal()"
-                            oninput="xCal()">
-                        <!--                    <style>#date1,#date2{position: static}</style>-->
+                        <input type="text" class="datepicker" placeholder="03 Апрель 2022" id="date-2"
+                           onclick="datepickerOpen()"
+                           onKeyUp="datepickerOpen()"
+                           oninput="datepickerOpen()"
+                          >
+                        <!--  onKeyUp="xCal()" oninput="xCal()"                  <style>#date1,#date2{position: static}</style>-->
                         <div class="datepicker_windows" id="date-row">
                             <div class="datepicker_windows_row">
 

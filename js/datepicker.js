@@ -506,11 +506,6 @@ http://cssworld.ru/en/datepicker/
 	xCal.set = function (o) {
 		for (var key in o) def[key] = o[key]
 	}
-// function datepickerClose() {
-// 	document.querySelector('.datepicker_row').style.display = 'none';
-// 	document.querySelector(".datepicker_windows").style.display = 'none';
-// 	return false;
-// }
 
 	xCal.all = function (cl, delim, order) {
 		if (typeof cl === "undefined" || cl == "") return;

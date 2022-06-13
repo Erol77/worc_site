@@ -137,14 +137,14 @@ document.addEventListener('DOMContentLoaded', () => {
     const insertDate1 = (e) => insertDate('date-1', e);
     const insertDate2 = (e) => insertDate('date-2', e);
 insertDate1('27.10.2020');
-insertDate2();
+// insertDate2();
     xCal('datepicker1', {
         id: "date1",
         "class": "xcalend2",
-        hide: 1,
+        hide: 0,
         x: 0,
         autoOff: 0,
-        autoOn: 1,
+        autoOn: 0,
         now: 0,
         to: "datepicker1",
         fn: insertDate1,
@@ -154,24 +154,15 @@ insertDate2();
     xCal('datepicker2', {
         id: "date2",
         "class": "xcalend2",
-        hide: 1,
+        hide: 0,
         x: 1,
-        autoOff: 1,
-        autoOn: 1,
+        autoOff: 0,
+        autoOn: 0,
         now: 0,
         to: "datepicker2",
         fn: insertDate2
     });
     const datePiker = document.querySelector('.datepicker_row');
-
-    // datePiker.addEventListener('click', function () {
-    //     datePiker.querySelector(".datepicker_windows").style.display = 'block';
-    //      datePiker.querySelector(".datepicker_windows_row").style.display = '';
-    // });
-// function datepickerClose(){
-// document.querySelector('.datepicker_row').style.display = 'none';
-// datePiker.querySelector(".datepicker_windows").style.display = 'none';
-// }
 
 //   datePiker.querySelector('.bold').addEventListener('click', function () {
 //       datePiker.querySelector(".datepicker_windows").style.display = 'none';
@@ -189,14 +180,8 @@ insertDate2();
     			}
     		e.stopPropagation();
     	  });*/
-    //document.querySelector
-    // $("#datepicker").datepicker({dateFormat: 'dd MM yy', inline:true, altField: "#alternate",});
-    //const date2 = document.querySelector("#datepicker2");
-    //date2.datepicker({dateFormat: 'dd MM yy', inline:true, altField: "#alternate2",});
 
-    //document.querySelector('.select').styler({ selectSearch: true });
-
-    //document.querySelector(".open_popup").magnificPopup({removalDelay:300,type:"inline"});
+      //document.querySelector(".open_popup").magnificPopup({removalDelay:300,type:"inline"});
     //document.querySelector(".open_popup").magnificPopup({removalDelay:300,type:"inline"});
 
     /****************** checked */
@@ -208,11 +193,18 @@ insertDate2();
 
 
         checked.addEventListener('click', () => {
-            var checkedNum = checked.querySelectorAll('input[type="checkbox"]:checked');
+            var checkedNum = Array.from(checked.querySelectorAll('input[type="checkbox"]:checked'));
 
             if (checkedNum.length) {
                 checkedSel.textContent = name + ' (выбрано: ' + checkedNum.length + ')';
                 closeBtn.classList.toggle('hide');
+checkedSel.parentElement.style.backgroundColor = '#fbf7e7';
+checkedSel.parentElement.style.borderRadius = '5px';
+let data = '';
+checkedNum.map(i => {console.log(i.parentElement.textContent)
+data += i.parentElement.textContent.trim()+', ';
+});
+checked.setAttribute('data-text', data);
             } else {
                 checkedSel.textContent = name;
             }
@@ -222,6 +214,9 @@ insertDate2();
             closeBtn.classList.add('hide');
             const clear = Array.from(checked.querySelectorAll('input[type="checkbox"]:checked'));
             clear.map(e => e.checked = false);
+checkedSel.parentElement.style.backgroundColor = '#fff';
+checkedSel.parentElement.style.borderRadius = '0px';
+checked.setAttribute('data-text', 'ни чего не выбрано');
         });
     };
 
@@ -291,9 +286,19 @@ insertDate2();
     });
 
 });
+//  datePiker.addEventListener('click', function () {
+//      datePiker.querySelector(".datepicker_windows").style.display = 'block';
+//      //      datePiker.querySelector(".datepicker_windows_row").style.display = '';
+//  });
+
+function datepickerOpen() {
+document.querySelector(".datepicker_windows").style.display = 'block';
+document.querySelector(".datepicker_windows_row").style.display = '';
+    return false;
+}
 
 function datepickerClose() {    
-    // document.querySelector(".datepicker_windows").style.display = 'none';
-// document.querySelector('.datepicker_windows_row').style.display = 'none';
+    document.querySelector(".datepicker_windows").style.display = 'none';
+document.querySelector('.datepicker_windows_row').style.display = 'none';
     return false;
 }

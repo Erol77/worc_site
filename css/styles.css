@@ -617,8 +617,9 @@ select {
 }
 .table_fio:hover:after {
 	content: attr(data-text);
-	background: #fff;
+	background: #fdf9e0;
 	border: 1px solid #bebebe;
+border-radius:5px;
 	max-width: 200px;
 	min-width: 200px;
 	width: 100%;
@@ -671,7 +672,7 @@ select {
 }
 .add_comments_link:hover::after {
 	content: attr(data-text);
-	background: #fff;
+	background: #fdf9e0;
 	border: 1px solid #bebebe;
 	max-width: 95px;
 	min-width: 95px;
@@ -684,6 +685,7 @@ select {
 	bottom: 100%;
 	left: 0;
 	z-index: 2;
+border-radius:5px;
 }
 /* .add_comments_link::before {
 	background: #ffdd00;
