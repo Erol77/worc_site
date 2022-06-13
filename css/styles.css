@@ -274,6 +274,7 @@ position: relative;
 .checkselect.open,
 .jq-selectbox.opened {
 	border-color: #e3dcb2;
+border-radius:5px;
 }
 .checkselect.open .checkselect-popup {
 	display: block !important;
