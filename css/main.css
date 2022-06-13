@@ -280,3 +280,10 @@ border-radius:5px;
     overflow: hidden; /* Обрезаем всё за пределами блока */
    }
 /* white-space */
+.select__option {
+    margin: 0; /* Убираем внешний отступ */
+    -webkit-line-clamp: 1; /* Число отображаемых строк */
+    display: -webkit-box; /* Включаем флексбоксы */
+    -webkit-box-orient: vertical; /* Вертикальная ориентация */
+    overflow: hidden; /* Обрезаем всё за пределами блока */
+   }
