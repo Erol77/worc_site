@@ -52,6 +52,7 @@ http://cssworld.ru/en/datepicker/
 		fn: ""
 	}
 
+
 	function iss(n) {
 		if (typeof n === "undefined" || n === null) return false;
 		return true
@@ -292,7 +293,7 @@ http://cssworld.ru/en/datepicker/
 				k = kk[0] + kk[1] + kk[2];
 				if (k < 7) kk[2] += (7 - k);
 				// ca += '<td colspan=' + kk[2] + ' onClick="document.getElementById(\'' + a.id + '\').style.display=\'none\'" title="' + lang[a.lang].x + '" class="bold">' + (kk[2] > 2 ? lang[a.lang].x : '&#215;') + '</td>';
-			ca += '<td colspan=' + kk[2] + ' title="Применить" class="bold apply"> Применить </td> ';
+			ca += '<td colspan=' + kk[2] + '  onclick="return datepickerClose(this)" title="Применить" class="datepicer-apply"> Применить </td>';
 			}
 			HTM(a.id, '<tfoot><tr>' + ca + '</tr></tfoot>');
 
@@ -505,6 +506,11 @@ http://cssworld.ru/en/datepicker/
 	xCal.set = function (o) {
 		for (var key in o) def[key] = o[key]
 	}
+// function datepickerClose() {
+// 	document.querySelector('.datepicker_row').style.display = 'none';
+// 	document.querySelector(".datepicker_windows").style.display = 'none';
+// 	return false;
+// }
 
 	xCal.all = function (cl, delim, order) {
 		if (typeof cl === "undefined" || cl == "") return;

@@ -141,37 +141,42 @@ insertDate2();
     xCal('datepicker1', {
         id: "date1",
         "class": "xcalend2",
-        hide: 0,
+        hide: 1,
         x: 0,
         autoOff: 0,
-        autoOn: 0,
+        autoOn: 1,
         now: 0,
         to: "datepicker1",
         fn: insertDate1,
     });
-
+// bold
 
     xCal('datepicker2', {
         id: "date2",
         "class": "xcalend2",
-        hide: 0,
+        hide: 1,
         x: 1,
-        autoOff: 0,
-        autoOn: 0,
+        autoOff: 1,
+        autoOn: 1,
         now: 0,
         to: "datepicker2",
         fn: insertDate2
     });
     const datePiker = document.querySelector('.datepicker_row');
 
-    datePiker.addEventListener('click', function () {
-        datePiker.querySelector(".datepicker_windows").style.display = 'block';
-        //  datePiker.querySelector(".datepicker_windows_row").style.display = 'block';
-    });
-  datePiker.querySelector('.bold').addEventListener('click', function () {
-      datePiker.querySelector(".datepicker_windows").style.display = 'none';
-      //  datePiker.querySelector(".datepicker_windows_row").style.display = 'block';
-  });
+    // datePiker.addEventListener('click', function () {
+    //     datePiker.querySelector(".datepicker_windows").style.display = 'block';
+    //      datePiker.querySelector(".datepicker_windows_row").style.display = '';
+    // });
+// function datepickerClose(){
+// document.querySelector('.datepicker_row').style.display = 'none';
+// datePiker.querySelector(".datepicker_windows").style.display = 'none';
+// }
+
+//   datePiker.querySelector('.bold').addEventListener('click', function () {
+//       datePiker.querySelector(".datepicker_windows").style.display = 'none';
+//       //  datePiker.querySelector(".datepicker_windows_row").style.display = 'block';
+//   });***********
 
     /****************datepicker end*/
     /*document.addEventListener('click', function(e) {
@@ -238,13 +243,14 @@ insertDate2();
             });
         }
 
-        if (!e.target.closest('.datepicker_row') && !e.target.closest('.xcalend2')) {
-            datePiker.querySelector('.datepicker_windows').style.display = 'none';
-        }
+        // if (!e.target.closest('.datepicker_row') && !e.target.closest('.xcalend2')) {
+        //     datePiker.querySelector('.datepicker_windows').style.display = 'none';
+        // }
 
         e.stopPropagation();
 
     });
+
     checkselect.map((e, i) => {
 
         e.addEventListener('click', function () {
@@ -285,3 +291,9 @@ insertDate2();
     });
 
 });
+
+function datepickerClose() {    
+    // document.querySelector(".datepicker_windows").style.display = 'none';
+// document.querySelector('.datepicker_windows_row').style.display = 'none';
+    return false;
+}

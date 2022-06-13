@@ -156,7 +156,7 @@ z-index: 100;
 .input-reset:hover {
     background-color: #444;
 }
-
+.xcalend2 .datepicer-apply,
 .select_item .apply {
     margin-top: 10px;
     width: 90%;
@@ -165,10 +165,14 @@ z-index: 100;
     padding: 10px;
     text-transform: uppercase;
     color: #ffffff;
-    background-color: red;
+    background-color: #d70404;
     border-radius: 5px;
 }
 
+.xcalend2 .datepicer-apply:hover,
+.select_item .apply:hover {
+  background-color: #ec0303;
+}
 /* ul.checkselect.open::before{
 
 } */

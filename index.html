@@ -312,40 +312,43 @@
                     </div>
 
                     <div class="select_item">
-<ul class="checkselect checkselect3">
-    <div class="checkselect-control">
-        <select class="form-control">
-            <option title=" По региону(ам)/по городу(ам)" data-text="По региону(ам)/по городу(ам)">По региону(ам)/по
-                городу(ам)</option>
-        </select>
-        <div class="checkselect-over"></div>
-        <button class="input-reset hide" type="button">×</button>
-    </div>
-    <div class="checkselect-popup">
-        <li>
-            <input type="checkbox" id="rergion" name="region">
-            <label title=" По региону(ам)/по городу(ам)" for="region">По региону(ам)/по городу(ам)</label>
-        </li>
+                        <ul class="checkselect checkselect3">
+                            <div class="checkselect-control">
+                                <select class="form-control">
+                                    <option title=" По региону(ам)/по городу(ам)"
+                                        data-text="По региону(ам)/по городу(ам)">По региону(ам)/по
+                                        городу(ам)</option>
+                                </select>
+                                <div class="checkselect-over"></div>
+                                <button class="input-reset hide" type="button">×</button>
+                            </div>
+                            <div class="checkselect-popup">
+                                <li>
+                                    <input type="checkbox" id="rergion" name="region">
+                                    <label title=" По региону(ам)/по городу(ам)" for="region">По региону(ам)/по
+                                        городу(ам)</label>
+                                </li>
 
-       
-        <li>
-            <input type="checkbox" id="rergion-1" name="rergion">
-            <label for="rergion-1">
-<svg class="_3BxpaiQA" width="16" height="16" xmlns="http://www.w3.org/2000/svg">
-    <path
-        d="M15.826 8.12l-2.414-2.055a.25.25 0 0 0-.412.19V7.5h-3c-1.654 0-3 1.346-3 3V15a1 1 0 0 0 2 0v-4.5c0-.551.449-1 1-1h3v1.245c0 .213.25.329.412.19l2.414-2.054a.5.5 0 0 0 0-.762M6 7.5H3V6.3a.25.25 0 0 0-.41-.192L.182 8.116a.5.5 0 0 0 0 .768l2.408 2.008A.25.25 0 0 0 3 10.7V9.5h3c.044 0 .086.007.128.013a3.99 3.99 0 0 1 1-1.79A2.983 2.983 0 0 0 6 7.5m-.435-4.912L7.619.174a.5.5 0 0 1 .762 0l2.055 2.414a.25.25 0 0 1-.19.412H9v3.632a3.96 3.96 0 0 0-.992.414A3.954 3.954 0 0 0 7 6.632V3H5.755a.25.25 0 0 1-.19-.412"
-        fill="#000" fill-rule="evenodd" fill-opacity=".38"></path>
-</svg><span></span>
-Нижний Новгород (3)</label>
-        </li>
-            <li>
-                <input type="checkbox" id="rergion-2" name="rergion">
-                <label for="rergion-2"><span></span>Москва (1)</label>
-            </li>      
-        <button class="apply hide" type="button">Применить</button>
-    </div>
 
-</ul>
+                                <li>
+                                    <input type="checkbox" id="rergion-1" name="rergion">
+                                    <label for="rergion-1">
+                                        <svg class="_3BxpaiQA" width="16" height="16"
+                                            xmlns="http://www.w3.org/2000/svg">
+                                            <path
+                                                d="M15.826 8.12l-2.414-2.055a.25.25 0 0 0-.412.19V7.5h-3c-1.654 0-3 1.346-3 3V15a1 1 0 0 0 2 0v-4.5c0-.551.449-1 1-1h3v1.245c0 .213.25.329.412.19l2.414-2.054a.5.5 0 0 0 0-.762M6 7.5H3V6.3a.25.25 0 0 0-.41-.192L.182 8.116a.5.5 0 0 0 0 .768l2.408 2.008A.25.25 0 0 0 3 10.7V9.5h3c.044 0 .086.007.128.013a3.99 3.99 0 0 1 1-1.79A2.983 2.983 0 0 0 6 7.5m-.435-4.912L7.619.174a.5.5 0 0 1 .762 0l2.055 2.414a.25.25 0 0 1-.19.412H9v3.632a3.96 3.96 0 0 0-.992.414A3.954 3.954 0 0 0 7 6.632V3H5.755a.25.25 0 0 1-.19-.412"
+                                                fill="#000" fill-rule="evenodd" fill-opacity=".38"></path>
+                                        </svg><span></span>
+                                        Нижний Новгород (3)</label>
+                                </li>
+                                <li>
+                                    <input type="checkbox" id="rergion-2" name="rergion">
+                                    <label for="rergion-2"><span></span>Москва (1)</label>
+                                </li>
+                                <button class="apply hide" type="button">Применить</button>
+                            </div>
+
+                        </ul>
                         <!-- <div id="select-region">
                             <select class="select"
                                 style="margin: 0px; padding: 0px; position: absolute; left: 0px; top: 0px; width: 100%; height: 100%; opacity: 0;">
@@ -358,22 +361,23 @@
                 </div>
                 <div class="form_bottom_row">
                     <div class="datepicker_row">
-<span>С</span>
-                        <input type="text" value="06.10.2021" class="datepicker" id="date-1" />
+                        <span>С</span>
+                        <input type="text" value="06.10.2021" class="datepicker" id="date-1" onKeyUp="xCal()"
+                            oninput="xCal()" />
                         <span>По</span>
-                        <input type="text" class="datepicker" placeholder="03 Апрель 2022" id="date-2">
+                        <input type="text" class="datepicker" placeholder="03 Апрель 2022" id="date-2" onKeyUp="xCal()"
+                            oninput="xCal()">
                         <!--                    <style>#date1,#date2{position: static}</style>-->
-                        <div class="datepicker_windows">
+                        <div class="datepicker_windows" id="date-row">
                             <div class="datepicker_windows_row">
 
-                                <!--                           class="datepicker" -->
-                                <div class="datepicker_windows_item" id="datepicker1" onClick="xCal()" onKeyUp="xCal()"
-                                    oninput="xCal()"></div>
-                                <div class="datepicker_windows_item" id="datepicker2" onClick="xCal()" onKeyUp="xCal()"
-                                    oninput="xCal()">
+                                <!--                           class="datepicker" onClick="xCal()" onKeyUp="xCal()"
+                                    oninput="xCal()"-->
+                                <div class="datepicker_windows_item" id="datepicker1" ></div>
+                                <div class="datepicker_windows_item" id="datepicker2">
 
 
-</div>
+                                </div>
 
                             </div>
                         </div>
@@ -434,7 +438,7 @@
                         <p class="table_header_text">Есть диалог</p>
                         <p class="table_header_text">Избранное/ Черный список</p>
                         <p class="table_header_text">Мои комментарии</p>
-<p class="table_header_text">Источник</p>
+                        <p class="table_header_text">Источник</p>
                         <p class="table_header_text">Фото соискателя</p>
 
                     </div>
@@ -468,7 +472,7 @@
                             <div data-modal class="table_body_item">
                                 <a href="#" class="link_table">Добавить комментарий</a>
                             </div>
-<div class="table_body_item"></div>
+                            <div class="table_body_item"></div>
                             <div class="table_body_item">
                                 <div class="card__col">
                                     <div class="card__logo">
@@ -521,7 +525,7 @@
                             <div data-modal class="table_body_item">
                                 <a href="#" class="link_table">Добавить комментарий</a>
                             </div>
-<div class="table_body_item"></div>
+                            <div class="table_body_item"></div>
                             <div class="table_body_item">
                                 <div class="card__col">
                                     <div class="card__logo">
@@ -579,7 +583,7 @@
                                     <a href="#" class="link_table">Добавить ещё комментарий</a>
                                 </div>
                             </div>
-<div class="table_body_item"></div>
+                            <div class="table_body_item"></div>
                             <div class="table_body_item">
                                 <div class="card__col">
                                     <div class="card__logo">
@@ -754,8 +758,8 @@
                                     </div>
                                     <a href="#" class="link_table">Добавить ещё комментарий</a>
                                 </div>
-</div>
-<div class="table_body_item"></div>
+                            </div>
+                            <div class="table_body_item"></div>
                             <div class="table_body_item">
                                 <div class="card__col">
                                     <div class="card__logo">
@@ -775,7 +779,7 @@
                                     </div>
                                 </div>
                             </div>
-                            
+
                         </div>
                     </div>
                 </div>
@@ -957,6 +961,14 @@
 
         <script>
             const select2 = new CustomSelect('#select-2');
+            // window.onload = function () {                //получаем идентификатор элемента
+            //     var a = document.getElementById('switch');                //вешаем на него событие
+            //     a.onclick = function () {                    //производим какие-то действия
+            //         document.querySelector('.datepicker_row').style.display = 'none';
+            //         document.querySelector(".datepicker_windows").style.display = 'none';
+            //         return false;
+            //     }
+            // }
             /*  xCal("alternate", {
                 id: "cssworldru8", // Set a unique ID
                 "class": "xcalend", // CSS class defines the appearance of the caledar

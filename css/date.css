@@ -1,6 +1,6 @@
 .datepicker_windows {
   background: #fff;
-  border: 1px solid #e3e5ea;
+  /* border: 1px solid #e3e5ea; */
   width: 450px;
   /* padding:0 20px 20px; */
   position: absolute;
@@ -141,4 +141,9 @@ border-bottom: 1px solid #e3dcb2;
 /* #datepicker1.datepicker_windows_item{
 padding: 0 -2px; 
 padding: 0 -2px;
+} */
+
+/* .datepicker_row > span::before {
+/* position: absolute; */
+  	background: url(../img/datepicker.png) no-repeat;
 } */
