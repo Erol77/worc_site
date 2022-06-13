@@ -263,3 +263,20 @@ border-radius:5px;
 	left: 0;
 	z-index: 2;
 }
+
+.select__option,
+/* .select__toggle, */
+.select__toggle {
+    white-space: nowrap; /* Текст не переносится */
+    overflow: hidden; /* Обрезаем всё за пределами блока */
+    /*text-overflow: ellipsis; /* Добавляем многоточие */
+}
+
+.comments-text {
+    margin: 0; /* Убираем внешний отступ */
+    -webkit-line-clamp: 2; /* Число отображаемых строк */
+    display: -webkit-box; /* Включаем флексбоксы */
+    -webkit-box-orient: vertical; /* Вертикальная ориентация */
+    overflow: hidden; /* Обрезаем всё за пределами блока */
+   }
+/* white-space */

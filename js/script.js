@@ -136,8 +136,8 @@ document.addEventListener('DOMContentLoaded', () => {
     }
     const insertDate1 = (e) => insertDate('date-1', e);
     const insertDate2 = (e) => insertDate('date-2', e);
-insertDate1('27.10.2020');
-// insertDate2();
+    insertDate1('27.10.2020');
+    // insertDate2();
     xCal('datepicker1', {
         id: "date1",
         "class": "xcalend2",
@@ -149,7 +149,7 @@ insertDate1('27.10.2020');
         to: "datepicker1",
         fn: insertDate1,
     });
-// bold
+    // bold
 
     xCal('datepicker2', {
         id: "date2",
@@ -164,10 +164,10 @@ insertDate1('27.10.2020');
     });
     const datePiker = document.querySelector('.datepicker_row');
 
-//   datePiker.querySelector('.bold').addEventListener('click', function () {
-//       datePiker.querySelector(".datepicker_windows").style.display = 'none';
-//       //  datePiker.querySelector(".datepicker_windows_row").style.display = 'block';
-//   });***********
+    //   datePiker.querySelector('.bold').addEventListener('click', function () {
+    //       datePiker.querySelector(".datepicker_windows").style.display = 'none';
+    //       //  datePiker.querySelector(".datepicker_windows_row").style.display = 'block';
+    //   });***********
 
     /****************datepicker end*/
     /*document.addEventListener('click', function(e) {
@@ -181,7 +181,7 @@ insertDate1('27.10.2020');
     		e.stopPropagation();
     	  });*/
 
-      //document.querySelector(".open_popup").magnificPopup({removalDelay:300,type:"inline"});
+    //document.querySelector(".open_popup").magnificPopup({removalDelay:300,type:"inline"});
     //document.querySelector(".open_popup").magnificPopup({removalDelay:300,type:"inline"});
 
     /****************** checked */
@@ -198,15 +198,16 @@ insertDate1('27.10.2020');
             if (checkedNum.length) {
                 checkedSel.textContent = name + ' (выбрано: ' + checkedNum.length + ')';
                 closeBtn.classList.toggle('hide');
-checkedSel.parentElement.style.backgroundColor = '#fbf7e7';
-checkedSel.parentElement.style.borderRadius = '5px';
-checkedSel.parentElement.style.border = '1px solid #e3dcb2'; //border-right-width: 1px;
-checked.style.border = 'none'; //border-right-width: 1px;
-let data = '';
-checkedNum.map(i => {console.log(i.parentElement.textContent)
-data += i.parentElement.textContent.trim()+', ';
-});
-checkedSel.setAttribute('data-text', data);
+                checkedSel.parentElement.style.backgroundColor = '#fbf7e7';
+                checkedSel.parentElement.style.borderRadius = '5px';
+                checkedSel.parentElement.style.border = '1px solid #e3dcb2'; //border-right-width: 1px;
+                checked.style.border = 'none'; //border-right-width: 1px;
+                let data = '';
+                checkedNum.map(i => {
+                    console.log(i.parentElement.textContent)
+                    data += i.parentElement.textContent.trim() + ', ';
+                });
+                checkedSel.setAttribute('data-text', data);
             } else {
                 checkedSel.textContent = name;
             }
@@ -216,11 +217,11 @@ checkedSel.setAttribute('data-text', data);
             closeBtn.classList.add('hide');
             const clear = Array.from(checked.querySelectorAll('input[type="checkbox"]:checked'));
             clear.map(e => e.checked = false);
-checkedSel.parentElement.style.backgroundColor = '#fff';
-checkedSel.parentElement.style.borderRadius = '0px';
-checked.style.border = ''; //border-right-width: 1px;
-checkedSel.removeAttribute('data-text');
-checkedSel.parentElement.style.border = '';
+            checkedSel.parentElement.style.backgroundColor = '#fff';
+            checkedSel.parentElement.style.borderRadius = '0px';
+            checked.style.border = ''; //border-right-width: 1px;
+            checkedSel.removeAttribute('data-text');
+            checkedSel.parentElement.style.border = '';
         });
     };
 
@@ -241,6 +242,7 @@ checkedSel.parentElement.style.border = '';
                 //   e.stopPropagation();
             });
         }
+
 
         // if (!e.target.closest('.datepicker_row') && !e.target.closest('.xcalend2')) {
         //     datePiker.querySelector('.datepicker_windows').style.display = 'none';
@@ -287,7 +289,30 @@ checkedSel.parentElement.style.border = '';
                 checkselect[i].classList.remove('open');
             }
         });
-    });
+    });/*
+const btnSelect = Array.from(document.querySelectorAll('.select__toggle'));
+
+
+    btnSelect.forEach(select => {
+        // select.addEventListener('click', () => {
+            if (select.getAttribute('data-index')>0) {
+                select.style.backgroundColor = '#fbf7e7';
+                select.style.borderRadius = '5px';
+                select.style.border = '1px solid #e3dcb2'; //border-right-width: 1px;
+                select.parentElement.style.border = 'none'; //border-right-width: 1px;
+            } else {
+       select.style.backgroundColor = '#fff';
+       select.style.borderRadius = '0px';
+       select.style.border = ''; //border-right-width: 1px;
+    //    select.removeAttribute('data-text');
+       select.parentElement.style.border = '';
+
+            }
+        });*/
+    // })
+function overflow(e){
+return e.scrollWidth > e.offsetWidth || e.scrollHeight > e.offsetHeight;
+}
 
 });
 //  datePiker.addEventListener('click', function () {
@@ -296,13 +321,13 @@ checkedSel.parentElement.style.border = '';
 //  });
 
 function datepickerOpen() {
-document.querySelector(".datepicker_windows").style.display = 'block';
-document.querySelector(".datepicker_windows_row").style.display = '';
+    document.querySelector(".datepicker_windows").style.display = 'block';
+    document.querySelector(".datepicker_windows_row").style.display = '';
     return false;
 }
 
-function datepickerClose() {    
+function datepickerClose() {
     document.querySelector(".datepicker_windows").style.display = 'none';
-document.querySelector('.datepicker_windows_row').style.display = 'none';
+    document.querySelector('.datepicker_windows_row').style.display = 'none';
     return false;
 }

@@ -85,7 +85,7 @@
 -->
                         <div class="select" id="select-2">
                             <button type="button" class="select__toggle line" name="type" value="all type"
-                                data-select="toggle" data-index="1">Все Типы</button>
+                                data-select="toggle" data-index="0">Все Типы</button>
                             <input type="hidden" name="type_id" id="type_id">
                             <div class="select__dropdown">
                                 <ul class="select__options">
@@ -362,24 +362,18 @@
                 <div class="form_bottom_row">
                     <div class="datepicker_row">
                         <span>С</span>
-                        <input type="text" value="06.10.2021" class="datepicker" id="date-1"
-                            onclick="datepickerOpen()"
-       onKeyUp="datepickerOpen()"
-       oninput="datepickerOpen()"
-                             />
+                        <input type="text" value="06.10.2021" class="datepicker" id="date-1" onclick="datepickerOpen()"
+                            onKeyUp="datepickerOpen()" oninput="datepickerOpen()" />
                         <span>По</span>
                         <input type="text" class="datepicker" placeholder="03 Апрель 2022" id="date-2"
-                           onclick="datepickerOpen()"
-                           onKeyUp="datepickerOpen()"
-                           oninput="datepickerOpen()"
-                          >
+                            onclick="datepickerOpen()" onKeyUp="datepickerOpen()" oninput="datepickerOpen()">
                         <!--  onKeyUp="xCal()" oninput="xCal()"                  <style>#date1,#date2{position: static}</style>-->
                         <div class="datepicker_windows" id="date-row">
                             <div class="datepicker_windows_row">
 
                                 <!--                           class="datepicker" onClick="xCal()" onKeyUp="xCal()"
                                     oninput="xCal()"-->
-                                <div class="datepicker_windows_item" id="datepicker1" ></div>
+                                <div class="datepicker_windows_item" id="datepicker1"></div>
                                 <div class="datepicker_windows_item" id="datepicker2">
 
 
@@ -643,7 +637,8 @@
                                 <div class="add_comments_wrap">
                                     <div class="add_comments">
                                         <p class="comments-date">01.07.2019 14:50 </p>
-                                        <p class="comments-text">Lorem ipsum dolor sit amet, consecte... Lorem ipsum
+                                        <p class="comments-text clamp">Lorem ipsum dolor sit amet, consecte... Lorem
+                                            ipsum
                                             dolor sit amet consectetur adipisicing elit. Laborum veritatis culpa magnam
                                             officiis! Commodi, quam earum magni, totam nulla voluptatum eaque eum illum
                                             laudantium corporis maxime sequi provident ab mollitia doloribus adipisci
@@ -671,7 +666,8 @@
                                 <div class="add_comments_wrap">
                                     <div class="add_comments">
                                         <p class="comments-date">01.07.2019 14:50 </p>
-                                        <p class="comments-text">Lorem ipsum dolor sit amet, consecte... Lorem ipsum
+                                        <p class="comments-text clamp">Lorem ipsum dolor sit amet, consecte... Lorem
+                                            ipsum
                                             dolor sit amet
                                             consectetur adipisicing elit. Laborum veritatis culpa magnam officiis!
                                             Commodi, quam
@@ -715,7 +711,8 @@
                                 <div class="add_comments_wrap">
                                     <div class="add_comments">
                                         <p class="comments-date">01.07.2019 14:50 </p>
-                                        <p class="comments-text">Lorem ipsum dolor sit amet, consecte... Lorem ipsum
+                                        <p class="comments-text clamp">Lorem ipsum dolor sit amet, consecte... Lorem
+                                            ipsum
                                             dolor sit amet
                                             consectetur adipisicing elit. Laborum veritatis culpa magnam officiis!
                                             Commodi, quam
@@ -866,7 +863,8 @@
                             <button class="btn btn__delete">
                                 <!--                        <i class="icon__delete"></i>-->
                             </button>
-                            <p class="modal__comments-text">Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                            <p class="modal__comments-text clamp">Lorem ipsum dolor sit amet consectetur adipisicing
+                                elit.
                                 Esse
                                 odio blanditiis veritatis commodi explicabo tempore nesciunt omnis fugit? Tempora
                                 repellendus ea odit magnam commodi alias! Maiores, beatae! Voluptate, molestiae fuga!
@@ -882,7 +880,8 @@
                             <p class="modal__comments-date">01.07.2019 14:50</p>
                             <button class="btn btn__edit"><i class="icon__edit"></i></button>
                             <button class="btn btn__delete"></button>
-                            <p class="modal__comments-text">Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                            <p class="modal__comments-text clamp">Lorem ipsum dolor sit amet consectetur adipisicing
+                                elit.
                                 Esse odio
                                 blanditiis veritatis commodi explicabo tempore nesciunt omnis fugit? Tempora repellendus
                                 ea
@@ -964,6 +963,34 @@
         <script src="./js/custom-select.js"></script>
         <script src="./js/modal.js"></script>
         <script type="text/javascript" src="./js/script.js"></script>
+        <script src="./js/_ellipsis.min.js"></script>
+        <script type="text/javascript">
+            Ellipsis({
+                debounce: 300,
+                lines: 5
+            }); //default conf
+            // {
+            // ellipsis: '…', //default ellipsis value
+            // debounce: 0, //if you want to chill out your memory usage on resizing
+            // responsive: true, //if you want the ellipsis to move with the window resizing
+            // className: '.clamp', //default class to apply the ellipsis
+            // lines: 2 //default number of lines when the ellipsis will appear
+            // portrait: null //default no change, put a number of lines if you want a different number of lines in portrait mode,
+            // break_word: true //default the ellipsis can truncate words
+            // }
+            Ellipsis({
+                ellipsis: '…', // символ, который добавится после обрезанного текста
+                debounce: 300, // задержка изменения обрезания при сжатии сайта (для оптимизации)
+                responsive: true, // адаптивно обрезать текст или нет
+                className: '.text', // класс для элемента
+                lines: 1, // сколько линий должно быть видно
+                portrait: null, // тут можно передать количество линий для портретного режима
+                break_word: false // определять, как обрезать текст - оставлять обрезанное слово или нет
+            });
+            Ellipsis({
+                break_word: false
+            }); //standard usage but we don't want the ellipsis to break words
+        </script>
 
         <script>
             const select2 = new CustomSelect('#select-2');
