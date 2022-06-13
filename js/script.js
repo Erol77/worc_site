@@ -204,7 +204,7 @@ let data = '';
 checkedNum.map(i => {console.log(i.parentElement.textContent)
 data += i.parentElement.textContent.trim()+', ';
 });
-checked.setAttribute('data-text', data);
+checkedSel.setAttribute('data-text', data);
             } else {
                 checkedSel.textContent = name;
             }
@@ -216,7 +216,7 @@ checked.setAttribute('data-text', data);
             clear.map(e => e.checked = false);
 checkedSel.parentElement.style.backgroundColor = '#fff';
 checkedSel.parentElement.style.borderRadius = '0px';
-checked.setAttribute('data-text', 'ни чего не выбрано');
+checkedSel.removeAttribute('data-text');
         });
     };
 
