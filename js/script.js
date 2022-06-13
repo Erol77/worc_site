@@ -200,7 +200,8 @@ insertDate1('27.10.2020');
                 closeBtn.classList.toggle('hide');
 checkedSel.parentElement.style.backgroundColor = '#fbf7e7';
 checkedSel.parentElement.style.borderRadius = '5px';
-checkedSel.parentElement.style.border = '1px solid #e3dcb2';
+checkedSel.parentElement.style.border = '1px solid #e3dcb2'; //border-right-width: 1px;
+checked.style.border = 'none'; //border-right-width: 1px;
 let data = '';
 checkedNum.map(i => {console.log(i.parentElement.textContent)
 data += i.parentElement.textContent.trim()+', ';
@@ -217,6 +218,7 @@ checkedSel.setAttribute('data-text', data);
             clear.map(e => e.checked = false);
 checkedSel.parentElement.style.backgroundColor = '#fff';
 checkedSel.parentElement.style.borderRadius = '0px';
+checked.style.border = ''; //border-right-width: 1px;
 checkedSel.removeAttribute('data-text');
 checkedSel.parentElement.style.border = '';
         });
