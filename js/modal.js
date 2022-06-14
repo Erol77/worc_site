@@ -1,9 +1,33 @@
 window.addEventListener('DOMContentLoaded', () => {
   const btn = [...document.querySelectorAll('[data-modal]')],
     modal = document.querySelector('.modal'),
-    modalCloseBtn = document.querySelector('[data-close]');
+    modalCloseBtn = document.querySelector('[data-close]')
+    btnEdit = [...document.querySelectorAll('.add_comments_link')];
+
+    
+    btnEdit.forEach((item, index) => {
+  console.log(item.parentElement.parentElement.parentElement.textContent+'   '+index);
+  item.addEventListener('click', (e) => {
+    e.preventDefault();
+    // item.onclick  = 
+    // item.parentElement.parentElement.parentElement.querySelector('.link_table').call;
+    // item.call( a, function(el) {
+    //   //вешаем событие
+    //   el.onclick = function(e) {
+    //       //производим действия
+    //   })
+
+    openModal();
+    modal.querySelector(".modal__comments").innerHTML = '';
+    document.querySelector("textarea").textContent = item.parentElement.querySelector('.comments-text').textContent.trim() ;
+    document.querySelector("textarea").focus();
+  })
+})
+
+
 
   function openModal() {
+    document.querySelector("textarea").textContent='';
     modal.classList.add('show');
     modal.classList.remove('hide');
     document.body.style.overflow = 'hidden';
@@ -11,10 +35,9 @@ window.addEventListener('DOMContentLoaded', () => {
   }
 
   btn.forEach((item, index) => {
-    if (item.querySelector('.add_comments_link') == modal || item.querySelector('.link_table') == '') {
-      item.preventDefault();
-      console.log('66');
-    }
+    // console.log(item.querySelector('.add_comments_link'))
+    // if(item)  || item.querySelector('.add_comments_link').textContent === 'Редактировать'
+   
     //console.log(item.querySelector('.link_table').textContent);
 
     if (item.querySelector('.link_table').textContent === 'Добавить ещё комментарий') {
@@ -39,9 +62,9 @@ window.addEventListener('DOMContentLoaded', () => {
                             <!--                        <i class="icon__delete"></i>-->
                         </button>
         <p class = "modal__comments-text" > ${dateText[i].textContent} </p></div> `;
-if (i+1 < dateCreate.length){
-element.innerHTML += '<hr>';
-}
+            if (i + 1 < dateCreate.length) {
+              element.innerHTML += '<hr>';
+            }
           }
           element.innerHTML += `
                     <button class="modal__comments-btn-left">

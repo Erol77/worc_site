@@ -208,6 +208,9 @@ document.addEventListener('DOMContentLoaded', () => {
                     data += i.parentElement.textContent.trim() + ', ';
                 });
                 checkedSel.setAttribute('data-text', data);
+                // checkedSel
+                checkedSel.parentElement.parentElement.classList.add('hide__text');
+                checkedSel.parentElement.parentElement.setAttribute('data-show', 'text');
             } else {
                 checkedSel.textContent = name;
             }
@@ -221,6 +224,10 @@ document.addEventListener('DOMContentLoaded', () => {
             checkedSel.parentElement.style.borderRadius = '0px';
             checked.style.border = ''; //border-right-width: 1px;
             checkedSel.removeAttribute('data-text');
+
+            checkedSel.parentElement.parentElement.classList.remove('hide__text');
+                checkedSel.parentElement.parentElement.removeAttribute('data-show');
+
             checkedSel.parentElement.style.border = '';
         });
     };

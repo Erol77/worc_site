@@ -562,6 +562,7 @@ select {
 	font-size: 15px;
 	line-height: 16px;
 	padding-right: 5px;
+	position: relative;
 }
 .table_header_text:nth-child(1),
 .table_body_item:nth-child(1) {
@@ -619,7 +620,7 @@ select {
 	display: flex;
 }
 .table_fio {
-	position: relative;
+	/* position: relative; */
 }
 /* .table_fio:hover:after {
 	content: attr(data-text);
