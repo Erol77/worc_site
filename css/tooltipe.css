@@ -6,7 +6,7 @@
 } */
 /* body a{
   color: #2196F3;
-} */
+} 
 .container{
   max-width: 900px;
   width: 100%;
@@ -25,13 +25,20 @@ input{
 
 /* default end */
 .tooltip {
-	background: rgba(0,0,0,.9);
-	color: #fff;
-	z-index: 999999;
+	/* background: rgba(0,0,0,.9);
+	color: #fff; */
+	z-index: 9999;
 	position: absolute;
 	padding: 15px;
 	max-width: 250px;
-	border-radius: 2px;
+   border: 1px solid #bebebe;
+    border-radius: 5px;
+    max-width: 300px;
+    min-width: 100px;
+text-align: center;
+
+    color: #ffffff;
+    background-color: #505f79;
 }
 .tooltip.animation-slide {
 	-webkit-animation-name: slideTooltip;
@@ -67,8 +74,9 @@ input{
 }
 .tooltip .tooltip-arrow {
 	position: absolute;
-	border: 8px solid rgba(0,0,0,.9);
+	border: 8px solid #505f79;
 }
+
 .tooltip-arrow.bottomtotop {
 	border-top-color: transparent;
 	border-left-color: transparent;
@@ -103,4 +111,21 @@ input{
 	left: 50%;
 	-webkit-transform: translateX(-50%);
 	transform: translateX(-50%);
+}
+  /* width: 0;
+      height: 0;
+      border-left: 70px solid transparent;
+      border-right: 70px solid transparent;
+      border-top: 100px solid #6E18C0; */
+
+#floatTip {
+  position: absolute; /* Абсолютное позиционирование */
+  width: 250px; /* Ширина блока */
+  display: none; /* Прячем от показа */
+  border: 1px solid #000; /* Параметры рамки */
+  padding: 5px; /* Поля вокруг текста */
+  font-family: sans-serif; /* Рубленый шрифт */
+  font-size: 9pt; /* Размер шрифта */
+  color: #333; /* Цвет текста */
+  background: #ECF5E4; /* Цвет фона */
 }

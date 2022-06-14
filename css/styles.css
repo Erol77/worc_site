@@ -644,7 +644,8 @@ border-radius:5px;
 }
 .link_table {
 	color: #1386f7;
-	text-decoration: underline;
+	text-decoration: none;
+border-bottom: 1px dashed #1386f7;
 	margin-bottom: 10px;
 	padding-bottom: 1px;
 	display: table;
@@ -661,7 +662,8 @@ border-radius:5px;
 }
 .table_body_item p a {
 	color: #1386f7;
-	text-decoration: underline;
+	text-decoration: none;
+border-bottom: 1px dashed #1386f7;
 }
 .add_comments {
 	position: relative;

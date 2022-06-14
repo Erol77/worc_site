@@ -20,7 +20,7 @@
         <link rel="stylesheet" href="./css/main.css">
         <link rel="stylesheet" href="./css/date.css">
         <link rel="stylesheet" href="./css/textDecor.css">
-        <!-- <link rel="stylesheet" href="./css/tooltype.css"> -->
+        <link rel="stylesheet" href="./css/tooltipe.css">
         <!-- <link rel="stylesheet" href="./src/style.css">
 <link rel="stylesheet" href="./src/addition.css"> -->
     </head>
@@ -82,34 +82,39 @@
                         <input type="submit" class="search__submit" value="">
                     </div>
                     <div style="position:relative">
-                    <div class=" select_item ">
-                        <!--form_search
+                        <div class=" select_item ">
+                            <!--form_search
 
 -->
-                        <div class="select" id="select-2">
-                            <button type="button" class="select__toggle line" name="type" value="all type"
-                                data-select="toggle" data-index="0">Все Типы</button>
-                            <input type="hidden" name="type_id" id="type_id">
-                            <div class="select__dropdown">
-                                <ul class="select__options">
-                                    <li class="select__option" data-select="option" data-value="all type"
-                                        data-index="0">Все Типы</li>
-                                    <li class="select__option" data-select="option" data-value="active" data-index="1">
-                                        Активные <span>(84)</span></li>
-                                    <li class="select__option" data-select="option" data-value="no-active"
-                                        data-index="2">Неактивные (12)</li>
-                                    <li class="select__option" data-select="option" data-value="to-moderation" data-index="3">
-                                        На модерации (9)</li>
-                                    <li class="select__option" data-select="option" data-value="ended" data-index="4">
-                                        Завершенные (15)</li>
-                                    <li class="select__option" data-select="option" data-value="not-publickation" data-index="5">
-                                        Ещё не опубликованны (10)</li>
-                                    <li class="select__option" data-select="option" data-value="to-endded" data-index="6">
-                                        Принудительно завершенные (6)</li>
-                                </ul>
+                            <div class="select" id="select-2">
+                                <button type="button" class="select__toggle line" name="type" value="all type"
+                                    data-select="toggle" data-index="0">Все Типы</button>
+                                <input type="hidden" name="type_id" id="type_id">
+                                <div class="select__dropdown">
+                                    <ul class="select__options">
+                                        <li class="select__option" data-select="option" data-value="all type"
+                                            data-index="0">Все Типы</li>
+                                        <li class="select__option" data-select="option" data-value="active"
+                                            data-index="1">
+                                            Активные <span>(84)</span></li>
+                                        <li class="select__option" data-select="option" data-value="no-active"
+                                            data-index="2">Неактивные (12)</li>
+                                        <li class="select__option" data-select="option" data-value="to-moderation"
+                                            data-index="3">
+                                            На модерации (9)</li>
+                                        <li class="select__option" data-select="option" data-value="ended"
+                                            data-index="4">
+                                            Завершенные (15)</li>
+                                        <li class="select__option" data-select="option" data-value="not-publickation"
+                                            data-index="5">
+                                            Ещё не опубликованны (10)</li>
+                                        <li class="select__option" data-select="option" data-value="to-endded"
+                                            data-index="6">
+                                            Принудительно завершенные (6)</li>
+                                    </ul>
+                                </div>
                             </div>
-                        </div>
-                        <!-- <div class="jq-selectbox jqselect select dropdown" style="display: inline-block; position: relative; z-index: 100;"> select__option_selected"
+                            <!-- <div class="jq-selectbox jqselect select dropdown" style="display: inline-block; position: relative; z-index: 100;"> select__option_selected"
 
 <select class="select" style="margin: 0px; padding: 0px; position: absolute; left: 0px; top: 0px; width: 100%; height: 100%; opacity: 0;">
                             <option>Все Типы</option>
@@ -141,7 +146,7 @@
                             </ul>
                         </div>
                     </div> -->
-                        <!--
+                            <!--
                     <select class="select">
                         <option>Все Типы</option>
                         <option>Активные</option>
@@ -152,8 +157,8 @@
                         <option>Принудительно завершенные</option>
                     </select>
                     -->
+                        </div>
                     </div>
-                </div>
                     <div class="select_item">
                         <ul class="checkselect checkselect2">
                             <div class="checkselect-control">
@@ -349,6 +354,18 @@
                                     <input type="checkbox" id="rergion-2" name="rergion">
                                     <label for="rergion-2"><span></span>Москва (1)</label>
                                 </li>
+  <li>
+      <input class="input-region input-region-item punkt-item" type="checkbox" id="rergion-2_053" name="region-item">
+      <label for="rergion-2_053" class="region-multi">Нижний Новгород</label>
+  </li>
+  <li>
+      <input class="input-region input-region-item punkt-item" type="checkbox" id="rergion-2_054" name="region-item">
+      <label for="rergion-2_054" class="region-multi">Новосмолинский</label>
+  </li>
+  <li >
+      <input class="input-region input-region-item punkt-item" type="checkbox" id="rergion-2_055" name="region-item">
+      <label for="rergion-2_055" class="region-multi">Павлово</label>
+  </li>
                                 <button class="apply hide" type="button">Применить</button>
                             </div>
 
@@ -449,10 +466,12 @@
                     <div class="table_body">
                         <div class="table_body_row">
                             <div class="table_body_item">
-                                <p class="table_fio" data-text="Герасемчукова Максимилиана">Герасемчукова</p>                                
+                                <p class="table_fio" data-text="Герасемчукова Максимилиана">Герасемчукова</p>
                                 <p class="table_fio" data-text="Герасемчукова Максимилиана">Максимилиана</p>
                                 <hr>
-                                <p class="table_body_item-type" data-text="Безработный">Безработный</p>
+                                <p class="table_body_item-type"
+                                    onmouseover="toolTip('Безработный')"
+                                    onmouseout="toolTip()"  data-text="Безработный">Безработный</p>
                                 <hr>
                                 <p class="table_body_item-online">Онлайн </p>
                             </div>
@@ -460,7 +479,8 @@
                             <div class="table_body_item">Плотник</div>
                             <div class="table_body_item">25.06.2019</div>
                             <div class="table_body_item">
-                                <a href="tel:+79527779999" class="table_phone"data-text="+7(952)7779999"><span> +7(952)7779999</span> </a>
+                                <a href="tel:+79527779999" class="table_phone" data-text="+7(952)7779999"><span>
+                                        +7(952)7779999</span> </a>
                             </div>
                             <!-- <div class="table_body_item">Безработный</div> -->
                             <div class="table_body_item">Нижний Новгород/ Сормовский район</div>
@@ -556,7 +576,7 @@
                                 <p class="table_fio" data-text="Егоров Сергей">Егоров</p>
                                 <p class="table_fio" data-text="Егоров Сергей">Сергей</p>
                                 <hr>
-                                <p class="table_body_item-type"data-text="Безработный">Безработный</p>
+                                <p class="table_body_item-type" data-text="Безработный">Безработный</p>
                                 <hr>
                                 <p class="table_body_item-online">Онлайн </p>
                             </div>
@@ -959,8 +979,17 @@
                 </div>
             </div>
         </div>
+        <div class="tooltip animation-slide hide" id="tooltip" style="top: 332.312px; left: 1099.5px;">
+This is
+            <strong>smart</strong>
+            tooltip, an excellent way to put up any extra information
+<div class="tooltip-arrow toptobottom center ">
+            </div>
+        </div>
+<div class="" id="floatTip">
 
-        <!-- <script type="text/javascript" src="js/jquery-3.3.1.min.js"></script>    -->
+</div>
+        <!-- <script type="text/javascript" src="js/jquery-3.3.1.min.js"></script> floatTip   -->
         <!-- <script type="text/javascript" src="js/slick.min.js"></script>    -->
         <!-- <script type="text/javascript" src="js/jquery.magnific-popup.js"></script> -->
         <!-- <script type="text/javascript" src="js/jquery-ui.js"></script>    -->

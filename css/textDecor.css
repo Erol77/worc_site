@@ -49,12 +49,13 @@ border-radius:5px;
 button.select__toggle{
     white-space: nowrap;
     padding: 0 0.75rem;
+    font-size: 15px;
 }
 
 /* white-space */
 .hide__text,
 .select__option {
-    /* position: relative; */
+    position: relative;
     overflow: hidden;
     text-overflow: ellipsis;
     display: -webkit-box;
@@ -74,9 +75,9 @@ button.select__toggle{
     pointer-events: none;
 }
 
-.hide__text:hover::before,
-[data-show='text']:hover::before {
-    display: inline;
+._hide__text:hover::before,
+._[data-show='text']:hover::before {
+    /* display: inline; */
     content: attr(data-text);
     /* background: #fdf9e0; */
     border: 1px solid #bebebe;
@@ -103,7 +104,7 @@ button.select__toggle{
     font-family: inherit;
     overflow: visible;
 }
-
+/*
 .tooltip {
     transform: translateY(-100%);
     right: 0;
@@ -119,13 +120,13 @@ button.select__toggle{
     /* left: 50%; */
     /* width: 10%; */
     /* transform: translate(-50%, -50%); */
-    color: #ffffff;
+ /*   color: #ffffff;
     background-color: #505f79;
     padding: 6px 9px;
     font-size: 14px;
     line-height: 16px;
     font-family: inherit;
-    /* font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif; */
+    /* font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif; *//*
 }
 
 .tooltip:after {
@@ -138,7 +139,7 @@ button.select__toggle{
     border-width: 7px 7px 0 7px;
     border-style: solid;
     border-color: #505f79;
-    /* transparent transparent transparent; */
+    /* transparent transparent transparent; *//*
 }
 
 .tooltip[data-show='text']:hover:after {
@@ -157,4 +158,4 @@ button.select__toggle{
     bottom: 100%;
     left: 0;
     z-index: 2;
-}
+}*/

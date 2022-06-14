@@ -208,11 +208,15 @@ document.addEventListener('DOMContentLoaded', () => {
                     data += i.parentElement.textContent.trim() + ', ';
                 });
                 checkedSel.setAttribute('data-text', data);
+ checkedSel.parentElement.parentElement.setAttribute('onmouseover', `toolTip('${data}')`);
+ checkedSel.parentElement.parentElement.setAttribute('onmouseout', `toolTip()`);
                 // checkedSel
                 checkedSel.parentElement.parentElement.classList.add('hide__text');
                 checkedSel.parentElement.parentElement.setAttribute('data-show', 'text');
             } else {
                 checkedSel.textContent = name;
+checkedSel.parentElement.parentElement.setAttribute('onmouseover', `toolTip('${name}')`);
+checkedSel.parentElement.parentElement.setAttribute('onmouseout', `toolTip()`);
             }
         });
         closeBtn.addEventListener('click', () => {
