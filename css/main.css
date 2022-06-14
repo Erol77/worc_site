@@ -264,13 +264,14 @@ border-radius:5px;
 	z-index: 2;
 }
 
-.select__option,
-/* .select__toggle, */
-.select__toggle {
-    white-space: nowrap; /* Текст не переносится */
-    overflow: hidden; /* Обрезаем всё за пределами блока */
-    /*text-overflow: ellipsis; /* Добавляем многоточие */
-}
+/* .select__option,*/
+.select__toggle
+/* .select__toggle */
+{ 
+   white-space: nowrap; /* Текст не переносится */
+   overflow: hidden; /* Обрезаем всё за пределами блока */
+    text-overflow: ellipsis; /* Добавляем многоточие */
+ } 
 
 .comments-text {
     margin: 0; /* Убираем внешний отступ */
@@ -280,8 +281,9 @@ border-radius:5px;
     overflow: hidden; /* Обрезаем всё за пределами блока */
    }
 /* white-space */
+/* .select__toggle.line, */
 .select__option {
-    margin: 0; /* Убираем внешний отступ */
+
     -webkit-line-clamp: 1; /* Число отображаемых строк */
     display: -webkit-box; /* Включаем флексбоксы */
     -webkit-box-orient: vertical; /* Вертикальная ориентация */
