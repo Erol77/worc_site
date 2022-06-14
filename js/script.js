@@ -202,9 +202,9 @@ document.addEventListener('DOMContentLoaded', () => {
                 checkedSel.parentElement.style.borderRadius = '5px';
                 checkedSel.parentElement.style.border = '1px solid #e3dcb2'; //border-right-width: 1px;
                 checked.style.border = 'none'; //border-right-width: 1px;
-                let data = '';
+                let data = name + ' (выбрано: ' + checkedNum.length + ')';
                 checkedNum.map(i => {
-                    console.log(i.parentElement.textContent)
+                    // console.log(i.parentElement.textContent)
                     data += i.parentElement.textContent.trim() + ', ';
                 });
                 checkedSel.setAttribute('data-text', data);
@@ -310,9 +310,7 @@ const btnSelect = Array.from(document.querySelectorAll('.select__toggle'));
             }
         });*/
     // })
-function overflow(e){
-return e.scrollWidth > e.offsetWidth || e.scrollHeight > e.offsetHeight;
-}
+
 
 });
 //  datePiker.addEventListener('click', function () {

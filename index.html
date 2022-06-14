@@ -95,13 +95,13 @@
                                         Активные <span>(84)</span></li>
                                     <li class="select__option" data-select="option" data-value="no-active"
                                         data-index="2">Неактивные (12)</li>
-                                    <li class="select__option" data-select="option" data-value="toyota" data-index="3">
+                                    <li class="select__option" data-select="option" data-value="to-moderation" data-index="3">
                                         На модерации (9)</li>
-                                    <li class="select__option" data-select="option" data-value="nissan" data-index="4">
+                                    <li class="select__option" data-select="option" data-value="ended" data-index="4">
                                         Завершенные (15)</li>
-                                    <li class="select__option" data-select="option" data-value="nissan" data-index="5">
+                                    <li class="select__option" data-select="option" data-value="not-publickation" data-index="5">
                                         Ещё не опубликованны (10)</li>
-                                    <li class="select__option" data-select="option" data-value="nissan" data-index="6">
+                                    <li class="select__option" data-select="option" data-value="to-endded" data-index="6">
                                         Принудительно завершенные (6)</li>
                                 </ul>
                             </div>
@@ -445,10 +445,10 @@
                     <div class="table_body">
                         <div class="table_body_row">
                             <div class="table_body_item">
-                                <p class="table_fio" data-text="Герасемчукова Максимилиана">Герасемчукова Максимилиана
+                                <p class="table_fio" data-text="Герасемчукова Максимилиана"><span>Герасемчукова</span> <span> Максимилиана</span> 
                                 </p>
                                 <hr>
-                                <p class="table_body_item-type">Безработный</p>
+                                <p class="table_body_item-type" data-text="Безработный"><span>Безработный</span></p>
                                 <hr>
                                 <p class="table_body_item-online">Онлайн </p>
                             </div>
@@ -456,7 +456,7 @@
                             <div class="table_body_item">Плотник</div>
                             <div class="table_body_item">25.06.2019</div>
                             <div class="table_body_item">
-                                <a href="tel:+79527779999" class="table_phone">+7(952)7779999</a>
+                                <a href="tel:+79527779999" class="table_phone"data-text="+7(952)7779999"><span> +7(952)7779999</span> </a>
                             </div>
                             <!-- <div class="table_body_item">Безработный</div> -->
                             <div class="table_body_item">Нижний Новгород/ Сормовский район</div>
@@ -495,9 +495,9 @@
                         </div>
                         <div class="table_body_row">
                             <div class="table_body_item">
-                                <p class="table_fio" data-text="Егоров Сергей">Егоров Сергей</p>
+                                <p class="table_fio" data-text="Егоров Сергей"><span> Егоров</span> <span>  Сергей</span> </p>
                                 <hr>
-                                <p class="table_body_item-type">Безработный</p>
+                                <p class="table_body_item-type" data-text="Безработный"><span>Безработный </span> </p>
                                 <hr>
                                 <p class="table_body_item-online">Онлайн </p>
                             </div>
@@ -508,7 +508,7 @@
                             </div>
                             <div class="table_body_item">25.06.2019</div>
                             <div class="table_body_item">
-                                <a href="tel:+79527779999" class="table_phone">+79527779999</a>
+                                <a href="tel:+79527779999" class="table_phone"><span> +79527779999</span> </a>
                             </div>
 
                             <div class="table_body_item">Нижний Новгород/ Сормовский район</div>
@@ -550,7 +550,7 @@
                             <div class="table_body_item">
                                 <p class="table_fio" data-text="Егоров Сергей">Егоров Сергей</p>
                                 <hr>
-                                <p class="table_body_item-type">Безработный</p>
+                                <p class="table_body_item-type"data-text="Безработный"><span>Безработный </span></p>
                                 <hr>
                                 <p class="table_body_item-online">Онлайн </p>
                             </div>
@@ -608,7 +608,7 @@
                             <div class="table_body_item">
                                 <p class="table_fio" data-text="Егоров Сергей">Егоров Сергей</p>
                                 <hr>
-                                <p class="table_body_item-type">Безработный</p>
+                                <p class="table_body_item-type"><span>Безработный </span></p>
                                 <hr>
                                 <p class="table_body_item-online">Онлайн </p>
                             </div>
@@ -963,57 +963,10 @@
         <script src="./js/custom-select.js"></script>
         <script src="./js/modal.js"></script>
         <script type="text/javascript" src="./js/script.js"></script>
-        <script src="./js/_ellipsis.min.js"></script>
+        <!-- <script src="./js/_ellipsis.min.js"></script> -->
+        <script src="./js/textEllipsis.js"></script>
         <script type="text/javascript">
-           // Ellipsis({
-           //     debounce: 300,
-           //     lines: 5
-           // }); //default conf
-            // {
-            // ellipsis: '…', //default ellipsis value
-            // debounce: 0, //if you want to chill out your memory usage on resizing
-            // responsive: true, //if you want the ellipsis to move with the window resizing
-            // className: '.clamp', //default class to apply the ellipsis
-            // lines: 2 //default number of lines when the ellipsis will appear
-            // portrait: null //default no change, put a number of lines if you want a different number of lines in portrait mode,
-            // break_word: true //default the ellipsis can truncate words
-            // }
-            Ellipsis({
-                ellipsis: '…', // символ, который добавится после обрезанного текста
-                debounce: 300, // задержка изменения обрезания при сжатии сайта (для оптимизации)
-                responsive: true, // адаптивно обрезать текст или нет
-                className: '..select__toggle', // класс для элемента
-                lines: 1, // сколько линий должно быть видно
-                portrait: null, // тут можно передать количество линий для портретного режима
-                break_word: false // определять, как обрезать текст - оставлять обрезанное слово или нет
-            });
-            Ellipsis({
-                break_word: false
-            }); //standard usage but we don't want the ellipsis to break words
-        </script>
-
-        <script>
             const select2 = new CustomSelect('#select-2');
-            // window.onload = function () {                //получаем идентификатор элемента
-            //     var a = document.getElementById('switch');                //вешаем на него событие
-            //     a.onclick = function () {                    //производим какие-то действия
-            //         document.querySelector('.datepicker_row').style.display = 'none';
-            //         document.querySelector(".datepicker_windows").style.display = 'none';
-            //         return false;
-            //     }
-            // }
-            /*  xCal("alternate", {
-                id: "cssworldru8", // Set a unique ID
-                "class": "xcalend", // CSS class defines the appearance of the caledar
-                hide: 0, // Do not hide the calendar
-                x: 1, // Disable calendar closure button
-                //autoOn: 0,
-                autoOff: 0, // Disable auto-hide
-                to: "date8", // Place a calendar inside an element with an id=date8
-                fn: "console.log", // Cal the function with the specified name, the selection result will be transferred to it
-                // hide: 0
-            });*/
-            // xCal.all("datepicker");
         </script>
     </body>
 
