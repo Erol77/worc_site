@@ -583,7 +583,7 @@ select {
 }
 .table_header_text:nth-child(5),
 .table_body_item:nth-child(5) {
-	width: 110px;
+	width: 100px;
 }
 .table_header_text:nth-child(6) {
 	width: 110px;
