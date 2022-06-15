@@ -255,9 +255,7 @@ checkedSel.parentElement.parentElement.setAttribute('onmouseout', `toolTip()`);
         }
 
 
-        // if (!e.target.closest('.datepicker_row') && !e.target.closest('.xcalend2')) {
-        //     datePiker.querySelector('.datepicker_windows').style.display = 'none';
-        // }
+       
 
         e.stopPropagation();
 
@@ -287,8 +285,6 @@ checkedSel.parentElement.parentElement.setAttribute('onmouseout', `toolTip()`);
                     checkselect[i].classList.remove('open');
                     checkselect[i].style.display = 'none';
                 }
-
-
             }
         });
 
@@ -340,3 +336,9 @@ function datepickerClose() {
     document.querySelector('.datepicker_windows_row').style.display = 'none';
     return false;
 }
+document.addEventListener('click', (el) => {
+    console.log(el.target.value)//closest
+ if (!el.target.closest('.datepicker_row') ) {
+    datepickerClose();
+        }
+    })

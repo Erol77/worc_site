@@ -43,7 +43,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     addTextDecoration('.table_fio');
     addTextDecoration('.table_body_item-type');
-    addTextDecoration('.table_body_item a.table_phone');
+    addTextDecoration('.table_phone span');
     /*
         document.addEventListener('mousemove', (e) => {
     console.log(e.offsetX, '   ' + e.offsetY + '   ' + e.target.getAttribute('data-text'));
