@@ -25,6 +25,7 @@ const user = new Pag();
       modal.querySelector(".modal__comments").innerHTML = '';
       document.querySelector("textarea").textContent = item.parentElement.querySelector('.comments-text').textContent.trim();
       document.querySelector("textarea").focus();
+ modal.setAttribute('data-edits', index);
     })
   })
 
@@ -170,7 +171,8 @@ setTimeout(() => document.querySelector('#comments').textContent = '', 1000);
     }
     if (e.target.type === 'submit') { //e.target.getAttribute('.data-close') == ''
       e.preventDefault();
-      let numberPost = modal.getAttribute('data-index');
+
+
       const message = document.createElement('div');
       message.classList.add('add_comments_wrap');
       message.innerHTML = `          <div class="add_comments">
@@ -180,8 +182,19 @@ setTimeout(() => document.querySelector('#comments').textContent = '', 1000);
                               </div>
                                     <a href="#" class="link_table">Добавить ещё комментарий</a>
                                 `;
+if (modal.hasAttribute('data-index')) {
+      let numberPost = modal.getAttribute('data-index');
       console.log(numberPost);
       btn[numberPost].append(message);
+modal.removeAttribute('data-index');
+} else if (modal.hasAttribute('data-edit')) {
+let numberPost = modal.getAttribute('data-edits');
+
+
+
+btnEdit[numberPost].parentElement.replaceWith(message)
+modal.removeAttribute('data-edits');
+}
       closeModal();
     }
   });
