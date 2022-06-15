@@ -98,9 +98,9 @@ var Pagination = {
     // binding buttons
     Buttons: function(e) {
         var nav = e.getElementsByTagName('a');/**************** .modal__comments-btn-left  .modal__comments-btn-right*/
-        nav[0].addEventListener('click', Pagination.Prev, false);
-        nav[1].addEventListener('click', Pagination.Next, false);
-        e.querySelector('.modal__comments-btn-left').addEventListener('click', Pagination.Prev, false);
+      //   nav[0].addEventListener('click', Pagination.Prev, false);
+      //   nav[1].addEventListener('click', Pagination.Next, false);
+        [...e.querySelectorAll('.modal__comments-btn-left')].map(i=>i.addEventListener('click', Pagination.Prev, false));
         e.querySelector('.modal__comments-btn-right').addEventListener('click', Pagination.Next, false);
     },
 
