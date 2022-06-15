@@ -40,6 +40,9 @@ let data = {
     modal.classList.remove('hide');
     document.body.style.overflow = 'hidden';
     // clearInterval(modalTimerId);
+    document.querySelector('.pagination__goto').addEventListener('click',(e)=>{
+console.log(e.children.value)
+    })
   }
 
   btn.forEach((item, index) => {
