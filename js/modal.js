@@ -3,6 +3,11 @@ window.addEventListener('DOMContentLoaded', () => {
     modal = document.querySelector('.modal'),
     modalCloseBtn = document.querySelector('[data-close]')
     btnEdit = [...document.querySelectorAll('.add_comments_link')];
+
+    var initPagination = function(select, size = 3) {
+    Pagination.Init(document.getElementById(select), {size});
+};
+
 let data = {
   btnEdit,//.parentElement.parentElement.parentElement.textContent
   btn
@@ -117,14 +122,16 @@ let data = {
                             OK
                         </button>
 </div>
-
+<div class="hide" id="pag"></div>
                     </div>
         `;
           modal.querySelector('.modal__comments').append(element); //querySelector('.modal__comments-list')
           //  });
         }
         openModal();
+        initPagination('pag', dateCreate.length);
         document.querySelector("textarea").focus();
+        
       }))
     }
 
