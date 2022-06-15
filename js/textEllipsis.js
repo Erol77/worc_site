@@ -86,12 +86,17 @@ setTimeout(tooltip.classList.toggle('hide'),1000)
         addTextDecorationSelect('.select__toggle');
         // addTextDecoration('.form-control');
     })
-
-
-
-
-
 })
+function getCoords(elem) {
+    let box = elem.getBoundingClientRect();  
+    return {
+      top: box.top + window.pageYOffset,
+      right: box.right + window.pageXOffset,
+      bottom: box.bottom + window.pageYOffset,
+      left: box.left + window.pageXOffset
+    };
+  }
+
 document.onmousemove = moveTip;
 function moveTip(e) {
     floatTipStyle = document.getElementById("tooltip").style;
@@ -109,6 +114,9 @@ function moveTip(e) {
     } else {
         floatTipStyle.left = x - w + 'px';
     }    // Положение от верхнего края окна браузера
+    let c = getCoords(this),
+    center= c.left+c.right/c.left;
+    console.log(c.top+'top  '+getCoor+center);
     floatTipStyle.top = y -80 + 'px';
 }
 

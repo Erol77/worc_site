@@ -1,0 +1,93 @@
+﻿<style type="text/css">
+.items{
+width:59px}
+select.items-text options,
+button.items-text {white-space: nowrap;
+width:100px}
+.items-text
+{position:relative;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	display: -webkit-box;
+	-webkit-line-clamp: 1;
+	-webkit-box-orient: vertical;
+}
+
+
+/*
+.items-text {
+	overflow: hidden;
+	position: relative;
+	height: 62px;
+}*/
+.items-text:after {
+	content: "";
+	text-align: right;
+	position: absolute;
+	border:1px solid red;
+	bottom: 0;
+	right: 0;
+	width: 70%;
+	height: 1.2em;
+	background: linear-gradient(to right, rgba(255, 255, 255, 0), white 100%);
+	pointer-events: none;
+}
+
+</style>
+<body>
+<div class="items">
+	<div class="items-row">
+		<h3>Блок #1</h3>
+		<div class="items-text">
+			Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
+			Proin blandit magna eu tempus ullamcorper. Sed porta justo 
+			sed nibh elementum condimentum.
+		</div>
+	</div>
+	<div class="items-row">
+		<h3>Блок #2</h3>
+		<div class="items-text">
+			Quisque non eros sit amet elit commodo maximus eget a eros. 
+			Curabitur malesuada neque eu neque suscipit, sit amet efficitur 
+			lorem pharetra. Curabitur et risus eu lacus lacinia convallis.
+			Integer faucibus tellus sed congue finibus. Vestibulum eu felis 
+			consectetur, blandit libero eu, vulputate neque. Cras et ex a 
+			urna aliquam faucibus sed quis elit.
+		</div>
+		<p class="items-text">sitamet elitcommodo maximus eget a eros. 
+			Curabitur malesuada neque eu neque suscipit, sit amet efficitur 
+			lorem pharetra. Curabitur et risu</p>
+	<button class="items-text">Quisque non eros sit amet elit</button>
+	<select  class="items-text" id="12">
+	<option class="items-text" > non eros sit amet elit commodo m</option>
+	<option> non eros sit amet elit commodo m</option></select>
+	
+	</div>
+	<div class="items-row">
+		<h3>Блок #3</h3>
+		<div class="items-text">
+			Etiam eu lorem sit amet mi bibendum auctor. Mauris nec risus 
+			a erat rutrum blandit. Vivamus sodales erat sit amet nibh elementum egestas.
+		</div>
+	</div>
+</div></body>
+<script type="text/javascript">
+function getCoords(elem) {
+  let box = elem.getBoundingClientRect();
+
+  return {
+    top: box.top + window.pageYOffset,
+    right: box.right + window.pageXOffset,
+    bottom: box.bottom + window.pageYOffset,
+    left: box.left + window.pageXOffset
+  };
+}
+document.addEventListener('mousemove', 
+  function(e) {
+  var c = e.target.getBoundingClientRect(),
+      scrolltop = document.body.scrollTop + c.top,
+      scrollleft = document.body.scrollLeft + c.left,
+      center=getCoords(e.target).left+getCoords(e.target).left/getCoords(e.target).right;
+  console.log('top:' + scrolltop + ' left: ' + scrollleft + '  '+getCoords(e.target).top+'top  '+getCoords(e.target).right+'tright  '+getCoords(e.target).bottom+'bottom  '+getCoords(e.target).left+'left  '+center);
+})
+</script>
