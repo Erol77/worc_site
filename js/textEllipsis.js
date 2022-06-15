@@ -111,19 +111,22 @@ function moveTip(e) {
     // Показывать слой справа от курсора 
     if ((x + w + 10) < document.body.clientWidth) {
         floatTipStyle.left =   x -50 + 'px';        // Показывать слой слева от курсора
+        floatTipStyle.arrow = 'left';
     } else {
         floatTipStyle.left = x - w + 'px';
-    }    // Положение от верхнего края окна браузера
-    let c = getCoords(this),
-    center= c.left+c.right/c.left;
-    console.log(c.top+'top  '+getCoor+center);
+        floatTipStyle.arrow = 'center';
+    }    // Положение от верхнего края окна браузера righttoleft
+    // let c = getCoords(e.target),
+    // center= c.left+c.right/c.left;
+    // floatTipStyle.left = center+'px';
+    // console.log(c.top+'top  '+center);
     floatTipStyle.top = y -80 + 'px';
 }
 
 function toolTip(msg) {
     floatTipStyle = document.getElementById("tooltip").style;
     if (msg) {
-          document.getElementById("tooltip").innerHTML = msg + '<div class="tooltip-arrow toptobottom center "></div>';
+          document.getElementById("tooltip").innerHTML = msg + '<div class="tooltip-arrow toptobottom '+floatTipStyle.arrow+' "></div>';
         floatTipStyle.display = "block"; 
     } else {
         floatTipStyle.display = "none"; //  floatTip
