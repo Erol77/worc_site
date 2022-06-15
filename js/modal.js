@@ -3,10 +3,13 @@ window.addEventListener('DOMContentLoaded', () => {
     modal = document.querySelector('.modal'),
     modalCloseBtn = document.querySelector('[data-close]')
     btnEdit = [...document.querySelectorAll('.add_comments_link')];
-
-    
-    btnEdit.forEach((item, index) => {
-  console.log(item.parentElement.parentElement.parentElement.textContent+'   '+index);
+let data = {
+  btnEdit,//.parentElement.parentElement.parentElement.textContent
+  btn
+}
+    console.log(data);
+    btnEdit.map((item, index) => {
+  // console.log(item.parentElement.parentElement.parentElement.textContent+'   '+index); elements
   item.addEventListener('click', (e) => {
     e.preventDefault();
     // item.onclick  = 
@@ -143,7 +146,8 @@ window.addEventListener('DOMContentLoaded', () => {
   }
 
   modal.addEventListener('click', (e) => {
-    if (e.target === modal || e.target === modalCloseBtn) { //e.target.getAttribute('.data-close') == ''
+    // console.log(e.target.type);
+    if (e.target === modal || e.target === modalCloseBtn || e.target.type==='submit'||e.target.type==='reset') { //e.target.getAttribute('.data-close') == ''
       closeModal();
     }
   });
