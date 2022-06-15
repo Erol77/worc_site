@@ -325,12 +325,13 @@ button.btn.btn__edit {
   outline: none;
   padding: 0.75rem 2rem;
   text-decoration: none;
-  transition: background-color, border-color, color;
+  /* transition: background-color, border-color, color; */
   transition-duration: 0.2s;
+
 }
 
 .modal .pagination__button {
-  color: #fff;
+  /* color: #fff; */
 }
 
 .modal .pagination {
@@ -348,7 +349,7 @@ padding: 0.75rem;
 }
 
 p.pagination__title {
-  max-width: 40px;
+  max-width:100px;
 }
 
 .modal .pagination__button:focus,
@@ -359,10 +360,11 @@ p.pagination__title {
 }
 
 .modal .pagination__button {
-  background-color: #0000;
+  /* background-color: #0000; */
   border-color: #ffdd00;
   outline: none;
-  color: #ffdd00;
+  /* color: #ffdd00; */
+color: #000;
 }
 
 .modal .pagination__button--disabled,
