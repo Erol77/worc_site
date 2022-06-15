@@ -2,53 +2,47 @@ window.addEventListener('DOMContentLoaded', () => {
   const btn = [...document.querySelectorAll('[data-modal]')],
     modal = document.querySelector('.modal'),
     modalCloseBtn = document.querySelector('[data-close]')
-    btnEdit = [...document.querySelectorAll('.add_comments_link')];
+  btnEdit = [...document.querySelectorAll('.add_comments_link')];
 
-    var initPagination = function(select, size = 3) {
-    Pagination.Init(document.getElementById(select), {size});
-};
+  // var initPagination = function (select, size = 3) {
+  //   Pagination.Init(document.getElementById(select), {
+  //     size
+  //   });
+  // };
+const user = new Pag();
 
-let data = {
-  btnEdit,//.parentElement.parentElement.parentElement.textContent
-  btn
-}
-    console.log(data);
-    btnEdit.map((item, index) => {
-  // console.log(item.parentElement.parentElement.parentElement.textContent+'   '+index); elements
-  item.addEventListener('click', (e) => {
-    e.preventDefault();
-    // item.onclick  = 
-    // item.parentElement.parentElement.parentElement.querySelector('.link_table').call;
-    // item.call( a, function(el) {
-    //   //вешаем событие
-    //   el.onclick = function(e) {
-    //       //производим действия
-    //   })
 
-    openModal();
-    modal.querySelector(".modal__comments").innerHTML = '';
-    document.querySelector("textarea").textContent = item.parentElement.querySelector('.comments-text').textContent.trim() ;
-    document.querySelector("textarea").focus();
+  let data = {
+    btnEdit, //.parentElement.parentElement.parentElement.textContent
+    btn
+  }
+  console.log(data);
+
+  btnEdit.map((item, index) => {
+    item.addEventListener('click', (e) => {
+      e.preventDefault();
+      openModal();
+      modal.querySelector(".modal__comments").innerHTML = '';
+      document.querySelector("textarea").textContent = item.parentElement.querySelector('.comments-text').textContent.trim();
+      document.querySelector("textarea").focus();
+    })
   })
-})
 
 
 
   function openModal() {
-    document.querySelector("textarea").textContent='';
+    document.querySelector("textarea").textContent = '';
     modal.classList.add('show');
     modal.classList.remove('hide');
     document.body.style.overflow = 'hidden';
     // clearInterval(modalTimerId);
-    document.querySelector('.pagination__goto').addEventListener('click',(e)=>{
-console.log(e.children.value)
-    })
+   
   }
 
   btn.forEach((item, index) => {
     // console.log(item.querySelector('.add_comments_link'))
     // if(item)  || item.querySelector('.add_comments_link').textContent === 'Редактировать'
-   
+
     //console.log(item.querySelector('.link_table').textContent);
 
     if (item.querySelector('.link_table').textContent === 'Добавить ещё комментарий') {
@@ -67,12 +61,13 @@ console.log(e.children.value)
 
             element.innerHTML += `    <div data-element=${i} class="modal__comments-item">               
                               <p class="modal__comments-date" > ${dateCreate[i].textContent}</p> 
-        <button class="btn btn__edit" data-edit></button>
-                        <button button class = "btn btn__delete"
+           <button class="btn btn__edit" data-text="Редактировать" data-edit></button>
+                        <button button button class = "btn btn__delete"
+                        data-text="Удалить"
                         data-delete>
                             <!--                        <i class="icon__delete"></i>-->
                         </button>
-        <p class = "modal__comments-text" > ${dateText[i].textContent} </p></div> `;
+          <p class = "modal__comments-text" > ${dateText[i].textContent} </p></div> `;
             if (i + 1 < dateCreate.length) {
               element.innerHTML += '<hr>';
             }
@@ -106,8 +101,8 @@ console.log(e.children.value)
                             </svg>
                         </button>
 
-                        <!--                        <input type="text" class="pagination__item" value="1">-->
-                        <p class="modal__pagination-list">1 из 94</p>
+                       
+                        <p class="modal__pagination-list">1 из ${dateCreate.length}</p>
 
                         <button class="pagination__button pagination__button--next pagination__button--available" data-event-action="click: pagination-next">
                             <svg viewBox="0 0 9.14 18" width="0" height="0" class="arrow-icon ">
@@ -115,32 +110,43 @@ console.log(e.children.value)
                                 </path>
                             </svg>
                         </button>
-<div class="pagination__goto" >
+                    <div class="pagination__goto" >
                         <p class="pagination__title">перейти на страницу</p>
-                        <input type="text" class="pagination__item" value="1">
+                        <input type="text" class="pagination__item" value="${dateCreate.length}">
 
                         <button button class = "pagination__button pagination__button--goto"
-                        data - page = "false"
-                        data - event - action = "click: pagination-goTo" >
+                        data-page="false"
+                        data-event-action="click: pagination-goTo" >
                             OK
                         </button>
-</div>
-<div class="hide" id="pag"></div>
                     </div>
-        `;
+                    <div class="hide" id="pag"></div>
+                                  </div>
+                `;
           modal.querySelector('.modal__comments').append(element); //querySelector('.modal__comments-list')
           //  });
         }
         openModal();
-        initPagination('pag', dateCreate.length);
+        // initPagination('pag', dateCreate.length);
+        modal.setAttribute('data-index', index)
         document.querySelector("textarea").focus();
-        
+user.Init(document.getElementById('pag'), {
+  size: dateCreate.length, // pages size
+  page: 1, // selected page
+  step: 3 // pages before and after current
+});
+ document.querySelector('.pagination__goto').addEventListener('click', (e) => {
+   console.log(e.target)
+   // Pagination.Click()
+ })
+
       }))
     }
 
     if (item.querySelector('.link_table').textContent === 'Добавить комментарий') {
       item.querySelector('.link_table').addEventListener('click', () => {
         openModal();
+        modal.setAttribute('data-index', index);
         modal.querySelector(".modal__comments").innerHTML = '';
         document.querySelector("textarea").focus();
       })
@@ -153,11 +159,29 @@ console.log(e.children.value)
     modal.classList.add('hide');
     document.body.style.overflow = '';
     modal.querySelector(".modal__comments").innerHTML = '';
+setTimeout(() => document.querySelector('#comments').textContent = '', 1000);
+
   }
 
   modal.addEventListener('click', (e) => {
     // console.log(e.target.type);
-    if (e.target === modal || e.target === modalCloseBtn || e.target.type==='submit'||e.target.type==='reset') { //e.target.getAttribute('.data-close') == ''
+    if (e.target === modal || e.target === modalCloseBtn || e.target.type === 'submit' || e.target.type === 'reset') { //e.target.getAttribute('.data-close') == ''
+      closeModal();
+    }
+    if (e.target.type === 'submit') { //e.target.getAttribute('.data-close') == ''
+      e.preventDefault();
+      let numberPost = modal.getAttribute('data-index');
+      const message = document.createElement('div');
+      message.classList.add('add_comments_wrap');
+      message.innerHTML = `          <div class="add_comments">
+                                        <p class="comments-date">${new Date().toLocaleString()}</p>
+                                        <p class="comments-text">${document.querySelector('#comments').value}</p>
+                                        <a href="#" class="add_comments_link" data-text="Редактировать"></a>
+                              </div>
+                                    <a href="#" class="link_table">Добавить ещё комментарий</a>
+                                `;
+      console.log(numberPost);
+      btn[numberPost].append(message);
       closeModal();
     }
   });

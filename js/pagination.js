@@ -1,7 +1,7 @@
 ﻿/* * * * * * * * * * * * * * * * *
  * Pagination
  * javascript page navigation
- * * * * * * * * * * * * * * * * */
+ * * * * * * * * * * * * * * * * 
 
 var Pagination = {
     code: '',   
@@ -30,10 +30,10 @@ var Pagination = {
         Pagination.code += '<a>1</a><i>...</i>';
     },
     // Handlers
-/**********************/
+/**********************
     // change page
-    Click: function() {
-        Pagination.page = +this.innerHTML;/****************************/
+    Click: function(e) {
+        Pagination.page = + e;//+this.innerHTML;/***************************
         Pagination.Start();
     },
 
@@ -97,7 +97,7 @@ var Pagination = {
 
     // binding buttons
     Buttons: function(e) {
-        var nav = e.getElementsByTagName('a');/**************** .modal__comments-btn-left  .modal__comments-btn-right*/
+        var nav = e.getElementsByTagName('a');/**************** .modal__comments-btn-left  .modal__comments-btn-right
       //   nav[0].addEventListener('click', Pagination.Prev, false);
       //   nav[1].addEventListener('click', Pagination.Next, false);
         [...e.querySelectorAll('.modal__comments-btn-left')].map(i=>i.addEventListener('click', Pagination.Prev, false));
@@ -125,8 +125,170 @@ var Pagination = {
         Pagination.Start();
     }
 };
-/* Initialization*/
+Initialization*/
 // var initPagination = function() {
 //     Pagination.Init(document.getElementById('pagination'), {size: 30});
 // };
 // document.addEventListener('DOMContentLoaded', init, false);
+
+
+class Pag {
+    constructor(data) {
+        // this.Init = Init,
+        data = data || {},
+            this.size = data.size || 300,
+            this.page = data.page || 1,
+            this.step = data.step || 3,
+            this.code = '',
+
+
+            // let boundFunc = func.bind(context);
+
+            this.Init = this.Init.bind(this),
+            this.Click = this.Click.bind(this),
+            this.Prev = this.Prev.bind(this),
+            this.Next = this.Next.bind(this),
+            // this.Start = this.Start.bind(this),
+            this.Bind = this.Bind.bind(this),
+            this.Extend = this.Extend.bind(this),
+            // this.Finish = this.Finish.bind(this),
+            this.Buttons = this.Buttons.bind(this),
+            this.Create = this.Create.bind(this),
+            this.Add = this.Add.bind(this)
+
+    }
+    // --------------------
+    // Utility
+    // --------------------
+
+
+    // converting initialize data
+    Extend(data) {
+        data = data || {};
+        this.size = data.size || 300;
+        this.page = data.page || 1;
+        this.step = data.step || 3;
+    }
+
+    // add pages by number (from [s] to [f])
+    Add(s, f) {
+        for (var i = s; i < f; i++) {
+            this.code += '<a>' + i + '</a>';
+        }
+    }
+
+    // add last page with separator
+    Last() {
+        this.code += '<i>...</i><a>' + this.size + '</a>';
+    }
+
+    // add first page with separator
+    First() {
+        this.code += '<a>1</a><i>...</i>';
+    }
+
+
+
+    // --------------------
+    // Handlers
+    // --------------------
+
+    // change page
+    Click() {
+        console.log(this);
+        this.page = +this.innerHTML;
+        this.Start();
+    }
+
+    // previous page
+    Prev() {
+        this.page--;
+        if (this.page < 1) {
+            this.page = 1;
+        }
+        this.Start();
+    }
+
+    // next page
+    Next() {
+        this.page++;
+        if (this.page > this.size) {
+            this.page = this.size;
+        }
+        this.Start();
+    }
+
+
+
+    // --------------------
+    // Script
+    // --------------------.modal__comments-btn-left  .modal__comments-btn-right
+
+    // binding pages
+    Bind() {
+        var a = this.e.getElementsByTagName('a');
+        for (var i = 0; i < a.length; i++) {
+            if (+a[i].innerHTML === this.page) a[i].className = 'current';
+            a[i].addEventListener('click', this.Click, false);
+        }
+    }
+
+    // write pagination
+    Finish() {
+        this.e.innerHTML = this.code;
+        this.code = '';
+        this.Bind();
+    }
+
+    // find pagination type
+    Start() {
+        if (this.size < this.step * 2 + 6) {
+            this.Add(1, this.size + 1);
+        } else if (this.page < this.step * 2 + 1) {
+            this.Add(1, this.step * 2 + 4);
+            this.Last();
+        } else if (this.page > this.size - this.step * 2) {
+            this.First();
+            this.Add(this.size - this.step * 2 - 2, this.size + 1);
+        } else {
+            this.First();
+            this.Add(this.page - this.step, this.page + this.step + 1);
+            this.Last();
+        }
+        this.Finish();
+    }
+
+
+
+    // --------------------
+    // Initialization
+    // --------------------
+
+    // binding buttons
+    Buttons(e) {
+        var nav = e.getElementsByTagName('a');
+        nav[0].addEventListener('click', this.Prev, false);
+        nav[1].addEventListener('click', this.Next, false);
+    }
+
+    // create skeleton
+    Create(e) {
+
+        var html = [
+            '<a>&#9668;</a>', // previous button
+            '<span></span>', // pagination container
+            '<a>&#9658;</a>' // next button
+        ];
+
+        e.innerHTML = html.join('');
+        this.e = e.getElementsByTagName('span')[0];
+        this.Buttons(e);
+    }
+
+    // init
+    Init(e, data) {
+        this.Extend(data);
+        this.Create(e);
+        this.Start();
+    }
+}

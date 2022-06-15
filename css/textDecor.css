@@ -103,6 +103,7 @@ button.select__toggle{
     line-height: 16px;
     font-family: inherit;
     overflow: visible;
+    background: #fdf9e0;
 }
 /*
 .tooltip {
