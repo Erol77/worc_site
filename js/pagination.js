@@ -155,6 +155,7 @@ this.text=data.text || '';
             // this.Finish = this.Finish.bind(this),
             this.Buttons = this.Buttons.bind(this);
             this.Create = this.Create.bind(this);
+ this.Go = this.Go.bind(this);
             // this.Add = this.Add.bind(this);
 
     }
@@ -162,21 +163,12 @@ this.text=data.text || '';
     // Utility
     // --------------------
 
-
-    // converting initialize data
-    // Extend(data) {
-    //     data = data || {};
-    //     this.size = data.size || 300;
-    //     this.page = data.page || 1;
-    //     this.step = data.step || 3;
-    // }
-
     // add pages by number (from [s] to [f])
     Add(s, f) {
 // if (this.text.length > 0)
         for (var i = s; i < f; i++) {
             // this.code += '<a>' + i + '</a>';
- this.code += `<div class="modal__comments-item" style="display:none" data-element=${i}>` + this.text[i] + '</div>';
+ this.code += `<div class="modal__comments-item"  data-element=${i}>` + this.text[i-1] + '</div>';
         }
     }
 
@@ -234,8 +226,9 @@ Go(){
     Bind() {
         var a =[...this.e.querySelectorAll('.modal__comments-item')];
         for (var i = 0; i < a.length; i++) {
-            if (+a[i].innerHTML === this.page) {a[i].style.display = 'block';
-            a[i].className = 'show';}
+            if (+a[i].innerHTML === this.page) {//a[i].style.display = 'block';
+            a[i].className = 'show';
+}
             a[i].addEventListener('click', this.Click, false);
         }
     }
@@ -279,7 +272,7 @@ goto = e.querySelector('.pagination__button--goto'),
 inputGoto = e.querySelector('.pagination__item');
 navLeft.map(i=>{i.addEventListener('click', this.Prev, false);});
 navRight.map(i=>{i.addEventListener('click',this.Next, false);});
-inputGoto.addEventListener('input', this.page = inputGoto.value);
+inputGoto.addEventListener('input', this.page = this.value);
 goto.addEventListener('click', this.Go, false);
 
 
@@ -328,7 +321,7 @@ goto.addEventListener('click', this.Go, false);
                         </button>
                     <div class="pagination__goto" >
                         <p class="pagination__title">перейти на страницу</p>
-                        <input type="text" class="pagination__item" value="${this.size}">
+                        <input type="text"  name="goto" class="pagination__item" value="${this.size}">
 
                         <button class = "pagination__button pagination__button--goto"
                         data-page="false"

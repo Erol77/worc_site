@@ -9,25 +9,27 @@ window.addEventListener('DOMContentLoaded', () => {
   //     size
   //   });
   // };
-  const user = new Pag();
-let text={};
+
+  let text = {},
+    number = 0;
+
 
   let data = {
     btnEdit, //.parentElement.parentElement.parentElement.textContent
     btn
   }
-  console.log(data);
 
-  btnEdit.map((item, index) => {
-    item.addEventListener('click', (e) => {
-      e.preventDefault();
-      openModal();
-      modal.querySelector(".modal__comments").innerHTML = '';
-      document.querySelector("textarea").textContent = item.parentElement.querySelector('.comments-text').textContent.trim();
-      document.querySelector("textarea").focus();
-      modal.setAttribute('data-edits', index);
-    })
-  })
+
+  // btnEdit.map((item, index) => {
+  //   item.addEventListener('click', (e) => {
+  //     e.preventDefault();
+  //     openModal();
+  //     modal.querySelector(".modal__comments").innerHTML = '';
+  //     document.querySelector("textarea").textContent = item.parentElement.querySelector('.comments-text').textContent.trim();
+  //     document.querySelector("textarea").focus();
+  //     modal.setAttribute('data-edits', index);
+  //   })
+  // })
 
 
 
@@ -41,79 +43,66 @@ let text={};
   }
 
   btn.forEach((item, index) => {
+    number = index;
     // console.log(item.querySelector('.add_comments_link'))
     // if(item)  || item.querySelector('.add_comments_link').textContent === 'Редактировать'
 
-    //console.log(item.querySelector('.link_table').textContent);
+    const dateCreate = item.querySelectorAll('.comments-date') ? Array.from(item.querySelectorAll('.comments-date')): ''; /**************** */
+    const dateText = item.querySelectorAll('.comments-text') ? Array.from(item.querySelectorAll('.comments-text')): '';
+    let content = Array.from(item.querySelectorAll('.link_table'));
+   
 
-    if (item.querySelector('.link_table').textContent === 'Добавить ещё комментарий') {
-      // console.log(index);
-      let content = Array.from(item.querySelectorAll('.link_table'));
-      content.map(j => j.addEventListener('click', () => {
-        // item.preventDefault();
-        const dateCreate = item.querySelectorAll('.comments-date');
-        const dateText = item.querySelectorAll('.comments-text');
-        modal.querySelector(".modal__comments").innerHTML = '';
-        if (dateCreate.length > 0) {
-          // [...item.querySelectorAll('.comments-date')].map(i => (i) => {
-          // const element = document.createElement('div');
-          // element.classList.add('modal__comments-list');
-          for (let i = 0; i < dateCreate.length; i++) {
+    content.map((j, dateCreate, dateText) => j.addEventListener('click', () => {
+   console.log(dateText + '   ' + number + '   ' + dateCreate);
+      modal.querySelector(".modal__comments").innerHTML = '';
+      if (dateCreate.length > 0) {
+        // [...item.querySelectorAll('.comments-date')].map(i => (i) => {
+        // const element = document.createElement('div');
+        // element.classList.add('modal__comments-list');
+        for (let i = 0; i < dateCreate.length; i++) {
+          text[i] = `<p class="modal__comments-date">${dateCreate[i].textContent}</p><button class="btn btn__edit" onmouseover="toolTip('Редактировать')" onmouseout="toolTip()"data-text="Редактировать"data-edit></button><button class="btn btn__delete"onmouseover="toolTip('Удалить')" onmouseout="toolTip()"data-text="Удалить" data-delete><!--<i class="icon__delete"></i>--></button><p class="modal__comments-text">${dateText[i].textContent}</p>`;
 
-            // element.innerHTML +
-            text[i] = `<p class="modal__comments-date">${dateCreate[i].textContent}</p><button class="btn btn__edit" data-text="Редактировать"data-edit></button><button class="btn btn__delete"data-text="Удалить" data-delete><!--<i class="icon__delete"></i>--></button><p class="modal__comments-text">${dateText[i].textContent}</p>`;
-
-            // if (i + 1 < dateCreate.length) {
-            //   element.innerHTML += '<hr>';
-            // }
-          }
-
-          // <button class="modal__comments-btn-left">
-          //     <svg viewBox="0 0 9.15 18" width="0" height="0" class="arrow-icon">
-          //         <path fill="currentColor" d="M7.51 15.51a.63.63 0 0 1-.46-.19L1.18 9.46C1.06 9.34.99 9.17.99 9s.07-.34.19-.46l5.86-5.86c.25-.25.67-.25.92 0s.25.67 0 .92L2.56 9l5.4 5.4c.25.25.25.67 0 .92a.61.61 0 0 1-.45.19z">
-          //         </path>
-          //     </svg></button>
-          // <button class="modal__comments-btn-right">
-          //     <svg viewBox="0 0 9.15 18" width="0" height="0" class="arrow-icon">
-          //         <path fill="currentColor" d="M1.64 15.51a.63.63 0 0 1-.46-.19.66.66 0 0 1 0-.92L6.59 9l-5.4-5.4c-.25-.25-.25-.67 0-.92s.67-.25.92 0l5.86 5.86c.12.12.19.29.19.46 0 .17-.07.34-.19.46L2.1 15.32a.62.62 0 0 1-.46.19z">
-          //         </path>
-          //     </svg>
-          // </button>
-
-
-          // element.innerHTML += `                    
-          //           <div class="pagination" id="pag"></div>                               
-          //      `; 
-          // modal.querySelector('.modal__comments').append(element); //querySelector('.modal__comments-list')
-          //  });
+          // if (i + 1 < dateCreate.length) {
+          //   element.innerHTML += '<hr>';
+          // }
         }
-          console.log(text);
+      } // console.log(text);
+    }))
+
+    item.addEventListener('click', (e, dateCreate, dateText, content) => {
+      e.preventDefault();
+      if (e.target.textContent === 'Добавить ещё комментарий') {
+
+        console.log(dateText + '   ' + number + '   ' + dateCreate);
+
+        // let content = Array.from(e.target.parentElement.querySelectorAll('.link_table'));
+
+
         openModal();
-        // initPagination('pag', dateCreate.length);
-        modal.setAttribute('data-index', index)
-        document.querySelector("textarea").focus();
-        user.Init(document.getElementById('pag'), {
+        const user = new Pag({
           size: dateCreate.length, // pages size
           page: 1, // selected page
           step: 3, // pages before and after current
-          text:''
+          text: text
         });
-        // document.querySelector('.pagination__goto').addEventListener('click', (e) => {
-          // console.log(e.target)
-          // Pagination.Click()
-        // })
-
-      }))
-    }
-
-    if (item.querySelector('.link_table').textContent === 'Добавить комментарий') {
-      item.querySelector('.link_table').addEventListener('click', () => {
-        openModal();
-        modal.setAttribute('data-index', index);
-        modal.querySelector(".modal__comments").innerHTML = '';
+        modal.setAttribute('data-index', index)
         document.querySelector("textarea").focus();
-      })
-    }
+        user.Init(document.getElementById('pag'));
+
+
+
+      }
+    })
+
+
+    // if (item.querySelector('.link_table').textContent === 'Добавить комментарий') {
+    //   item.querySelector('.link_table').addEventListener('click', () => {
+    //     openModal();
+    //     modal.setAttribute('data-index', index);
+    //     modal.querySelector(".modal__comments").innerHTML = '';
+    //     document.querySelector("textarea").focus();
+    //   })
+    // }
 
   });
 
@@ -121,14 +110,14 @@ let text={};
     modal.classList.remove('show');
     modal.classList.add('hide');
     document.body.style.overflow = '';
-    modal.querySelector(".modal__comments").innerHTML = '';
+    // modal.querySelector(".modal__comments").innerHTML = '';
     setTimeout(() => document.querySelector('#comments').textContent = '', 1000);
 
   }
 
   modal.addEventListener('click', (e) => {
     // console.log(e.target.type);
-    if (e.target === modal || e.target === modalCloseBtn || e.target.type === 'submit' || e.target.type === 'reset') { //e.target.getAttribute('.data-close') == ''
+    if (e.target === modal || e.target === modalCloseBtn || e.target.type === 'reset') { //e.target.getAttribute('.data-close') == ''
       closeModal();
     }
     if (e.target.type === 'submit') { //e.target.getAttribute('.data-close') == ''
@@ -144,6 +133,7 @@ let text={};
                               </div>
                                     <a href="#" class="link_table">Добавить ещё комментарий</a>
                                 `;
+      message.querySelector('.add_comments_link');
       if (modal.hasAttribute('data-index')) {
         let numberPost = modal.getAttribute('data-index');
         console.log(numberPost);
@@ -151,7 +141,6 @@ let text={};
         modal.removeAttribute('data-index');
       } else if (modal.hasAttribute('data-edit')) {
         let numberPost = modal.getAttribute('data-edits');
-
 
 
         btnEdit[numberPost].parentElement.replaceWith(message)
