@@ -47,18 +47,14 @@ window.addEventListener('DOMContentLoaded', () => {
     // console.log(item.querySelector('.add_comments_link'))
     // if(item)  || item.querySelector('.add_comments_link').textContent === 'Редактировать'
 
-    const dateCreate = item.querySelectorAll('.comments-date') ? Array.from(item.querySelectorAll('.comments-date')): ''; /**************** */
-    const dateText = item.querySelectorAll('.comments-text') ? Array.from(item.querySelectorAll('.comments-text')): '';
+    const dateCreate = item.querySelectorAll('.comments-date') ? Array.from(btn[index].querySelectorAll('.comments-date')) : ''; /**************** */
+    const dateText = item.querySelectorAll('.comments-text') ? Array.from(btn[index].querySelectorAll('.comments-text')) : '';
     let content = Array.from(item.querySelectorAll('.link_table'));
    
 
-    content.map((j, dateCreate, dateText) => j.addEventListener('click', () => {
-   console.log(dateText + '   ' + number + '   ' + dateCreate);
-      modal.querySelector(".modal__comments").innerHTML = '';
-      if (dateCreate.length > 0) {
-        // [...item.querySelectorAll('.comments-date')].map(i => (i) => {
-        // const element = document.createElement('div');
-        // element.classList.add('modal__comments-list');
+   console.log(dateText.textContent + '   ' + number + '   ' + dateCreate.innerHTML);
+      // modal.querySelector(".modal__comments").innerHTML = '';
+ 
         for (let i = 0; i < dateCreate.length; i++) {
           text[i] = `<p class="modal__comments-date">${dateCreate[i].textContent}</p><button class="btn btn__edit" onmouseover="toolTip('Редактировать')" onmouseout="toolTip()"data-text="Редактировать"data-edit></button><button class="btn btn__delete"onmouseover="toolTip('Удалить')" onmouseout="toolTip()"data-text="Удалить" data-delete><!--<i class="icon__delete"></i>--></button><p class="modal__comments-text">${dateText[i].textContent}</p>`;
 
@@ -66,12 +62,12 @@ window.addEventListener('DOMContentLoaded', () => {
           //   element.innerHTML += '<hr>';
           // }
         }
-      } // console.log(text);
-    }))
 
-    item.addEventListener('click', (e, dateCreate, dateText, content) => {
+ 
+
+    item.addEventListener('click', (e) => {
       e.preventDefault();
-      if (e.target.textContent === 'Добавить ещё комментарий') {
+      if (e.target.textContent === 'Добавить ещё комментарий' || e.target.classList.contains('.add_comments_link')) {
 
         console.log(dateText + '   ' + number + '   ' + dateCreate);
 
@@ -79,15 +75,18 @@ window.addEventListener('DOMContentLoaded', () => {
 
 
         openModal();
+if (dateCreate.length){ 
         const user = new Pag({
           size: dateCreate.length, // pages size
           page: 1, // selected page
           step: 3, // pages before and after current
           text: text
         });
+ user.Init(document.getElementById('pag'));
+        }
         modal.setAttribute('data-index', index)
         document.querySelector("textarea").focus();
-        user.Init(document.getElementById('pag'));
+       
 
 
 
