@@ -226,7 +226,7 @@ class Pag {
     Bind() {
         var a = [...this.e.querySelectorAll('.modal__comments-item')];
         for (var i = 0; i < a.length; i++) {
-            if (+a[i].getAttribute(data-element) === this.page) { //a[i].style.display = 'block';
+            if (+a[i].getAttribute(data-element) == this.page) { //a[i].style.display = 'block';
                 a[i].className = 'show';
                 a[i].className.toggle('hide');
             }
