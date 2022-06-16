@@ -9,8 +9,8 @@ window.addEventListener('DOMContentLoaded', () => {
   //     size
   //   });
   // };
-const user = new Pag();
-
+  const user = new Pag();
+let text={};
 
   let data = {
     btnEdit, //.parentElement.parentElement.parentElement.textContent
@@ -25,7 +25,7 @@ const user = new Pag();
       modal.querySelector(".modal__comments").innerHTML = '';
       document.querySelector("textarea").textContent = item.parentElement.querySelector('.comments-text').textContent.trim();
       document.querySelector("textarea").focus();
- modal.setAttribute('data-edits', index);
+      modal.setAttribute('data-edits', index);
     })
   })
 
@@ -37,7 +37,7 @@ const user = new Pag();
     modal.classList.remove('hide');
     document.body.style.overflow = 'hidden';
     // clearInterval(modalTimerId);
-   
+
   }
 
   btn.forEach((item, index) => {
@@ -47,7 +47,7 @@ const user = new Pag();
     //console.log(item.querySelector('.link_table').textContent);
 
     if (item.querySelector('.link_table').textContent === 'Добавить ещё комментарий') {
-      console.log(index);
+      // console.log(index);
       let content = Array.from(item.querySelectorAll('.link_table'));
       content.map(j => j.addEventListener('click', () => {
         // item.preventDefault();
@@ -56,90 +56,52 @@ const user = new Pag();
         modal.querySelector(".modal__comments").innerHTML = '';
         if (dateCreate.length > 0) {
           // [...item.querySelectorAll('.comments-date')].map(i => (i) => {
-          const element = document.createElement('div');
-          element.classList.add('modal__comments-list');
+          // const element = document.createElement('div');
+          // element.classList.add('modal__comments-list');
           for (let i = 0; i < dateCreate.length; i++) {
 
-            element.innerHTML += `    <div data-element=${i} class="modal__comments-item">               
-                              <p class="modal__comments-date" > ${dateCreate[i].textContent}</p> 
-           <button class="btn btn__edit" data-text="Редактировать" data-edit></button>
-                        <button button button class = "btn btn__delete"
-                        data-text="Удалить"
-                        data-delete>
-                            <!--                        <i class="icon__delete"></i>-->
-                        </button>
-          <p class = "modal__comments-text" > ${dateText[i].textContent} </p></div> `;
-            if (i + 1 < dateCreate.length) {
-              element.innerHTML += '<hr>';
-            }
+            // element.innerHTML +
+            text[i] = `<p class="modal__comments-date">${dateCreate[i].textContent}</p><button class="btn btn__edit" data-text="Редактировать"data-edit></button><button class="btn btn__delete"data-text="Удалить" data-delete><!--<i class="icon__delete"></i>--></button><p class="modal__comments-text">${dateText[i].textContent}</p>`;
+
+            // if (i + 1 < dateCreate.length) {
+            //   element.innerHTML += '<hr>';
+            // }
           }
-          element.innerHTML += `
-                    <button class="modal__comments-btn-left">
-                        <svg viewBox="0 0 9.15 18" width="0" height="0" class="arrow-icon">
-                            <path fill="currentColor" d="M7.51 15.51a.63.63 0 0 1-.46-.19L1.18 9.46C1.06 9.34.99 9.17.99 9s.07-.34.19-.46l5.86-5.86c.25-.25.67-.25.92 0s.25.67 0 .92L2.56 9l5.4 5.4c.25.25.25.67 0 .92a.61.61 0 0 1-.45.19z">
-                            </path>
-                        </svg></button>
-                    <button class="modal__comments-btn-right">
-                        <svg viewBox="0 0 9.15 18" width="0" height="0" class="arrow-icon">
-                            <path fill="currentColor" d="M1.64 15.51a.63.63 0 0 1-.46-.19.66.66 0 0 1 0-.92L6.59 9l-5.4-5.4c-.25-.25-.25-.67 0-.92s.67-.25.92 0l5.86 5.86c.12.12.19.29.19.46 0 .17-.07.34-.19.46L2.1 15.32a.62.62 0 0 1-.46.19z">
-                            </path>
-                        </svg>
-                    </button>
- 
+
+          // <button class="modal__comments-btn-left">
+          //     <svg viewBox="0 0 9.15 18" width="0" height="0" class="arrow-icon">
+          //         <path fill="currentColor" d="M7.51 15.51a.63.63 0 0 1-.46-.19L1.18 9.46C1.06 9.34.99 9.17.99 9s.07-.34.19-.46l5.86-5.86c.25-.25.67-.25.92 0s.25.67 0 .92L2.56 9l5.4 5.4c.25.25.25.67 0 .92a.61.61 0 0 1-.45.19z">
+          //         </path>
+          //     </svg></button>
+          // <button class="modal__comments-btn-right">
+          //     <svg viewBox="0 0 9.15 18" width="0" height="0" class="arrow-icon">
+          //         <path fill="currentColor" d="M1.64 15.51a.63.63 0 0 1-.46-.19.66.66 0 0 1 0-.92L6.59 9l-5.4-5.4c-.25-.25-.25-.67 0-.92s.67-.25.92 0l5.86 5.86c.12.12.19.29.19.46 0 .17-.07.34-.19.46L2.1 15.32a.62.62 0 0 1-.46.19z">
+          //         </path>
+          //     </svg>
+          // </button>
 
 
-          <div class="pagination">
-                        <button class="pagination__button pagination__button--previous pagination__button--disabled" data-page="false" data-event-action="click: pagination-previous">
-                            <svg viewBox="0 0 9.15 18" width="0" height="0" class="arrow-icon">
-                                <path fill="currentColor" d="M7.51 15.51a.63.63 0 0 1-.46-.19L1.18 9.46C1.06 9.34.99 9.17.99 9s.07-.34.19-.46l5.86-5.86c.25-.25.67-.25.92 0s.25.67 0 .92L2.56 9l5.4 5.4c.25.25.25.67 0 .92a.61.61 0 0 1-.45.19z">
-                                </path>
-                            </svg>
-                        </button>
-                        <button class="pagination__button pagination__button--previous" data-page="false" data-event-action="click: pagination-previous">
-                            <svg viewBox="0 0 9.15 18" width="0" height="0" class="arrow-icon">
-                                <path fill="currentColor" d="M1.64 15.51a.63.63 0 0 1-.46-.19.66.66 0 0 1 0-.92L6.59 9l-5.4-5.4c-.25-.25-.25-.67 0-.92s.67-.25.92 0l5.86 5.86c.12.12.19.29.19.46 0 .17-.07.34-.19.46L2.1 15.32a.62.62 0 0 1-.46.19z">
-                                </path>
-                            </svg>
-                        </button>
-
-                       
-                        <p class="modal__pagination-list">1 из ${dateCreate.length}</p>
-
-                        <button class="pagination__button pagination__button--next pagination__button--available" data-event-action="click: pagination-next">
-                            <svg viewBox="0 0 9.14 18" width="0" height="0" class="arrow-icon ">
-                                <path fill="currentColor" d="M1.64 15.51a.63.63 0 0 1-.46-.19.66.66 0 0 1 0-.92L6.59 9l-5.4-5.4c-.25-.25-.25-.67 0-.92s.67-.25.92 0l5.86 5.86c.12.12.19.29.19.46 0 .17-.07.34-.19.46L2.1 15.32a.62.62 0 0 1-.46.19z">
-                                </path>
-                            </svg>
-                        </button>
-                    <div class="pagination__goto" >
-                        <p class="pagination__title">перейти на страницу</p>
-                        <input type="text" class="pagination__item" value="${dateCreate.length}">
-
-                        <button button class = "pagination__button pagination__button--goto"
-                        data-page="false"
-                        data-event-action="click: pagination-goTo" >
-                            OK
-                        </button>
-                    </div>
-                    <div class="hide" id="pag"></div>
-                                  </div>
-                `;
-          modal.querySelector('.modal__comments').append(element); //querySelector('.modal__comments-list')
+          // element.innerHTML += `                    
+          //           <div class="pagination" id="pag"></div>                               
+          //      `; 
+          // modal.querySelector('.modal__comments').append(element); //querySelector('.modal__comments-list')
           //  });
         }
+          console.log(text);
         openModal();
         // initPagination('pag', dateCreate.length);
         modal.setAttribute('data-index', index)
         document.querySelector("textarea").focus();
-user.Init(document.getElementById('pag'), {
-  size: dateCreate.length, // pages size
-  page: 1, // selected page
-  step: 3 // pages before and after current
-});
- document.querySelector('.pagination__goto').addEventListener('click', (e) => {
-   console.log(e.target)
-   // Pagination.Click()
- })
+        user.Init(document.getElementById('pag'), {
+          size: dateCreate.length, // pages size
+          page: 1, // selected page
+          step: 3, // pages before and after current
+          text:''
+        });
+        // document.querySelector('.pagination__goto').addEventListener('click', (e) => {
+          // console.log(e.target)
+          // Pagination.Click()
+        // })
 
       }))
     }
@@ -160,7 +122,7 @@ user.Init(document.getElementById('pag'), {
     modal.classList.add('hide');
     document.body.style.overflow = '';
     modal.querySelector(".modal__comments").innerHTML = '';
-setTimeout(() => document.querySelector('#comments').textContent = '', 1000);
+    setTimeout(() => document.querySelector('#comments').textContent = '', 1000);
 
   }
 
@@ -182,19 +144,19 @@ setTimeout(() => document.querySelector('#comments').textContent = '', 1000);
                               </div>
                                     <a href="#" class="link_table">Добавить ещё комментарий</a>
                                 `;
-if (modal.hasAttribute('data-index')) {
-      let numberPost = modal.getAttribute('data-index');
-      console.log(numberPost);
-      btn[numberPost].append(message);
-modal.removeAttribute('data-index');
-} else if (modal.hasAttribute('data-edit')) {
-let numberPost = modal.getAttribute('data-edits');
+      if (modal.hasAttribute('data-index')) {
+        let numberPost = modal.getAttribute('data-index');
+        console.log(numberPost);
+        btn[numberPost].append(message);
+        modal.removeAttribute('data-index');
+      } else if (modal.hasAttribute('data-edit')) {
+        let numberPost = modal.getAttribute('data-edits');
 
 
 
-btnEdit[numberPost].parentElement.replaceWith(message)
-modal.removeAttribute('data-edits');
-}
+        btnEdit[numberPost].parentElement.replaceWith(message)
+        modal.removeAttribute('data-edits');
+      }
       closeModal();
     }
   });
