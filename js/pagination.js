@@ -7,17 +7,12 @@
         this.step = data.step || 3;
         this.code = '';
         this.text = data.text || '';
-
-
-        // let boundFunc = func.bind(context);
-
         this.Init = this.Init.bind(this);
         this.Click = this.Click.bind(this);
         this.Prev = this.Prev.bind(this);
         this.Next = this.Next.bind(this);
         this.Start = this.Start.bind(this),
         this.Bind = this.Bind.bind(this);
-        // this.Extend = this.Extend.bind(this);
         // this.Finish = this.Finish.bind(this),
         // this.Buttons = this.Buttons.bind(this);
         // this.Create = this.Create.bind(this);
@@ -45,7 +40,12 @@
 
     // add first page with separator
     First() {
-        this.code += '<a>1</a><i>...</i>';
+        this.code += `<button class="pagination__button pagination__btn--left pagination__button--disabled" data-page="false" >
+        <svg viewBox="0 0 9.15 18" width="0" height="0" class="arrow-icon">
+            <path fill="currentColor" d="M7.51 15.51a.63.63 0 0 1-.46-.19L1.18 9.46C1.06 9.34.99 9.17.99 9s.07-.34.19-.46l5.86-5.86c.25-.25.67-.25.92 0s.25.67 0 .92L2.56 9l5.4 5.4c.25.25.25.67 0 .92a.61.61 0 0 1-.45.19z">
+            </path>
+        </svg>
+    </button>`;
     }
 
 
@@ -91,10 +91,10 @@
     // binding pages
     Bind() {
         var a = [...this.e.querySelectorAll('i')];
-        var text = [...this.e.querySelectorAll('div')];
+        var text = [...this.e.querySelectorAll('.modal__comments-item')];
         for (var i = 0; i < a.length; i++) {
             if (+a[i].innerHTML === this.page) { //a[i].style.display = 'block';
-                a[i].className = 'show';
+                // a[i].className = 'show';
                 text[i].className='show';
             }
             // a[i].addEventListener('click', this.Click, false);
@@ -185,7 +185,7 @@
                                 </path>
                             </svg>
                         </button>
- <p class="modal__pagination-list">1 из ${this.size}</p>
+ <p class="modal__pagination-list">${this.page} из ${this.size}</p>
     <button class="pagination__button pagination__button--next pagination__button--available" data-event-action="click: pagination-next">
                             <svg viewBox="0 0 9.14 18" width="0" height="0" class="arrow-icon ">
                                 <path fill="currentColor" d="M1.64 15.51a.63.63 0 0 1-.46-.19.66.66 0 0 1 0-.92L6.59 9l-5.4-5.4c-.25-.25-.25-.67 0-.92s.67-.25.92 0l5.86 5.86c.12.12.19.29.19.46 0 .17-.07.34-.19.46L2.1 15.32a.62.62 0 0 1-.46.19z">
@@ -203,9 +203,9 @@
                         </button>
                     </div></div>
 `,
-            '<a>&#9668;</a>', // previous button
+            //'<a>&#9668;</a>', // previous button
             // '<span></span>', // pagination container
-            '<a>&#9658;</a>', // next button
+           // '<a>&#9658;</a>', // next button
             '</div>'
         ];
 

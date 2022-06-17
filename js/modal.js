@@ -1,8 +1,39 @@
 window.addEventListener('DOMContentLoaded', () => {
   const dataUser = document.querySelector('#data-user'),
-  modal = document.querySelector('.modal'),
-  modalCloseBtn = document.querySelector('[data-close]');
+    modal = document.querySelector('.modal'),
+    modalCloseBtn = document.querySelector('[data-close]');
+    let textarea=document.getElementById('comments');
 
+    let db;
+    (      async()=>{
+        db=await IDBCursor.openDb('db',1,db=>{
+          db.createObjectStore('notes',{
+            keyPath:'id'
+          })
+        })
+        createList()
+      })();
+const addNote= async()=>{
+let tex = textarea.value
+
+      let note = {
+        id,
+        text,
+        createDate: new Date().toLocaleDateString(),
+        completed:''
+      }
+
+      try{
+        await db.transaction('notes','readwrite')
+        .objectStore('notes')
+        .add(note)
+        await createList()
+        .then(()=>{
+          textarea.value=''
+          dateInput.value=''
+        } )
+      }catch{console.log('not add db')}
+    }
   const configUser = {
     attributes: true,
     childList: true,
@@ -13,7 +44,7 @@ window.addEventListener('DOMContentLoaded', () => {
     for (let mutation of mutationsList) {
       if (mutation.type === 'childList') {
         modalUser()//          console.log('A child node has been added or removed.');
-      } 
+      }
     }
   };
   const observerUser = new MutationObserver(callbackUser);
@@ -23,7 +54,7 @@ window.addEventListener('DOMContentLoaded', () => {
     attributes: true,
     childList: true,
     // subtree: true,
-    attributeFilter: ['data-index', 'data-delete', 'data-edit', 'data-modal']
+    attributeFilter: ['class']//['data-index', 'data-delete', 'data-edit', 'data-modal']
   };
 
   const callback = function (mutationsList, observer) {
@@ -35,44 +66,32 @@ window.addEventListener('DOMContentLoaded', () => {
       // }
       let mt = 'Тип изменения ' + mutation.type;
       mt += "Измененный элемент " + mutation.target;
-      console.log('The ' + mt + ' attribute was modified.'+observer);
+      console.log('The ' + mt + ' attribute was modified.' + observer);
     }
   };
   const observer = new MutationObserver(callback);
   observer.observe(document.documentElement, config);
+
   function openModal() {
-    document.querySelector("textarea").textContent = '';
+    // textarea.innerHTML = '';
     modal.classList.add('show');
     modal.classList.remove('hide');
     document.body.style.overflow = 'hidden';
     // clearInterval(modalTimerId);
-
   }
 
+  function closeModal() {
+    modal.classList.remove('show');
+    modal.classList.add('hide');
+    document.body.style.overflow = '';
+    // modal.querySelector(".modal__comments").innerHTML = '';
+    setTimeout(() =>textarea.innerHTML = '', 1000);
+  }
 
+  const btn = [...document.querySelectorAll('[data-modal]')];
 
   function modalUser() {
-
-    const btn = [...document.querySelectorAll('[data-modal]')];
-
-    // btnEdit = [...document.querySelectorAll('.add_comments_link')];
-
     let text = {}, number = 0;
-
-    // var mutationObserver = new MutationObserver(function(mutations) {
-    //   mutations.forEach(function(mutation) {
-    //     console.log(mutation);
-    //   });
-    // });
-
-    // mutationObserver.observe(document.documentElement, {
-    //   attributes: true,
-    //   characterData: true,
-    //   childList: true,
-    //   subtree: true,
-    //   attributeOldValue: true,
-    //   characterDataOldValue: true
-    // });
     btn.forEach((item, index) => {
       number = index;
       const dateCreate = item.querySelectorAll('.comments-date') ? Array.from(btn[index].querySelectorAll('.comments-date')) : ''; /**************** */
@@ -90,6 +109,8 @@ window.addEventListener('DOMContentLoaded', () => {
         e.preventDefault();
         if (e.target.textContent === 'Добавить ещё комментарий' || e.target.closest('.link_table') || e.target.getAttribute('data-text') === 'Редактировать') {
           openModal();
+          modal.setAttribute('data-index', index)
+         
           if (dateCreate.length) {
             const user = new Pag({
               size: dateCreate.length, // pages size
@@ -100,84 +121,64 @@ window.addEventListener('DOMContentLoaded', () => {
             user.Init(document.getElementById('pag'));
           }
           if (e.target.getAttribute('data-text') === 'Редактировать') {
-            modal.setAttribute('data-edits', index);
-            document.querySelector("textarea").textContent = item.parentElement.querySelector('.comments-text').textContent.trim();
-            document.querySelector("textarea").focus();
-
+            modal.setAttribute('data-edits', e.target.dataset.edit);
+            textarea.textContent = item.parentElement.querySelector('.comments-text').textContent.trim();
+          }else if (e.target.textContent === 'Добавить комментарий') {
+            modal.setAttribute('data-newcomment', 'new-comment');
+            document.getElementById('pag').innerHTML = '';
+          } else {
+            modal.setAttribute('data-addcomment',dateCreate.length);
           }
-          if (e.target.textContent === 'Добавить комментарий'){
-            document.getElementById('pag').innerHTML='';
-          }
-          modal.setAttribute('data-index', index)
-          document.querySelector("textarea").focus();
+          textarea.focus();
         }
-        //     if (e.target.getAttribute('data-text')==='Редактировать'){
-        //     e.preventDefault();
-        //     openModal();
-        //     modal.querySelector(".modal__comments").innerHTML = '';
-        //     document.querySelector("textarea").textContent = item.parentElement.querySelector('.comments-text').textContent.trim();
-        //     document.querySelector("textarea").focus();
-        //     modal.setAttribute('data-edits', index);
-        // //   })
-        // }
-
       })
-
-
-      // if (item.querySelector('.link_table').textContent === 'Добавить комментарий') {
-      //   item.querySelector('.link_table').addEventListener('click', () => {
-      //     openModal();
-      //     modal.setAttribute('data-index', index);
-      //     modal.querySelector(".modal__comments").innerHTML = '';
-      //     document.querySelector("textarea").focus();
-      //   })
-      // }
-
     });
-
-    function closeModal() {
-      modal.classList.remove('show');
-      modal.classList.add('hide');
-      document.body.style.overflow = '';
-      // modal.querySelector(".modal__comments").innerHTML = '';
-      setTimeout(() => document.querySelector('#comments').textContent = '', 1000);
-
-    }
-
     modal.addEventListener('click', (e) => {
       // console.log(e.target.type);
-      e.stopPropagation();
-      if (e.target === modal || e.target === modalCloseBtn || e.target.type === 'reset') { //e.target.getAttribute('.data-close') == ''
-        closeModal();
+
+      if (e.target === modal || e.target === modalCloseBtn) { //e.target.getAttribute('.data-close') == ''
+        closeModal();//|| e.target.type === 'reset'
       }
       if (e.target.type === 'submit') { //e.target.getAttribute('.data-close') == ''
+        addNote();
         e.preventDefault();
-
 
         const message = document.createElement('div');
         message.classList.add('add_comments_wrap');
         message.innerHTML = `          <div class="add_comments">
                                         <p class="comments-date">${new Date().toLocaleString()}</p>
                                         <p class="comments-text">${document.querySelector('#comments').value}</p>
-                                        <a href="#" class="add_comments_link" data-text="Редактировать"></a>
+                                        <a href="#" class="add_comments_link" data-edit="0" data-text="Редактировать"></a>
                               </div>
                                     <a href="#" class="link_table">Добавить ещё комментарий</a>
                                 `;
         message.querySelector('.add_comments_link');
-        if (modal.hasAttribute('data-index')) {
+        if (modal.hasAttribute('data-newcomment')) {
           let numberPost = modal.getAttribute('data-index');
-          console.log(numberPost);
+          // console.log(numberPost);
+          btn[numberPost].innerHTML='';
+          btn[numberPost].append(message) ;
+          modal.removeAttribute('data-index');modal.removeAttribute('data-newcomment');
+        }
+          if (modal.hasAttribute('data-addcomment')) {
+          let numberPost = modal.getAttribute('data-index');
+          // console.log(numberPost);
           btn[numberPost].append(message);
-          modal.removeAttribute('data-index');
-        } else if (modal.hasAttribute('data-edit')) {
-          let numberPost = modal.getAttribute('data-edits');
+          modal.removeAttribute('data-index');modal.removeAttribute('data-addcomment');
+        } 
+         if (modal.hasAttribute('data-edits')) {
+          let numberPost = modal.getAttribute('data-index');
+          let numberComment = modal.getAttribute('data-edits');
+let mess = [`<p class="comments-date">${new Date().toLocaleString()}</p>`,`<p class="comments-text">${document.querySelector('#comments').value}</p>`,
+`<a href="#" class="add_comments_link" data-edit="${numberComment}" data-text="Редактировать"></a>`]
+message.innerHTML = mess.join('');
 
-
-          btnEdit[numberPost].parentElement.replaceWith(message)
-          modal.removeAttribute('data-edits');
+          btn[numberPost].querySelector(`[data-edit="${numberComment}"]`).replaceWith(message)
+          modal.removeAttribute('data-edits');modal.removeAttribute('data-index');
         }
         closeModal();
       }
+      e.stopPropagation();
     });
 
     document.addEventListener('keydown', (e) => {
@@ -185,25 +186,6 @@ window.addEventListener('DOMContentLoaded', () => {
         closeModal();
       }
     });
-
-    // const modalTimerId = setTimeout(openModal, 150000);
-
-    // function showModalScroll() {
-    //   if (window.pageYOffset + document.documentElement.clientHeight >= document.documentElement.scrollHeight) {
-    //     openModal();
-    //     window.removeEventListener('scroll', showModalScroll);
-    //   }
-    // }
-    // window.addEventListener('scroll', showModalScroll);
   }
   modalUser();
 });
-/*
-<input type="text"> length: <span id="length">0</span>
-<script>
-  var text = document.querySelector("input");
-  var output = document.querySelector("#length");
-  text.addEventListener("input", function() {
-    output.textContent = text.value.length;
-  });
-</script>*/
