@@ -5,35 +5,35 @@ window.addEventListener('DOMContentLoaded', () => {
     let textarea=document.getElementById('comments');
 
     let db;
-    (      async()=>{
-        db=await IDBCursor.openDb('db',1,db=>{
-          db.createObjectStore('notes',{
-            keyPath:'id'
-          })
-        })
-        createList()
-      })();
-const addNote= async()=>{
-let tex = textarea.value
+    // (      async()=>{
+    //     db=await IDBCursor.openDb('db',1,db=>{
+    //       db.createObjectStore('notes',{
+    //         keyPath:'id'
+    //       })
+    //     })
+    //     createList()
+    //   })();
+// const addNote= async()=>{
+// let tex = textarea.value
 
-      let note = {
-        id,
-        text,
-        createDate: new Date().toLocaleDateString(),
-        completed:''
-      }
+//       let note = {
+//         id,
+//         text,
+//         createDate: new Date().toLocaleDateString(),
+//         completed:''
+//       }
 
-      try{
-        await db.transaction('notes','readwrite')
-        .objectStore('notes')
-        .add(note)
-        await createList()
-        .then(()=>{
-          textarea.value=''
-          dateInput.value=''
-        } )
-      }catch{console.log('not add db')}
-    }
+//       try{
+//         await db.transaction('notes','readwrite')
+//         .objectStore('notes')
+//         .add(note)
+//         await createList()
+//         .then(()=>{
+//           textarea.value=''
+//           dateInput.value=''
+//         } )
+//       }catch{console.log('not add db')}
+//     }
   const configUser = {
     attributes: true,
     childList: true,
@@ -42,35 +42,37 @@ let tex = textarea.value
   };
   const callbackUser = function (mutationsList) {
     for (let mutation of mutationsList) {
-      if (mutation.type === 'childList') {
-        modalUser()//          console.log('A child node has been added or removed.');
-      }
+      // if (mutation.type === 'childList') {
+      //   modalUser()//          console.log('A child node has been added or removed.');
+      // }
+      console.log('A mutation.  '+mutation);
+      // modalUser();
     }
   };
   const observerUser = new MutationObserver(callbackUser);
   observerUser.observe(dataUser, configUser);
 
-  const config = {
-    attributes: true,
-    childList: true,
-    // subtree: true,
-    attributeFilter: ['class']//['data-index', 'data-delete', 'data-edit', 'data-modal']
-  };
+  // const config = {
+  //   attributes: true,
+  //   childList: true,
+  //   // subtree: true,
+  //   attributeFilter: ['class']//['data-index', 'data-delete', 'data-edit', 'data-modal']
+  // };
 
-  const callback = function (mutationsList, observer) {
-    for (let mutation of mutationsList) {
-      // if (mutation.type === 'childList') {
-      //     console.log('A child node has been added or removed.');
-      // } else if (mutation.type === 'attributes') {
-      //     console.log('The ' + mutation.attributeName + ' attribute was modified.');
-      // }
-      let mt = 'Тип изменения ' + mutation.type;
-      mt += "Измененный элемент " + mutation.target;
-      console.log('The ' + mt + ' attribute was modified.' + observer);
-    }
-  };
-  const observer = new MutationObserver(callback);
-  observer.observe(document.documentElement, config);
+  // const callback = function (mutationsList, observer) {
+  //   for (let mutation of mutationsList) {
+  //     // if (mutation.type === 'childList') {
+  //     //     console.log('A child node has been added or removed.');
+  //     // } else if (mutation.type === 'attributes') {
+  //     //     console.log('The ' + mutation.attributeName + ' attribute was modified.');
+  //     // }
+  //     let mt = 'Тип изменения ' + mutation.type;
+  //     mt += "Измененный элемент " + mutation.target;
+  //     console.log('The ' + mt + ' attribute was modified.' + observer);
+  //   }
+  // };
+  // const observer = new MutationObserver(callback);
+  // observer.observe(document.documentElement, config);
 
   function openModal() {
     // textarea.innerHTML = '';
@@ -135,12 +137,13 @@ let tex = textarea.value
     });
     modal.addEventListener('click', (e) => {
       // console.log(e.target.type);
-
+e.stopPropagation();
       if (e.target === modal || e.target === modalCloseBtn) { //e.target.getAttribute('.data-close') == ''
         closeModal();//|| e.target.type === 'reset'
       }
+      
       if (e.target.type === 'submit') { //e.target.getAttribute('.data-close') == ''
-        addNote();
+        // addNote();
         e.preventDefault();
 
         const message = document.createElement('div');

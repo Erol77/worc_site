@@ -58,9 +58,12 @@
     Click(e) {
         // console.log(this);
         this.page = +e.target.innerHTML;
+        e.stopPropagation();
         this.Start();
     }
-
+Number(e){
+    this.e.textContent = this.page;
+}
     // previous page
     Prev() {
         this.page--;
@@ -94,11 +97,12 @@
         var text = [...this.e.querySelectorAll('.modal__comments-item')];
         for (var i = 0; i < a.length; i++) {
             if (+a[i].innerHTML === this.page) { //a[i].style.display = 'block';
-                // a[i].className = 'show';
+                a[i].className = 'show';
                 text[i].className='show';
             }
             // a[i].addEventListener('click', this.Click, false);
             // text[i].addEventListener('click', this.Click, false);
+
         }
     }
 
@@ -124,7 +128,7 @@
             this.Add(this.page - this.step, this.page + this.step + 1);
             this.Last();
         }
-        this.Finish();
+        // this.Finish();
     }
 
 
@@ -148,7 +152,7 @@
         inputGoto.addEventListener('input',()=> {this.page = inputGoto.value}, false);
         goto.addEventListener('click', this.Go, false);
 
-
+// e.stopPropagation();
 
         // var nav = e.getElementsByTagName('a');
         // nav[0].addEventListener('click', this.Prev, false);
@@ -185,7 +189,7 @@
                                 </path>
                             </svg>
                         </button>
- <p class="modal__pagination-list">${this.page} из ${this.size}</p>
+ <p class="modal__pagination-list"><span>1</span>из ${this.size}</p>
     <button class="pagination__button pagination__button--next pagination__button--available" data-event-action="click: pagination-next">
                             <svg viewBox="0 0 9.14 18" width="0" height="0" class="arrow-icon ">
                                 <path fill="currentColor" d="M1.64 15.51a.63.63 0 0 1-.46-.19.66.66 0 0 1 0-.92L6.59 9l-5.4-5.4c-.25-.25-.25-.67 0-.92s.67-.25.92 0l5.86 5.86c.12.12.19.29.19.46 0 .17-.07.34-.19.46L2.1 15.32a.62.62 0 0 1-.46.19z">
@@ -211,7 +215,10 @@
 
         e.innerHTML = html.join('');
         this.e = e.getElementsByTagName('span')[0];
+        
         this.Buttons(e);
+        this.e = e.getElementsByTagName('span')[1];
+        this.Number(e);
     }
 
     // init
