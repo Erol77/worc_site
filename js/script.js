@@ -337,8 +337,8 @@ function datepickerClose() {
     return false;
 }
 document.addEventListener('click', (el) => {
-    console.log(el.target.dataset +'    '+el.target.closest('td')+
-    '    '+el.target.closest('#date2')+'    '+el.target.closest('.xcalend'))//closest xcalend
+    // console.log(el.target.dataset +'    '+el.target.closest('td')+
+    // '    '+el.target.closest('#date2')+'    '+el.target.closest('.xcalend'))//closest xcalend
  if (!el.target.closest('.datepicker_row') && !el.target.closest('td'))  {
     datepickerClose();
         }

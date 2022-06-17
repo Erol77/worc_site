@@ -1,23 +1,25 @@
 ﻿class Pag {
     constructor(data) {
         // this.Init = Init,
-        data = data || {},
-            this.size = data.size || 10;
+        // data = data || {},
+        this.size = data.size || 10;
         this.page = data.page || 1;
         this.step = data.step || 3;
         this.code = '';
-        this.text = data.text || '';
+        this.text = data.text;
         this.Init = this.Init.bind(this);
         this.Click = this.Click.bind(this);
         this.Prev = this.Prev.bind(this);
         this.Next = this.Next.bind(this);
         this.Start = this.Start.bind(this),
-        this.Bind = this.Bind.bind(this);
+            this.Bind = this.Bind.bind(this);
         // this.Finish = this.Finish.bind(this),
         // this.Buttons = this.Buttons.bind(this);
         // this.Create = this.Create.bind(this);
         this.Go = this.Go.bind(this);
         // this.Add = this.Add.bind(this);
+        // this.elem = data.elem;
+        // this.onclick = this.onClick.bind(this); // (*)
 
     }
     // --------------------
@@ -61,14 +63,15 @@
         e.stopPropagation();
         this.Start();
     }
-Number(e){
-    this.e.textContent = this.page;
-}
+    Number(e) {
+        this.e.textContent = this.page;
+    }
     // previous page
     Prev() {
         this.page--;
         if (this.page < 1) {
             this.page = 1;
+            // e.className = 'pagination__button--disabled';
         }
         this.Start();
     }
@@ -94,17 +97,19 @@ Number(e){
     // binding pages
     Bind() {
         var a = [...this.e.querySelectorAll('i')];
+var spanText = [...this.textElem.querySelectorAll('span')];
         var text = [...this.e.querySelectorAll('.modal__comments-item')];
         for (var i = 0; i < a.length; i++) {
             if (+a[i].innerHTML === this.page) { //a[i].style.display = 'block';
                 a[i].className = 'show';
-                text[i].className='show';
+                text[i].className = 'modal__comments-item show';
+                spanText[1] = +a[i].innerHTML;
+console.log('bind')
             }
             // a[i].addEventListener('click', this.Click, false);
             // text[i].addEventListener('click', this.Click, false);
-
         }
-    }
+}
 
     // write pagination
     Finish() {
@@ -128,15 +133,10 @@ Number(e){
             this.Add(this.page - this.step, this.page + this.step + 1);
             this.Last();
         }
-        // this.Finish();
+this.Number();
+        this.Finish();
     }
-
-
-
-    // --------------------
     // Initialization
-    // --------------------
-
     // binding buttons
     Buttons(e) {
         let navLeft = [...e.querySelectorAll('.pagination__btn--left')],
@@ -149,16 +149,14 @@ Number(e){
         navRight.map(i => {
             i.addEventListener('click', this.Next, false);
         });
-        inputGoto.addEventListener('input',()=> {this.page = inputGoto.value}, false);
+        inputGoto.addEventListener('input', () => {
+            this.page = inputGoto.value
+        }, false);
         goto.addEventListener('click', this.Go, false);
-
-// e.stopPropagation();
-
         // var nav = e.getElementsByTagName('a');
         // nav[0].addEventListener('click', this.Prev, false);
         // nav[1].addEventListener('click', this.Next, false);
     }
-
     // create skeleton
     Create(e) {
 
@@ -209,21 +207,18 @@ Number(e){
 `,
             //'<a>&#9668;</a>', // previous button
             // '<span></span>', // pagination container
-           // '<a>&#9658;</a>', // next button
+            // '<a>&#9658;</a>', // next button
             '</div>'
         ];
-
         e.innerHTML = html.join('');
         this.e = e.getElementsByTagName('span')[0];
-        
         this.Buttons(e);
-        this.e = e.getElementsByTagName('span')[1];
-        this.Number(e);
+        this.textElem = e.getElementsByTagName('span')[1];
+        // this.Number(e);
     }
-
+   
     // init
     Init(e, text) {
-        // this.Extend(data);
         this.Create(e, text);
         this.Start();
     }

@@ -1,0 +1,108 @@
+﻿<body>
+  <div id="menu">
+    <button data-action="save">Сохранить</button>
+    <button data-action="load">Загрузить</button>
+    <button data-action="search">Поиск</button>
+    <button data-action="save">Сохранить</button>
+    <button data-action="paginationLeft">left</button>
+    <button data-action="paginationRight">right</button>
+    <button data-action="paginationGoTo">GoTo</button>
+    <button data-action="paginationEdit">Edit</button>
+    <button data-action="paginationDelete">Delete</button>
+<input type="text">
+<i>1</i><i>2</i><i>3</i>
+<div class="modal__comments-item">1</div>
+<div class="modal__comments-item">2</div>
+<div class="modal__comments-item">3</div>
+  </div>
+
+  <script>
+    class Menu {
+      constructor(elem) {
+        this._elem = elem;
+this.size = size||3;
+this.step = step||3;
+this.page = page||1;
+        elem.onclick = this.onClick.bind(this); // (*)
+this.Bind=this.Bind.bind(this);
+      }
+
+      save() {
+        alert('сохраняю');
+      }
+
+      load() {
+        alert('загружаю');
+      }
+      paginationLeft(e) {
+        // alert('left');
+  this.page--;
+  if (this.page < 1) { this.page=1;e.className='deactivate' } 
+this.Start(e);
+      }
+      paginationRight(e) {
+        // alert('right');
+ this.page++;
+ if (this.page > this.size) {
+ this.page = this.size;e.className='deactivate'
+ }
+ this.Start(e);
+      }
+      paginationGoTo() {
+        // alert('GoTo');
+ this.page = +this.page;
+ this.Start();
+      }
+      paginationEdit() {
+        alert('Edit');
+      }
+      paginationDelete() {
+        alert('Delete');
+      }
+
+      search() {
+        alert('ищу');
+      }
+
+      Bind() {
+        var a = [...e.querySelectorAll('i')];
+        var text = [...e.querySelectorAll('.modal__comments-item')];
+        for (var i = 0; i < a.length; i++) {
+          if (+a[i].innerHTML === this.page) { //a[i].style.display='block' ;
+            a[i].className = 'show';
+            text[i].className = 'show';
+          } // a[i].addEventListener('click', this.Click, false); //
+          // text[i].addEventListener('click', this.Click, false);
+        }
+      }
+
+
+      Start(e) {
+        // if (this.size < 12) {
+        //   this.Add(1, this.size + 1);
+        // } else {
+        //   this.First();
+        //   this.Add(this.page - this.step, this.page + this.step + 1);
+        //   this.Last();
+        // }
+if (this.page > 1 && e.dataset.action.paginationLeft.closest('deactivate')) {
+e.dataset.action.paginationLeft.className.remove('deactivate')}
+if (this.page < this.size && e.dataset.action==='paginationRight' && e.closest('deactivate')) {
+  e.className.remove('deactivate')}
+        this.Bind();
+      }
+
+      onClick(event) {
+        let action = event.target.dataset.action;
+        if (action) {
+          this[action](event.target);
+        }
+      }
+    }
+
+    new Menu(menu,size=3,step=3,page=1);
+    /* size: dateCreate.length, // pages size
+    page: 1, // selected page
+    step: 3, // pages before and after current*/
+  </script>
+</body>
