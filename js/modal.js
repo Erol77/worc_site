@@ -116,6 +116,7 @@ if (dateCreate.length){
 
   modal.addEventListener('click', (e) => {
     // console.log(e.target.type);
+    e.stopPropagation();
     if (e.target === modal || e.target === modalCloseBtn || e.target.type === 'reset') { //e.target.getAttribute('.data-close') == ''
       closeModal();
     }
