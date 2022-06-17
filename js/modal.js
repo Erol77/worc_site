@@ -1,49 +1,45 @@
 window.addEventListener('DOMContentLoaded', () => {
-  const btn = [...document.querySelectorAll('[data-modal]')],
-    modal = document.querySelector('.modal'),
-    modalCloseBtn = document.querySelector('[data-close]')
-  // btnEdit = [...document.querySelectorAll('.add_comments_link')];
+  const dataUser = document.querySelector('#data-user'),
+  modal = document.querySelector('.modal'),
+  modalCloseBtn = document.querySelector('[data-close]');
 
-  let text = {},    number = 0;
-
-  // var mutationObserver = new MutationObserver(function(mutations) {
-  //   mutations.forEach(function(mutation) {
-  //     console.log(mutation);
-  //   });
-  // });
-
-  // mutationObserver.observe(document.documentElement, {
-  //   attributes: true,
-  //   characterData: true,
-  //   childList: true,
-  //   subtree: true,
-  //   attributeOldValue: true,
-  //   characterDataOldValue: true
-  // });
+  const configUser = {
+    attributes: true,
+    childList: true,
+    subtree: true
+    // attributeFilter: ['data-index', 'data-delete', 'data-edit','data-modal']
+  };
+  const callbackUser = function (mutationsList) {
+    for (let mutation of mutationsList) {
+      if (mutation.type === 'childList') {
+        modalUser()//          console.log('A child node has been added or removed.');
+      } 
+    }
+  };
+  const observerUser = new MutationObserver(callbackUser);
+  observerUser.observe(dataUser, configUser);
 
   const config = {
     attributes: true,
     childList: true,
     // subtree: true,
-    attributeFilter: ['data-index', 'data-delete', 'data-edit','data-modal']
-};
+    attributeFilter: ['data-index', 'data-delete', 'data-edit', 'data-modal']
+  };
 
-const callback = function(mutationsList, observer) {
-  for (let mutation of mutationsList) {
+  const callback = function (mutationsList, observer) {
+    for (let mutation of mutationsList) {
       // if (mutation.type === 'childList') {
       //     console.log('A child node has been added or removed.');
       // } else if (mutation.type === 'attributes') {
       //     console.log('The ' + mutation.attributeName + ' attribute was modified.');
       // }
       let mt = 'Тип изменения ' + mutation.type;
-     mt += "Измененный элемент "+ mutation.target;
-      console.log('The ' + mt + ' attribute was modified.');
-  }
-};
-const observer = new MutationObserver(callback);
-observer.observe(document.documentElement, config);
-
-
+      mt += "Измененный элемент " + mutation.target;
+      console.log('The ' + mt + ' attribute was modified.'+observer);
+    }
+  };
+  const observer = new MutationObserver(callback);
+  observer.observe(document.documentElement, config);
   function openModal() {
     document.querySelector("textarea").textContent = '';
     modal.classList.add('show');
@@ -53,144 +49,154 @@ observer.observe(document.documentElement, config);
 
   }
 
-  btn.forEach((item, index) => {
-    number = index;
-    // console.log(item.querySelector('.add_comments_link'))
-    // if(item)  || item.querySelector('.add_comments_link').textContent === 'Редактировать'
-
-    const dateCreate = item.querySelectorAll('.comments-date') ? Array.from(btn[index].querySelectorAll('.comments-date')) : ''; /**************** */
-    const dateText = item.querySelectorAll('.comments-text') ? Array.from(btn[index].querySelectorAll('.comments-text')) : '';
-    let content = Array.from(item.querySelectorAll('.link_table'));
-   
-
-   console.log(dateText.textContent + '   ' + number + '   ' + dateCreate.innerHTML);
-      // modal.querySelector(".modal__comments").innerHTML = '';
- 
-        for (let i = 0; i < dateCreate.length; i++) {
-          text[i] = `<p class="modal__comments-date">${dateCreate[i].textContent}</p><button class="btn btn__edit" onmouseover="toolTip('Редактировать')" onmouseout="toolTip()"data-text="Редактировать"data-edit></button><button class="btn btn__delete"onmouseover="toolTip('Удалить')" onmouseout="toolTip()"data-text="Удалить" data-delete><!--<i class="icon__delete"></i>--></button><p class="modal__comments-text">${dateText[i].textContent}</p>`;
-
-          // if (i + 1 < dateCreate.length) {
-          //   element.innerHTML += '<hr>';
-          // }
-        }
-
- 
-
-    item.addEventListener('click', (e) => {
-      console.log(e.target.contains('.link_table'))
-      e.preventDefault();
-      if (e.target.textContent === 'Добавить ещё комментарий' || e.target.textContent === 'Добавить ещё комментарий' || e.target.getAttribute('data-text')==='Редактировать') {
-
-        console.log(dateText + '   ' + number + '   ' + dateCreate);
-
-        // let content = Array.from(e.target.parentElement.querySelectorAll('.link_table'));
 
 
-        openModal();
-       
-if (dateCreate.length){ 
-        const user = new Pag({
-          size: dateCreate.length, // pages size
-          page: 1, // selected page
-          step: 3, // pages before and after current
-          text: text
-        });
- user.Init(document.getElementById('pag'));
-        }
-        if (e.target.getAttribute('data-text')==='Редактировать'){
-          modal.setAttribute('data-edits', index);
-          document.querySelector("textarea").textContent = item.parentElement.querySelector('.comments-text').textContent.trim();
-      document.querySelector("textarea").focus();
+  function modalUser() {
 
-        }
-        modal.setAttribute('data-index', index)
-        document.querySelector("textarea").focus();   
+    const btn = [...document.querySelectorAll('[data-modal]')];
+
+    // btnEdit = [...document.querySelectorAll('.add_comments_link')];
+
+    let text = {}, number = 0;
+
+    // var mutationObserver = new MutationObserver(function(mutations) {
+    //   mutations.forEach(function(mutation) {
+    //     console.log(mutation);
+    //   });
+    // });
+
+    // mutationObserver.observe(document.documentElement, {
+    //   attributes: true,
+    //   characterData: true,
+    //   childList: true,
+    //   subtree: true,
+    //   attributeOldValue: true,
+    //   characterDataOldValue: true
+    // });
+    btn.forEach((item, index) => {
+      number = index;
+      const dateCreate = item.querySelectorAll('.comments-date') ? Array.from(btn[index].querySelectorAll('.comments-date')) : ''; /**************** */
+      const dateText = item.querySelectorAll('.comments-text') ? Array.from(btn[index].querySelectorAll('.comments-text')) : '';
+      let content = Array.from(item.querySelectorAll('.link_table'));
+
+      for (let i = 0; i < dateCreate.length; i++) {
+        text[i] = `<p class="modal__comments-date">${dateCreate[i].textContent}</p><button class="btn btn__edit" onmouseover="toolTip('Редактировать')" onmouseout="toolTip()"data-text="Редактировать"data-edit></button><button class="btn btn__delete"onmouseover="toolTip('Удалить')" onmouseout="toolTip()"data-text="Удалить" data-delete><!--<i class="icon__delete"></i>--></button><p class="modal__comments-text">${dateText[i].textContent}</p>`;
+        // if (i + 1 < dateCreate.length) {
+        //   element.innerHTML += '<hr>';
+        // }
       }
-  //     if (e.target.getAttribute('data-text')==='Редактировать'){
-  //     e.preventDefault();
-  //     openModal();
-  //     modal.querySelector(".modal__comments").innerHTML = '';
-  //     document.querySelector("textarea").textContent = item.parentElement.querySelector('.comments-text').textContent.trim();
-  //     document.querySelector("textarea").focus();
-  //     modal.setAttribute('data-edits', index);
-  // //   })
-  // }
 
-    })
+      item.addEventListener('click', (e) => {
+        e.preventDefault();
+        if (e.target.textContent === 'Добавить ещё комментарий' || e.target.closest('.link_table') || e.target.getAttribute('data-text') === 'Редактировать') {
+          openModal();
+          if (dateCreate.length) {
+            const user = new Pag({
+              size: dateCreate.length, // pages size
+              page: 1, // selected page
+              step: 3, // pages before and after current
+              text: text
+            });
+            user.Init(document.getElementById('pag'));
+          }
+          if (e.target.getAttribute('data-text') === 'Редактировать') {
+            modal.setAttribute('data-edits', index);
+            document.querySelector("textarea").textContent = item.parentElement.querySelector('.comments-text').textContent.trim();
+            document.querySelector("textarea").focus();
+
+          }
+          if (e.target.textContent === 'Добавить комментарий'){
+            document.getElementById('pag').innerHTML='';
+          }
+          modal.setAttribute('data-index', index)
+          document.querySelector("textarea").focus();
+        }
+        //     if (e.target.getAttribute('data-text')==='Редактировать'){
+        //     e.preventDefault();
+        //     openModal();
+        //     modal.querySelector(".modal__comments").innerHTML = '';
+        //     document.querySelector("textarea").textContent = item.parentElement.querySelector('.comments-text').textContent.trim();
+        //     document.querySelector("textarea").focus();
+        //     modal.setAttribute('data-edits', index);
+        // //   })
+        // }
+
+      })
 
 
-    // if (item.querySelector('.link_table').textContent === 'Добавить комментарий') {
-    //   item.querySelector('.link_table').addEventListener('click', () => {
-    //     openModal();
-    //     modal.setAttribute('data-index', index);
-    //     modal.querySelector(".modal__comments").innerHTML = '';
-    //     document.querySelector("textarea").focus();
-    //   })
-    // }
+      // if (item.querySelector('.link_table').textContent === 'Добавить комментарий') {
+      //   item.querySelector('.link_table').addEventListener('click', () => {
+      //     openModal();
+      //     modal.setAttribute('data-index', index);
+      //     modal.querySelector(".modal__comments").innerHTML = '';
+      //     document.querySelector("textarea").focus();
+      //   })
+      // }
 
-  });
+    });
 
-  function closeModal() {
-    modal.classList.remove('show');
-    modal.classList.add('hide');
-    document.body.style.overflow = '';
-    // modal.querySelector(".modal__comments").innerHTML = '';
-    setTimeout(() => document.querySelector('#comments').textContent = '', 1000);
+    function closeModal() {
+      modal.classList.remove('show');
+      modal.classList.add('hide');
+      document.body.style.overflow = '';
+      // modal.querySelector(".modal__comments").innerHTML = '';
+      setTimeout(() => document.querySelector('#comments').textContent = '', 1000);
 
-  }
-
-  modal.addEventListener('click', (e) => {
-    // console.log(e.target.type);
-    e.stopPropagation();
-    if (e.target === modal || e.target === modalCloseBtn || e.target.type === 'reset') { //e.target.getAttribute('.data-close') == ''
-      closeModal();
     }
-    if (e.target.type === 'submit') { //e.target.getAttribute('.data-close') == ''
-      e.preventDefault();
+
+    modal.addEventListener('click', (e) => {
+      // console.log(e.target.type);
+      e.stopPropagation();
+      if (e.target === modal || e.target === modalCloseBtn || e.target.type === 'reset') { //e.target.getAttribute('.data-close') == ''
+        closeModal();
+      }
+      if (e.target.type === 'submit') { //e.target.getAttribute('.data-close') == ''
+        e.preventDefault();
 
 
-      const message = document.createElement('div');
-      message.classList.add('add_comments_wrap');
-      message.innerHTML = `          <div class="add_comments">
+        const message = document.createElement('div');
+        message.classList.add('add_comments_wrap');
+        message.innerHTML = `          <div class="add_comments">
                                         <p class="comments-date">${new Date().toLocaleString()}</p>
                                         <p class="comments-text">${document.querySelector('#comments').value}</p>
                                         <a href="#" class="add_comments_link" data-text="Редактировать"></a>
                               </div>
                                     <a href="#" class="link_table">Добавить ещё комментарий</a>
                                 `;
-      message.querySelector('.add_comments_link');
-      if (modal.hasAttribute('data-index')) {
-        let numberPost = modal.getAttribute('data-index');
-        console.log(numberPost);
-        btn[numberPost].append(message);
-        modal.removeAttribute('data-index');
-      } else if (modal.hasAttribute('data-edit')) {
-        let numberPost = modal.getAttribute('data-edits');
+        message.querySelector('.add_comments_link');
+        if (modal.hasAttribute('data-index')) {
+          let numberPost = modal.getAttribute('data-index');
+          console.log(numberPost);
+          btn[numberPost].append(message);
+          modal.removeAttribute('data-index');
+        } else if (modal.hasAttribute('data-edit')) {
+          let numberPost = modal.getAttribute('data-edits');
 
 
-        btnEdit[numberPost].parentElement.replaceWith(message)
-        modal.removeAttribute('data-edits');
+          btnEdit[numberPost].parentElement.replaceWith(message)
+          modal.removeAttribute('data-edits');
+        }
+        closeModal();
       }
-      closeModal();
-    }
-  });
+    });
 
-  document.addEventListener('keydown', (e) => {
-    if (e.code === "Escape" && modal.classList.contains('show')) {
-      closeModal();
-    }
-  });
+    document.addEventListener('keydown', (e) => {
+      if (e.code === "Escape" && modal.classList.contains('show')) {
+        closeModal();
+      }
+    });
 
-  // const modalTimerId = setTimeout(openModal, 150000);
+    // const modalTimerId = setTimeout(openModal, 150000);
 
-  // function showModalScroll() {
-  //   if (window.pageYOffset + document.documentElement.clientHeight >= document.documentElement.scrollHeight) {
-  //     openModal();
-  //     window.removeEventListener('scroll', showModalScroll);
-  //   }
-  // }
-  // window.addEventListener('scroll', showModalScroll);
-
+    // function showModalScroll() {
+    //   if (window.pageYOffset + document.documentElement.clientHeight >= document.documentElement.scrollHeight) {
+    //     openModal();
+    //     window.removeEventListener('scroll', showModalScroll);
+    //   }
+    // }
+    // window.addEventListener('scroll', showModalScroll);
+  }
+  modalUser();
 });
 /*
 <input type="text"> length: <span id="length">0</span>

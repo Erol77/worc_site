@@ -126,16 +126,17 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // insertDate1('21.11.1953');
 
-    function insertDate(selector, e = new Date().toLocaleString()) {
+    function insertDate(selector, e = new Date().toLocaleString(),c = '') {
         let date = e.split('.')
         let month = {
             mo: ["Января", "Февраля", "Марта", "Апреля", "Мая", "Июня", "Июля", "Августа", "Сентября", "Октября", "Ноября", "Декабря"]
         }
         console.log(date, parseInt(date[1]) + '    ' + month.mo[parseInt(date[1]) - 1]);
         document.querySelector('#' + selector).value = date[0] + '  ' + month.mo[parseInt(date[1]) - 1] + '  ' + date[2];
+        if( typeof c==='function'){datepickerClose()};
     }
     const insertDate1 = (e) => insertDate('date-1', e);
-    const insertDate2 = (e) => insertDate('date-2', e);
+    const insertDate2 = (e) => insertDate('date-2', e,datepickerClose());
     insertDate1('27.10.2020');
     // insertDate2();
     xCal('datepicker1', {
@@ -337,9 +338,10 @@ function datepickerClose() {
     return false;
 }
 document.addEventListener('click', (el) => {
-    console.log(el.target.getAttribute('data-picker') +'    '+el.target.closest('td')+
+    console.log(el.target.dataset +'    '+el.target.closest('td')+
     '    '+el.target.closest('#date2')+'    '+el.target.closest('.xcalend'))//closest xcalend
- if (!el.target.closest('.datepicker_row') && !el.target.closest('td') || el.target.closest('#date2') && el.target.closest('td'))  {
+ if (!el.target.closest('.datepicker_row') && !el.target.closest('td'))  {
     datepickerClose();
         }
     })
+    //|| el.target.closest('#date2') && el.target.closest('td')
