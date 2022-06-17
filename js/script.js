@@ -137,8 +137,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
     const insertDate1 = (e) => insertDate('date-1', e);
     const insertDate2 = (e) => insertDate('date-2', e,datepickerClose());
-    insertDate1('27.10.2020');
-    // insertDate2();
+    insertDate1('27.11.2021');insertDate2(new Date().toLocaleDateString())
     xCal('datepicker1', {
         id: "date1",
         "class": "xcalend2",
