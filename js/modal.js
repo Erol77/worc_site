@@ -2,35 +2,46 @@ window.addEventListener('DOMContentLoaded', () => {
   const btn = [...document.querySelectorAll('[data-modal]')],
     modal = document.querySelector('.modal'),
     modalCloseBtn = document.querySelector('[data-close]')
-  btnEdit = [...document.querySelectorAll('.add_comments_link')];
+  // btnEdit = [...document.querySelectorAll('.add_comments_link')];
 
-  // var initPagination = function (select, size = 3) {
-  //   Pagination.Init(document.getElementById(select), {
-  //     size
+  let text = {},    number = 0;
+
+  // var mutationObserver = new MutationObserver(function(mutations) {
+  //   mutations.forEach(function(mutation) {
+  //     console.log(mutation);
   //   });
-  // };
+  // });
 
-  let text = {},
-    number = 0;
+  // mutationObserver.observe(document.documentElement, {
+  //   attributes: true,
+  //   characterData: true,
+  //   childList: true,
+  //   subtree: true,
+  //   attributeOldValue: true,
+  //   characterDataOldValue: true
+  // });
 
+  const config = {
+    attributes: true,
+    childList: true,
+    // subtree: true,
+    attributeFilter: ['data-index', 'data-delete', 'data-edit','data-modal']
+};
 
-  let data = {
-    btnEdit, //.parentElement.parentElement.parentElement.textContent
-    btn
+const callback = function(mutationsList, observer) {
+  for (let mutation of mutationsList) {
+      // if (mutation.type === 'childList') {
+      //     console.log('A child node has been added or removed.');
+      // } else if (mutation.type === 'attributes') {
+      //     console.log('The ' + mutation.attributeName + ' attribute was modified.');
+      // }
+      let mt = 'Тип изменения ' + mutation.type;
+     mt += "Измененный элемент "+ mutation.target;
+      console.log('The ' + mt + ' attribute was modified.');
   }
-
-
-  // btnEdit.map((item, index) => {
-  //   item.addEventListener('click', (e) => {
-  //     e.preventDefault();
-  //     openModal();
-  //     modal.querySelector(".modal__comments").innerHTML = '';
-  //     document.querySelector("textarea").textContent = item.parentElement.querySelector('.comments-text').textContent.trim();
-  //     document.querySelector("textarea").focus();
-  //     modal.setAttribute('data-edits', index);
-  //   })
-  // })
-
+};
+const observer = new MutationObserver(callback);
+observer.observe(document.documentElement, config);
 
 
   function openModal() {
@@ -66,8 +77,9 @@ window.addEventListener('DOMContentLoaded', () => {
  
 
     item.addEventListener('click', (e) => {
+      console.log(e.target.contains('.link_table'))
       e.preventDefault();
-      if (e.target.textContent === 'Добавить ещё комментарий' || e.target.classList.contains('.add_comments_link')) {
+      if (e.target.textContent === 'Добавить ещё комментарий' || e.target.textContent === 'Добавить ещё комментарий' || e.target.getAttribute('data-text')==='Редактировать') {
 
         console.log(dateText + '   ' + number + '   ' + dateCreate);
 
@@ -75,6 +87,7 @@ window.addEventListener('DOMContentLoaded', () => {
 
 
         openModal();
+       
 if (dateCreate.length){ 
         const user = new Pag({
           size: dateCreate.length, // pages size
@@ -84,13 +97,25 @@ if (dateCreate.length){
         });
  user.Init(document.getElementById('pag'));
         }
+        if (e.target.getAttribute('data-text')==='Редактировать'){
+          modal.setAttribute('data-edits', index);
+          document.querySelector("textarea").textContent = item.parentElement.querySelector('.comments-text').textContent.trim();
+      document.querySelector("textarea").focus();
+
+        }
         modal.setAttribute('data-index', index)
-        document.querySelector("textarea").focus();
-       
-
-
-
+        document.querySelector("textarea").focus();   
       }
+  //     if (e.target.getAttribute('data-text')==='Редактировать'){
+  //     e.preventDefault();
+  //     openModal();
+  //     modal.querySelector(".modal__comments").innerHTML = '';
+  //     document.querySelector("textarea").textContent = item.parentElement.querySelector('.comments-text').textContent.trim();
+  //     document.querySelector("textarea").focus();
+  //     modal.setAttribute('data-edits', index);
+  // //   })
+  // }
+
     })
 
 

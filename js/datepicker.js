@@ -155,7 +155,7 @@ http://cssworld.ru/en/datepicker/
 		if (!Nod(a.id)) {
 			if (a.to == "") a.to = document.body;
 			else a.to = Nod(a.to);
-			HTM(a.to, '<table id="' + a.id + '" class="' + a['class'] + '"><thead></thead><tbody></tbody><tfoot></tfoot></table>');
+			HTM(a.to, '<table data-picker="1" id="' + a.id + '" class="' + a['class'] + '"><thead></thead><tbody></tbody><tfoot></tfoot></table>');
 		} else Nod(a.id).style.display = "";
 
 		var oo = a.o.getBoundingClientRect();
@@ -183,7 +183,7 @@ http://cssworld.ru/en/datepicker/
 				}
 			}
 			Del(document.querySelector("#" + a.id + " tbody"));
-			HTM(a.id, '<tbody><tr><th rowspan=4 valign=bottom>?</th>' + ca + '</tr></tbody>'); //<a " target="_blank">href="http://cssworld.ru/en/datepicker/</a>
+			HTM(a.id, '<tbody data-picker="2"><tr><th rowspan=4 valign=bottom>?</th>' + ca + '</tr></tbody>'); //<a " target="_blank">href="http://cssworld.ru/en/datepicker/</a>
 			var k = document.querySelectorAll("#" + a.id + " tbody td");
 			for (var i = 0; i < k.length; i++) {
 				k[i].onclick = function () {
@@ -211,7 +211,7 @@ http://cssworld.ru/en/datepicker/
 				}
 			}
 			Del(document.querySelector("#" + a.id + " tbody"));
-			HTM(a.id, '<tbody><tr><th rowspan=5 valign=bottom><a href="noindex" target="_blank">?</a></th>' + ca + '</tr></tbody>');
+			HTM(a.id, '<tbody data-picker="3body"><tr><th rowspan=5 valign=bottom><a href="noindex" target="_blank">?</a></th>' + ca + '</tr></tbody>');
 			var k = document.querySelectorAll("#" + a.id + " tbody td");
 			for (var i = 0; i < k.length; i++) {
 				k[i].onclick = function () {
@@ -241,7 +241,7 @@ http://cssworld.ru/en/datepicker/
 			if (DNfirst != 0) j = DNfirst - 1;
 			else j = 6;
 			/******************** */
-			HTM(a.id, '<thead><tr><td class="cal-lY" title="' + lang[a.lang].prey + '">&lt;</td><td colspan=5 class="cal-y"></td><td class="cal-rY" title="' + lang[a.lang].nexy + '">&gt;</td></tr>' + '<tr><td class="cal-l" title="' + lang[a.lang].pre + '">&lt;</td><td colspan=5 class="cal-m"></td><td class="cal-r" title="' + lang[a.lang].nex + '">&gt;</td></tr><tr><td>' + lang[a.lang].w + '</td></tr></thead>');
+			HTM(a.id, '<thead data-picker="4 head"><tr><td class="cal-lY" title="' + lang[a.lang].prey + '">&lt;</td><td colspan=5 class="cal-y"></td><td class="cal-rY" title="' + lang[a.lang].nexy + '">&gt;</td></tr>' + '<tr><td class="cal-l" title="' + lang[a.lang].pre + '">&lt;</td><td colspan=5 class="cal-m"></td><td class="cal-r" title="' + lang[a.lang].nex + '">&gt;</td></tr><tr><td>' + lang[a.lang].w + '</td></tr></thead>');
 
 			if (j > 0) { // ‹ &larr;
 				if (m == 0) mm = 11;
@@ -293,7 +293,7 @@ http://cssworld.ru/en/datepicker/
 				k = kk[0] + kk[1] + kk[2];
 				if (k < 7) kk[2] += (7 - k);
 				// ca += '<td colspan=' + kk[2] + ' onClick="document.getElementById(\'' + a.id + '\').style.display=\'none\'" title="' + lang[a.lang].x + '" class="bold">' + (kk[2] > 2 ? lang[a.lang].x : '&#215;') + '</td>';
-			ca += '<td colspan=' + kk[2] + '  onclick="return datepickerClose(this)" title="Применить" class="datepicer-apply"> Применить </td>';
+			// ca += '<td colspan=' + kk[2] + '  onclick="return datepickerClose(this)" title="Применить" class="datepicer-apply"> Применить </td>';
 			}
 			HTM(a.id, '<tfoot><tr>' + ca + '</tr></tfoot>');
 

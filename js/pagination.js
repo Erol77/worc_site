@@ -15,7 +15,7 @@
         this.Click = this.Click.bind(this);
         this.Prev = this.Prev.bind(this);
         this.Next = this.Next.bind(this);
-        // this.Start = this.Start.bind(this),
+        this.Start = this.Start.bind(this),
         this.Bind = this.Bind.bind(this);
         // this.Extend = this.Extend.bind(this);
         // this.Finish = this.Finish.bind(this),
@@ -55,9 +55,9 @@
     // --------------------
 
     // change page
-    Click() {
-        console.log(this);
-        this.page = +this.innerHTML;
+    Click(e) {
+        // console.log(this);
+        this.page = +e.target.innerHTML;
         this.Start();
     }
 
@@ -91,12 +91,14 @@
     // binding pages
     Bind() {
         var a = [...this.e.querySelectorAll('i')];
+        var text = [...this.e.querySelectorAll('div')];
         for (var i = 0; i < a.length; i++) {
             if (+a[i].innerHTML === this.page) { //a[i].style.display = 'block';
                 a[i].className = 'show';
-                a[i].className.toggle('hide');
+                text[i].className='show';
             }
-            a[i].addEventListener('click', this.Click, false);
+            // a[i].addEventListener('click', this.Click, false);
+            // text[i].addEventListener('click', this.Click, false);
         }
     }
 
@@ -143,7 +145,7 @@
         navRight.map(i => {
             i.addEventListener('click', this.Next, false);
         });
-        inputGoto.addEventListener('input',()=> {this.page = this.value}, false);
+        inputGoto.addEventListener('input',()=> {this.page = inputGoto.value}, false);
         goto.addEventListener('click', this.Go, false);
 
 
