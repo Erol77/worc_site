@@ -448,8 +448,8 @@
             <section id="data-user" class="table">
                 <div class="table_scroll">
                     <div class="table_header">
-                        <p class="table_header_text">ФИО</p>
-                        <p class="table_header_text">Возраст/<br>Год рождение</p>
+                        <p class="table_header_text">ФИО/<br>Год рождения/<br>Возраст/<br>Статус</p>
+                        <!-- <p class="table_header_text">Возраст/<br>Год рождение</p> -->
                         <p class="table_header_text">Вакансию на которую откликнулся/ Последнее активное резюме</p>
                         <p class="table_header_text">Дата добавления</p>
                         <p class="table_header_text">Телефон</p>
@@ -470,19 +470,22 @@
                                 <p class="table_fio" 
                                     data-text="Герасемчукова Максимилиана">Герасемчукова</p>
                                 <p class="table_fio" data-text="Герасемчукова Максимилиана">Максимилиана</p>
+                                <p class="table_date">25.01.2001 <span>21 года</span></p>
                                 <hr>
                                 <p class="table_body_item-type"
                                     onmouseover="toolTip('Безработный')"
                                     onmouseout="toolTip()"  data-text="Безработный">Безработный</p>
                                 <hr>
-                                <p class="table_body_item-online">Онлайн </p>
+                                <!-- <p class="table_body_item-online">Онлайн </p> -->
                             </div>
-                            <div class="table_body_item">45 лет/1973</div>
+                            <!-- <div class="table_body_item">45 лет/1973</div> -->
                             <div class="table_body_item">Плотник</div>
                             <div class="table_body_item">25.06.2019</div>
                             <div class="table_body_item">
                                 <a href="tel:+79527779999" class="table_phone" data-text="+7(952)7779999"
-                                    onmouseover="toolTip('+7(952)7779999')" onmouseout="toolTip()">
+                                    value="stoppropagation js"
+                                    onmouseover="toolTip('+7(952)7779999');event.stopImmediatePropagation()"
+                                    onmouseout="toolTip()">
                                         +7(952)777...<span style="position: absolute; left: -2001px; width: 2001px;">9999
                                             </span> </a>
                             </div>
@@ -493,9 +496,10 @@
                                 <a href="#" class="link_table">Да</a>
                             </div>
                             <div class="table_body_item">
-                                <p>В черном списке</p>
-                                <a href="#" class="link_table">Убрать из черного списка</a>
-                                <a href="#" class="link_table">Добавить в избранное</a>
+                     
+      <a href="#" class="link_table">Добавить в избранное</a>
+      <a href="#" class="link_table">Убрать из черного списка</a>
+           <p>В черном списке</p>
                             </div>
                             <div data-modal class="table_body_item">
                                 <a href="#" class="link_table">Добавить комментарий</a>
@@ -517,6 +521,7 @@
                                             Был на сайте:</p>
                                         <span>14.10.2021</span>
                                         <span>10:15</span>
+<p class="card__status--offline">Оффлайн </p>
                                     </div>
                                 </div>
                             </div>
@@ -525,12 +530,13 @@
                             <div class="table_body_item">
                                 <p class="table_fio" data-text="Егоров Сергей">Егоров</p>
                                 <p class="table_fio" data-text="Егоров Сергей"> Сергей</p>
+                                <p class="table_date">25.01.2001 <span>21 года</span></p>
                                 <hr>
                                 <p class="table_body_item-type" data-text="Безработный">Безработный </p>
                                 <hr>
-                                <p class="table_body_item-online">Онлайн </p>
+                                <!-- <p class="table_body_item-online">Онлайн </p> -->
                             </div>
-                            <div class="table_body_item">33 года/1983</div>
+                            <!-- <div class="table_body_item">33 года/1983</div> -->
                             <div class="table_body_item">
                                 <p>Плотник/<p>Слесарь-сантехник</p>
                                 </p>
@@ -551,8 +557,8 @@
                                 <p>Нет/<a href="#" class="link_table">Написать</a></p>
                             </div>
                             <div class="table_body_item">
-                                <a href="#" class="link_table">Убрать из черного списка</a>
-                                <a href="#" class="link_table">Добавить в избранное</a>
+          <a href="#" class="link_table">Добавить в избранное</a>
+          <a href="#" class="link_table">Добавить в черный список</a>
                             </div>
                             <div data-modal class="table_body_item">
                                 <a href="#" class="link_table">Добавить комментарий</a>
@@ -574,6 +580,7 @@
                                             Был на сайте:</p>
                                         <span>14.10.2021</span>
                                         <span>10:15</span>
+<p class="card__status--offline">Оффлайн </p>
                                     </div>
                                 </div>
                             </div>
@@ -582,12 +589,13 @@
                             <div class="table_body_item">
                                 <p class="table_fio" data-text="Егоров Сергей">Егоров</p>
                                 <p class="table_fio" data-text="Егоров Сергей">Сергей</p>
+                                    <p class="table_date">25.01.2001 <span>21</span> года</p>
                                 <hr>
                                 <p class="table_body_item-type" data-text="Безработный">Безработный</p>
                                 <hr>
-                                <p class="table_body_item-online">Онлайн </p>
+                                
                             </div>
-                            <div class="table_body_item">33 года/1983</div>
+                            <!-- <div class="table_body_item">33 года/1983</div> -->
                             <div class="table_body_item">
                                 <p>Плотник/<p>Слесарь-сантехник</p>
                                 </p>
@@ -600,14 +608,19 @@
                                     </span> </a>
                             </div>
 
-                            <div class="table_body_item">Нижний Новгород/ Сормовский район</div>
+                            <div class="table_body_item">
+<p>Нижний Новгород/</p>
+<br>
+<p>Сормовский район</p>
+</div>
                             <div class="table_body_item">
                                 <p>Подбор от ВВН</p>
                             </div>
                             <div class="table_body_item"><a href="#" class="link_table">Да</a></div>
                             <div class="table_body_item">
-                                <a href="#" class="link_table">Убрать из черного списка</a>
-                                <a href="#" class="link_table">Добавить в избранное</a>
+<a href="#" class="link_table">Добавить в избранное</a>
+                                <a href="#" class="link_table">Добавить в черный список</a>
+                                
                             </div>
                             <div data-modal class="table_body_item">
                                 <div class="add_comments_wrap">
@@ -631,11 +644,13 @@
                                         <a href="">
                                             <img src="./img/worcker_62.jpg" alt="worcker"></a>
                                     </div>
-                                    <div class="card__status card__status--online">
+                                    <div class="card__status ">
+
                                         <p>
                                             Был на сайте:</p>
                                         <span>14.10.2021</span>
                                         <span>10:15</span>
+<p class="card__status--online">Онлайн </p>
                                     </div>
                                 </div>
                             </div>
@@ -644,12 +659,13 @@
                             <div class="table_body_item">
                                 <p class="table_fio" data-text="Егоров Сергей">Егоров</p>
                                 <p class="table_fio" data-text="Егоров Сергей">Сергей</p>
+<p class="table_date">25.01.2001 <span>21</span> года</p>
                                 <hr>
                                 <p class="table_body_item-type">Безработный</p>
                                 <hr>
-                                <p class="table_body_item-online">Онлайн </p>
+                                <!-- <p class="table_body_item-online">Онлайн </p> -->
                             </div>
-                            <div class="table_body_item">33 года/1983</div>
+                            <!-- <div class="table_body_item">33 года/1983</div> -->
                             <div class="table_body_item">
                                 <p>Плотник/<p>Слесарь-сантехник</p>
                                 </p>
@@ -670,8 +686,8 @@
                                 <p>Нет/<a href="#" class="link_table">Написать</a></p>
                             </div>
                             <div class="table_body_item">
-                                <a href="#" class="link_table">Убрать из черного списка</a>
-                                <a href="#" class="link_table">Добавить в избранное</a>
+       <a href="#" class="link_table">Добавить в избранное</a>
+       <a href="#" class="link_table">Добавить в черный список</a>
                             </div>
                             <div data-modal class="table_body_item">
                                 <div class="add_comments_wrap">
@@ -819,6 +835,7 @@
                                             Был на сайте:</p>
                                         <span>14.10.2021</span>
                                         <span>10:15</span>
+<p class="card__status--offline">Оффлайн </p>
                                     </div>
                                 </div>
                             </div>

@@ -181,9 +181,6 @@ z-index: 100;
 color:#707070;
 }
 
-.table_body_item-online{
-color: #6aa527;
-}
 .card__logo {
     padding: 4px;
     border-radius: 5px;
@@ -262,4 +259,10 @@ border-radius:5px;
 	bottom: 100%;
 	left: 0;
 	z-index: 2;
+}
+.card__status .card__status--online{
+color: #6aa527;
+}
+.card__status .card__status--offline{
+color: #707070;
 }
