@@ -386,7 +386,7 @@ color: #000;
 
 .modal .pagination__button--disabled,
 .modal [disabled].pagination__button {
-  background-color: #0000;
+  /* background-color: #0000; */
   border-color: #a2aab6;
   outline: none;
 }
@@ -400,7 +400,7 @@ color: #000;
 .modal .pagination__button--disabled:hover,
 .modal [disabled].pagination__button:focus,
 .modal [disabled].pagination__button:hover {
-  background-color: #0000;
+  /* background-color: #0000; */
   border-color: #a2aab6;
   color: #a2aab6;
 }

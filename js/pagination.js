@@ -60,7 +60,7 @@
     Click(e) {
         // console.log(this);
         this.page = +e.target.innerHTML;
-        e.stopPropagation();
+        // e.stopPropagation();
         this.Start();
     }
     Number(e) {
@@ -84,8 +84,12 @@
         }
         this.Start();
     }
-    Go() {
-        this.page = +this.page;
+    Go(k) {
+
+        if (k > this.size) {
+            k = this.size;
+        }
+        this.page = +k;
         this.Start();
     }
 
@@ -97,19 +101,29 @@
     // binding pages
     Bind() {
         var a = [...this.e.querySelectorAll('i')];
-var spanText = [...this.textElem.querySelectorAll('span')];
+        // var spanText = this.textElem;
         var text = [...this.e.querySelectorAll('.modal__comments-item')];
+        // btnLeft
         for (var i = 0; i < a.length; i++) {
             if (+a[i].innerHTML === this.page) { //a[i].style.display = 'block';
-                a[i].className = 'show';
+                // a[i].className = 'show';
                 text[i].className = 'modal__comments-item show';
-                spanText[1] = +a[i].innerHTML;
-console.log('bind')
+                this.textElem.textContent = +a[i].innerHTML;
+                console.log('bind' + this.btnRight)
+            }
+            if (a[i].innerHTML === 1) {
+                this.btnLeft.classList ='pagination__button--disabled'
+            }
+
+            if (a[i].innerHTML !== a.length - 1 && this.btnRight.closest('.pagination__button--disabled')) {
+                this.btnRight.classList.remove('pagination__button--disabled');
+            } else {
+                this.btnRight.classList.add('pagination__button--disabled')
             }
             // a[i].addEventListener('click', this.Click, false);
             // text[i].addEventListener('click', this.Click, false);
         }
-}
+    }
 
     // write pagination
     Finish() {
@@ -133,7 +147,7 @@ console.log('bind')
             this.Add(this.page - this.step, this.page + this.step + 1);
             this.Last();
         }
-this.Number();
+        this.Number();
         this.Finish();
     }
     // Initialization
@@ -149,10 +163,12 @@ this.Number();
         navRight.map(i => {
             i.addEventListener('click', this.Next, false);
         });
-        inputGoto.addEventListener('input', () => {
-            this.page = inputGoto.value
-        }, false);
-        goto.addEventListener('click', this.Go, false);
+        // let p = +inputGoto.value;
+        // inputGoto.addEventListener('input', () => {
+
+        //  }, false);
+        goto.addEventListener('click', () => this.Go(inputGoto.value), false);
+
         // var nav = e.getElementsByTagName('a');
         // nav[0].addEventListener('click', this.Prev, false);
         // nav[1].addEventListener('click', this.Next, false);
@@ -188,7 +204,7 @@ this.Number();
                             </svg>
                         </button>
  <p class="modal__pagination-list"><span>1</span>из ${this.size}</p>
-    <button class="pagination__button pagination__button--next pagination__button--available" data-event-action="click: pagination-next">
+    <button class="pagination__button pagination__button--next pagination__button--go" data-event-action="click: pagination-next">
                             <svg viewBox="0 0 9.14 18" width="0" height="0" class="arrow-icon ">
                                 <path fill="currentColor" d="M1.64 15.51a.63.63 0 0 1-.46-.19.66.66 0 0 1 0-.92L6.59 9l-5.4-5.4c-.25-.25-.25-.67 0-.92s.67-.25.92 0l5.86 5.86c.12.12.19.29.19.46 0 .17-.07.34-.19.46L2.1 15.32a.62.62 0 0 1-.46.19z">
                                 </path>
@@ -214,9 +230,11 @@ this.Number();
         this.e = e.getElementsByTagName('span')[0];
         this.Buttons(e);
         this.textElem = e.getElementsByTagName('span')[1];
-        // this.Number(e);
+        this.btnLeft = e.querySelectorAll('.pagination__btn--left')[1];
+        this.btnRight = e.querySelectorAll('.pagination__btn--next')[1];
+        // console.log('---------' + this.textElem.innerHTML)
     }
-   
+
     // init
     Init(e, text) {
         this.Create(e, text);

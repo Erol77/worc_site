@@ -6,36 +6,6 @@ window.addEventListener('DOMContentLoaded', () => {
 
   let textarea = document.getElementById('comments');
 
-  let db;
-  // (      async()=>{
-  //     db=await IDBCursor.openDb('db',1,db=>{
-  //       db.createObjectStore('notes',{
-  //         keyPath:'id'
-  //       })
-  //     })
-  //     createList()
-  //   })();
-  // const addNote= async()=>{
-  // let tex = textarea.value
-
-  //       let note = {
-  //         id,
-  //         text,
-  //         createDate: new Date().toLocaleDateString(),
-  //         completed:''
-  //       }
-
-  //       try{
-  //         await db.transaction('notes','readwrite')
-  //         .objectStore('notes')
-  //         .add(note)
-  //         await createList()
-  //         .then(()=>{
-  //           textarea.value=''
-  //           dateInput.value=''
-  //         } )
-  //       }catch{console.log('not add db')}
-  //     }
   const configUser = {
     attributes: true,
     childList: true,
@@ -54,28 +24,6 @@ window.addEventListener('DOMContentLoaded', () => {
   const observerUser = new MutationObserver(callbackUser);
   observerUser.observe(dataUser, configUser);
 
-  // const config = {
-  //   attributes: true,
-  //   childList: true,
-  //   // subtree: true,
-  //   attributeFilter: ['class']//['data-index', 'data-delete', 'data-edit', 'data-modal']
-  // };
-
-  // const callback = function (mutationsList, observer) {
-  //   for (let mutation of mutationsList) {
-  //     // if (mutation.type === 'childList') {
-  //     //     console.log('A child node has been added or removed.');
-  //     // } else if (mutation.type === 'attributes') {
-  //     //     console.log('The ' + mutation.attributeName + ' attribute was modified.');
-  //     // }
-  //     let mt = 'Тип изменения ' + mutation.type;
-  //     mt += "Измененный элемент " + mutation.target;
-  //     console.log('The ' + mt + ' attribute was modified.' + observer);
-  //   }
-  // };
-  // const observer = new MutationObserver(callback);
-  // observer.observe(document.documentElement, config);
-
   function openModal() {
     // textarea.innerHTML = '';
     modal.classList.add('show');
@@ -93,9 +41,6 @@ window.addEventListener('DOMContentLoaded', () => {
   }
 
   const btn = [...document.querySelectorAll('[data-modal]')];
-
-
-
 
   function modalUser() {
 
@@ -140,7 +85,7 @@ window.addEventListener('DOMContentLoaded', () => {
             modal.setAttribute('data-newcomment', 'new-comment');
             document.getElementById('pag').innerHTML = '';
 textarea.innerHTML='';
-          } else {
+          } else if (e.target.textContent === 'Добавить ещё комментарий') {
             modal.setAttribute('data-addcomment', dateCreate.length);
             textarea.innerHTML = '';
           }
