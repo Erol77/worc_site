@@ -98,10 +98,10 @@ window.addEventListener('DOMContentLoaded', () => {
 
 
   function modalUser() {
-  
+
     btn.forEach((item, index) => {
-  let text = {},
-    number = 0;
+      let text = {},
+        number = 0;
       number = index;
       const dateCreate = item.querySelectorAll('.comments-date') ? Array.from(btn[index].querySelectorAll('.comments-date')) : ''; /**************** */
       const dateText = item.querySelectorAll('.comments-text') ? Array.from(btn[index].querySelectorAll('.comments-text')) : '';
@@ -113,33 +113,36 @@ window.addEventListener('DOMContentLoaded', () => {
         //   element.innerHTML += '<hr>';
         // }
       }
-  
+
       item.addEventListener('click', (e) => {
         e.preventDefault();
         if (e.target.textContent === 'Добавить ещё комментарий' || e.target.closest('.link_table') || e.target.getAttribute('data-text') === 'Редактировать') {
           openModal();
           modal.setAttribute('data-index', index)
-    const user = new Pag({
-      page: 1, // selected page
-      step: 3, // pages before and after current
-      size: dateCreate.length, // pages size
-      text,
-      elem: pag
-    });
-    //  if (dateCreate.length) {
-    user.Init(document.getElementById('pag'), {
-      text
-    });
-       
+          const user = new Pag({
+            page: 1, // selected page
+            step: 3, // pages before and after current
+            size: dateCreate.length, // pages size
+            text,
+            elem: pag
+          });
+          //  if (dateCreate.length) {
+          user.Init(document.getElementById('pag'), {
+            text
+          });
+
           // }
           if (e.target.getAttribute('data-text') === 'Редактировать') {
             modal.setAttribute('data-edits', e.target.dataset.edit);
             textarea.innerHTML = item.parentElement.querySelector('.comments-text').textContent.trim();
-          } else if (e.target.textContent === 'Добавить комментарий') {
+          } 
+ if (e.target.textContent === 'Добавить комментарий') {
             modal.setAttribute('data-newcomment', 'new-comment');
             document.getElementById('pag').innerHTML = '';
+textarea.innerHTML='';
           } else {
             modal.setAttribute('data-addcomment', dateCreate.length);
+            textarea.innerHTML = '';
           }
           textarea.focus();
         }
@@ -152,7 +155,7 @@ window.addEventListener('DOMContentLoaded', () => {
       message.classList.add('add_comments_wrap');
       message.innerHTML = `          <div class="add_comments">
                                         <p class="comments-date">${new Date().toLocaleString()}</p>
-                                        <p class="comments-text">${document.querySelector('#comments').value}</p>
+                                        <p class="comments-text">${textarea.value}</p>
                                         <a href="#" class="add_comments_link" data-edit="0" data-text="Редактировать"></a>
                               </div>
                                     <a href="#" class="link_table">Добавить ещё комментарий</a>
@@ -162,6 +165,7 @@ window.addEventListener('DOMContentLoaded', () => {
         let numberPost = modal.getAttribute('data-index');
         // console.log(numberPost);
         btn[numberPost].innerHTML = '';
+        // btn[numberPost].innerHTML = message;
         btn[numberPost].append(message);
         modal.removeAttribute('data-index');
         modal.removeAttribute('data-newcomment');
@@ -176,12 +180,17 @@ window.addEventListener('DOMContentLoaded', () => {
       if (modal.hasAttribute('data-edits')) {
         let numberPost = modal.getAttribute('data-index');
         let numberComment = modal.getAttribute('data-edits');
-        let mess = [`<p class="comments-date">${new Date().toLocaleString()}</p>`, `<p class="comments-text">${document.querySelector('#comments').value}</p>`,
-          `<a href="#" class="add_comments_link" data-edit="${numberComment}" data-text="Редактировать"></a>`
-        ]
-        message.innerHTML = mess.join('');
 
-        btn[numberPost].querySelector(`[data-edit="${numberComment}"]`).replaceWith(message)
+        // let mess = [`<p class="comments-date">${new Date().toLocaleString()}</p>`, `<p class="comments-text">${document.querySelector('#comments').value}</p>`,
+        //   `<a href="#" class="add_comments_link" data-edit="${numberComment}" data-text="Редактировать"></a>`
+        // ]
+        // message.innerHTML = mess.join('');
+
+        // btn[numberPost].querySelector(`[data-edit="${numberComment}"]`).replaceWith(message) .add_comments_wrap
+ let dateAdd = btn[numberPost].querySelectorAll(`.add_comments_wrap`)[numberComment] ;
+dateAdd.querySelector('.comments-date').textContent = new Date().toLocaleString();
+dateAdd.querySelector('.comments-text').textContent = textarea.value;
+  
         modal.removeAttribute('data-edits');
         modal.removeAttribute('data-index');
       }
@@ -195,19 +204,19 @@ window.addEventListener('DOMContentLoaded', () => {
       }
 
       //if (e.target.type === 'submit') { //e.target.getAttribute('.data-close') == ''
-if (e.target.dataset.action === 'edit'){
-  console.log('edit -' + modal.querySelector('.modal__comments-item.show .modal__comments-text'))
-textarea.innerHTML = modal.querySelector('.modal__comments-item.show .modal__comments-text').innerHTML
-}
+      if (e.target.dataset.action === 'edit') {
+        console.log('edit -' + modal.querySelector('.modal__comments-item.show .modal__comments-text'))
+        textarea.innerHTML = modal.querySelector('.modal__comments-item.show .modal__comments-text').innerHTML
+      }
 
-if (e.target.dataset.action === 'deletePost') {
-  console.log('deletePost')
-modal.querySelector('.modal__comments-item.show .modal__comments-text').innerHTML=''
-}
+      if (e.target.dataset.action === 'deletePost') {
+        console.log('deletePost')
+        modal.querySelector('.modal__comments-item.show .modal__comments-text').innerHTML = ''
+      }
 
       // addNote();
-// const textControl = new Pag()
-//       textControl.onClick(e)
+      // const textControl = new Pag()
+      //       textControl.onClick(e)
       e.preventDefault();
     });
 
