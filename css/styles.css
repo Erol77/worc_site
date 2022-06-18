@@ -625,6 +625,10 @@ font: inherit;
 .table_body_item .table_date span{
 color: red;
 }
+/* .table_body_item .table_cite {
+font: inherit;
+line-height: 2;
+} */
 .table_fio {
 	/* position: relative; */
 }
