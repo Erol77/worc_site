@@ -16,7 +16,7 @@ modalSubmit = document.querySelector('.btn-warning');
       // if (mutation.type === 'childList') {
       //   modalUser()//          console.log('A child node has been added or removed.');
       // }
-      console.log('A mutation.  ' + mutation);
+      // console.log('A mutation.  ' + mutation);
       modalUser();
     }
   };

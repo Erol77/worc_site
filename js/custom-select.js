@@ -143,7 +143,6 @@ function addTextToTarget(selector,target){
 let text = document.querySelector(target);
 text.value = data.textContent;
 // console.log(data.textContent + '    ' + text.value)
-
 }
 
 

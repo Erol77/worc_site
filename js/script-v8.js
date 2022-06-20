@@ -1,140 +1,81 @@
 document.addEventListener('DOMContentLoaded', () => {
 
-// setChecked('#checkselect-category', 'Выберите рубрику');
+    const configUser = {
+        attributes: true,
+        childList: true,
+        subtree: true,
+        // attributeFilter: ['data-value']
+    };
+    const callbackUser = function (mutationsList) {
+        for (let mutation of mutationsList) {
+            // if (mutation.type === 'childList') {
+            //   modalUser()//          console.log('A child node has been added or removed.');
+            // }
+            console.log('A mutation.  ' + mutation);
+            // selectToRubric();
+        }
+    };
+    let mutationsList = []
+    const observerUser = new MutationObserver(callbackUser);
+    observerUser.observe(document.forms[0], configUser);
 
+
+    // setChecked('#checkselect-category', 'Выберите рубрику');
+
+    const selectRubric = new CustomSelect('#select-rubric', {
+        name: 'rubric', // значение атрибута name у кнопки
+        targetValue: 'rubric', // значение по умолчанию
+        options: [
+            ['rubric', 'Выберите рубрику'],
+            ['HR_specialists_-_Business_Coaches', 'HR специалисты - Бизнес-тренеры'],
+            ['Autobusiness_-_Service', 'Автобизнес - Сервисное обслуживание'],
+            ['Administrative_staff', 'Административный персонал'],
+            ['Banks_-_Investments_-_Leasing', 'Банки - Инвестиции - Лизинг'],
+            ['Landscaping', 'Благоустройство'],
+            ['Accounting_-_Taxes_-_Enterprise_Finance', 'Бухгалтерия - Налоги - Финансы предприятия'],
+            ['Hotels_-_Restaurants_-_Cafes', 'Гостиницы - Рестораны - Кафе'],
+            ['State_institutions_-_Local_self-government_-_non-farmer', 'Государственные учреждения - Местное самоуправление - некоммер'],
+            ['Design_-_Graphics_-_Photos', 'Дизайн - Графика - Фото'],
+            ['Procurement_-_Supply', 'Закупки - Снабжение'],
+            ['Installation_and_service', 'Инсталляция и сервис'],
+            ['Consulting_-_Analytics_-_Audit', 'Консалтинг - Аналитика - Аудит'],
+            ['Culture_-_Show_Business_-_Entertainment', 'Культура - Шоу-бизнес - Развлечения'],
+            ['Marketing_-_Advertising_-_PR', 'Маркетинг - Реклама - PR'],
+            ['Media_Publishing', 'Медиа - Издательское дело'],
+            ['Medicine_-_Pharmaceuticals_-_Healthcare', 'Медицина - Фармацевтика - Здравоохранение'],
+            ['Marine_specialties', 'Морские специальности'],
+            ['Science_-_Education', 'Наука - Образование'],
+            ['Realty', 'Недвижимость'],
+            ['Non-profit_-_Public_organizations', 'Некоммерческие - Общественные организации'],
+            ['Security_-_Security_-_Law_enforcement_agencies', 'Охрана - Безопасность - Силовые структуры'],
+            ['Translator', 'Переводчик'],
+            ['Salesperson_-_Customer_Service_Manager', 'Продавец - Менеджер по работе с клиентами'],
+            ['Production_-_Process_Engineers', 'Производство - Инженеры - Технологи'],
+            ['Working_specialties_-_Couriers_-_Home_Staff', 'Рабочие специальности - Курьеры - Персонал для дома'],
+            ['Agriculture_-_Agribusiness_-_Forestry', 'Сельское хозяйство - Агробизнес - Лесное хозяйство'],
+            ['Sport_-_Beauty_-_Wellness', 'Спорт - Красота - Оздоровление'],
+            ['Insurance', 'Страхование'],
+            ['Construction_-_Architecture', 'Строительство - Архитектура'],
+            ['Students_-_The_beginning_of_a_career_-_Without_experience', 'Студенты - Начало карьеры - Без опыта'],
+            ['Telecommunications_-_Communication', 'Телекоммуникации - Связь'],
+            ['Top_Management_-_Directors', 'Топ-менеджмент - Директора'],
+            ['Trade_-_Sales_-_Client-Management', 'Торговля - Продажи - Клиент-менеджмент'],
+            ['Transport_-_Logistics', 'Транспорт - Логистика'],
+            ['Tourism_-_Travel', 'Туризм - Путешествия'],
+            ['Lawyers,_lawyers,_notaries', 'Юристы, адвокаты, нотариусы'],
+
+        ], // опции
+    });
+function addTextToTarget(selector, target) {
+    const data = document.querySelector(selector);
+    let text = document.querySelector(target);
+    text.innerHTML = data.textContent;
+    // console.log(data.textContent + '    ' + text.value)
+}
+
+    const selectToRubric = () => addTextToTarget('#select-rubric .select__toggle', '.type-category__item');
+    // selectToRubric();
+  const selectCategory = new CustomSelect('#select-category');
+// const selectToCategory = () => addTextToTarget('#select-category .select__toggle', '.select__select-category');
 
 })
-  
-function setChecked(target, name = 'По вакансии') {
-
-    var checked = document.querySelector(target),
-        closeBtn = checked.querySelector('.input-reset'),
-        checkedSel = checked.querySelector('.form-control option');
-    //.form-control--selected
-
-    checked.addEventListener('click', () => {
-        var checkedNum = Array.from(checked.querySelectorAll('input[type="checkbox"]:checked'));
-
-        // if(!checked.closest('form-control--selected')&&!closeBtn.closest('hide')){/**/
-        // closeBtn.classList.add('hide');}
-
-
-
-        if (checkedNum.length) {
-            checkedSel.textContent = name + ' (выбрано: ' + checkedNum.length + ')';
-            checked.classList.add('form-control--selected');
-            // checkedSel.classList.add('form-control--selected');
-            if (closeBtn.closest('.hide')) {
-                closeBtn.style.right = -15 + '%';
-                closeBtn.classList.remove('hide');
-            }
-
-            checkedSel.parentElement.style.backgroundColor = '#fbf7e7';
-            checkedSel.parentElement.style.borderRadius = '5px';
-            checkedSel.parentElement.style.border = '1px solid #e3dcb2'; //border-right-width: 1px;
-            checked.style.width = 88 + '%';
-            // checked.style.after.right = 80+'%';
-            checked.style.border = 'none'; //border-right-width: 1px;
-            let data = name + ' (выбрано: ' + checkedNum.length + ')';
-            checkedNum.map(i => {
-                // console.log(i.parentElement.textContent)
-                data += i.parentElement.textContent.trim() + ', ';
-            });
-            checkedSel.setAttribute('data-text', data);
-            checkedSel.parentElement.parentElement.setAttribute('onmouseover', `toolTip('${data}')`);
-            checkedSel.parentElement.parentElement.setAttribute('onmouseout', `toolTip()`);
-            // checkedSel
-            checkedSel.parentElement.parentElement.classList.add('hide__text');
-            checkedSel.parentElement.parentElement.setAttribute('data-show', 'text');
-        } else {
-            checkedSel.textContent = name;
-            checkedSel.parentElement.parentElement.setAttribute('onmouseover', `toolTip('${name}')`);
-            checkedSel.parentElement.parentElement.setAttribute('onmouseout', `toolTip()`);
-            checked.style.width = 100 + '%';
-            if (checked.closest('.form-control--selected')) {/**/
-                // checked.classList.remove('form-control--selected');
-                closeDialog();
-            }
-        }
-        if (!checked.closest('.form-control--selected')) {/**/
-            closeBtn.classList.add('hide');
-        }
-
-    });
-    function closeDialog() {
-        closeBtn.classList.add('hide');
-        checked.classList.remove('form-control--selected')
-        const clear = Array.from(checked.querySelectorAll('input[type="checkbox"]:checked'));
-        clear.map(e => e.checked = false);
-        checkedSel.parentElement.style.backgroundColor = '#fff';
-        checkedSel.parentElement.style.borderRadius = '0px';
-        checked.style.border = ''; //border-right-width: 1px;
-        checkedSel.removeAttribute('data-text');
-
-        checkedSel.parentElement.parentElement.classList.remove('hide__text');
-        checkedSel.parentElement.parentElement.removeAttribute('data-show');
-
-        checkedSel.parentElement.style.border = '';
-    }
-    closeBtn.addEventListener('click', closeDialog, false);
-};
-
-
-const checkselect = Array.from(document.querySelectorAll('.checkselect'));
-const closeBtn = Array.from(document.querySelectorAll('.input-reset'));
-const applyBtn = Array.from(document.querySelectorAll('.apply'));
-// открыть чекбоксы
-/*********************close to un enabled */
-document.addEventListener('click', (e) => {
-    if (!e.target.closest('.checkselect')) {
-        document.querySelectorAll('.checkselect').forEach(select => {
-            select.classList.remove('open');
-            //   e.stopPropagation();
-        });
-    }
-    e.stopPropagation();
-});
-
-checkselect.map((e, i) => {
-
-    e.addEventListener('click', function () {
-        this.classList.toggle('open');
-        applyBtn[i].classList.toggle('hide');
-        applyBtn[i].classList.toggle('show');
-    });
-
-    document.addEventListener('click', (el) => {
-        if (el.target === closeBtn[i]) {
-            closeBtn[i].classList.add('hide');
-            applyBtn[i].classList.add('hide');
-            applyBtn[i].classList.remove('show')
-            checkselect[i].classList.remove('open');
-            const clear = Array.from(checkselect[i].querySelectorAll('input[type="checkbox"]:checked'));
-            clear.map(e => e.checked = false);
-
-            if (el.target === checkselect[i] || el.target === applyBtn[i] || el.target.closest('.checkselect') === null) {
-                closeBtn[i].classList.add('hide');
-                applyBtn[i].classList.add('hide');
-                applyBtn[i].classList.remove('show')
-                checkselect[i].classList.remove('open');
-                checkselect[i].style.display = 'none';
-            }
-        }
-    });
-
-    document.addEventListener('keydown', (e) => {
-        if (e.code === "Escape" && checkselect[i].classList.contains('open')) {
-            closeBtn[i].classList.add('hide');
-            applyBtn[i].classList.add('hide');
-            applyBtn[i].classList.remove('show')
-            checkselect[i].classList.remove('open');
-        }
-    });
-});
-
-function addTextToTarget(selector,target){
-    const data = document.querySelector(selector);
-    const text =  Array.from(document.querySelectorAll(target));
-    let param = data.textContent;
-text.map(i=>i.textContent=param)
-}
