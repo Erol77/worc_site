@@ -204,12 +204,14 @@ document.addEventListener('DOMContentLoaded', () => {
                 checkedSel.textContent = name + ' (выбрано: ' + checkedNum.length + ')';
                 checked.classList.add('form-control--selected');
                 // checkedSel.classList.add('form-control--selected');
-                if (closeBtn.closest('.hide')) closeBtn.classList.remove('hide');
+                if (closeBtn.closest('.hide')){ 
+                    closeBtn.style.right=-15+'%';
+                    closeBtn.classList.remove('hide');}
 
                 checkedSel.parentElement.style.backgroundColor = '#fbf7e7';
                 checkedSel.parentElement.style.borderRadius = '5px';
                 checkedSel.parentElement.style.border = '1px solid #e3dcb2'; //border-right-width: 1px;
-                checked.style.width = 80 + '%';
+                checked.style.width = 88 + '%';
                 // checked.style.after.right = 80+'%';
                 checked.style.border = 'none'; //border-right-width: 1px;
                 let data = name + ' (выбрано: ' + checkedNum.length + ')';

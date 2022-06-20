@@ -346,7 +346,9 @@ position: relative;
 	color: #000;
 	cursor: pointer;
 }			
-.checkselect-popup label:hover,
+.checkselect-popup label:hover{
+	background-color: #e3dcb2;
+}
 input[type="checkbox"]:checked + label,
 .jq-selectbox li:hover,
 .jq-selectbox li.sel {
