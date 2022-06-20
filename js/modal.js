@@ -17,7 +17,7 @@ modalSubmit = document.querySelector('.btn-warning');
       //   modalUser()//          console.log('A child node has been added or removed.');
       // }
       console.log('A mutation.  ' + mutation);
-      modalUser();selectToStatus();
+      modalUser();
     }
   };
   const observerUser = new MutationObserver(callbackUser);

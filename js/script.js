@@ -12,12 +12,12 @@ document.addEventListener('DOMContentLoaded', () => {
     //             } while ((i < 0) && (el = el.parentElement));
     //             return el;
     //         };
-    // }
+    // }, 'data-delete', 'data-edit','data-modal'
     const configUser = {
         attributes: true,
         childList: true,
-        subtree: true
-        // attributeFilter: ['data-index', 'data-delete', 'data-edit','data-modal']
+        subtree: true,
+        attributeFilter: ['data-value']
       };
       const callbackUser = function (mutationsList) {
         for (let mutation of mutationsList) {
@@ -26,10 +26,15 @@ document.addEventListener('DOMContentLoaded', () => {
           // }
           console.log('A mutation.  ' + mutation);
          selectToStatus();
+         selectToType();
+         selectToComment();
+         selectToDialog();
         }
       };
+let mutationsList=[]
       const observerUser = new MutationObserver(callbackUser);
-      observerUser.observe(document.querySelector('form'), configUser);
+      observerUser.observe(document.forms[0], configUser);
+
 
     const burger = document.querySelector('.burger');
     const navBlock = document.querySelector('.nav_block');
@@ -51,7 +56,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
         ], // опции
     });
-    const selectToStatus= ()=>addTextToTarget('#select-3 .select__toggle','#select-3 input');
+    const selectToStatus = () => addTextToTarget('#select-3 .select__toggle', '.select__select-3');
     selectToStatus();
     // const selectRegion = new CustomSelect('#select-region', {
     //     name: 'region', // значение атрибута name у кнопки
@@ -74,6 +79,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
         ], // опции
     });
+  const selectToType = () => addTextToTarget('#select-type .select__toggle', '.select__select-type');
+  selectToType();
 
     const selectComment = new CustomSelect('#select-comment', {
         name: 'comment', // значение атрибута name у кнопки
@@ -86,6 +93,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
         ], // опции
     });
+const selectToComment = () => addTextToTarget('#select-comment .select__toggle', '.select__select-comment');
+selectToComment();
 
     const selectDialog = new CustomSelect('#select-dialog', {
         name: 'dialog', // значение атрибута name у кнопки
@@ -97,7 +106,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
         ], // опции
     });
-
+const selectToDialog = () => addTextToTarget('#select-dialog .select__toggle', '.select__select-dialog');
+selectToDialog();
     /****************end select */
    
     /****************datepicker */

@@ -124,7 +124,7 @@ CustomSelect.template = params => {
     }
     items.push(`<li class="select__option${selectedClass}" data-select="option" tabindex="0" data-value="${option[0]}" data-index="${index}"><span>${option[1]}</span></li>`);
   });
-  return `<input type="hidden" value="" data-value ><button type="button" class="select__toggle" name="${name}" value="${selectedValue}" data-select="toggle" data-index="${selectedIndex}"><span tabindex="0">${selectedContent}</span></button>
+  return `<button type="button" class="select__toggle" name="${name}" value="${selectedValue}" data-select="toggle" data-index="${selectedIndex}"><span tabindex="0">${selectedContent}</span></button>
   <div class="select__dropdown">
     <ul class="select__options">${items.join('')}</ul>
   </div>`;
@@ -140,11 +140,10 @@ document.addEventListener('click', (e) => {
 
 function addTextToTarget(selector,target){
   const data = document.querySelector(selector);
-  const text =  Array.from(document.querySelectorAll(target));
-  let param = data.textContent;console.log(data.textContent+'    '+text)
-text.map(i=>{
-  console.log(data)
-  i.value=data.textContent})
+let text = document.querySelector(target);
+text.value = data.textContent;
+// console.log(data.textContent + '    ' + text.value)
+
 }
 
 
