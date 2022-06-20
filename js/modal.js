@@ -1,10 +1,9 @@
 window.addEventListener('DOMContentLoaded', () => {
   const dataUser = document.querySelector('#data-user'),
     modal = document.querySelector('.modal'),
-    modalCloseBtn = document.querySelector('[data-close]'),
-    modalSubmit = document.querySelector('.btn-warning');
-
-  let textarea = document.getElementById('comments');
+    modalCloseBtn = document.querySelector('[data-close]');
+modalSubmit = document.querySelector('.btn-warning');
+ let textarea = document.getElementById('comments');
 
   const configUser = {
     attributes: true,
@@ -37,12 +36,15 @@ window.addEventListener('DOMContentLoaded', () => {
     modal.classList.add('hide');
     document.body.style.overflow = '';
     // modal.querySelector(".modal__comments").innerHTML = '';
-    setTimeout(() => textarea.innerHTML = '', 1000);
+    setTimeout(() => textarea.value = '', 10);
   }
 
   const btn = [...document.querySelectorAll('[data-modal]')];
 
   function modalUser() {
+   
+    
+
 
     btn.forEach((item, index) => {
       let text = {},
@@ -60,7 +62,7 @@ window.addEventListener('DOMContentLoaded', () => {
       }
 
       item.addEventListener('click', (e) => {
-        e.preventDefault();
+        // e.preventDefault();
         if (e.target.textContent === 'Добавить ещё комментарий' || e.target.closest('.link_table') || e.target.getAttribute('data-text') === 'Редактировать') {
           openModal();
           modal.setAttribute('data-index', index)
@@ -78,16 +80,19 @@ window.addEventListener('DOMContentLoaded', () => {
 
           // }
           if (e.target.getAttribute('data-text') === 'Редактировать') {
-            modal.setAttribute('data-edits', e.target.dataset.edit);
-            textarea.innerHTML = item.parentElement.querySelector('.comments-text').textContent.trim();
-          } 
- if (e.target.textContent === 'Добавить комментарий') {
+            modal.setAttribute('data-edits', e.target.dataset.edit); //modal__label-comments Добавить свой комментарий
+            modal.querySelector('.modal__label-comments').textContent = 'Редактировать свой комментарий';
+            textarea.value = item.parentElement.querySelector('.comments-text').textContent.trim();
+          }
+          if (e.target.textContent === 'Добавить комментарий') {
             modal.setAttribute('data-newcomment', 'new-comment');
-            document.getElementById('pag').innerHTML = '';
-textarea.innerHTML='';
+            modal.querySelector('.modal__label-comments').textContent = 'Добавить свой комментарий';
+            document.getElementById('pag').value = '';
+            textarea.textContent = '';
           } else if (e.target.textContent === 'Добавить ещё комментарий') {
             modal.setAttribute('data-addcomment', dateCreate.length);
-            textarea.innerHTML = '';
+            modal.querySelector('.modal__label-comments').textContent = 'Добавить свой комментарий';
+            textarea.value = '';
           }
           textarea.focus();
         }
@@ -96,6 +101,7 @@ textarea.innerHTML='';
 
 
     modalSubmit.addEventListener('click', (e) => {
+    let numberPost = modal.getAttribute('data-index');
       const message = document.createElement('div');
       message.classList.add('add_comments_wrap');
       message.innerHTML = `          <div class="add_comments">
@@ -107,7 +113,7 @@ textarea.innerHTML='';
                                 `;
       message.querySelector('.add_comments_link');
       if (modal.hasAttribute('data-newcomment')) {
-        let numberPost = modal.getAttribute('data-index');
+    
         // console.log(numberPost);
         btn[numberPost].innerHTML = '';
         // btn[numberPost].innerHTML = message;
@@ -116,14 +122,12 @@ textarea.innerHTML='';
         modal.removeAttribute('data-newcomment');
       }
       if (modal.hasAttribute('data-addcomment')) {
-        let numberPost = modal.getAttribute('data-index');
         // console.log(numberPost);
         btn[numberPost].append(message);
         modal.removeAttribute('data-index');
         modal.removeAttribute('data-addcomment');
       }
       if (modal.hasAttribute('data-edits')) {
-        let numberPost = modal.getAttribute('data-index');
         let numberComment = modal.getAttribute('data-edits');
 
         // let mess = [`<p class="comments-date">${new Date().toLocaleString()}</p>`, `<p class="comments-text">${document.querySelector('#comments').value}</p>`,
@@ -132,10 +136,10 @@ textarea.innerHTML='';
         // message.innerHTML = mess.join('');
 
         // btn[numberPost].querySelector(`[data-edit="${numberComment}"]`).replaceWith(message) .add_comments_wrap
- let dateAdd = btn[numberPost].querySelectorAll(`.add_comments_wrap`)[numberComment] ;
-dateAdd.querySelector('.comments-date').textContent = new Date().toLocaleString();
-dateAdd.querySelector('.comments-text').textContent = textarea.value;
-  
+        let dateAdd = btn[numberPost].querySelectorAll(`.add_comments_wrap`)[numberComment];
+        dateAdd.querySelector('.comments-date').textContent = new Date().toLocaleString();
+        dateAdd.querySelector('.comments-text').textContent = textarea.value;
+
         modal.removeAttribute('data-edits');
         modal.removeAttribute('data-index');
       }
