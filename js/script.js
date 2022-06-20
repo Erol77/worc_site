@@ -126,18 +126,18 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // insertDate1('21.11.1953');
 
-    function insertDate(selector, e = new Date().toLocaleString(),c = '') {
+    function insertDate(selector, e = new Date().toLocaleString(), c = '') {
         let date = e.split('.')
         let month = {
             mo: ["Января", "Февраля", "Марта", "Апреля", "Мая", "Июня", "Июля", "Августа", "Сентября", "Октября", "Ноября", "Декабря"]
         }
         console.log(date, parseInt(date[1]) + '    ' + month.mo[parseInt(date[1]) - 1]);
         document.querySelector('#' + selector).value = date[0] + '  ' + month.mo[parseInt(date[1]) - 1] + '  ' + date[2];
-        if( typeof c==='function'){datepickerClose()};
+        if (typeof c === 'function') { datepickerClose() };
     }
     const insertDate1 = (e) => insertDate('date-1', e);
-    const insertDate2 = (e) => insertDate('date-2', e,datepickerClose());
-    insertDate1('27.11.2021');insertDate2(new Date().toLocaleDateString())
+    const insertDate2 = (e) => insertDate('date-2', e, datepickerClose());
+    insertDate1('27.11.2021'); insertDate2(new Date().toLocaleDateString())
     xCal('datepicker1', {
         id: "date1",
         "class": "xcalend2",
@@ -172,14 +172,14 @@ document.addEventListener('DOMContentLoaded', () => {
     /****************datepicker end*/
     /*document.addEventListener('click', function(e) {
              console.log(e,'  click  ',e.target);
-    		if (!(e.target).closestMy(".datepicker_row")) {datePiker.style.display='none';
-    		 // document.querySelector('.datepicker_windows').hide();
-    		}
+            if (!(e.target).closestMy(".datepicker_row")) {datePiker.style.display='none';
+             // document.querySelector('.datepicker_windows').hide();
+            }
              if (!(e.target).closestMy(".checkselect")) {
-    			if(checkselect.classList.contains('open'))checkselect.classList.toggle('open');                
-    			}
-    		e.stopPropagation();
-    	  });*/
+                if(checkselect.classList.contains('open'))checkselect.classList.toggle('open');                
+                }
+            e.stopPropagation();
+          });*/
 
     //document.querySelector(".open_popup").magnificPopup({removalDelay:300,type:"inline"});
     //document.querySelector(".open_popup").magnificPopup({removalDelay:300,type:"inline"});
@@ -190,19 +190,27 @@ document.addEventListener('DOMContentLoaded', () => {
         var checked = document.querySelector(target),
             closeBtn = checked.querySelector('.input-reset'),
             checkedSel = checked.querySelector('.form-control option');
-//.form-control--selected
+        //.form-control--selected
 
         checked.addEventListener('click', () => {
             var checkedNum = Array.from(checked.querySelectorAll('input[type="checkbox"]:checked'));
 
+            // if(!checked.closest('form-control--selected')&&!closeBtn.closest('hide')){/**/
+            // closeBtn.classList.add('hide');}
+
+
+
             if (checkedNum.length) {
                 checkedSel.textContent = name + ' (выбрано: ' + checkedNum.length + ')';
-                checkedSel.classList.add('form-control--selected')
-                closeBtn.classList.toggle('hide');
+                checked.classList.add('form-control--selected');
+                // checkedSel.classList.add('form-control--selected');
+                if (closeBtn.closest('.hide')) closeBtn.classList.remove('hide');
 
                 checkedSel.parentElement.style.backgroundColor = '#fbf7e7';
                 checkedSel.parentElement.style.borderRadius = '5px';
                 checkedSel.parentElement.style.border = '1px solid #e3dcb2'; //border-right-width: 1px;
+                checked.style.width = 80 + '%';
+                // checked.style.after.right = 80+'%';
                 checked.style.border = 'none'; //border-right-width: 1px;
                 let data = name + ' (выбрано: ' + checkedNum.length + ')';
                 checkedNum.map(i => {
@@ -210,39 +218,48 @@ document.addEventListener('DOMContentLoaded', () => {
                     data += i.parentElement.textContent.trim() + ', ';
                 });
                 checkedSel.setAttribute('data-text', data);
- checkedSel.parentElement.parentElement.setAttribute('onmouseover', `toolTip('${data}')`);
- checkedSel.parentElement.parentElement.setAttribute('onmouseout', `toolTip()`);
+                checkedSel.parentElement.parentElement.setAttribute('onmouseover', `toolTip('${data}')`);
+                checkedSel.parentElement.parentElement.setAttribute('onmouseout', `toolTip()`);
                 // checkedSel
                 checkedSel.parentElement.parentElement.classList.add('hide__text');
                 checkedSel.parentElement.parentElement.setAttribute('data-show', 'text');
             } else {
                 checkedSel.textContent = name;
-checkedSel.parentElement.parentElement.setAttribute('onmouseover', `toolTip('${name}')`);
-checkedSel.parentElement.parentElement.setAttribute('onmouseout', `toolTip()`);
+                checkedSel.parentElement.parentElement.setAttribute('onmouseover', `toolTip('${name}')`);
+                checkedSel.parentElement.parentElement.setAttribute('onmouseout', `toolTip()`);
+                checked.style.width = 100 + '%';
+                if (checked.closest('.form-control--selected')) {/**/
+                    // checked.classList.remove('form-control--selected');
+                    closeDialog();
+                }
             }
+            if (!checked.closest('.form-control--selected')) {/**/
+                closeBtn.classList.add('hide');
+            }
+
         });
+function closeDialog(){
+    closeBtn.classList.add('hide');
+    checked.classList.remove('form-control--selected')
+    const clear = Array.from(checked.querySelectorAll('input[type="checkbox"]:checked'));
+    clear.map(e => e.checked = false);
+    checkedSel.parentElement.style.backgroundColor = '#fff';
+    checkedSel.parentElement.style.borderRadius = '0px';
+    checked.style.border = ''; //border-right-width: 1px;
+    checkedSel.removeAttribute('data-text');
 
-        closeBtn.addEventListener('click', () => {
+    checkedSel.parentElement.parentElement.classList.remove('hide__text');
+    checkedSel.parentElement.parentElement.removeAttribute('data-show');
 
-            closeBtn.classList.add('hide');
-            const clear = Array.from(checked.querySelectorAll('input[type="checkbox"]:checked'));
-            clear.map(e => e.checked = false);
-            checkedSel.parentElement.style.backgroundColor = '#fff';
-            checkedSel.parentElement.style.borderRadius = '0px';
-            checked.style.border = ''; //border-right-width: 1px;
-            checkedSel.removeAttribute('data-text');
-
-            checkedSel.parentElement.parentElement.classList.remove('hide__text');
-                checkedSel.parentElement.parentElement.removeAttribute('data-show');
-
-            checkedSel.parentElement.style.border = '';
-        });
+    checkedSel.parentElement.style.border = '';
+}
+        closeBtn.addEventListener('click', closeDialog,false);
     };
 
-    setChecked('.checkselect1');
+    setChecked('#checkselect1');
 
-    setChecked('.checkselect2', 'По возрасту');
-    setChecked('.checkselect3', 'По региону(ам)/по городу(ам)');
+    setChecked('#checkselect2', 'По возрасту');
+    setChecked('#checkselect3', 'По региону(ам)/по городу(ам)');
 
     const checkselect = Array.from(document.querySelectorAll('.checkselect'));
     const closeBtn = Array.from(document.querySelectorAll('.input-reset'));
@@ -255,7 +272,7 @@ checkedSel.parentElement.parentElement.setAttribute('onmouseout', `toolTip()`);
                 select.classList.remove('open');
                 //   e.stopPropagation();
             });
-        }     
+        }
         e.stopPropagation();
     });
 
@@ -337,8 +354,8 @@ function datepickerClose() {
 document.addEventListener('click', (el) => {
     // console.log(el.target.dataset +'    '+el.target.closest('td')+
     // '    '+el.target.closest('#date2')+'    '+el.target.closest('.xcalend'))//closest xcalend
- if (!el.target.closest('.datepicker_row') && !el.target.closest('td'))  {
-    datepickerClose();
-        }
-    })
+    if (!el.target.closest('.datepicker_row') && !el.target.closest('td')) {
+        datepickerClose();
+    }
+})
     //|| el.target.closest('#date2') && el.target.closest('td')  rgba(255,153,0,.2);

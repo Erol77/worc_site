@@ -138,20 +138,28 @@
 
 
 .input-reset {
-/* position: absolute; */
-position: inline-block;
+position: absolute;
+/* position: inline-block; */
+float: right;
     top: 50%;
     transform: translateY(-50%);
     right: 3px;
-    font-size: 25px;
-    line-height: 16px;
-    border-radius: 50%;
-    background-color: #bbb;
-    color: #fff;
+    /* font-size: 25px; */
+    /* line-height: 16px; */
+    /* border-radius: 50%; */
+    /* background-color: #bbb; */
+    /* color: #fff; */
     padding: 3px;
     /* padding-bottom: 5px; */
     transition: 0.3s;
 z-index: 100;
+
+background-color: rgb(251, 247, 231);
+border-radius: 5px;
+border: 1px solid rgb(227, 220, 178);
+color: #ffdd00;
+font-size: 1.5rem;
+line-height: 1.2rem;
 }
 
 .input-reset:hover {

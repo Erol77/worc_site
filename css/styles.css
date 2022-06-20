@@ -252,7 +252,7 @@ position: relative;
 	border-bottom: 1px solid #fff;
 	width: 100%;
 	position: relative;
-	display: inline-block;
+	/* display: inline-block; */
 	cursor: pointer;
 /* display: flex; */
 }
@@ -268,14 +268,13 @@ position: relative;
 	right: 10px;
 }
 .checkselect.open::after,
-.checkselect2.open::after,
 .jq-selectbox.opened .jq-selectbox__trigger {
 	transform: rotate(180deg);
 }
 .checkselect.open,
 .jq-selectbox.opened {
-	border-color: #e3dcb2;
-border-radius:5px;
+	/* border-color: #e3dcb2; */
+/* border-radius:5px; */
 }
 .checkselect.open .checkselect-popup {
 	display: block !important;
@@ -287,8 +286,8 @@ border-radius:5px;
 .checkselect-control select,
 .jq-selectbox__select-text {
 	background: #fff;
-	position: relative;
-	display: inline-block;
+	/* position: relative; */
+	/* display: inline-block; */
 	width: 100%;
 	font-size: 14px;
 	line-height: 30px;
