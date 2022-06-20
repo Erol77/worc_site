@@ -1673,6 +1673,14 @@ select {
   /* border-top: 1px solid #bebebe; */
   /* border-bottom: 1px solid #bebebe; */
 }
+.wrapper .inp-vacanci p{
+  display: inline-block;
+  float: right;
+}
+
+.category-pos{
+  margin-bottom: 2%;
+}
 .category-post__title,
 .type-category__title {
   padding-left: 45px;

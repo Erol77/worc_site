@@ -535,3 +535,22 @@ http://cssworld.ru/en/datepicker/
 	}
 
 })();
+
+function datepickerOpen() {
+    document.querySelector(".datepicker_windows").style.display = 'block';
+    document.querySelector(".datepicker_windows_row").style.display = '';
+    return false;
+}
+
+function datepickerClose() {
+    document.querySelector(".datepicker_windows").style.display = 'none';
+    document.querySelector('.datepicker_windows_row').style.display = 'none';
+    return false;
+}
+document.addEventListener('click', (el) => {
+    // console.log(el.target.dataset +'    '+el.target.closest('td')+
+    // '    '+el.target.closest('#date2')+'    '+el.target.closest('.xcalend'))//closest xcalend
+    if (!el.target.closest('.datepicker_row') && !el.target.closest('td')) {
+        datepickerClose();
+    }
+})

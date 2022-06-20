@@ -13,6 +13,23 @@ document.addEventListener('DOMContentLoaded', () => {
     //             return el;
     //         };
     // }
+    const configUser = {
+        attributes: true,
+        childList: true,
+        subtree: true
+        // attributeFilter: ['data-index', 'data-delete', 'data-edit','data-modal']
+      };
+      const callbackUser = function (mutationsList) {
+        for (let mutation of mutationsList) {
+          // if (mutation.type === 'childList') {
+          //   modalUser()//          console.log('A child node has been added or removed.');
+          // }
+          console.log('A mutation.  ' + mutation);
+         selectToStatus();
+        }
+      };
+      const observerUser = new MutationObserver(callbackUser);
+      observerUser.observe(document.querySelector('form'), configUser);
 
     const burger = document.querySelector('.burger');
     const navBlock = document.querySelector('.nav_block');
@@ -34,7 +51,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
         ], // опции
     });
-
+    const selectToStatus= ()=>addTextToTarget('#select-3 .select__toggle','#select-3 input');
+    selectToStatus();
     // const selectRegion = new CustomSelect('#select-region', {
     //     name: 'region', // значение атрибута name у кнопки
     //     targetValue: 'region', // значение по умолчанию
@@ -81,46 +99,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     /****************end select */
-    //     const selectDropdown = Array.from(document.querySelectorAll('.jq-selectbox'));
-    //     // const navBlock = document.querySelector('.nav_block');
-    //     selectDropdown.map((e, i) => e.addEventListener('click', function (el) {
-    //         if (el.target === selectDropdown[i] && selectDropdown[i].classList.contains('opened')){
-    //          selectDropdown[i].style = "display: inline-block; position: relative; z-index: 0;";
-    //          selectDropdown[i].classList.toggle('opened');
-    //          selectDropdown[i].querySelector('.jq-selectbox__dropdown').style = "position: absolute; display: none;";
-    //          selectDropdown[i].querySelector('ul').style = "position: relative; list-style: none; overflow: auto; overflow-x: hidden";
-
-
-    // }else{
-    //             selectDropdown[i].style = "display: inline-block; position: relative; z-index: 100;";
-    //                     selectDropdown[i].classList.toggle('opened');
-    //             selectDropdown[i].querySelector('.jq-selectbox__dropdown').style="position: absolute; height: auto; bottom: auto; top: 30px; ";
-    //             selectDropdown[i].querySelector('ul').style="position: relative; list-style: none; overflow: hidden auto; max-height: 312px;";
-    // }
-    //     }));
-    /*******************************no worc */
-    // document.addEventListener('click', (e) => {
-    //     if (!e.target.closest('.checkselect checkselect1') &&
-    // document.querySelector('.jq-selectbox').closestMy('opened')) {
-    //         document.querySelector('.jq-selectbox .checkselect1 .opened').select.classList.remove('opened');
-    // // forEach(select => {            select.classList.remove('opened');        });
-    //     }
-    // });
-
-
-    /******       class="jq-selectbox__dropdown" style="position: absolute; height: auto; bottom: auto; top: 30px;       
-    style="position: relative; list-style: none; overflow: hidden auto; max-height: 312px;"     */
-    //        if (!(e.target)&& e.classList.contains('open')) {
-    //		e.target.classList.remove('open'); console.log('click',e.target);e.stopPropagation();}
-    //	$(document).on('click', function(e) {
-
-    //			if (!$(e.target).closest(".checkselect").length) {
-    //			$(e.target).classList.toggle('open');
-    //                console.log('click',e.target);
-    //			}
-    //		e.stopPropagation();
-    //	});
-
+   
     /****************datepicker */
 
 
@@ -138,6 +117,8 @@ document.addEventListener('DOMContentLoaded', () => {
     const insertDate1 = (e) => insertDate('date-1', e);
     const insertDate2 = (e) => insertDate('date-2', e, datepickerClose());
     insertDate1('27.11.2021'); insertDate2(new Date().toLocaleDateString())
+
+    
     xCal('datepicker1', {
         id: "date1",
         "class": "xcalend2",
@@ -195,22 +176,136 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 
-function datepickerOpen() {
-    document.querySelector(".datepicker_windows").style.display = 'block';
-    document.querySelector(".datepicker_windows_row").style.display = '';
-    return false;
-}
 
-function datepickerClose() {
-    document.querySelector(".datepicker_windows").style.display = 'none';
-    document.querySelector('.datepicker_windows_row').style.display = 'none';
-    return false;
-}
-document.addEventListener('click', (el) => {
-    // console.log(el.target.dataset +'    '+el.target.closest('td')+
-    // '    '+el.target.closest('#date2')+'    '+el.target.closest('.xcalend'))//closest xcalend
-    if (!el.target.closest('.datepicker_row') && !el.target.closest('td')) {
-        datepickerClose();
-    }
-})
     //|| el.target.closest('#date2') && el.target.closest('td')  rgba(255,153,0,.2);
+
+      
+    function setChecked(target, name = 'По вакансии') {
+
+        var checked = document.querySelector(target),
+            closeBtn = checked.querySelector('.input-reset'),
+            checkedSel = checked.querySelector('.form-control option');
+        //.form-control--selected
+    
+        checked.addEventListener('click', () => {
+            var checkedNum = Array.from(checked.querySelectorAll('input[type="checkbox"]:checked'));
+    
+            // if(!checked.closest('form-control--selected')&&!closeBtn.closest('hide')){/**/
+            // closeBtn.classList.add('hide');}
+    
+    
+    
+            if (checkedNum.length) {
+                checkedSel.textContent = name + ' (выбрано: ' + checkedNum.length + ')';
+                checked.classList.add('form-control--selected');
+                // checkedSel.classList.add('form-control--selected');
+                if (closeBtn.closest('.hide')) {
+                    closeBtn.style.right = -15 + '%';
+                    closeBtn.classList.remove('hide');
+                }
+    
+                checkedSel.parentElement.style.backgroundColor = '#fbf7e7';
+                checkedSel.parentElement.style.borderRadius = '5px';
+                checkedSel.parentElement.style.border = '1px solid #e3dcb2'; //border-right-width: 1px;
+                checked.style.width = 88 + '%';
+                // checked.style.after.right = 80+'%';
+                checked.style.border = 'none'; //border-right-width: 1px;
+                let data = name + ' (выбрано: ' + checkedNum.length + ')';
+                checkedNum.map(i => {
+                    // console.log(i.parentElement.textContent)
+                    data += i.parentElement.textContent.trim() + ', ';
+                });
+                checkedSel.setAttribute('data-text', data);
+                checkedSel.parentElement.parentElement.setAttribute('onmouseover', `toolTip('${data}')`);
+                checkedSel.parentElement.parentElement.setAttribute('onmouseout', `toolTip()`);
+                // checkedSel
+                checkedSel.parentElement.parentElement.classList.add('hide__text');
+                checkedSel.parentElement.parentElement.setAttribute('data-show', 'text');
+            } else {
+                checkedSel.textContent = name;
+                checkedSel.parentElement.parentElement.setAttribute('onmouseover', `toolTip('${name}')`);
+                checkedSel.parentElement.parentElement.setAttribute('onmouseout', `toolTip()`);
+                checked.style.width = 100 + '%';
+                if (checked.closest('.form-control--selected')) {/**/
+                    // checked.classList.remove('form-control--selected');
+                    closeDialog();
+                }
+            }
+            if (!checked.closest('.form-control--selected')) {/**/
+                closeBtn.classList.add('hide');
+            }
+    
+        });
+        function closeDialog() {
+            closeBtn.classList.add('hide');
+            checked.classList.remove('form-control--selected')
+            const clear = Array.from(checked.querySelectorAll('input[type="checkbox"]:checked'));
+            clear.map(e => e.checked = false);
+            checkedSel.parentElement.style.backgroundColor = '#fff';
+            checkedSel.parentElement.style.borderRadius = '0px';
+            checked.style.border = ''; //border-right-width: 1px;
+            checkedSel.removeAttribute('data-text');
+    
+            checkedSel.parentElement.parentElement.classList.remove('hide__text');
+            checkedSel.parentElement.parentElement.removeAttribute('data-show');
+    
+            checkedSel.parentElement.style.border = '';
+        }
+        closeBtn.addEventListener('click', closeDialog, false);
+    };
+    
+    
+    const checkselect = Array.from(document.querySelectorAll('.checkselect'));
+    const closeBtn = Array.from(document.querySelectorAll('.input-reset'));
+    const applyBtn = Array.from(document.querySelectorAll('.apply'));
+    // открыть чекбоксы
+    /*********************close to un enabled */
+    document.addEventListener('click', (e) => {
+        if (!e.target.closest('.checkselect')) {
+            document.querySelectorAll('.checkselect').forEach(select => {
+                select.classList.remove('open');
+                //   e.stopPropagation();
+            });
+        }
+        e.stopPropagation();
+    });
+    
+    checkselect.map((e, i) => {
+    
+        e.addEventListener('click', function () {
+            this.classList.toggle('open');
+            applyBtn[i].classList.toggle('hide');
+            applyBtn[i].classList.toggle('show');
+        });
+    
+        document.addEventListener('click', (el) => {
+            if (el.target === closeBtn[i]) {
+                closeBtn[i].classList.add('hide');
+                applyBtn[i].classList.add('hide');
+                applyBtn[i].classList.remove('show')
+                checkselect[i].classList.remove('open');
+                const clear = Array.from(checkselect[i].querySelectorAll('input[type="checkbox"]:checked'));
+                clear.map(e => e.checked = false);
+    
+                if (el.target === checkselect[i] || el.target === applyBtn[i] || el.target.closest('.checkselect') === null) {
+                    closeBtn[i].classList.add('hide');
+                    applyBtn[i].classList.add('hide');
+                    applyBtn[i].classList.remove('show')
+                    checkselect[i].classList.remove('open');
+                    checkselect[i].style.display = 'none';
+                }
+            }
+        });
+    
+        document.addEventListener('keydown', (e) => {
+            if (e.code === "Escape" && checkselect[i].classList.contains('open')) {
+                closeBtn[i].classList.add('hide');
+                applyBtn[i].classList.add('hide');
+                applyBtn[i].classList.remove('show')
+                checkselect[i].classList.remove('open');
+            }
+        });
+    });
+    
+    
+    

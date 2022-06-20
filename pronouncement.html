@@ -170,28 +170,32 @@
                 <p class="type__item">Объявление подает соискатель, тот, кто ищет себе работу</p> -->
 
           <div class="select_item">
-              <select class="select"
-                style="margin: 0px; padding: 0px; position: absolute; left: 0px; top: 0px; width: 100%; height: 100%; opacity: 0;">
-                <option>Выберите тип объявления</option>
-                <option>Объявление резюме</option>
-                <option>Объявление вакансия</option>
-              </select>
+            <select class="select"
+              style="margin: 0px; padding: 0px; position: absolute; left: 0px; top: 0px; width: 100%; height: 100%; opacity: 0;">
+              <option>Выберите тип объявления</option>
+              <option>Объявление резюме</option>
+              <option>Объявление вакансия</option>
+            </select>
 
             <div class="select" id="select-category">
               <button type="button" class="select__toggle line" name="type" value="all type" data-select="toggle"
-                data-index="0">Все Типы</button>
+                data-index="0">Выберите тип объявления</button>
               <input type="hidden" name="type_id" id="type_id">
               <div class="select__dropdown">
                 <ul class="select__options">
-                  <li class="select__option" data-select="option" data-value="all type" data-index="0">Все Типы</li>
+                  <li class="select__option" data-select="option" data-value="all type" data-index="0">Выберите тип объявления</li>
                   <li class="select__option" data-select="option" data-value="active" data-index="1">
-                    <h4 class="type__title">Объявление резюме</h4>
+                    <h4 class="type__title">Объявление резюме<span></span></h4>
                   </li>
-                  <li><p class="type__item">Объявление подает соискатель, тот, кто ищет себе работу</p></li>
+                  <li>
+                    <p class="type__item">Объявление подает соискатель, тот, кто ищет себе работу</p>
+                  </li>
                   <li class="select__option" data-select="option" data-value="no-active" data-index="2">
-                    <h4 class="type__title">Объявление вакансии</h4>
+                    <h4 class="type__title">Объявление вакансии<span></span></h4>
                   </li>
-                  <li><p class="type__item">Объявление подает работодатель, тот, кто ищет себе сотрудников</p></li>
+                  <li>
+                    <p class="type__item">Объявление подает работодатель, тот, кто ищет себе сотрудников</p>
+                  </li>
 
                 </ul>
               </div>
@@ -206,11 +210,13 @@
 
 
           <div class="select_item">
-            <ul class="checkselect" id="checkselect-category">
+            <div class="select" id="select-rubrik"></div>
+
+            <!-- <ul class="checkselect" id="checkselect-category">
               <div class="checkselect-control">
                 <select class="form-control">
                   <option title=" По региону(ам)/по городу(ам)" data-text="По региону(ам)/по городу(ам)">
-                    <h4 class="category">Выберите рубрику</h4>
+                    Выберите рубрику
                   </option>
                 </select>
                 <div class="checkselect-over"></div>
@@ -256,13 +262,8 @@
                 </li>
                 <button class="apply hide" type="button">Применить</button>
               </div>
-
-            </ul>
-
+            </ul> -->
           </div>
-
-
-
         </div>
         <div class="wrapper type-category">
           <h3 class="type-category__title">Категория :</h3>
@@ -1310,19 +1311,15 @@
   <script src="./js/script-v8.js"></script>
   <!-- <script src="./js/script.js"></script> -->
   <script>
-    // const selectStatus = new CustomSelect('#select-category', {
-    //   name: 'type', // значение атрибута name у кнопки
-    //   targetValue: 'type', // значение по умолчанию
-    //   options: [
-    //     ['type', 'Выберите тип объявления'],
-    //     ['work',
-    //       '<h4 class="type__title">Объявление резюме</h4>', '<p class="type__item">Объявление подает соискатель, тот, кто ищет себе работу</p>'
-    //     ],
-    //     ['worker',
-    //       '<h4 class="type__title">Объявление вакансии</h4><p class="type__item">Объявление подает работодатель, тот, кто ищет себе сотрудников</p>'
-    //     ],
-    //   ], // опции
-    // });
+    const selectStatus = new CustomSelect('#select-rubrik', {
+      name: 'type', // значение атрибута name у кнопки
+      targetValue: 'type', // значение по умолчанию
+      options: [
+        ['type', 'Выберите тип объявления'],
+        ['work', ',kby'],
+        ['worker', 'sdfsadf'],
+      ], // опции
+    });
     const select2 = new CustomSelect('#select-category');
   </script>
 </body>
