@@ -1668,7 +1668,7 @@ select {
   -moz-box-pack: start;
   -ms-flex-pack: start;
   justify-content: flex-start;
-  padding: 15px 0;
+  padding: 15px 40px;
   background-color: #fffce5;
   /* border-top: 1px solid #bebebe; */
   /* border-bottom: 1px solid #bebebe; */
@@ -1685,7 +1685,7 @@ min-height: 150px;
 
 .category-post__title,
 .type-category__title {
-  padding-left: 45px;
+  /* padding-left: 45px; */
   margin-right: 10px;
 }
 .type-category__item {
@@ -2634,4 +2634,41 @@ margin: 10px;
 /* float: right; */
 /* width: 345;
 height: 45; */  box-sizing: border-box;
+}
+.category-language,.category-about,.category-residence,.category-worker,.category-advertisement,
+.category-college,
+.category-place-work,
+.category-parameters,
+.category-contacts{
+padding: 40px 40px;
+margin: 25px 0px;
+flex-wrap: wrap;
+}
+
+.category-language h3,.category-about h3,.category-residence h3,.category-worker h3,.category-advertisement h3,
+.category-college h3,
+.category-place-work h3,
+.category-parameters h3,
+.category-contacts h3{
+ background: yellow;
+  flex: 3 0 0;
+}
+.category-language label,.category-about label,.category-residence label,.category-worker label,.category-advertisement label,
+.category-college label,
+.category-place-work label,
+.category-parameters label,
+.category-contacts label{
+  flex: 2 0 0;
+  background: orange;
+}
+
+
+
+.category-language input,.category-about input,.category-residence input,.category-worker input,.category-advertisement input,
+.category-college input,
+.category-place-work input,
+.category-parameters input,
+.category-contacts input{
+  flex: 1 0 0;
+  background: red;
 }
