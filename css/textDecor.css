@@ -61,10 +61,10 @@ button.select__toggle{
     display: -webkit-box;
     -webkit-line-clamp: 1;
     -webkit-box-orient: vertical;
-display: inline-block;
+/* display: inline-block; */
 
 }
-.hide__text::after{
+.hide__text::before{
     content: '';
     text-align: right;
     position: absolute;

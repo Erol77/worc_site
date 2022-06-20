@@ -190,14 +190,14 @@ document.addEventListener('DOMContentLoaded', () => {
         var checked = document.querySelector(target),
             closeBtn = checked.querySelector('.input-reset'),
             checkedSel = checked.querySelector('.form-control option');
-
+//.form-control--selected
 
         checked.addEventListener('click', () => {
             var checkedNum = Array.from(checked.querySelectorAll('input[type="checkbox"]:checked'));
 
             if (checkedNum.length) {
                 checkedSel.textContent = name + ' (выбрано: ' + checkedNum.length + ')';
-
+                checkedSel.classList.add('form-control--selected')
                 closeBtn.classList.toggle('hide');
 
                 checkedSel.parentElement.style.backgroundColor = '#fbf7e7';
