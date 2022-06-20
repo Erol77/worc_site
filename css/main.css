@@ -138,7 +138,8 @@
 
 
 .input-reset {
-position: absolute;
+/* position: absolute; */
+position: inline-block;
     top: 50%;
     transform: translateY(-50%);
     right: 3px;
