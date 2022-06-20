@@ -1,4 +1,4 @@
-  
+  //select=Array.from(document.querySelector('.form-control')); select.map(i=>console.log(i.value))
     function setChecked(target, name = 'По вакансии') {
 
     var checked = document.querySelector(target),

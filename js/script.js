@@ -26,7 +26,7 @@ document.addEventListener('DOMContentLoaded', () => {
           // }
           console.log('A mutation.  ' + mutation);
          selectToStatus();
-         selectToType();
+        //  selectToType();
          selectToComment();
          selectToDialog();
         }
@@ -68,19 +68,19 @@ let mutationsList=[]
     //     ], // опции
     // });
 
-    const selectType = new CustomSelect('#select-type', {
-        name: 'type', // значение атрибута name у кнопки
-        targetValue: 'type', // значение по умолчанию
-        options: [
-            ['type', 'По типу добавления'],
-            ['response', 'Отклик'],
-            ['selection-vvn', 'Подбор от ВВН'],
-            ['selection-subscription', 'Подбор по подписке'],
+    // const selectType = new CustomSelect('#select-type', {
+    //     name: 'type', // значение атрибута name у кнопки
+    //     targetValue: 'type', // значение по умолчанию
+    //     options: [
+    //         ['type', 'По типу добавления'],
+    //         ['response', 'Отклик'],
+    //         ['selection-vvn', 'Подбор от ВВН'],
+    //         ['selection-subscription', 'Подбор по подписке'],
 
-        ], // опции
-    });
-  const selectToType = () => addTextToTarget('#select-type .select__toggle', '.select__select-type');
-  selectToType();
+    //     ], // опции
+    // });
+//   const selectToType = () => addTextToTarget('#select-type .select__toggle', '.select__select-type');
+//   selectToType();
 
     const selectComment = new CustomSelect('#select-comment', {
         name: 'comment', // значение атрибута name у кнопки
@@ -181,6 +181,8 @@ selectToDialog();
 
     setChecked('#checkselect2', 'По возрасту');
     setChecked('#checkselect3', 'По региону(ам)/по городу(ам)');
+  setChecked('#checkselect-type', 'По типу добавления');
+
    
 
 });

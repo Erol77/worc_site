@@ -416,14 +416,43 @@
                     </div>
 
                     <div class="select_item">
-                        <div id="select-type"></div>
-                        <select class="select__select-type"
+                        <!-- <div id="select-type"></div> -->
+                        <select class="select__checkselect-type" name="checkselect-type"
                             style="margin: 0px; padding: 0px; position: absolute; left: 0px; top: 0px; width: 0%; height: 0%; opacity: 0;">
                             <option>По типу добавления</option>
                             <option>Отклик</option>
                             <option>Подбор от ВВН</option>
                             <option>Подбор по подписке</option>
                         </select>
+
+
+
+ <ul class="checkselect" id="checkselect-type">
+     <div class="checkselect-control">
+         <select class="form-control">
+             <option>По типу добавления</option>
+         </select>
+         <div class="checkselect-over"></div>
+
+     </div>
+     <button class="input-reset hide" type="button">×</button>
+     <div class="checkselect-popup" style="display: none;">
+         <li>
+             <input type="checkbox" id="type1" name="type">
+             <label for="type1"><span></span>Отклик</label>
+         </li>
+         <li>
+             <input type="checkbox" id="type2" name="type">
+             <label for="type2"><span></span>Подбор от ВВН</label>
+         </li>
+         <li>
+             <input type="checkbox" id="type3" name="type">
+             <label for="type3"><span></span>Подбор по подписке</label>
+         </li>
+         <button class="apply hide" type="button">Применить</button>
+     </div>
+
+ </ul>
 
                     </div>
                     <div class="select_item"> <select class="select__select-comment"
