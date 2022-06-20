@@ -363,7 +363,7 @@ button:active {
   width: 20px;
   height: 20px;
   max-height: 90%;
-  background-image: url("../img/ajax-loader.gif");
+  background-image: url("./img/ajax-loader.gif");
   -webkit-background-size: contain;
   -moz-background-size: contain;
   -o-background-size: contain;
@@ -404,7 +404,7 @@ button:active {
 }
 .btn-link.i {
   padding-left: 22px;
-  background-image: url("../img/link.svg");
+  background-image: url("./img/link.svg");
   background-repeat: no-repeat;
   background-position: left top 2px;
   -webkit-background-size: 12px 12px;
@@ -643,7 +643,7 @@ textarea {
   position: absolute;
   top: 0;
   right: 0;
-  background-image: url("../img/search.svg");
+  background-image: url("./img/search.svg");
   background-repeat: no-repeat;
   background-position: center center;
   -webkit-background-size: 30% 30%;
@@ -829,7 +829,7 @@ textarea {
   padding: 0 2px 0 24px;
   height: 25px;
   line-height: 25px;
-  background-image: url("../img/link.svg");
+  background-image: url("./img/link.svg");
   background-repeat: no-repeat;
   background-position: left 7px center;
   -webkit-background-size: 9px 9px;
@@ -882,7 +882,7 @@ select {
   -ms-transform: rotate(90deg);
   -o-transform: rotate(90deg);
   transform: rotate(90deg);
-  background-image: url("../img/move-to-next.svg");
+  background-image: url("./img/move-to-next.svg");
   background-repeat: no-repeat;
   background-position: right 0 center;
   -webkit-background-size: 10px 10px;
@@ -1458,7 +1458,7 @@ select {
   height: 24px;
   width: 100%;
   color: rgba(0, 0, 0, 0) !important;
-  background-image: url("../img/move-to-next.svg");
+  background-image: url("./img/move-to-next.svg");
   -webkit-background-size: 40% 40%;
   -moz-background-size: 40%;
   -o-background-size: 40%;
@@ -1873,13 +1873,13 @@ select {
   color: #0088d2 !important;
 }
 .item-row:hover .item-col .whatches {
-  background-image: url("../img/whatches-blue.svg");
+  background-image: url("./img/whatches-blue.svg");
 }
 .item-row:hover .item-col .fav {
-  background-image: url("../img/heart-blue.svg");
+  background-image: url("./img/heart-blue.svg");
 }
 .item-row:hover .item-col .chat {
-  background-image: url("../img/note-blue.svg");
+  background-image: url("./img/note-blue.svg");
 }
 .item-statistic {
   position: relative;
@@ -2005,13 +2005,13 @@ select {
 }
 .item-col .whatches {
   width: 19px;
-  background-image: url("../img/whatches.svg");
+  background-image: url("./img/whatches.svg");
 }
 .item-col .fav {
-  background-image: url("../img/heart.svg");
+  background-image: url("./img/heart.svg");
 }
 .item-col .chat {
-  background-image: url("../img/note.svg");
+  background-image: url("./img/note.svg");
 }
 .item .onhover {
   visibility: hidden;
@@ -2072,7 +2072,7 @@ select {
   -o-background-size: 14px 14px;
   background-size: 14px 14px;
   background-position: center right;
-  background-image: url("../img/attention.svg");
+  background-image: url("./img/attention.svg");
   background-repeat: no-repeat;
 }
 .item-prime .prime__descr.old {
