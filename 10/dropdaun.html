@@ -1,0 +1,581 @@
+<style>
+.dropdown {
+display: flex;
+position: relative
+}
+
+@media only screen and (min-width: 768px) {
+.dropdown {
+display:inline-block;
+margin-right: 0
+}
+}
+
+.dropdown__head {
+-webkit-touch-callout: none;
+border: 1px solid #dddedf;
+box-sizing: border-box;
+color: #333;
+height: inherit!important;
+line-height: inherit!important;
+margin-bottom: 8px;
+margin-right: 8px;
+padding: 3px!important;
+padding-left: 10px;
+padding-right: 10px;
+position: relative;
+-webkit-user-select: none;
+-khtml-user-select: none;
+-moz-user-select: none;
+-ms-user-select: none;
+user-select: none
+}
+
+.dropdown__head:hover {
+background-color: hsla(0,0%,100%,.33);
+cursor: pointer
+}
+
+.dropdown__head--opened,.dropdown__head--opened:hover,.dropdown__head:active,.dropdown__head:hover {
+border: 1px solid transparent;
+box-shadow: 0 1px 6px 0 rgba(25,50,90,.05),0 1px 2px 0 rgba(25,50,90,.05)
+}
+
+.dropdown__head--opened,.dropdown__head--opened:hover,.dropdown__head:active {
+background-color: #fff
+}
+
+.dropdown__head--selected {
+box-shadow: 0 1px 6px 0 rgba(25,50,90,.05),0 1px 2px 0 rgba(25,50,90,.05)!important;
+color: #000;
+font-weight: 700
+}
+
+.dropdown__head--selected,.dropdown__head--selected:hover {
+cursor: default
+}
+
+.dropdown__head--selected,.dropdown__head--selected--opened,.dropdown__head--selected--opened:hover,.dropdown__head--selected:active,.dropdown__head--selected:hover
+{
+background-color: #fff!important;
+border: 1px solid transparent!important
+}
+
+.dropdown__head__item {
+display: inline-block;
+height: 32px;
+line-height: 32px;
+padding-left: 12px;
+padding-right: 32px;
+position: relative;
+vertical-align: middle
+}
+
+.dropdown__head__item--selected {
+background-color: rgba(255,153,0,.2)
+}
+
+.dropdown__head__item--selected:hover {
+background-color: rgba(255,153,0,.3);
+cursor: pointer
+}
+
+.dropdown__head__item--selected:active {
+background-color: rgba(255,153,0,.4)
+}
+
+.dropdown__head__item--selected .icon {
+color: #f90;
+cursor: pointer
+}
+
+.dropdown__head__item .icon {
+font-size: 16px;
+height: 32px;
+line-height: 32px
+}
+
+.dropdown__head__clear {
+background-color: rgba(255,153,0,.2);
+cursor: pointer;
+display: inline-block;
+height: 32px;
+margin-left: 1px;
+width: 32px
+}
+
+.dropdown__head__clear:hover {
+background-color: rgba(255,153,0,.3)
+}
+
+.dropdown__head__clear:active {
+background-color: rgba(255,153,0,.4)
+}
+
+.dropdown__head__clear .icon {
+color: #f90;
+font-size: 16px;
+line-height: 32px;
+text-align: center;
+vertical-align: middle;
+width: 100%
+}
+
+.dropdown__head .icon--angle-down,.dropdown__head .icon--angle-up {
+color: #999;
+float: none;
+padding-left: 5px;
+position: absolute;
+right: 8px
+}
+
+.dropdown__list {
+-webkit-tap-highlight-color: transparent;
+background-color: #fff;
+border: none;
+box-shadow: 0 8px 16px 0 rgba(25,50,90,.05),0 4px 8px 0 rgba(25,50,90,.05),0 1px 2px 0 rgba(25,50,90,.05),0 0 1px 0
+rgba(25,50,90,.05);
+box-sizing: border-box;
+cursor: pointer;
+display: none;
+left: 0;
+max-width: 304px;
+padding: 8px 16px;
+position: absolute;
+top: 44px;
+width: 100%;
+z-index: 10
+}
+
+@media only screen and (min-width: 768px) {
+.dropdown__list {
+width:304px
+}
+}
+
+.dropdown__list--opened {
+display: block
+}
+
+.dropdown__list--opened:hover {
+cursor: default
+}
+
+.dropdown__list--inverted {
+left: inherit;
+right: 8px
+}
+
+.dropdown__list h3 {
+margin-bottom: 0
+}
+
+.dropdown__list .button--search {
+margin-bottom: 8px!important;
+margin-top: 18px!important
+}
+
+.dropdown__description {
+color: #999;
+display: block;
+font-size: 13px;
+line-height: 19px;
+margin-bottom: 12px
+}
+
+.dropdown__item {
+cursor: pointer;
+line-height: 20px;
+margin-bottom: 2px;
+min-height: inherit;
+padding: 8px;
+text-overflow: ellipsis
+}
+
+@media only screen and (min-width: 768px) {
+.dropdown__item {
+width:256px
+}
+}
+
+.dropdown__item:hover {
+background-color: rgba(255,153,0,.3)
+}
+
+.dropdown__item:active {
+background-color: rgba(255,153,0,.4)
+}
+
+.dropdown__item--selected {
+background-color: rgba(255,153,0,.2);
+font-weight: 700
+}
+
+.dropdown .filter-option {
+display: flex
+}
+
+.dropdown .filter-option__icon {
+margin-right: 6px;
+width: 26px
+}
+
+.dropdown .filter-option__text {
+flex: 1
+}
+
+.dropdown .filter-option__desc {
+color: #999;
+font-size: 13px;
+font-weight: 400;
+margin-top: 5px
+}
+
+.dropdown .filter-option--input-with-range {
+display: block
+}
+
+.dropdown .filter-option--input-with-range .filter-option__icon {
+display: inline-block
+}
+
+.dropdown .filter-option--input-with-range input {
+color: #999;
+padding: 8px
+}
+
+.dropdown .filter-option--input-with-range input.filter_name_salary {
+width: 50%
+}
+
+.dropdown .filter-option--input-with-range input::-webkit-inner-spin-button,.dropdown .filter-option--input-with-range
+input::-webkit-outer-spin-button {
+-webkit-appearance: none;
+margin: 0
+}
+
+.dropdown .filter-option--input-with-range input[type=number] {
+-moz-appearance: textfield
+}
+
+.dropdown .filter-option--input-with-range .MuiSlider-root {
+margin-top: 15px
+}
+
+.dropdown .filter-option--input-with-range .MuiSlider-rail,.dropdown .filter-option--input-with-range .MuiSlider-track {
+background-color: #dddedf;
+border-radius: 4px;
+height: 4px
+}
+
+.dropdown .filter-option--input-with-range .MuiSlider-thumb {
+background-color: #dddedf;
+border-radius: 0;
+box-shadow: none;
+height: 32px;
+margin-top: -14px;
+transition: none;
+width: 8px
+}
+
+.dropdown .filter-option--input-with-range .MuiSlider-active,.dropdown .filter-option--input-with-range
+.MuiSlider-focusVisible,.dropdown .filter-option--input-with-range .MuiSlider-thumb:hover {
+box-shadow: none
+}
+
+.dropdown .filter-option--input-with-range .range-description {
+color: #999;
+font-size: 13px;
+font-weight: 400
+}
+
+.dropdown .filter-option--input-with-range .range-description__max {
+float: right
+}
+
+.dropdown .filter-option--input-with-range--selected .MuiSlider-rail,.dropdown
+.filter-option--input-with-range--selected .MuiSlider-thumb {
+background-color: #f90
+}
+
+.dropdown .filter-option--input-with-range--selected .MuiSlider-track {
+background-color: #999
+}
+
+.dropdown .filter-option--input-with-range--selected input {
+color: #000
+}
+
+.dropdown .filter-option--input-with-range--selected .range-description {
+color: #333
+}
+
+.dropdown .filter-option .option-icon {
+vertical-align: sub
+}
+
+.dropdown__icon {
+float: right
+}
+
+.dropdown .option-subheadline {
+margin-top: 8px
+}
+
+.filters__body {
+position: relative
+}
+
+.filters-toggler {
+display: inline-block;
+height: 35px;
+margin-bottom: 8px
+}
+
+@media only screen and (min-width: 768px) {
+.filters-toggler {
+padding-top:5px
+}
+}
+
+@media only screen and (min-width: 1020px) {
+.filters-toggler {
+margin-left:12px
+}
+}
+
+.filters-toggler__text {
+border-bottom: 1px solid #a6a9ae;
+color: #333;
+line-height: 28px;
+vertical-align: middle
+}
+
+.filters-toggler:hover {
+border-bottom: none
+}
+
+.filters-toggler:hover>.filters-toggler__text {
+border-bottom: 1px solid #000
+}
+
+.filters-toggler:active {
+background-color: #e8e8e8
+}
+
+.filters-toggler .icon {
+color: #999;
+line-height: 28px;
+margin-left: 8px;
+vertical-align: middle
+}
+
+@media only screen and (min-width: 768px) {
+.filters-toggler--opened {
+margin-left:12px
+}
+}
+
+.filters-scrollbox__container {
+height: 47px!important
+}
+
+.filters-scrollbox__label-container {
+white-space: nowrap
+}
+
+.filters-scrollbox__label-container .dropdown__head {
+display: inline-block;
+margin-bottom: 0
+}
+
+.filters-scrollbox__label-container .dropdown__head__item {
+padding-right: 12px
+}
+
+.filters-scrollbox__label-container .dropdown__head--selected {
+box-shadow: none!important
+}
+
+.search-modal__root {
+padding: 16px!important
+}
+
+.search-modal__header {
+border-bottom: 1px solid #e8e8e8;
+padding-bottom: 16px;
+text-align: right
+}
+
+.search-modal__clear {
+text-decoration: underline
+}
+
+.search-modal__actions {
+background-color: #f4f4f4;
+border-top: 1px solid #e8e8e8;
+flex-direction: column;
+justify-content: center;
+padding: 8px 16px 16px!important
+}
+
+.search-modal__count {
+font-size: 14px;
+padding-bottom: 8px
+}
+
+.search-modal .button--search {
+margin-left: 0!important;
+width: 100%
+}
+
+.search-modal .dropdown__list {
+border-bottom: 1px solid #e8e8e8;
+box-shadow: none;
+display: block;
+max-width: 100%;
+padding: 0;
+position: relative;
+top: 0;
+width: 100%
+}
+
+.search-modal .dropdown__list .button--search {
+display: none
+}
+
+.search-modal .dropdown__inner-title-container {
+padding: 11px 0
+}
+
+.search-modal .dropdown__inner-title {
+display: flex
+}
+
+.search-modal .dropdown__inner-title h3 {
+display: inline-block;
+margin-top: 3px
+}
+
+.search-modal .dropdown__inner-title .icon {
+align-self: center;
+color: #a6a9ae;
+font-size: 24px
+}
+
+.search-modal .dropdown__count {
+align-self: center;
+background-color: #f90;
+border-radius: 50%;
+color: #fff;
+font-size: 12px;
+line-height: 20px;
+margin-left: auto;
+margin-right: 16px;
+text-align: center
+}
+
+.search-modal .dropdown__count--displayed {
+height: 19px;
+width: 19px
+}
+
+.search-modal .dropdown__options {
+display: block;
+margin-bottom: 18px;
+margin-top: -11px
+}
+
+.hero {
+background-color: #f4f4f4;
+padding: 36px 0
+}
+
+.hero--collapsed {
+padding: 20px 0
+}
+
+.hero--bold {
+background-color: #0183c5;
+color: #fff
+}
+
+
+</style>
+<div class="dropdown">
+  <div class="dropdown__head dropdown__head--selected dropdown__head--opened">
+    <div class="dropdown__head__item dropdown__head__item--selected">Pracovní smlouva (HPP/VPP)<span
+        class="icon radius__icon-down icon--angle-up"></span></div>
+    <div class="dropdown__head__clear"><span class="icon icon--cross"></span></div>
+  </div>
+  <div class="dropdown__list dropdown__list--opened">
+    <div class="dropdown__inner-title-container">
+      <h3 data-gtm-vis-recent-on-screen-347315_1127="8399" data-gtm-vis-first-on-screen-347315_1127="8399"
+        data-gtm-vis-total-visible-time-347315_1127="100" data-gtm-vis-has-fired-347315_1127="1">Úvazek</h3>
+    </div>
+    <div class="MuiCollapse-root MuiCollapse-entered" style="min-height: 0px; height: auto; transition-duration: 0ms;">
+      <div class="MuiCollapse-wrapper">
+        <div class="MuiCollapse-wrapperInner">
+          <div class="dropdown__options"><span class="dropdown__description"></span>
+            <div class="dropdown__item">
+              <div class="filter-option filter-option--checkbox">
+                <div class="filter-option__icon"><img class="option-icon"
+                    src="https://ijobs.cz/build/images/checkbox.a3c44cec.svg" alt="Checkbox"></div>
+                <div class="filter-option__text">Plný úvazek</div>
+              </div>
+            </div>
+            <div class="dropdown__item">
+              <div class="filter-option filter-option--checkbox">
+                <div class="filter-option__icon"><img class="option-icon"
+                    src="https://ijobs.cz/build/images/checkbox.a3c44cec.svg" alt="Checkbox"></div>
+                <div class="filter-option__text">Zkrácený úvazek</div>
+              </div>
+            </div>
+            <div class="">
+              <h3 class="option-subheadline" data-gtm-vis-recent-on-screen-347315_1127="8402"
+                data-gtm-vis-first-on-screen-347315_1127="8402" data-gtm-vis-total-visible-time-347315_1127="100"
+                data-gtm-vis-has-fired-347315_1127="1">Typ spolupráce</h3>
+            </div>
+            <div class="dropdown__item dropdown__item--selected">
+              <div class="filter-option filter-option--checkbox">
+                <div class="filter-option__icon"><img class="option-icon"
+                    src="https://ijobs.cz/build/images/checkbox-selected.43d7cae5.svg" alt="Checkbox selected"></div>
+                <div class="filter-option__text">Pracovní smlouva (HPP/VPP)</div>
+              </div>
+            </div>
+            <div class="dropdown__item">
+              <div class="filter-option filter-option--checkbox">
+                <div class="filter-option__icon"><img class="option-icon"
+                    src="https://ijobs.cz/build/images/checkbox.a3c44cec.svg" alt="Checkbox"></div>
+                <div class="filter-option__text">Práce na živnostenský list</div>
+              </div>
+            </div>
+            <div class="dropdown__item">
+              <div class="filter-option filter-option--checkbox">
+                <div class="filter-option__icon"><img class="option-icon"
+                    src="https://ijobs.cz/build/images/checkbox.a3c44cec.svg" alt="Checkbox"></div>
+                <div class="filter-option__text">Práce na dohodu (DPP/DPČ)</div>
+              </div>
+            </div>
+            <div class="">
+              <h3 class="option-subheadline" data-gtm-vis-first-on-screen-347315_1127="8405"
+                data-gtm-vis-total-visible-time-347315_1127="100" data-gtm-vis-has-fired-347315_1127="1">Stáže</h3>
+            </div>
+            <div class="dropdown__item">
+              <div class="filter-option filter-option--checkbox">
+                <div class="filter-option__icon"><img class="option-icon"
+                    src="https://ijobs.cz/build/images/checkbox.a3c44cec.svg" alt="Checkbox"></div>
+                <div class="filter-option__text">Stáže, praxe a trainee programy</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div><button type="submit" class="button button--search"><span>Zobrazit nabídky</span></button>
+  </div>
+</div>
+<div class=""style="height: 500px;width: 300px; background-color: red;"></div>
+
+<div class="dropdown__head__clear"><span class="icon icon--cross"></span></div>
+<script>
+</script>

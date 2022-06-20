@@ -197,7 +197,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
             if (checkedNum.length) {
                 checkedSel.textContent = name + ' (выбрано: ' + checkedNum.length + ')';
+
                 closeBtn.classList.toggle('hide');
+
                 checkedSel.parentElement.style.backgroundColor = '#fbf7e7';
                 checkedSel.parentElement.style.borderRadius = '5px';
                 checkedSel.parentElement.style.border = '1px solid #e3dcb2'; //border-right-width: 1px;
@@ -219,6 +221,7 @@ checkedSel.parentElement.parentElement.setAttribute('onmouseover', `toolTip('${n
 checkedSel.parentElement.parentElement.setAttribute('onmouseout', `toolTip()`);
             }
         });
+
         closeBtn.addEventListener('click', () => {
 
             closeBtn.classList.add('hide');
@@ -252,13 +255,8 @@ checkedSel.parentElement.parentElement.setAttribute('onmouseout', `toolTip()`);
                 select.classList.remove('open');
                 //   e.stopPropagation();
             });
-        }
-
-
-       
-
+        }     
         e.stopPropagation();
-
     });
 
     checkselect.map((e, i) => {
@@ -343,4 +341,4 @@ document.addEventListener('click', (el) => {
     datepickerClose();
         }
     })
-    //|| el.target.closest('#date2') && el.target.closest('td')
+    //|| el.target.closest('#date2') && el.target.closest('td')  rgba(255,153,0,.2);
