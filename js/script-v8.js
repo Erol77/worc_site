@@ -1,6 +1,6 @@
 document.addEventListener('DOMContentLoaded', () => {
 
-setChecked('checkselect-category', 'Выберите рубрику');
+setChecked('#checkselect-category', 'Выберите рубрику');
 
 
 })

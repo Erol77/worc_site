@@ -129,7 +129,7 @@ CustomSelect.template = params => {
     <ul class="select__options">${items.join('')}</ul>
   </div>`;
 };
-
+/*<input type="hidden" value="${selectedContent}" >*/
 document.addEventListener('click', (e) => {
   if (!e.target.closest('.select')) {
     document.querySelectorAll(CustomSelect.SELECTOR_ACTIVE).forEach(select => {

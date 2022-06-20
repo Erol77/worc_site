@@ -349,6 +349,7 @@ position: relative;
 .checkselect-popup label:hover{
 	background-color: #e3dcb2;
 }
+
 input[type="checkbox"]:checked + label,
 .jq-selectbox li:hover,
 .jq-selectbox li.sel {
@@ -388,7 +389,7 @@ input[type="checkbox"]:checked + label span::before {
 }
 input[type="checkbox"]:checked + label span {
     border-color: #ff0000;
-}
+}/************************я**/
 select {
 	-webkit-appearance: none;
 	-moz-appearance: none;
