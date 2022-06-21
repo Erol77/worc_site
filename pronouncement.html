@@ -278,15 +278,21 @@
           </div>
 
           <div class="wrapper category-contacts">
-            <h3 class="contacts__title">Контактная информация</h3>
+            <h2 class="contacts__title">Контактная информация</h2>
             <div class="contacts__email inp-wrap ">
-              <label for="email" class=""><h4>Электронная поча</h4></label>
+              <label for="email" class="">
+                <h3>Электронная поча</h3>
+              </label>
               <input type="email" name="email" id="email" placeholder="111nat@mail.ru" required></div>
             <div class="contacts__name inp-wrap ">
-              <label for="name"><h4>Ваше Имя</h4></label>
+              <label for="name">
+                <h3>Ваше Имя</h3>
+              </label>
               <input type="text" name="name" id="name" placeholder="Светлана" required></div>
             <div class="contacts__phone inp-wrap ">
-              <label for="phone"><h4>Телефон</h4></label>
+              <label for="phone">
+                <h3>Телефон</h3>
+              </label>
               <input type="tel" name="phone" id="phone" placeholder="8 952 777-00-01" required>
             </div>
             <hr>
@@ -308,26 +314,38 @@
             </div>
             <div class="contacts__added">
               <h3 class="contacts__added--title">Дополнительные сопсобы связи</h3>
-              <div class="">
+              <div class="contacts__added--list">
                 <div class="contacts__added--message inp-checkbox">
                   <input type="checkbox" name="message" id="message">
                   <label for="message"></label>
-                </div><p>Через сообщения на Vsevn.ru</p>
+                </div>
+                <p>Через сообщения на Vsevn.ru</p>
                 <div class="contacts__added--email inp-checkbox">
                   <input type="checkbox" name="addEmail" id="addEmail">
                   <label for="addEmail"></label>
-                </div><p>Электронная почта</p>
+                </div>
+                <p>Электронная почта</p>
               </div>
             </div>
           </div>
 
           <div class="wrapper category-parameters">
-            <h2>ПараметрыЖ</h2>
-            <label for="">График работы <span>*</span></label>
-            <input type="text" name="" id="">
+            <h2>Параметры</h2>
 
-            <label for="">Оаыт работы</label>
-            <input type="text" name="" id=""><span>лет</span>
+            <div class="parameters__schedule inp-wrap ">
+              <label for="schedule" class="">
+                <h3>График работы <span>*</span></h3>
+              </label>
+              <input type="text" name="schedule" id="schedule" placeholder="---" required></div>
+<div class="parameters__schedule inp-wrap ">
+  <label for="working-experience" class="">
+    <h3>Оаыт работы <span>*</span></h3>
+  </label>
+  <input type="text" name="working-experience" id="working-experience" placeholder="---"
+    required><span>лет</span>
+  </div>
+
+        
 
             <label for="">Стаж работы</label>
             <input type="text" name="" id=""><span>лет</span>

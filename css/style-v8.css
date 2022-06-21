@@ -2646,7 +2646,7 @@ input[type="checkbox"]:checked + label span {
   padding: 40px 40px;
   margin: 25px 0px;
   flex-wrap: wrap;
-  gap: 15px;
+  gap: 7px;
 }
 
 .category-language h3,
@@ -2687,6 +2687,7 @@ input[type="checkbox"]:checked + label span {
   background: red; */
 }
 /* flex-basis: 200px;  */
+.category-parameters,
 .wrapper.category-contacts {
   flex-direction: column;
   justify-content: start;
@@ -2708,17 +2709,31 @@ input[type="checkbox"]:checked + label span {
   border-top: 1px solid #e3dcb2;
   padding-top: 25px;
 }
-.wrapper.category-contacts h3,
+.wrapper.category-contacts h3,.category-parameters h3,.category-parameters h4,
 .wrapper.category-contacts h4{
 width: 290px;
 }
+
 .wrapper.category-contacts .inp-checkbox{
 float: left;
 margin-right: 15px;
 }
+.category-parameters .inp-wrap input,
 .wrapper.category-contacts .inp-wrap input{
 width: 330px;
 height: 55px;
 border-radius: 5px;
+font-size: 1.2em;
+margin-right: 25px;
+}
 
+.wrapper.category-contacts  p {
+  /* flex: 1; */
+  background: red;
+/* box-sizing: content-box; */
+/* flex-basis: 400px; */
+/* display: inline-block; */
+}
+.contacts__phone.inp-wrap{
+margin-bottom: 20px;
 }
