@@ -13,27 +13,27 @@ document.addEventListener('DOMContentLoaded', () => {
     //             return el;
     //         };
     // }, 'data-delete', 'data-edit','data-modal'
-    const configUser = {
-        attributes: true,
-        childList: true,
-        subtree: true,
-        attributeFilter: ['data-value']
-      };
-      const callbackUser = function (mutationsList) {
-        for (let mutation of mutationsList) {
+    // const configUser = {
+        // attributes: true,
+        // childList: true,
+        // subtree: true,
+        // attributeFilter: ['data-value']
+    //   };
+    //   const callbackUser = function (mutationsList) {
+        // for (let mutation of mutationsList) {
           // if (mutation.type === 'childList') {
           //   modalUser()//          console.log('A child node has been added or removed.');
           // }
-          console.log('A mutation.  ' + mutation);
-         selectToStatus();
+        //   console.log('A mutation.  ' + mutation);
+        //  selectToStatus();
         //  selectToType();
-         selectToComment();
-         selectToDialog();
-        }
-      };
-let mutationsList=[]
-      const observerUser = new MutationObserver(callbackUser);
-      observerUser.observe(document.forms[0], configUser);
+        //  selectToComment();
+        //  selectToDialog();
+        // }
+    //   };
+// let mutationsList=[]
+    //   const observerUser = new MutationObserver(callbackUser);
+    //   observerUser.observe(document.forms[0], configUser);
 
 
     const burger = document.querySelector('.burger');

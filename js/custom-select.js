@@ -141,7 +141,14 @@ document.addEventListener('click', (e) => {
 function addTextToTarget(selector,target){
   const data = document.querySelector(selector);
 let text = document.querySelector(target);
-text.value = data.textContent;
+data.parentElement.addEventListener('click',()=>{
+  // if(text.value!=data.textContent){
+    text.value = data.textContent;
+   console.log(data.textContent + '    ' + text.value)
+  // }
+
+})
+// text.value = data.textContent;
 // console.log(data.textContent + '    ' + text.value)
 }
 
