@@ -678,6 +678,7 @@ textarea {
   left: 50%;
   border: 1px solid #e4ddb4;
   background-color: #fff;
+border-radius:3px;
   -webkit-transform: translate(-50%, -50%);
   -moz-transform: translate(-50%, -50%);
   -ms-transform: translate(-50%, -50%);
@@ -2605,13 +2606,15 @@ padding-right: 50px;
 max-width: 660px;
     height: 48px;
 margin-right: 20px;
-font: inherit;  box-sizing: border-box;
+font: inherit; 
+ box-sizing: border-box;
 }
 
 .box__title {
 display: flex;
-max-width: 345;
-height: 45;
+/* max-width: 345; */
+flex-basis: 345px; 
+/* height: 45; */
 /* text-align:center; */
 /* border:2px solid vba(--yellow0); */
 /* background-color:rgb(255, 255, 240); */
@@ -2621,6 +2624,7 @@ height: 45;
 justify-content: space-between;
 /* padding: 5px 15px; */
   box-sizing: border-box;
+align-items: center; 
 }
 
 .box__title img{
@@ -2630,10 +2634,8 @@ margin: 10px;
  
 }
 .box__title p{
-/* display: inline; */
-/* float: right; */
-/* width: 345;
-height: 45; */  box-sizing: border-box;
+  box-sizing: border-box;
+font-size: 0.7em;
 }
 .category-language,.category-about,.category-residence,.category-worker,.category-advertisement,
 .category-college,
@@ -2643,6 +2645,7 @@ height: 45; */  box-sizing: border-box;
 padding: 40px 40px;
 margin: 25px 0px;
 flex-wrap: wrap;
+gap: 15px;
 }
 
 .category-language h3,.category-about h3,.category-residence h3,.category-worker h3,.category-advertisement h3,
@@ -2650,16 +2653,16 @@ flex-wrap: wrap;
 .category-place-work h3,
 .category-parameters h3,
 .category-contacts h3{
- background: yellow;
-  flex: 3 0 0;
+ /* background: yellow;
+  flex: 3 0 0; */
 }
 .category-language label,.category-about label,.category-residence label,.category-worker label,.category-advertisement label,
 .category-college label,
 .category-place-work label,
 .category-parameters label,
 .category-contacts label{
-  flex: 2 0 0;
-  background: orange;
+  /* flex: 2 0 0;
+  background: orange; */
 }
 
 
@@ -2669,6 +2672,23 @@ flex-wrap: wrap;
 .category-place-work input,
 .category-parameters input,
 .category-contacts input{
-  flex: 1 0 0;
-  background: red;
+  /* flex: 1 0 0;
+  background: red; */
+}
+/* flex-basis: 200px;  */
+.wrapper.category-contacts{
+flex-direction: column;
+justify-content: start;
+align-items: start; 
+align-content: stretch;
+align-items: stretch;
+/* flex-grow:1;
+ flex-shrink: */
+/* padding: auto; */
+}
+/* .wrapper.category-contacts  */
+.contacts__message,
+.contacts__email{
+/* flex-direction: row; */
+display: flex;
 }

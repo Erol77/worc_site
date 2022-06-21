@@ -279,25 +279,49 @@
 
           <div class="wrapper category-contacts">
             <h3 class="contacts__title">Контактная информация</h3>
-            <label for="email" class="">Электронная поча</label>
-            <input type="email" name="email" id="email" placeholder="111nat@mail.ru">
-            <label for="name">Ваше Имя</label>
-            <input type="text" name="name" id="name" placeholder="Светлана">
-            <label for="phone">Телефон</label>
-            <input type="tel" name="phone" id="phone" placeholder="8 952 777-00-01">
+            <div class="contacts__email">
+              <label for="email" class="">Электронная поча</label>
+              <input type="email" name="email" id="email" placeholder="111nat@mail.ru"></div>
+            <div class="contacts__name">
+              <label for="name">Ваше Имя</label>
+              <input type="text" name="name" id="name" placeholder="Светлана"></div>
+            <div class="contacts__phone">
+              <label for="phone">Телефон</label>
+              <input type="tel" name="phone" id="phone" placeholder="8 952 777-00-01">
+            </div>
+            <div class="inp-wrap date datepicker" id="dateRangePicker">
+              <input type="text" autocomplete="off" placeholder="От" class="datepicker" name="date" id="inpDate">
+              <input type="text" autocomplete="off" placeholder="До" class="datepicker" name="date2" id="inpDate2">
+            </div>
             <hr>
-            <h3 for="">Основные способы связи доступные работодателю:</h3>
-            <input type="text" class="">
-            <label for="">Отклики на сайте(все отклики вместе с вакансиями мы продублируем на эл. почту)</label>
+            <div class="contacts__message">
+              <h3 class="contacts__message--title">Основные способы связи доступные работодателю:</h3>
+              <div class="contacts__message--email inp-checkbox">
+                <input type="checkbox" name="message--email" id="message--email">
+                <label for="message--email"></label>
 
-            <input type="text" name="" id="">
-            <label for="">По телефону</label>
+              </div>
+              <p>Отклики на сайте(все отклики вместе с вакансиями мы продублируем на эл.
+                почту)</p>
+              <div class="contacts__message--phone inp-checkbox">
+                <input type="checkbox" name="message--phone" id="message--phone">
+                <label for="message--phone"></label>
+              </div>
+              <p>По телефону</p>
+            </div>
 
-            <h3 for="">Дополнительные сопсобы связи</h3>
-            <input type="text" name="" id="">
-            <label for="">Через сообщения на Vsevn.ru</label>
-            <input type="text" name="" id="">
-            <label for="">Электронная почта</label>
+<div class="contacts__added">
+            <h3 class="contacts__added--title">Дополнительные сопсобы связи</h3>
+
+            <div class="contacts__added--contact inp-checkbox">
+              <input type="checkbox" name="contact" id="contact">
+              <label for="contact">Через сообщения на Vsevn.ru</label>
+</div>
+            <div class="contacts__added--email inp-checkbox">
+              <input type="checkbox" name="addEmail" id="addEmail">
+              <label for="addEmail">Электронная почта</label>
+            </div>
+</div>
           </div>
 
           <div class="wrapper category-parameters">
@@ -393,7 +417,7 @@
 
             <button>+</button> <a href="http://">Добавить язык</a>
           </div>
-<!-- ********* -->
+          <!-- ********* -->
           <div class="wrapper category-language">
             <h2>Ключевые навыки</h2>
             <label for="">Укажите ключевые навыки</label>
