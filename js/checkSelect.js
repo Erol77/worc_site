@@ -19,14 +19,14 @@
             checked.classList.add('form-control--selected');
             // checkedSel.classList.add('form-control--selected');
             if (closeBtn.closest('.hide')) {
-                closeBtn.style.right = -15 + '%';
+                closeBtn.style.right = -15 + 'px';
                 closeBtn.classList.remove('hide');
             }
 
             checkedSel.parentElement.style.backgroundColor = '#fbf7e7';
             checkedSel.parentElement.style.borderRadius = '5px';
             checkedSel.parentElement.style.border = '1px solid #e3dcb2'; //border-right-width: 1px;
-            checked.style.width = 88 + '%';
+            checked.style.width =checked.style.width-25 +'px';
             // checked.style.after.right = 80+'%';
             checked.style.border = 'none'; //border-right-width: 1px;
             let data = name + ' (выбрано: ' + checkedNum.length + ')';
@@ -44,7 +44,7 @@
             checkedSel.textContent = name;
             checkedSel.parentElement.parentElement.setAttribute('onmouseover', `toolTip('${name}')`);
             checkedSel.parentElement.parentElement.setAttribute('onmouseout', `toolTip()`);
-            checked.style.width = 100 + '%';
+            // checked.style.width = 100 + '%';
             if (checked.closest('.form-control--selected')) {/**/
                 // checked.classList.remove('form-control--selected');
                 closeDialog();
