@@ -100,6 +100,6 @@ const selectEducation = new CustomSelect('#education',
 
     ], // опции 
 });
-
+addTextToTarget('#education .select__toggle', '.select__education--education');
 
 })

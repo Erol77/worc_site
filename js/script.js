@@ -217,7 +217,7 @@ selectToDialog();
                 }
     
                 checkedSel.parentElement.style.backgroundColor = '#fbf7e7';
-                checkedSel.parentElement.style.borderRadius = '5px';
+                // checkedSel.parentElement.style.borderRadius = '5px';
                 checkedSel.parentElement.style.border = '1px solid #e3dcb2'; //border-right-width: 1px;
                 checked.style.width = 91 + '%';
                 // checked.style.after.right = 80+'%';
@@ -254,7 +254,7 @@ selectToDialog();
             const clear = Array.from(checked.querySelectorAll('input[type="checkbox"]:checked'));
             clear.map(e => e.checked = false);
             checkedSel.parentElement.style.backgroundColor = '#fff';
-            checkedSel.parentElement.style.borderRadius = '0px';
+            // checkedSel.parentElement.style.borderRadius = '0px';
             checked.style.border = ''; //border-right-width: 1px;
             checkedSel.removeAttribute('data-text');
     

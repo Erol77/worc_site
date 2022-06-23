@@ -155,7 +155,7 @@ float: right;
 z-index: 2;
 
 background-color: rgb(251, 247, 231);
-border-radius: 5px;
+/* border-radius: 5px; */
 border: 1px solid rgb(227, 220, 178);
 color: #ffdd00;
 font-size: 1.5rem;
