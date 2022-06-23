@@ -2719,7 +2719,7 @@ input[type="checkbox"]:checked + label span {
   padding-top: 25px;
   padding-bottom: 10px;
 }
-.wrapper.category h3,
+.wrapper.category h3,.category label,
 .wrapper.category h4{
 width: 290px;
 }
@@ -2759,8 +2759,10 @@ margin-bottom: 20px;
 }
 
 .buttons {
-	display: inline-block;
+	display: flex;
 	overflow: hidden;
+  max-width: 350px;
+  height: 55px;
 }
 .buttons-item {
 	display: inline-block;
@@ -2772,8 +2774,8 @@ margin-bottom: 20px;
 .buttons label {
 	display: inline-block;
 	cursor: pointer;
-	padding: 0px 15px;
-	line-height: 34px;
+	padding: 0px 44px;
+	line-height: 55px;
 	border: 1px solid #999;
 	border-right: none;
 	user-select: none;
@@ -2802,12 +2804,67 @@ margin-bottom: 20px;
 	background: #efefef;
 	color: #666;
 }
-.category label{
+/* .category label{ */
   /* display: block; */
-  font-size: 1.17em;
+  /* font-size: 1.17em; */
   /* margin-block-start: 1em;
   margin-block-end: 1em;
   margin-inline-start: 0px;
   margin-inline-end: 0px; */
   /* font-weight: bold; */
+/* } */
+
+.form_radio {
+	margin-bottom: 10px;
+}
+.form_radio input[type=radio] {
+	display: none;
+}
+.form_radio label {
+	display: inline-block;
+	cursor: pointer;
+	position: relative;
+	padding-left: 25px;
+	margin-right: 0;
+	line-height: 18px;
+	user-select: none;
+}
+.form_radio label:before {
+	content: "";
+	display: inline-block;
+	width: 17px;
+	height: 18px;
+	position: absolute;
+	left: 0;
+	bottom: 1px;
+	background: url(/img/radio-1.png) 0 0 no-repeat;
+}
+ 
+/* Checked */
+.form_radio input[type=radio]:checked + label:before {
+	background: url(/img/radio-2.png) 0 0 no-repeat;
+}
+ 
+/* Hover */
+.form_radio label:hover:before {
+	filter: brightness(120%);
+}
+ 
+/* Disabled */
+.form_radio input[type=radio]:disabled + label:before {
+	filter: grayscale(100%);
+}
+.inner__wrapper {
+  display: flex;
+  align-items: center;
+  align-content: center;
+  justify-content: center;
+}
+.inner__wrapper .buttons label{
+  width: 165px;
+  height: 55px;
+}
+.parameters__secondment.inner__wrapper label{
+  padding:0 20px;
+  width: 110px;
 }

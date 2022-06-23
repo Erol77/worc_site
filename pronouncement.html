@@ -204,7 +204,6 @@
           </div>
 
 
-
           <!-- <h4 class="type__title">Объявление вакансии</h4>
                 <p class="type__item">Объявление подает работодатель, тот, кто ищет себе сотрудников</p> -->
           <!-- <h4 class="category">Выберите рубрику</h4> -->
@@ -337,8 +336,8 @@
             <label for="working-experience" class="">
               <h3>Опыт работы <span>*</span></h3>
             </label>
-            <input type="text" name="working-experience" id="working-experience" placeholder="---"
-              required><span>лет</span>
+            <input type="text" name="working-experience" id="working-experience" placeholder="---" required>
+            <p>лет</p>
           </div>
 
           <div class="parameters__seniority inp-wrap">
@@ -346,18 +345,19 @@
             <label for="seniority">
               <h3>Стаж работы</h3>
             </label>
-            <input type="text" name="seniority" id="seniority"><span>лет</span>
+            <input type="text" name="seniority" id="seniority">
+            <p>лет</p>
           </div>
           <div class="parameters__education inp-wrap">
             <label for="education">Образование <span>*</span></label>
             <input type="text" name="education" id="education">
           </div>
-          <div class="parameters__gender">
-            <label for="gender">Пол <span>*</span></label>
+          <div class="parameters__gender inner__wrapper">
+            <h3>Пол <span>*</span></h3>
             <!-- <input type="text" name="gender" id="gender" hidden> -->
             <div class="buttons">
               <div class="buttons-item">
-                <input id="gender-1" type="radio" name="gender" value="Мужской" >
+                <input id="gender-1" type="radio" name="gender" value="Мужской">
                 <label for="gender-1">Мужской</label>
               </div>
               <div class="buttons-item">
@@ -365,17 +365,18 @@
                 <label for="gender-2">Женский</label>
               </div>
             </div>
-            <!-- <button>Мужской</button> <input type="button " name="">
+          </div>
+          <!-- <button>Мужской</button> <input type="button " name="">
               <button>Женский</button></div> -->
-            <div class="parameters__age inp-wrap">
-              <label for="">Возраст <span>*</span></label>
-              <input type="text" name="age" id="age">
-              <p>лет</p>
-            </div>
-            <div class="parameters__secondment">
+          <div class="parameters__age inp-wrap">
+            <label for="">Возраст <span>*</span></label>
+            <input type="text" name="age" id="age">
+            <p>лет</p>
+          </div>
+          <div class="parameters__secondment  inner__wrapper">
 
-             <label> Готовность к командировкам</label> <span>*</span>
-             <div class="buttons">
+            <h3> Готовность к командировкам <span>*</span></h3> 
+            <div class="buttons">
               <div class="buttons-item">
                 <input id="secondment-1" type="radio" name="secondment" value="Не готов" checked>
                 <label for="secondment-1">Не готов</label>
@@ -389,34 +390,34 @@
                 <label for="secondment-3">Иногда</label>
               </div>
             </div>
-              
-             
+</div>
 
-            <div class="parameters__removal">
+
+            <div class="parameters__removal inner__wrapper">
               <label for="removal">Переезд <span>*</span></label>
               <div class="buttons">
                 <div class="buttons-item">
-                  <input id="removal-1" type="radio" name="removal" value="Возможен" >
+                  <input id="removal-1" type="radio" name="removal" value="Возможен">
                   <label for="removal-1">Возможен</label>
                 </div>
                 <div class="buttons-item">
                   <input id="removal-2" type="radio" name="removal" value="Невозможен" checked>
                   <label for="removal-2">Невозможен</label>
                 </div>
-              </div>           
+              </div>
             </div>
             <div class="parameters__nationality">
               <label for="">Гражданство <span>*</span></label>
               <div class="select__nationality" id="nationality"></div>
               <select class="select__select--nationality"
-              style="margin: 0px; padding: 0px; position: absolute; left: 0px; top: 0px; width: 0%; height: 0%; opacity: 0;">
-              <option>Гражданство</option>
+                style="margin: 0px; padding: 0px; position: absolute; left: 0px; top: 0px; width: 0%; height: 0%; opacity: 0;">
+                <option>Гражданство</option>
               </select>
               <input type="text" hidden>
 
             </div>
           </div>
-
+        </div>
           <h2>Укажите дополнительные параметры и опции:</h2>
 
           <div class="wrapper category category__work">
@@ -793,6 +794,25 @@
 
 
 
+          <div class="form_radio">
+            <input id="radio-1" type="radio" name="radio" value="1" checked>
+            <label for="radio-1">Radio button 1</label>
+          </div>
+
+          <div class="form_radio">
+            <input id="radio-2" type="radio" name="radio" value="2">
+            <label for="radio-2">Radio button 2</label>
+          </div>
+
+          <div class="form_radio">
+            <input id="radio-3" type="radio" name="radio" value="3">
+            <label for="radio-3">Radio button 3</label>
+          </div>
+
+          <div class="form_radio">
+            <input id="radio-4" type="radio" name="radio" value="4" disabled>
+            <label for="radio-4">Radio disabled</label>
+          </div>
 
 
 
