@@ -219,7 +219,7 @@ selectToDialog();
                 checkedSel.parentElement.style.backgroundColor = '#fbf7e7';
                 checkedSel.parentElement.style.borderRadius = '5px';
                 checkedSel.parentElement.style.border = '1px solid #e3dcb2'; //border-right-width: 1px;
-                checked.style.width = 92 + '%';
+                checked.style.width = 91 + '%';
                 // checked.style.after.right = 80+'%';
                 checked.style.border = 'none'; //border-right-width: 1px;
                 let data = name + ' (выбрано: ' + checkedNum.length + ')';
@@ -231,7 +231,7 @@ selectToDialog();
                 checkedSel.parentElement.parentElement.setAttribute('onmouseover', `toolTip('${data}')`);
                 checkedSel.parentElement.parentElement.setAttribute('onmouseout', `toolTip()`);
                 // checkedSel
-                checkedSel.parentElement.parentElement.classList.add('hide__text');
+                // checkedSel.parentElement.parentElement.classList.add('hide__text');
                 checkedSel.parentElement.parentElement.setAttribute('data-show', 'text');
             } else {
                 checkedSel.textContent = name;
@@ -258,7 +258,7 @@ selectToDialog();
             checked.style.border = ''; //border-right-width: 1px;
             checkedSel.removeAttribute('data-text');
     
-            checkedSel.parentElement.parentElement.classList.remove('hide__text');
+            // checkedSel.parentElement.parentElement.classList.remove('hide__text');
             checkedSel.parentElement.parentElement.removeAttribute('data-show');
     
             checkedSel.parentElement.style.border = '';

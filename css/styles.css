@@ -447,7 +447,7 @@ select {
 .datepicker_row > span {
 	font-size: 15px;
 	color: #000;
-	padding: 0 8px;
+	padding: 0 4px;
 }
 .datepicker {
 	background: none;
@@ -797,6 +797,10 @@ border-radius:5px;
 .form_top_row .select_item:last-child{
 width: 400px;
 } 
+
+.form_bottom_row .select_item:nth-child(2){
+width: 295px;
+}
 
 
 

@@ -30,10 +30,10 @@ input{
 	z-index: 9999;
 	position: absolute;
 	padding: 15px;
-	max-width: 250px;
+	/* max-width: 250px; */
    border: 1px solid #bebebe;
     border-radius: 5px;
-    max-width: 300px;
+    /* max-width: 300px; */
     min-width: 100px;
 text-align: center;
 
@@ -42,6 +42,7 @@ text-align: center;
     /* background: #fdf9e0;
 border: 1px solid #bebebe;
 color: #000; */
+white-space: pre;
 }
 .tooltip.animation-slide {
 	-webkit-animation-name: slideTooltip;
