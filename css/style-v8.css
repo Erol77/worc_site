@@ -860,7 +860,7 @@ select {
 }
 .select {
   position: relative;
-  z-index: 11111;
+  /* z-index: 1; */
 }
 .select-styled {
   min-width: 187px;
@@ -2880,9 +2880,7 @@ margin-bottom: 20px;
 
 .inner__wrapper .select{
   width: 330px;
-  height: 55px;
-
- 
+  height: 55px; 
 }
 .inner__wrapper .select span{
   color: #665800;
@@ -2911,6 +2909,9 @@ width: 500px;
     border-radius: 5px;
     font-size: 1.2em;
     /* margin-right: 25px; */
+}
+.category-college .work__name.inp-wrap label{
+width: 290px;
 }
 
 .work__wrap{

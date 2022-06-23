@@ -113,7 +113,7 @@ const selectMonth = new CustomSelect('#beginning--month', {
 });
 
 const selectYear = new CustomSelect('#beginning--year', {
-    name: 'beginning--month', // значение атрибута name у кнопки  education
+    name: 'beginning--year', // значение атрибута name у кнопки  education
     targetValue: 'education', // значение по умолчанию
     options: [
         ['education', '--'],
@@ -133,7 +133,7 @@ const selectYear = new CustomSelect('#beginning--year', {
     ], // опции 
 });
 const selectMonthEbd = new CustomSelect('#end--month', {
-    name: 'beginning--month', // значение атрибута name у кнопки  education
+    name: 'end--month', // значение атрибута name у кнопки  education
     targetValue: 'education', // значение по умолчанию
     options: [
         ['education', '--'],
@@ -143,7 +143,7 @@ const selectMonthEbd = new CustomSelect('#end--month', {
 });
 
 const selectYearEnd = new CustomSelect('#end--year', {
-    name: 'beginning--month', // значение атрибута name у кнопки  education
+    name: 'end--year', // значение атрибута name у кнопки  education
     targetValue: 'education', // значение по умолчанию
     options: [
         ['education', '--'],
@@ -159,6 +159,16 @@ const selectYearEnd = new CustomSelect('#end--year', {
         ['10', '10'],
         ['11', '11'],
         ['12', '12'],
+
+    ], // опции  year--end
+});
+
+const selectEbdYear = new CustomSelect('#year--end', {
+    name: 'year--end', // значение атрибута name у кнопки  education
+    targetValue: 'education', // значение по умолчанию
+    options: [
+        ['education', '--'],
+        ['1', '01'],['2', '02'],['3','03'],['4','04'],['5','05'],['6','06'],['7','07'],['8','08'],['9','09'],['10','10'],['11','11'],['12','12'],        
 
     ], // опции 
 });
