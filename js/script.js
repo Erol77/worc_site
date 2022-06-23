@@ -212,7 +212,7 @@ selectToDialog();
                 checked.classList.add('form-control--selected');
                 // checkedSel.classList.add('form-control--selected');
                 if (closeBtn.closest('.hide')) {
-                    closeBtn.style.right = -26 + 'px';
+                    closeBtn.style.right = -30 + 'px';
                     closeBtn.classList.remove('hide');
                 }
     
