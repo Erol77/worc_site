@@ -102,4 +102,65 @@ const selectEducation = new CustomSelect('#education',
 });
 addTextToTarget('#education .select__toggle', '.select__education--education');
 
+const selectMonth = new CustomSelect('#beginning--month', {
+    name: 'beginning--month', // значение атрибута name у кнопки  education
+    targetValue: 'education', // значение по умолчанию
+    options: [
+        ['education', '--'],
+        ['1', '01'],['2', '02'],['3','03'],['4','04'],['5','05'],['6','06'],['7','07'],['8','08'],['9','09'],['10','10'],['11','11'],['12','12'],        
+
+    ], // опции 
+});
+
+const selectYear = new CustomSelect('#beginning--year', {
+    name: 'beginning--month', // значение атрибута name у кнопки  education
+    targetValue: 'education', // значение по умолчанию
+    options: [
+        ['education', '--'],
+        ['1', '01'],
+        ['2', '02'],
+        ['3', '03'],
+        ['4', '04'],
+        ['5', '05'],
+        ['6', '06'],
+        ['7', '07'],
+        ['8', '08'],
+        ['9', '09'],
+        ['10', '10'],
+        ['11', '11'],
+        ['12', '12'],
+
+    ], // опции 
+});
+const selectMonthEbd = new CustomSelect('#end--month', {
+    name: 'beginning--month', // значение атрибута name у кнопки  education
+    targetValue: 'education', // значение по умолчанию
+    options: [
+        ['education', '--'],
+        ['1', '01'],['2', '02'],['3','03'],['4','04'],['5','05'],['6','06'],['7','07'],['8','08'],['9','09'],['10','10'],['11','11'],['12','12'],        
+
+    ], // опции 
+});
+
+const selectYearEnd = new CustomSelect('#end--year', {
+    name: 'beginning--month', // значение атрибута name у кнопки  education
+    targetValue: 'education', // значение по умолчанию
+    options: [
+        ['education', '--'],
+        ['1', '01'],
+        ['2', '02'],
+        ['3', '03'],
+        ['4', '04'],
+        ['5', '05'],
+        ['6', '06'],
+        ['7', '07'],
+        ['8', '08'],
+        ['9', '09'],
+        ['10', '10'],
+        ['11', '11'],
+        ['12', '12'],
+
+    ], // опции 
+});
+
 })
