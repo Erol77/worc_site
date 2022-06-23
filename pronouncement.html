@@ -262,8 +262,10 @@
           <h3 class="category-post__title-mobile">желаемая должность: <span>*</span></h3>
           <p class="category-post__item">Супер мастер на все руки</p>
         </div>
-        <div class="wrapper category-vacanci">
-          <input type="text" placeholder="Введите вакансию на которую претендуете, например: продавец" required>
+        <div class="wrapper category-vacancy">
+          <input type="text" class="category-vacancy__item" name="vacancy"
+            placeholder="Введите вакансию на которую претендуете, например: продавец"
+            required>
           <div class="box__title"><img src="./img/content/attention.jpg" style="width: 26px;height: 26px;" alt="">
             <p>не пишите в должности зарплату и контактную информацию - для этого есть отдельные поля</p>
           </div>
@@ -272,22 +274,20 @@
         <div class="wrapper category category-contacts">
           <h2 class="contacts__title">Контактная информация</h2>
           <div class="contacts__email inp-wrap ">
-            <label for="email" class="">
-              <h3>Электронная поча</h3>
+            <label for="email" class="label">
+              Электронная поча
             </label>
             <input type="email" name="email" id="email" placeholder="111nat@mail.ru" required>
           </div>
           <div class="contacts__name inp-wrap ">
-            <label for="name">
-              <h3>Ваше Имя</h3>
+            <label for="name" class="label">
+              Ваше Имя
             </label>
             <input type="text" name="name" id="name" placeholder="Светлана" required>
           </div>
           <div class="contacts__phone inp-wrap ">
-            <label for="phone">
-              <h3>Телефон</h3>
-            </label>
-            <input type="tel" class="tel" name="phone" id="phone" placeholder="8 952 777-00-01" required>
+            <label for="phone" class="label">Телефон</label>
+            <input type="tel" class="tel" name="phone" id="phone" placeholder="+7 (952) 777-00-01" required>
           </div>
           <hr>
           <div class="contacts__message">
@@ -327,33 +327,27 @@
           <h2>Параметры</h2>
 
           <div class="parameters__schedule inp-wrap ">
-            <label for="schedule" class="">
-              <h3>График работы <span>*</span></h3>
-            </label>
+            <label for="schedule" class="label">График работы <span>*</span></label>
             <input type="text" name="schedule" id="schedule" placeholder="---" required>
           </div>
           <div class="parameters__schedule inp-wrap ">
-            <label for="working-experience" class="">
-              <h3>Опыт работы <span>*</span></h3>
-            </label>
+            <label for="working-experience" class="label">Опыт работы <span>*</span></label>
             <input type="text" name="working-experience" id="working-experience" placeholder="---" required>
             <p>лет</p>
           </div>
 
           <div class="parameters__seniority inp-wrap">
 
-            <label for="seniority">
-              <h3>Стаж работы</h3>
-            </label>
+            <label for="seniority" class="label">Стаж работы</label>
             <input type="text" name="seniority" id="seniority">
             <p>лет</p>
           </div>
           <div class="parameters__education inner__wrapper">
-            <h4>Образование <span>*</span></h4>
+            <label class="label">Образование <span>*</span></label>
             <div class="select__education" id="education"></div><input name="education" class="select__education--education" type="text" hidden>
           </div>
           <div class="parameters__gender inner__wrapper">
-            <h3>Пол <span>*</span></h3>
+            <label class="label">Пол <span>*</span></label>
             <!-- <input type="text" name="gender" id="gender" hidden> -->
             <div class="buttons">
               <div class="buttons-item">
@@ -369,13 +363,13 @@
           <!-- <button>Мужской</button> <input type="button " name="">
               <button>Женский</button></div> -->
           <div class="parameters__age inp-wrap">
-            <h4>Возраст <span>*</span></h4>
-            <input type="text" name="age" id="age">
+            <label class="label">Возраст <span>*</span></label>
+            <input type="number" name="age" id="age">
             <p>лет</p>
           </div>
           <div class="parameters__secondment  inner__wrapper">
 
-            <h4>Готовность к командировкам <span>*</span></h4>
+            <p class="label">Готовность к командировкам <span>*</span></p>
             <div class="buttons">
               <div class="buttons-item">
                 <input id="secondment-1" type="radio" name="secondment" value="Не готов" checked>
@@ -394,7 +388,7 @@
 
 
           <div class="parameters__removal inner__wrapper">
-            <h4>Переезд <span>*</span></h4>
+            <p class="label">Переезд <span>*</span></p>
             <div class="buttons">
               <div class="buttons-item">
                 <input id="removal-1" type="radio" name="removal" value="Возможен">
@@ -407,7 +401,7 @@
             </div>
           </div>
           <div class="parameters__nationality inner__wrapper">
-            <h4>Гражданство <span>*</span></h4>
+            <p class="label">Гражданство <span>*</span></p>
             
             <div class="select__nationality" id="nationality"></div><input class="select__nationality" type="text" hidden>
             <select class="select__select--nationality"
@@ -416,39 +410,46 @@
             </select>
           </div>
         </div>
-
-        <h2>Укажите дополнительные параметры и опции:</h2>
+        <h2 class="additional__title">Укажите дополнительные параметры и опции:</h2>
 
         <div class="wrapper category__work category ">
           <h2>Место работы:</h2>
           <div class="work__name inp-wrap">
-            <h4>Название компании <span>*</span></h4>
+            <label for="work--name" class="label">
+              Название компании <span>*</span>
+            </label>
             <input type="text" name="work--name" id="work--name">
           </div>
-          <div class="work__post inp-wrap">
-            <h4>Должность <span>*</span></h4>
+          <div class="work__name inp-wrap">
+
+            <label class="label">Должность <span>*</span></label>
             <input type="text" name="post">
           </div>
           <div class="work__beginning inp-wrap">
-            <h4>Начало работы <span>*</span></h4>
+            <label class="label">Начало работы <span>*</span></label>
             <input type="text" name="beginning--year" id="work__beginning--year">
             <!-- <div class="work__beginning--year" id=""></div> -->
             <input type="text" name="beginning--month" id="work__beginning--month">
           </div>
 
           <div class="work__end inp-wrap">
-            <h4>Окончание работы <span>*</span></h4>
+            <label class="label">Окончание работы <span>*</span></label>
             <input type="text" name="end--year" id="work__end--year">
             <!-- <div class="work__beginning--year" id=""></div> -->
             <input type="text" name="end--month" id="work__end--month">
             <div class="inp-checkbox">
-              <input type="text" name="work no end">
-              <label for="">По настоящее время</label>
+              <input type="text" name="today" id="today">
+              <label for="today"></label>
+            </div>
+            <p>По настоящее время</p>
+            <div class="contacts__added--email inp-checkbox">
+              <input type="checkbox" name="addEmail" id="addEmail">
+              <label for="addEmail"></label>
             </div>
           </div>
 
           <div class="work__obligation">
-            <h4>Обязанноести <span>*</span></h4>
+            <p class="label">Обязанноести <span>*</span></p>
             <input type="text" name="" id=""
               placeholder="Начните вводить должностные функции и ключевые навыки, чтобы получить больше приглашений от работодателей">
             <button>+</button>
@@ -458,20 +459,21 @@
               </div>
             </div>
           </div>
-          <button></button> <a href="http://">Добавить место работы</a>
+          <!-- <button></button>******************** -->
+ <a href="#">Добавить место работы</a>
 
         </div>
 
         <div class="wrapper category category-college">
           <h2>Учебные заведения:</h2>
 
-          <label for=""><h4>Название заведения</h4></label>
+          <label for="">Название заведения</label>
           <input type="text" name="" id="" placeholder="Полное название или аббревиатура учебного заведения">
 
-          <label for=""><h4>Специальность</h4></label>
+          <label for="">Специальность</label>
           <input type="text" name="" id="" placeholder='апример: "финансы, денежное обращение и кредит"'>
 
-          <label for=""><h4>Год окончания</h4></label>
+          <label for="">Год окончания</label>
           <input type="text" name="" id="">
           <p>если учитесь - укажите год предполагаемого окончания</p>
 
@@ -541,13 +543,13 @@
           <hr>
 
           <label for="">
-            <h3>Желаемая зарплата за месяц работы <span>*</span></h3>
+            Желаемая зарплата за месяц работы <span>*</span>
           </label>
           <input type="text" name="" id="">
           <a href="">Какую зарплату указать</a>
 
           <label for="">
-            <h3>Вам нужна подработка? <span>*</span></h3>
+            Вам нужна подработка? <span>*</span>
           </label>
           <input type="radio" name="" id=""><label for="">Да</label>
           <input type="radio" name="" id=""><label for="">Нет</label>
@@ -555,7 +557,7 @@
           <hr>
 
           <label for="">
-            <h3>Фотографии <span>*</span></h3>
+            Фотографии <span>*</span>
           </label>
           <input type="file" name="" id="">
           <p>Допустимые форматы JPEG, JPG, PNG. Размер файла не более 5 Мб </p>
@@ -564,30 +566,30 @@
         </div>
 
         <div class="wrapper category category-residence">
-          <h2></h2>
+          <!-- <h2></h2> -->
           <label for="">
-            <h3>Регион/населенный пункт <span>*</span></h3>
+            Регион/населенный пункт <span>*</span>
           </label>
           <input type="text" name="" id="">
 
           <label for="">
-            <h3>Улица <span>*</span></h3>
+            Улица <span>*</span>
           </label>
           <input type="text" name="" id="">
           <label for="">
-            <h3>Дом <span>*</span></h3>
+            Дом <span>*</span>
           </label>
           <input type="text" name="" id="">
 
           <img src="" alt="">
 
           <label for="">
-            <h3>Район <span>*</span></h3>
+            Район <span>*</span>
           </label>
           <input type="text" name="" id="" required>
 
           <label for="">
-            <h3>Рядом с вашим адресом есть метро?</h3>
+            Рядом с вашим адресом есть метро?
           </label>
           <input type="radio" name="" id=""><label for="">Да</label>
           <input type="radio" name="" id=""><label for="">Нет</label>

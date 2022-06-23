@@ -1667,7 +1667,7 @@ select {
   border-top: 1px solid #bebebe;
   border-bottom: 1px solid #bebebe;
 }
-.listing.pronouncement .wrapper.type-category,
+.listing.pronouncement .wrapper.type-category,.additional__title,
 .type-category {
   -webkit-box-pack: start;
   -webkit-justify-content: flex-start;
@@ -2610,12 +2610,12 @@ input[type="checkbox"]:checked + label span {
   border-color: #ff0000;
 }
 
-.category-vacanci {
+.category-vacancy {
   padding: 15px 40px;
   padding-right: 50px;
 }
 
-.category-vacanci input {
+.category-vacancy input {
   max-width: 660px;
   height: 48px;
   margin-right: 20px;
@@ -2624,7 +2624,8 @@ input[type="checkbox"]:checked + label span {
 }
 
 .box__title {
-  display: flex;
+  /* display: flex; */
+display: none;
   /* max-width: 345; */
   flex-basis: 345px;
   /* height: 45; */
@@ -2639,7 +2640,9 @@ input[type="checkbox"]:checked + label span {
   box-sizing: border-box;
   align-items: center;
 }
-
+.category-vacancy:hover .box__title {
+display: flex; 
+}
 .box__title img {
   /* float: left; */
   /* display: inline; */
@@ -2657,7 +2660,7 @@ input[type="checkbox"]:checked + label span {
   gap: 7px;
 }
 
-.category-language h3,
+/* .category-language h3,
 .category-about h3,
 .category-residence h3,
 .category-worker h3,
@@ -2665,10 +2668,10 @@ input[type="checkbox"]:checked + label span {
 .category-college h3,
 .category-place-work h3,
 .category-parameters h3,
-.category-contacts h3 {
+.category-contacts h3 { */
   /* background: yellow;
   flex: 3 0 0; */
-}
+/* }
 .category-language label,
 .category-about label,
 .category-residence label,
@@ -2677,10 +2680,10 @@ input[type="checkbox"]:checked + label span {
 .category-college label,
 .category-place-work label,
 .category-parameters label,
-.category-contacts label {
+.category-contacts label { */
   /* flex: 2 0 0;
   background: orange; */
-}
+/* }
 
 .category-language input,
 .category-about input,
@@ -2690,13 +2693,13 @@ input[type="checkbox"]:checked + label span {
 .category-college input,
 .category-place-work input,
 .category-parameters input,
-.category-contacts input {
+.category-contacts input { */
   /* flex: 1 0 0;
   background: red; */
-}
+/* } */
 /* flex-basis: 200px;  */
 .category-parameters,
-.wrapper.category {
+.wrapper .category {
   flex-direction: column;
   justify-content: start;
   align-items: start;
@@ -2719,10 +2722,12 @@ input[type="checkbox"]:checked + label span {
   padding-top: 25px;
   padding-bottom: 10px;
 }
-.wrapper.category h3,.category:first-child label,.category h3,
+.wrapper.category h3,.category:first-child label,.category .label,
 .wrapper.category h4{
 width: 290px;
 }
+.category h2{
+width: 80%;}
 
 .wrapper.category .inp-checkbox{
 /* float: left; */
@@ -2898,4 +2903,12 @@ width: 50px;
 .inner__wrapper .select__toggle::after{
   /* height: 10px; */
   top: 23px;
+}
+
+.work__name.inp-wrap input{
+height: 55px;
+width: 500px;
+    border-radius: 5px;
+    font-size: 1.2em;
+    /* margin-right: 25px; */
 }
