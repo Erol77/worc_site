@@ -2847,7 +2847,7 @@ margin-bottom: 20px;
  
 /* Checked */
 .form_radio input[type=radio]:checked + label:before {
-	background: url(/img/radio-2.png) 0 0 no-repeat;
+	/* background: url(/img/radio-2.png) 0 0 no-repeat; */
 }
  
 /* Hover */
@@ -2911,4 +2911,14 @@ width: 500px;
     border-radius: 5px;
     font-size: 1.2em;
     /* margin-right: 25px; */
+}
+
+.work__wrap{
+width: 330px;
+display: flex;
+height: 55px;
+}
+.work__wrap input{
+height: 55px;
+width: 45%;
 }
