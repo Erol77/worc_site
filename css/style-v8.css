@@ -2516,6 +2516,7 @@ select {
   background-color: #e3dcb2;
 }
 input[type="checkbox"]:checked + label,
+input[type="radio"]:checked + label ,
 .jq-selectbox li:hover,
 .jq-selectbox li.sel {
   background: #ffdd00;
@@ -2554,6 +2555,7 @@ input[type="checkbox"]:checked + label,
 }
 
 input[type="checkbox"]:checked + label,
+input[type="radio"]:checked + label,
 .jq-selectbox li:hover,
 .jq-selectbox li.sel {
   background: #ffdd00;
@@ -2564,10 +2566,12 @@ input[type="checkbox"]:checked + label,
   padding: 0;
   border: none;
 }
-
+input[type="radio"],
 input[type="checkbox"] {
   display: none;
 }
+
+input[type="radio"] + label span,
 input[type="checkbox"] + label span {
   border: 1px solid #e1e4eb;
   width: 11px;
@@ -2577,6 +2581,7 @@ input[type="checkbox"] + label span {
   top: 7px;
   left: 15px;
 }
+input[type="radio"] + label span::before,
 input[type="checkbox"] + label span::before {
   background: #ff0000;
   width: 7px;
@@ -2588,9 +2593,13 @@ input[type="checkbox"] + label span::before {
   top: 1px;
   left: 1px;
 }
+
+input[type="radio"]:checked + label span::before,
 input[type="checkbox"]:checked + label span::before {
   transform: scale(1);
 }
+
+input[type="radio"]:checked + label span,
 input[type="checkbox"]:checked + label span {
   border-color: #ff0000;
 }
