@@ -2876,8 +2876,7 @@ margin-bottom: 20px;
 .inner__wrapper .select{
   width: 330px;
   height: 55px;
-  border: 1px solid #e3dcb2;
-  border-radius: 5px;
+
  
 }
 .inner__wrapper .select span{
@@ -2887,6 +2886,8 @@ margin-bottom: 20px;
 height: 100%;
 justify-content: center;
 color: #665800;
+border: 1px solid #e3dcb2;
+border-radius: 5px;
 
 }
 
