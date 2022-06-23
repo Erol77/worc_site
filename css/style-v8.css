@@ -2719,7 +2719,7 @@ input[type="checkbox"]:checked + label span {
   padding-top: 25px;
   padding-bottom: 10px;
 }
-.wrapper.category h3,.category label,
+.wrapper.category h3,.category:first-child label,
 .wrapper.category h4{
 width: 290px;
 }
@@ -2867,4 +2867,23 @@ margin-bottom: 20px;
 .parameters__secondment.inner__wrapper label{
   padding:0 20px;
   width: 110px;
+}
+
+.parameters__secondment.inner__wrapper .buttons .buttons-item:first-child label{
+  padding: 0 14px;
+}
+
+.inner__wrapper .select{
+  width: 330px;
+  height: 55px;
+  border: 1px solid #e3dcb2;
+  border-radius: 5px;
+  color: #665800;
+}
+.inner__wrapper  .select__toggle {
+height: 100%;
+}
+
+.inner__wrapper .select__toggle::after{
+  height: 10px;
 }

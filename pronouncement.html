@@ -253,7 +253,7 @@
             <div class="select" id="select-rubric"></div>
           </div>
         </div>
-        <div class="wrapper category type-category">
+        <div class="wrapper type-category">
           <h3 class="type-category__title">Категория :</h3>
           <h4 class="type-category__item">Супер мастер на все руки</h4>
         </div>
@@ -349,7 +349,7 @@
             <p>лет</p>
           </div>
           <div class="parameters__education inp-wrap">
-            <label for="education">Образование <span>*</span></label>
+            <h4>Образование <span>*</span></h4>
             <input type="text" name="education" id="education">
           </div>
           <div class="parameters__gender inner__wrapper">
@@ -369,13 +369,13 @@
           <!-- <button>Мужской</button> <input type="button " name="">
               <button>Женский</button></div> -->
           <div class="parameters__age inp-wrap">
-            <label for="">Возраст <span>*</span></label>
+            <h4>Возраст <span>*</span></h4>
             <input type="text" name="age" id="age">
             <p>лет</p>
           </div>
           <div class="parameters__secondment  inner__wrapper">
 
-            <h3> Готовность к командировкам <span>*</span></h3> 
+            <h4>Готовность к командировкам <span>*</span></h4>
             <div class="buttons">
               <div class="buttons-item">
                 <input id="secondment-1" type="radio" name="secondment" value="Не готов" checked>
@@ -390,429 +390,428 @@
                 <label for="secondment-3">Иногда</label>
               </div>
             </div>
-</div>
+          </div>
 
 
-            <div class="parameters__removal inner__wrapper">
-              <label for="removal">Переезд <span>*</span></label>
-              <div class="buttons">
-                <div class="buttons-item">
-                  <input id="removal-1" type="radio" name="removal" value="Возможен">
-                  <label for="removal-1">Возможен</label>
-                </div>
-                <div class="buttons-item">
-                  <input id="removal-2" type="radio" name="removal" value="Невозможен" checked>
-                  <label for="removal-2">Невозможен</label>
-                </div>
+          <div class="parameters__removal inner__wrapper">
+            <h4>Переезд <span>*</span></h4>
+            <div class="buttons">
+              <div class="buttons-item">
+                <input id="removal-1" type="radio" name="removal" value="Возможен">
+                <label for="removal-1">Возможен</label>
+              </div>
+              <div class="buttons-item">
+                <input id="removal-2" type="radio" name="removal" value="Невозможен" checked>
+                <label for="removal-2">Невозможен</label>
               </div>
             </div>
-            <div class="parameters__nationality">
-              <label for="">Гражданство <span>*</span></label>
-              <div class="select__nationality" id="nationality"></div>
-              <select class="select__select--nationality"
-                style="margin: 0px; padding: 0px; position: absolute; left: 0px; top: 0px; width: 0%; height: 0%; opacity: 0;">
-                <option>Гражданство</option>
-              </select>
-              <input type="text" hidden>
-
-            </div>
+          </div>
+          <div class="parameters__nationality inner__wrapper">
+            <h4>Гражданство <span>*</span></h4>
+            <div class="select__nationality" id="nationality"></div>
+            <select class="select__select--nationality"
+              style="margin: 0px; padding: 0px; position: absolute; left: 0px; top: 0px; width: 0%; height: 0%; opacity: 0;">
+              <option>Гражданство</option>
+            </select>
+            <input type="text" hidden>
           </div>
         </div>
-          <h2>Укажите дополнительные параметры и опции:</h2>
 
-          <div class="wrapper category category__work">
-            <h2>Место работы:</h2>
-            <div class="work__name inp-wrap">
-              <label for="work--name">Название компании <span>*</span></label>
-              <input type="text" name="work--name" id="work--name">
-            </div>
-            <div class="work__post inp-wrap">
-              <label for="post">Должность <span>*</span></label>
-              <input type="text" name="post">
-            </div>
-            <div class="work__beginning inp-wrap">
-              <label for="">Начало работы <span>*</span></label>
-              <input type="text" name="beginning--year" id="work__beginning--year">
-              <!-- <div class="work__beginning--year" id=""></div> -->
-              <input type="text" name="beginning--month" id="work__beginning--month">
-            </div>
+        <h2>Укажите дополнительные параметры и опции:</h2>
 
-            <div class="work__end inp-wrap">
-              <label for="">Окончание работы <span>*</span></label>
-              <input type="text" name="end--year" id="work__end--year">
-              <!-- <div class="work__beginning--year" id=""></div> -->
-              <input type="text" name="end--month" id="work__end--month">
-              <div class="inp-checkbox">
-                <input type="text" name="work no end">
-                <label for="">По настоящее время</label>
-              </div>
-            </div>
-
-            <div class="work__obligation">
-              <label for="">Обязанноести <span>*</span></label>
-              <input type="text" name="" id=""
-                placeholder="Начните вводить должностные функции и ключевые навыки, чтобы получить больше приглашений от работодателей">
-              <button>+</button>
-              <div class="work__obligation--add">
-                <div class="work__obligation--item">
-                  <p>Ведение бухгалтерского учета</p><span>X</span>
-                </div>
-              </div>
-            </div>
-            <button></button> <a href="http://">Добавить место работы</a>
-
+        <div class="wrapper category category__work">
+          <h2>Место работы:</h2>
+          <div class="work__name inp-wrap">
+            <h4>Название компании <span>*</span></h4>
+            <input type="text" name="work--name" id="work--name">
+          </div>
+          <div class="work__post inp-wrap">
+            <h4>Должность <span>*</span></h4>
+            <input type="text" name="post">
+          </div>
+          <div class="work__beginning inp-wrap">
+            <h4>Начало работы <span>*</span></h4>
+            <input type="text" name="beginning--year" id="work__beginning--year">
+            <!-- <div class="work__beginning--year" id=""></div> -->
+            <input type="text" name="beginning--month" id="work__beginning--month">
           </div>
 
-          <div class="wrapper category category-college">
-            <h2>Учебные заведения:</h2>
-
-            <label for="">Название заведения</label>
-            <input type="text" name="" id="" placeholder="Полное название или аббревиатура учебного заведения">
-
-            <label for="">Специальность</label>
-            <input type="text" name="" id="" placeholder='апример: "финансы, денежное обращение и кредит"'>
-
-            <label for="">Год окончания</label>
-            <input type="text" name="" id="">
-            <p>если учитесь - укажите год предполагаемого окончания</p>
-
-            <button>+</button> <a href="http://">Добавить учебное заведение</a>
+          <div class="work__end inp-wrap">
+            <h4>Окончание работы <span>*</span></h4>
+            <input type="text" name="end--year" id="work__end--year">
+            <!-- <div class="work__beginning--year" id=""></div> -->
+            <input type="text" name="end--month" id="work__end--month">
+            <div class="inp-checkbox">
+              <input type="text" name="work no end">
+              <label for="">По настоящее время</label>
+            </div>
           </div>
 
-          <div class="wrapper category category-language">
-            <h2>Знание языков:</h2>
-            <label for="">Язык</label>
-            <input type="text" name="" id="">
-            <label for="">Уровень владения</label>
-            <input type="text" name="" id="">
-
-            <button>+</button> <a href="http://">Добавить язык</a>
-          </div>
-          <!-- ********* -->
-          <div class="wrapper category category-language">
-            <h2>Ключевые навыки</h2>
-            <label for="">Укажите ключевые навыки</label>
-            <input type="text" name="" id="" placeholder="Начните вводить здесь">
-            <button></button>
-            <button>+</button>
-            <p>Adobe Photochop x</p>
-          </div>
-
-          <div class="wrapper category category-about">
-            <h2>О себе: <span>*</span></h2>
+          <div class="work__obligation">
+            <h4>Обязанноести <span>*</span></h4>
             <input type="text" name="" id=""
-              placeholder="Чтобы побудить работодателя пригласить именно вас, укажите свои деловые качества и профессиональные навыки. Расскажите про ваши достижения, напишите чем вы можете быть полезны компании на этой должности.">
-            <p>Не указывайте в описании телефон или email. Для этого есть специальные поля.</p>
-            <h3>Дополнительные сведения:</h3>
-
-            <p>Укажите, что из перечисленного вы предпочитаете</p>
-
-            <p>Работа с ежедневной оплатой <span>*</span></p>
-            <input type="radio" name="" id=""><label for="">Да</label>
-            <input type="radio" name="" id=""><label for="">Нет</label>
-
-            <p>Работа без опыта <span>*</span></p>
-            <input type="radio" name="" id=""><label for="">Да</label>
-            <input type="radio" name="" id=""><label for="">Нет</label>
-
-            <p>Работа для студентов <span>*</span></p>
-            <input type="radio" name="" id=""><label for="">Да</label>
-            <input type="radio" name="" id=""><label for="">Нет</label>
-
-            <p>Работа для женщин <span>*</span></p>
-            <input type="radio" name="" id=""><label for="">Да</label>
-            <input type="radio" name="" id=""><label for="">Нет</label>
-
-            <p>Работа для пенсионеров <span>*</span></p>
-            <input type="radio" name="" id=""><label for="">Да</label>
-            <input type="radio" name="" id=""><label for="">Нет</label>
-
-            <p>Работа с бесплатным питанием <span>*</span></p>
-            <input type="radio" name="" id=""><label for="">Да</label>
-            <input type="radio" name="" id=""><label for="">Нет</label>
-
-            <p>Работа на дому <span>*</span></p>
-            <input type="radio" name="" id=""><label for="">Да</label>
-            <input type="radio" name="" id=""><label for="">Нет</label>
-
-            <p>Работа с проживанием <span>*</span></p>
-            <input type="radio" name="" id=""><label for="">Да</label>
-            <input type="radio" name="" id=""><label for="">Нет</label>
-
-            <hr>
-
-            <label for="">
-              <h3>Желаемая зарплата за месяц работы <span>*</span></h3>
-            </label>
-            <input type="text" name="" id="">
-            <a href="">Какую зарплату указать</a>
-
-            <label for="">
-              <h3>Вам нужна подработка? <span>*</span></h3>
-            </label>
-            <input type="radio" name="" id=""><label for="">Да</label>
-            <input type="radio" name="" id=""><label for="">Нет</label>
-
-            <hr>
-
-            <label for="">
-              <h3>Фотографии <span>*</span></h3>
-            </label>
-            <input type="file" name="" id="">
-            <p>Допустимые форматы JPEG, JPG, PNG. Размер файла не более 5 Мб </p>
-
-            <p>Добавьте фотографии что бы получить в 3 раза больше просмотров</p>
+              placeholder="Начните вводить должностные функции и ключевые навыки, чтобы получить больше приглашений от работодателей">
+            <button>+</button>
+            <div class="work__obligation--add">
+              <div class="work__obligation--item">
+                <p>Ведение бухгалтерского учета</p><span>X</span>
+              </div>
+            </div>
           </div>
+          <button></button> <a href="http://">Добавить место работы</a>
 
-          <div class="wrapper category category-residence">
-            <h2></h2>
-            <label for="">
-              <h3>Регион/населенный пункт <span>*</span></h3>
-            </label>
-            <input type="text" name="" id="">
+        </div>
 
-            <label for="">
-              <h3>Улица <span>*</span></h3>
-            </label>
-            <input type="text" name="" id="">
-            <label for="">
-              <h3>Дом <span>*</span></h3>
-            </label>
-            <input type="text" name="" id="">
+        <div class="wrapper category category-college">
+          <h2>Учебные заведения:</h2>
 
+          <label for="">Название заведения</label>
+          <input type="text" name="" id="" placeholder="Полное название или аббревиатура учебного заведения">
+
+          <label for="">Специальность</label>
+          <input type="text" name="" id="" placeholder='апример: "финансы, денежное обращение и кредит"'>
+
+          <label for="">Год окончания</label>
+          <input type="text" name="" id="">
+          <p>если учитесь - укажите год предполагаемого окончания</p>
+
+          <button>+</button> <a href="http://">Добавить учебное заведение</a>
+        </div>
+
+        <div class="wrapper category category-language">
+          <h2>Знание языков:</h2>
+          <label for="">Язык</label>
+          <input type="text" name="" id="">
+          <label for="">Уровень владения</label>
+          <input type="text" name="" id="">
+
+          <button>+</button> <a href="http://">Добавить язык</a>
+        </div>
+        <!-- ********* -->
+        <div class="wrapper category category-language">
+          <h2>Ключевые навыки</h2>
+          <label for="">Укажите ключевые навыки</label>
+          <input type="text" name="" id="" placeholder="Начните вводить здесь">
+          <button></button>
+          <button>+</button>
+          <p>Adobe Photochop x</p>
+        </div>
+
+        <div class="wrapper category category-about">
+          <h2>О себе: <span>*</span></h2>
+          <input type="text" name="" id=""
+            placeholder="Чтобы побудить работодателя пригласить именно вас, укажите свои деловые качества и профессиональные навыки. Расскажите про ваши достижения, напишите чем вы можете быть полезны компании на этой должности.">
+          <p>Не указывайте в описании телефон или email. Для этого есть специальные поля.</p>
+          <h3>Дополнительные сведения:</h3>
+
+          <p>Укажите, что из перечисленного вы предпочитаете</p>
+
+          <p>Работа с ежедневной оплатой <span>*</span></p>
+          <input type="radio" name="" id=""><label for="">Да</label>
+          <input type="radio" name="" id=""><label for="">Нет</label>
+
+          <p>Работа без опыта <span>*</span></p>
+          <input type="radio" name="" id=""><label for="">Да</label>
+          <input type="radio" name="" id=""><label for="">Нет</label>
+
+          <p>Работа для студентов <span>*</span></p>
+          <input type="radio" name="" id=""><label for="">Да</label>
+          <input type="radio" name="" id=""><label for="">Нет</label>
+
+          <p>Работа для женщин <span>*</span></p>
+          <input type="radio" name="" id=""><label for="">Да</label>
+          <input type="radio" name="" id=""><label for="">Нет</label>
+
+          <p>Работа для пенсионеров <span>*</span></p>
+          <input type="radio" name="" id=""><label for="">Да</label>
+          <input type="radio" name="" id=""><label for="">Нет</label>
+
+          <p>Работа с бесплатным питанием <span>*</span></p>
+          <input type="radio" name="" id=""><label for="">Да</label>
+          <input type="radio" name="" id=""><label for="">Нет</label>
+
+          <p>Работа на дому <span>*</span></p>
+          <input type="radio" name="" id=""><label for="">Да</label>
+          <input type="radio" name="" id=""><label for="">Нет</label>
+
+          <p>Работа с проживанием <span>*</span></p>
+          <input type="radio" name="" id=""><label for="">Да</label>
+          <input type="radio" name="" id=""><label for="">Нет</label>
+
+          <hr>
+
+          <label for="">
+            <h3>Желаемая зарплата за месяц работы <span>*</span></h3>
+          </label>
+          <input type="text" name="" id="">
+          <a href="">Какую зарплату указать</a>
+
+          <label for="">
+            <h3>Вам нужна подработка? <span>*</span></h3>
+          </label>
+          <input type="radio" name="" id=""><label for="">Да</label>
+          <input type="radio" name="" id=""><label for="">Нет</label>
+
+          <hr>
+
+          <label for="">
+            <h3>Фотографии <span>*</span></h3>
+          </label>
+          <input type="file" name="" id="">
+          <p>Допустимые форматы JPEG, JPG, PNG. Размер файла не более 5 Мб </p>
+
+          <p>Добавьте фотографии что бы получить в 3 раза больше просмотров</p>
+        </div>
+
+        <div class="wrapper category category-residence">
+          <h2></h2>
+          <label for="">
+            <h3>Регион/населенный пункт <span>*</span></h3>
+          </label>
+          <input type="text" name="" id="">
+
+          <label for="">
+            <h3>Улица <span>*</span></h3>
+          </label>
+          <input type="text" name="" id="">
+          <label for="">
+            <h3>Дом <span>*</span></h3>
+          </label>
+          <input type="text" name="" id="">
+
+          <img src="" alt="">
+
+          <label for="">
+            <h3>Район <span>*</span></h3>
+          </label>
+          <input type="text" name="" id="" required>
+
+          <label for="">
+            <h3>Рядом с вашим адресом есть метро?</h3>
+          </label>
+          <input type="radio" name="" id=""><label for="">Да</label>
+          <input type="radio" name="" id=""><label for="">Нет</label>
+
+        </div>
+
+        <div class="wrapper category category-worker">
+          <h2>Статус соискателя <span>*</span></h2>
+          <input type="radio" name="workfind" id=""><label for="">Безработный(ая) (Активно ищу работу</label>
+          <input type="radio" name="workfind" id=""><label for="">Работаю но открыт для предложений</label>
+        </div>
+
+        <div class="wrapper category category-advertisement">
+          <h2></h2>
+
+          <div class="advertisement-title">
+            <div class="">
+              <h3></h3>
+            </div>
+            <div class="">
+              <h3></h3>
+            </div>
+            <div class="">
+              <h3></h3>
+            </div>
+            <div class="">
+              <p></p>
+            </div>
+          </div>
+          <div class="advertisement-text">
+            <div class="">
+              <p></p>
+            </div>
+            <div class="">
+              <p></p>
+            </div>
+            <div class="">
+              <p></p>
+            </div>
+          </div>
+          <div class="advertisement-item">
+            <input type="radio" name="" id="">
             <img src="" alt="">
+            <p></p>
+            <span></span>
 
-            <label for="">
-              <h3>Район <span>*</span></h3>
-            </label>
-            <input type="text" name="" id="" required>
 
-            <label for="">
-              <h3>Рядом с вашим адресом есть метро?</h3>
-            </label>
-            <input type="radio" name="" id=""><label for="">Да</label>
-            <input type="radio" name="" id=""><label for="">Нет</label>
-
+            <div class="">
+              <p></p>
+            </div>
+            <div class="">
+              <p></p>
+            </div>
+            <div class="">
+              <p></p>
+            </div>
           </div>
 
-          <div class="wrapper category category-worker">
-            <h2>Статус соискателя <span>*</span></h2>
-            <input type="radio" name="workfind" id=""><label for="">Безработный(ая) (Активно ищу работу</label>
-            <input type="radio" name="workfind" id=""><label for="">Работаю но открыт для предложений</label>
+          <div class="advertisement-item">
+            <input type="radio" name="" id="">
+            <img src="" alt="">
+            <p></p>
+            <p><span></span><span></span></p>
+            <p></p>
+            <p></p>
+            <a href=""></a>
+
+            <div class="">
+              <p></p>
+            </div>
+            <div class="">
+              <p></p>
+            </div>
+            <div class="">
+              <p></p>
+            </div>
+            <div class="">
+              <p></p>
+            </div>
           </div>
 
-          <div class="wrapper category category-advertisement">
-            <h2></h2>
+          <div class="advertisement-item">
+            <input type="radio" name="" id="">
+            <img src="" alt="">
+            <p></p>
+            <p><span></span><span></span></p>
+            <p></p>
+            <p></p>
+            <a href=""></a>
 
-            <div class="advertisement-title">
-              <div class="">
-                <h3></h3>
-              </div>
-              <div class="">
-                <h3></h3>
-              </div>
-              <div class="">
-                <h3></h3>
-              </div>
-              <div class="">
-                <p></p>
-              </div>
+            <div class="">
+              <p></p>
             </div>
-            <div class="advertisement-text">
-              <div class="">
-                <p></p>
-              </div>
-              <div class="">
-                <p></p>
-              </div>
-              <div class="">
-                <p></p>
-              </div>
+            <div class="">
+              <p></p>
             </div>
-            <div class="advertisement-item">
-              <input type="radio" name="" id="">
-              <img src="" alt="">
+            <div class="">
               <p></p>
-              <span></span>
-
-
-              <div class="">
-                <p></p>
-              </div>
-              <div class="">
-                <p></p>
-              </div>
-              <div class="">
-                <p></p>
-              </div>
             </div>
-
-            <div class="advertisement-item">
-              <input type="radio" name="" id="">
-              <img src="" alt="">
+            <div class="">
               <p></p>
-              <p><span></span><span></span></p>
-              <p></p>
-              <p></p>
-              <a href=""></a>
-
-              <div class="">
-                <p></p>
-              </div>
-              <div class="">
-                <p></p>
-              </div>
-              <div class="">
-                <p></p>
-              </div>
-              <div class="">
-                <p></p>
-              </div>
             </div>
+          </div>
 
-            <div class="advertisement-item">
-              <input type="radio" name="" id="">
-              <img src="" alt="">
-              <p></p>
-              <p><span></span><span></span></p>
-              <p></p>
-              <p></p>
-              <a href=""></a>
+          <div class="advertisement-item">
+            <input type="radio" name="" id="">
+            <img src="" alt="">
+            <p></p>
+            <p><span></span><span></span></p>
+            <p></p>
+            <p></p>
+            <a href=""></a>
 
-              <div class="">
-                <p></p>
-              </div>
-              <div class="">
-                <p></p>
-              </div>
-              <div class="">
-                <p></p>
-              </div>
-              <div class="">
-                <p></p>
-              </div>
+            <div class="">
+              <p></p>
             </div>
-
-            <div class="advertisement-item">
-              <input type="radio" name="" id="">
-              <img src="" alt="">
+            <div class="">
               <p></p>
-              <p><span></span><span></span></p>
-              <p></p>
-              <p></p>
-              <a href=""></a>
-
-              <div class="">
-                <p></p>
-              </div>
-              <div class="">
-                <p></p>
-              </div>
-              <div class="">
-                <p></p>
-              </div>
-              <div class="">
-                <p></p>
-              </div>
             </div>
-
-            <div class="premium">
-              <img src="" alt="">
+            <div class="">
+              <p></p>
             </div>
-
-            <div class="advertisement-item">
-              <input type="checkbox" name="" id="">
-              <img src="" alt="">
+            <div class="">
               <p></p>
-              <p><span></span><span></span></p>
-              <p></p>
-              <p></p>
-              <a href=""></a>
             </div>
+          </div>
 
-            <div class="advertisement-item">
-              <input type="checkbox" name="" id="">
-              <img src="" alt="">
-              <p></p>
-              <p><span></span><span></span></p>
-              <p></p>
-              <p></p>
-              <a href=""></a>
-            </div>
+          <div class="premium">
+            <img src="" alt="">
+          </div>
 
-            <div class="advertisement-item">
-              <input type="checkbox" name="" id="">
-              <img src="" alt="">
-              <p></p>
-              <p><span></span><span></span></p>
-              <p></p>
-              <p></p>
-              <a href=""></a>
-              <div class="price"></div>
-              <div class="element"></div>
-              <div class="total__price"></div>
-            </div>
-            <div class="advertisement-item">
-              <p></p>
-              <p></p>
-              <p></p>
-              <div class="">
-                <p>Продвижение "XXL" 300р. скидка 95%</p>
-                <p>Продвижение "XXL" 300р. скидка 95%</p>
-                <p>Продвижение "XXL" 300р. скидка 95%</p>
-                <p>Продвижение "XXL" 300р. скидка 95%</p>
-                <p>Продвижение "XXL" 300р. скидка 95%</p>
-                <h3>Итого:</h3>
-                <p><span>1000p.</span></p>
-                <h4>Итого с учетом бонусов</h4>
+          <div class="advertisement-item">
+            <input type="checkbox" name="" id="">
+            <img src="" alt="">
+            <p></p>
+            <p><span></span><span></span></p>
+            <p></p>
+            <p></p>
+            <a href=""></a>
+          </div>
 
-              </div>
-              <div class="">
-                <p>20 р.</p>
-                <p>100 р.</p>
-                <p>50 р.</p>
-                <p>30 р.</p>
-                <p>15 р.</p>
-                <h3>527 p.</h3>
+          <div class="advertisement-item">
+            <input type="checkbox" name="" id="">
+            <img src="" alt="">
+            <p></p>
+            <p><span></span><span></span></p>
+            <p></p>
+            <p></p>
+            <a href=""></a>
+          </div>
 
-                <div class="total"><span>-527 p.</span></div>
-                <h4>0 p.</h4>
-              </div>
+          <div class="advertisement-item">
+            <input type="checkbox" name="" id="">
+            <img src="" alt="">
+            <p></p>
+            <p><span></span><span></span></p>
+            <p></p>
+            <p></p>
+            <a href=""></a>
+            <div class="price"></div>
+            <div class="element"></div>
+            <div class="total__price"></div>
+          </div>
+          <div class="advertisement-item">
+            <p></p>
+            <p></p>
+            <p></p>
+            <div class="">
+              <p>Продвижение "XXL" 300р. скидка 95%</p>
+              <p>Продвижение "XXL" 300р. скидка 95%</p>
+              <p>Продвижение "XXL" 300р. скидка 95%</p>
+              <p>Продвижение "XXL" 300р. скидка 95%</p>
+              <p>Продвижение "XXL" 300р. скидка 95%</p>
+              <h3>Итого:</h3>
+              <p><span>1000p.</span></p>
+              <h4>Итого с учетом бонусов</h4>
 
             </div>
-            <div class="advertisement-item">
-              <p>Услуги продвижения действуют в течении 7 дней</p><span></span> <button>Продолжить</button>
+            <div class="">
+              <p>20 р.</p>
+              <p>100 р.</p>
+              <p>50 р.</p>
+              <p>30 р.</p>
+              <p>15 р.</p>
+              <h3>527 p.</h3>
+
+              <div class="total"><span>-527 p.</span></div>
+              <h4>0 p.</h4>
             </div>
 
-
+          </div>
+          <div class="advertisement-item">
+            <p>Услуги продвижения действуют в течении 7 дней</p><span></span> <button>Продолжить</button>
           </div>
 
 
+        </div>
 
 
 
 
 
 
-          <div class="form_radio">
-            <input id="radio-1" type="radio" name="radio" value="1" checked>
-            <label for="radio-1">Radio button 1</label>
-          </div>
 
-          <div class="form_radio">
-            <input id="radio-2" type="radio" name="radio" value="2">
-            <label for="radio-2">Radio button 2</label>
-          </div>
 
-          <div class="form_radio">
-            <input id="radio-3" type="radio" name="radio" value="3">
-            <label for="radio-3">Radio button 3</label>
-          </div>
+        <div class="form_radio">
+          <input id="radio-1" type="radio" name="radio" value="1" checked>
+          <label for="radio-1">Radio button 1</label>
+        </div>
 
-          <div class="form_radio">
-            <input id="radio-4" type="radio" name="radio" value="4" disabled>
-            <label for="radio-4">Radio disabled</label>
-          </div>
+        <div class="form_radio">
+          <input id="radio-2" type="radio" name="radio" value="2">
+          <label for="radio-2">Radio button 2</label>
+        </div>
+
+        <div class="form_radio">
+          <input id="radio-3" type="radio" name="radio" value="3">
+          <label for="radio-3">Radio button 3</label>
+        </div>
+
+        <div class="form_radio">
+          <input id="radio-4" type="radio" name="radio" value="4" disabled>
+          <label for="radio-4">Radio disabled</label>
+        </div>
 
 
 

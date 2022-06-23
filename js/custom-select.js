@@ -124,7 +124,7 @@ CustomSelect.template = params => {
     }
     items.push(`<li class="select__option${selectedClass}" data-select="option" tabindex="0" data-value="${option[0]}" data-index="${index}"><span>${option[1]}</span></li>`);
   });
-  return `<button type="button" class="select__toggle" name="${name}" value="${selectedValue}" data-select="toggle" data-index="${selectedIndex}"><span tabindex="0">${selectedContent}</span></button>
+  return `<button type="button" class="select__toggle" name="${name}" value="${selectedValue}" data-select="toggle" data-index="${selectedIndex}">${selectedContent}</button>
   <div class="select__dropdown">
     <ul class="select__options">${items.join('')}</ul>
   </div>`;
