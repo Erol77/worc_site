@@ -80,14 +80,26 @@ function addTextToTarget(selector, target) {
 
 const selectNationality = new CustomSelect('#nationality',
 {
-    name: 'nationality', // значение атрибута name у кнопки
+    name: 'nationality', // значение атрибута name у кнопки  education
     targetValue: 'nationality', // значение по умолчанию
     options: [
-        ['nationality', 'Национальность'],
+        ['nationality', '--'],
         ['russ', 'Русский'],
         ['no russ', 'Не русский'],
 
-    ], // опции
+    ], // опции 
 });
+const selectEducation = new CustomSelect('#education',
+{
+    name: 'education', // значение атрибута name у кнопки  education
+    targetValue: 'education', // значение по умолчанию
+    options: [
+        ['education', '---'],
+        ['no-education', 'без образования'],
+        ['scull', 'школа'],
+
+    ], // опции 
+});
+
 
 })
