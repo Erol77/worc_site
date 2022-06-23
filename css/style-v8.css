@@ -2878,12 +2878,19 @@ margin-bottom: 20px;
   height: 55px;
   border: 1px solid #e3dcb2;
   border-radius: 5px;
+ 
+}
+.inner__wrapper .select span{
   color: #665800;
 }
 .inner__wrapper  .select__toggle {
 height: 100%;
+justify-content: center;
+color: #665800;
+
 }
 
 .inner__wrapper .select__toggle::after{
-  height: 10px;
+  /* height: 10px; */
+  top: 23px;
 }
