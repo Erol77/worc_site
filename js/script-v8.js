@@ -78,4 +78,16 @@ function addTextToTarget(selector, target) {
   const selectCategory = new CustomSelect('#select-category');
 // const selectToCategory = () => addTextToTarget('#select-category .select__toggle', '.select__select-category');
 
+const selectNationality = new CustomSelect('#nationality',
+{
+    name: 'nationality', // значение атрибута name у кнопки
+    targetValue: 'nationality', // значение по умолчанию
+    options: [
+        ['nationality', 'Национальность'],
+        ['russ', 'Русский'],
+        ['no russ', 'Не русский'],
+
+    ], // опции
+});
+
 })
