@@ -545,11 +545,11 @@
         <div class="wrapper category category-language">
           <h2>Знание языков:</h2>
           <div class="inner__wrapper">
-            <label for="">Язык</label>
+            <label class="label" for="">Язык</label>
             <div class="select__nationality" id="language"></div><input name ="language" class="select__language--language" type="text"   style="margin: 0px; padding: 0px; position: absolute; left: 0px; top: 0px; width: 0%; height: 0%; opacity: 0;">
           </div>
           <div class="inner__wrapper">
-            <label for="">Уровень владения</label>
+            <label class="label" for="">Уровень владения</label>
             <div class="select__nationality" id="skills"></div><input name ="language-skills" class="select__language--skills" type="text"   style="margin: 0px; padding: 0px; position: absolute; left: 0px; top: 0px; width: 0%; height: 0%; opacity: 0;">
           </div>
           <div class="ihher__wrapper button__add">
@@ -557,23 +557,60 @@
           </div>
         </div>
         <!-- ********* -->
-        <div class="wrapper category category-language">
+        <div class="category category__language">
           <h2>Ключевые навыки</h2>
-          <div class="work__name inp-wrap">
-            <label for="">Укажите ключевые навыки</label>
-            <input type="text" name="" id="" placeholder="Начните вводить здесь">
+          <div class="category__language--title inp-wrap">
+            <label class="label" for="">Укажите ключевые навыки</label>
+            <div class="inner__wrapper" id="textAreaWrap">
+              <div class="text-obligation">
+                <textarea id="key-skills" name="key-skills" cols="30" rows="4" autocomplete="on">Начните вводить здесь1</textarea>
+              </div>
+
+              <div class="inp-search">
+                <button type="button" class="find-obligation">
+                </button>
+              </div>
+              <button type="button" class="add-obligation">+</button>
+            </div>
+
+
+
           </div>
-          <button></button>
-          <button>+</button>
-          <p>Adobe Photochop x</p>
+          <div class="work__obligation--add">
+            <div class="work__obligation--item">
+              <p>Ведение бухгалтерского учета</p><span>X</span>
+            </div>
+            <div class="work__obligation--item ">
+              <p>Ведение а</p><span>X</span>
+            </div>
+            <div class="work__obligation--item">
+              <p>Ведение бухгалтерского учета</p><span>x</span>
+            </div>
+            <div class="work__obligation--item">
+              <p>Ведение бухгалтерского учета</p><span>X</span>
+            </div>
+            <div class="work__obligation--item ">
+              <p>Ведение бухгалтерского учета</p><span>X</span>
+            </div>
+            <div class="work__obligation--item">
+              <p>Ведение бухгалтерского учета</p><span>X</span>
+            </div>
+          </div>
+        
         </div>
 
-        <div class="wrapper category category-about">
+        <div class="wrapper category category__about">
           <h2>О себе: <span>*</span></h2>
           <div class="work__name inp-wrap">
-            <input type="text" name="" id=""
-              placeholder="Чтобы побудить работодателя пригласить именно вас, укажите свои деловые качества и профессиональные навыки. Расскажите про ваши достижения, напишите чем вы можете быть полезны компании на этой должности.">
-            <p>Не указывайте в описании телефон или email. Для этого есть специальные поля.</p>
+            <div class="text-obligation">
+              <textarea id="about" name="about" cols="30" rows="4" autocomplete="on"></textarea>
+            </div>
+            <div class="box__title" style="display: flex; padding: 4px 0; "><img src="./img/content/attention.jpg" style="width: 26px;height: 26px;" alt="">
+              <p>Не указывайте в описании телефон или email. Для этого есть специальные поля.</p>
+
+            
+            
+          </div>
             <h3>Дополнительные сведения:</h3>
           </div>
           <p>Укажите, что из перечисленного вы предпочитаете</p>

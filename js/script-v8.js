@@ -66,166 +66,190 @@ document.addEventListener('DOMContentLoaded', () => {
 
         ], // опции
     });
-function addTextToTarget(selector, target) {
-    const data = document.querySelector(selector);
-    let text = document.querySelector(target);
-    text.innerHTML = data.textContent;
-    // console.log(data.textContent + '    ' + text.value)
-}
+    function addTextToTarget(selector, target) {
+        const data = document.querySelector(selector);
+        let text = document.querySelector(target);
+        text.innerHTML = data.textContent;
+        // console.log(data.textContent + '    ' + text.value)
+    }
 
     const selectToRubric = () => addTextToTarget('#select-rubric .select__toggle', '.type-category__item');
     // selectToRubric();
-  const selectCategory = new CustomSelect('#select-category');
-// const selectToCategory = () => addTextToTarget('#select-category .select__toggle', '.select__select-category');
+    const selectCategory = new CustomSelect('#select-category');
+    // const selectToCategory = () => addTextToTarget('#select-category .select__toggle', '.select__select-category');
 
-const selectNationality = new CustomSelect('#nationality',
-{
-    name: 'nationality', // значение атрибута name у кнопки  education
-    targetValue: 'nationality', // значение по умолчанию
-    options: [
-        ['nationality', '--'],
-        ['russ', 'Русский'],
-        ['no russ', 'Не русский'],
+    const selectNationality = new CustomSelect('#nationality',
+        {
+            name: 'nationality', // значение атрибута name у кнопки  education
+            targetValue: 'nationality', // значение по умолчанию
+            options: [
+                ['nationality', '--'],
+                ['russ', 'Русский'],
+                ['no russ', 'Не русский'],
 
-    ], // опции 
-});
-const selectEducation = new CustomSelect('#education',
-{
-    name: 'education', // значение атрибута name у кнопки  education
-    targetValue: 'education', // значение по умолчанию
-    options: [
-        ['education', '---'],
-        ['no-education', 'без образования'],
-        ['scull', 'школа'],
+            ], // опции 
+        });
+    const selectEducation = new CustomSelect('#education',
+        {
+            name: 'education', // значение атрибута name у кнопки  education
+            targetValue: 'education', // значение по умолчанию
+            options: [
+                ['education', '---'],
+                ['no-education', 'без образования'],
+                ['scull', 'школа'],
 
-    ], // опции 
-});
-addTextToTarget('#education .select__toggle', '.select__education--education');
+            ], // опции 
+        });
+    addTextToTarget('#education .select__toggle', '.select__education--education');
 
-const selectMonth = new CustomSelect('#beginning--month', {
-    name: 'beginning--month', // значение атрибута name у кнопки  education
-    targetValue: 'education', // значение по умолчанию
-    options: [
-        ['education', '--'],
-        ['1', '01'],['2', '02'],['3','03'],['4','04'],['5','05'],['6','06'],['7','07'],['8','08'],['9','09'],['10','10'],['11','11'],['12','12'],        
+    const selectMonth = new CustomSelect('#beginning--month', {
+        name: 'beginning--month', // значение атрибута name у кнопки  education
+        targetValue: 'education', // значение по умолчанию
+        options: [
+            ['education', '--'],
+            ['1', '01'], ['2', '02'], ['3', '03'], ['4', '04'], ['5', '05'], ['6', '06'], ['7', '07'], ['8', '08'], ['9', '09'], ['10', '10'], ['11', '11'], ['12', '12'],
 
-    ], // опции 
-});
+        ], // опции 
+    });
 
-const selectYear = new CustomSelect('#beginning--year', {
-    name: 'beginning--year', // значение атрибута name у кнопки  education
-    targetValue: 'education', // значение по умолчанию
-    options: [
-        ['education', '--'],
-        ['1', '01'],
-        ['2', '02'],
-        ['3', '03'],
-        ['4', '04'],
-        ['5', '05'],
-        ['6', '06'],
-        ['7', '07'],
-        ['8', '08'],
-        ['9', '09'],
-        ['10', '10'],
-        ['11', '11'],
-        ['12', '12'],
+    const selectYear = new CustomSelect('#beginning--year', {
+        name: 'beginning--year', // значение атрибута name у кнопки  education
+        targetValue: 'education', // значение по умолчанию
+        options: [
+            ['education', '--'],
+            ['1', '01'],
+            ['2', '02'],
+            ['3', '03'],
+            ['4', '04'],
+            ['5', '05'],
+            ['6', '06'],
+            ['7', '07'],
+            ['8', '08'],
+            ['9', '09'],
+            ['10', '10'],
+            ['11', '11'],
+            ['12', '12'],
 
-    ], // опции 
-});
-const selectMonthEbd = new CustomSelect('#end--month', {
-    name: 'end--month', // значение атрибута name у кнопки  education
-    targetValue: 'education', // значение по умолчанию
-    options: [
-        ['education', '--'],
-        ['1', '01'],['2', '02'],['3','03'],['4','04'],['5','05'],['6','06'],['7','07'],['8','08'],['9','09'],['10','10'],['11','11'],['12','12'],        
+        ], // опции 
+    });
+    const selectMonthEbd = new CustomSelect('#end--month', {
+        name: 'end--month', // значение атрибута name у кнопки  education
+        targetValue: 'education', // значение по умолчанию
+        options: [
+            ['education', '--'],
+            ['1', '01'], ['2', '02'], ['3', '03'], ['4', '04'], ['5', '05'], ['6', '06'], ['7', '07'], ['8', '08'], ['9', '09'], ['10', '10'], ['11', '11'], ['12', '12'],
 
-    ], // опции 
-});
+        ], // опции 
+    });
 
-const selectYearEnd = new CustomSelect('#end--year', {
-    name: 'end--year', // значение атрибута name у кнопки  education
-    targetValue: 'education', // значение по умолчанию
-    options: [
-        ['education', '--'],
-        ['1', '01'],
-        ['2', '02'],
-        ['3', '03'],
-        ['4', '04'],
-        ['5', '05'],
-        ['6', '06'],
-        ['7', '07'],
-        ['8', '08'],
-        ['9', '09'],
-        ['10', '10'],
-        ['11', '11'],
-        ['12', '12'],
+    const selectYearEnd = new CustomSelect('#end--year', {
+        name: 'end--year', // значение атрибута name у кнопки  education
+        targetValue: 'education', // значение по умолчанию
+        options: [
+            ['education', '--'],
+            ['1', '01'],
+            ['2', '02'],
+            ['3', '03'],
+            ['4', '04'],
+            ['5', '05'],
+            ['6', '06'],
+            ['7', '07'],
+            ['8', '08'],
+            ['9', '09'],
+            ['10', '10'],
+            ['11', '11'],
+            ['12', '12'],
 
-    ], // опции  year--end
-});
+        ], // опции  year--end
+    });
 
-const selectEbdYear = new CustomSelect('#year--end', {
-    name: 'year--end', // значение атрибута name у кнопки  education
-    targetValue: 'education', // значение по умолчанию
-    options: [
-        ['education', '--'],
-        ['1', '01'],['2', '02'],['3','03'],['4','04'],['5','05'],['6','06'],['7','07'],['8','08'],['9','09'],['10','10'],['11','11'],['12','12'],        
+    const selectEbdYear = new CustomSelect('#year--end', {
+        name: 'year--end', // значение атрибута name у кнопки  education
+        targetValue: 'education', // значение по умолчанию
+        options: [
+            ['education', '--'],
+            ['1', '01'], ['2', '02'], ['3', '03'], ['4', '04'], ['5', '05'], ['6', '06'], ['7', '07'], ['8', '08'], ['9', '09'], ['10', '10'], ['11', '11'], ['12', '12'],
 
-    ], // опции language
-});
+        ], // опции language
+    });
 
-const selectLlngwich = new CustomSelect('#language', {
-    name: 'language', // значение атрибута name у кнопки  education
-    targetValue: 'language', // значение по умолчанию
-    options: [
-        ['language', '--'],
-        ['1', 'Русский'],['2', 'Французский'],['3','Английский'],['4','Немецкий'],['5','Ты что полиглот'],['6','06'],['7','07'],['8','08'],['9','09'],['10','10'],['11','11'],['12','12'],        
+    const selectLlngwich = new CustomSelect('#language', {
+        name: 'language', // значение атрибута name у кнопки  education
+        targetValue: 'language', // значение по умолчанию
+        options: [
+            ['language', '--'],
+            ['1', 'Русский'], ['2', 'Французский'], ['3', 'Английский'], ['4', 'Немецкий'], ['5', 'Ты что полиглот'], ['6', '06'], ['7', '07'], ['8', '08'], ['9', '09'], ['10', '10'], ['11', '11'], ['12', '12'],
 
-    ], // опции language
-});
+        ], // опции language
+    });
 
-const selectSkills = new CustomSelect('#skills', {
-    name: 'languageCvalification', // значение атрибута name у кнопки  education
-    targetValue: 'languageCvalification', // значение по умолчанию
-    options: [
-        ['languageCvalification', '--'],
-        ['1', 'Свободно читаю'],['2', 'Свободно говорю'],['3','Читаю с переводчиком'],['4','Понимаю но говорить не могу'],['5','Знаю такое название'],['6','06'],['7','07'],['8','08'],['9','09'],['10','10'],['11','11'],['12','12'],        
+    const selectSkills = new CustomSelect('#skills', {
+        name: 'languageCvalification', // значение атрибута name у кнопки  education
+        targetValue: 'languageCvalification', // значение по умолчанию
+        options: [
+            ['languageCvalification', '--'],
+            ['1', 'Свободно читаю'], ['2', 'Свободно говорю'], ['3', 'Читаю с переводчиком'], ['4', 'Понимаю но говорить не могу'], ['5', 'Знаю такое название'], ['6', '06'], ['7', '07'], ['8', '08'], ['9', '09'], ['10', '10'], ['11', '11'], ['12', '12'],
 
-    ], // опции language
-});
+        ], // опции language
+    });
 
 
-/*
-$('textarea').focus(function () {
-    if ($(this).val() === placeholder) {
-        $(this).attr('value', '');
-    }
-});
-
-$('textarea').blur(function () {
-    if ($(this).val() === '') {
-        $(this).attr('value', placeholder);
-    }
-});
-*/
+    /*
+    $('textarea').focus(function () {
+        if ($(this).val() === placeholder) {
+            $(this).attr('value', '');
+        }
+    });
+    
+    $('textarea').blur(function () {
+        if ($(this).val() === '') {
+            $(this).attr('value', placeholder);
+        }
+    });
+    */
 
 })
-function showToltip(select){
-document.querySelector(select).style.display='block'
+function showToltip(select) {
+    document.querySelector(select).style.display = 'block'
 }
 
-var placeholder = 'Начните вводить должностные функции и ключевые навыки\nчтобы получить больше приглашений от работодателей';
-const textArea = document.getElementById('textArea')
-textArea.value = placeholder;
+ var placeholder = 'Начните вводить должностные функции и ключевые навыки\nчтобы получить больше приглашений от работодателей';
+// const textArea = document.getElementById('textArea')
+// textArea.value = placeholder;
 
-textArea.addEventListener('focus', () => {
-   if (textArea.value === placeholder) {
-     textArea.value = '';
-     textArea.style = 'font:inherit; color:#665800;';
-   }
-});
-textArea.addEventListener('blur', () => {
-    if (textArea.value === '') {
-        textArea.value = placeholder;
-        textArea.style = 'font:none; rgba(102, 88, 0, 0.5);';
-    }
-})
+// textArea.addEventListener('focus', () => {
+//    if (textArea.value === placeholder) {
+//      textArea.value = '';
+//      textArea.style = 'font:inherit; color:#665800;';
+//    }
+// });
+// textArea.addEventListener('blur', () => {
+//     if (textArea.value === '') {
+//         textArea.value = placeholder;
+//         textArea.style = 'font:none; rgba(102, 88, 0, 0.5);';
+//     }
+// })
+
+function textAreaToPlaceholder(placeholder, selector) {
+    // var placeholder = 'Начните вводить должностные функции и ключевые навыки\nчтобы получить больше приглашений от работодателей';
+    const textArea = document.getElementById(selector)
+    textArea.value = placeholder;
+    textArea.addEventListener('focus', () => {
+        if (textArea.value === placeholder) {
+            textArea.value = '';
+            textArea.style = 'font:inherit; color:#665800;';
+        }
+    });
+    textArea.addEventListener('blur', () => {
+        if (textArea.value === '') {
+            textArea.value = placeholder;
+            textArea.style = 'font:none; rgba(102, 88, 0, 0.5);';
+        }
+    })
+}
+
+textAreaToPlaceholder(placeholder,'textArea');
+textAreaToPlaceholder('Начните вводить здесь','key-skills');
+let placeAbout = 'Чтобы побудить работодателя пригласить именно вас, укажите свои деловые качества и профессиональные навыки. Расскажите про ваши достижения, напишите чем вы можете быть полезны компании на этой должности.';
+
+textAreaToPlaceholder(placeAbout,'about');
