@@ -170,7 +170,27 @@ const selectEbdYear = new CustomSelect('#year--end', {
         ['education', '--'],
         ['1', '01'],['2', '02'],['3','03'],['4','04'],['5','05'],['6','06'],['7','07'],['8','08'],['9','09'],['10','10'],['11','11'],['12','12'],        
 
-    ], // опции 
+    ], // опции lengwich
+});
+
+const selectLlngwich = new CustomSelect('#lengwich', {
+    name: 'lengwich', // значение атрибута name у кнопки  education
+    targetValue: 'lengwich', // значение по умолчанию
+    options: [
+        ['lengwich', '--'],
+        ['1', 'Русский'],['2', 'Французский'],['3','Английский'],['4','Немецкий'],['5','Ты что полиглот'],['6','06'],['7','07'],['8','08'],['9','09'],['10','10'],['11','11'],['12','12'],        
+
+    ], // опции lengwich
+});
+
+const selectLengwichCvalification = new CustomSelect('#lengwichCvalification', {
+    name: 'lengwichCvalification', // значение атрибута name у кнопки  education
+    targetValue: 'lengwichCvalification', // значение по умолчанию
+    options: [
+        ['lengwichCvalification', '--'],
+        ['1', 'Свободно читаю'],['2', 'Свободно говорю'],['3','Читаю с переводчиком'],['4','Понимаю но говорить не могу'],['5','Знаю такое название'],['6','06'],['7','07'],['8','08'],['9','09'],['10','10'],['11','11'],['12','12'],        
+
+    ], // опции lengwich
 });
 
 

@@ -2658,10 +2658,15 @@ input[type="checkbox"]:checked + label span {
 }
 
 .category {
+  display: flex;
+  flex-direction: column;
   padding: 40px 40px;
   margin: 25px 0px;
   flex-wrap: wrap;
   gap: 7px;
+  justify-content: start;
+  align-items: flex-start;
+  align-content: flex-start;
 }
 
 /* .category-language h3,
@@ -3032,4 +3037,7 @@ margin-right: 7px;
     color:white;
     background-color: #7c8797;
     opacity: 0.3;
+  }
+  .lengwich{
+
   }
