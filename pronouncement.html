@@ -468,21 +468,21 @@
               <button>+</button> ---- <div id="placeholderDiv">Начните вводить должностные функции и ключевые навыки,<br> чтобы получить
                     больше приглашений
                     от работодателей</div>-->
-            
-              <div class="inner__wrapper" id="textAreaWrap">
-                <div class="text-obligation">
-                  <textarea id="textArea" name="story" cols="30" rows="4" autocomplete="on"></textarea>
-                </div>
 
-                <div class="inp-search">
-                  <button type="button" class="find-obligation">
-                  </button>
-                </div>
-                <button type="button" class="add-obligation">+</button>
+            <div class="inner__wrapper" id="textAreaWrap">
+              <div class="text-obligation">
+                <textarea id="textArea" name="story" cols="30" rows="4" autocomplete="on"></textarea>
               </div>
 
-  
-            
+              <div class="inp-search">
+                <button type="button" class="find-obligation">
+                </button>
+              </div>
+              <button type="button" class="add-obligation">+</button>
+            </div>
+
+
+
           </div>
           <div class="work__obligation--add">
             <div class="work__obligation--item">
@@ -490,13 +490,17 @@
             </div>
             <div class="work__obligation--item ">
               <p>Ведение а</p><span>X</span>
-            </div><div class="work__obligation--item">
+            </div>
+            <div class="work__obligation--item">
               <p>Ведение бухгалтерского учета</p><span>X</span>
-            </div><div class="work__obligation--item">
+            </div>
+            <div class="work__obligation--item">
               <p>Ведение бухгалтерского учета</p><span>X</span>
-            </div><div class="work__obligation--item ">
+            </div>
+            <div class="work__obligation--item ">
               <p>Ведение бухгалтерского учета</p><span>X</span>
-            </div><div class="work__obligation--item">
+            </div>
+            <div class="work__obligation--item">
               <p>Ведение бухгалтерского учета</p><span>X</span>
             </div>
           </div>
@@ -520,18 +524,23 @@
             <input type="text" name="profession" id="profession"
               placeholder='Например: "финансы, денежное обращение и кредит"'>
           </div>
-          <div class="work__wrap">
+          <div class="work__name inner__wrapper inp-wrap">
             <label for="year--end">Год окончания</label>
-            <div class="select__year--end" id="year--end"></div>
-            <div class="ihher__wrapper">
-              <p>если учитесь - укажите год предполагаемого окончания</p>
-            </div>
-            <input type="text" name="year--end" id="year--end"
-              style="margin: 0px; padding: 0px; position: absolute; left: 0px; top: 0px; width: 0%; height: 0%; opacity: 0;">
+            <!-- <div class="work__wrap"> -->
+              <div class="select__year--end" id="year--end"></div>
+               <div class="box__title" style="display: flex; padding: 4px 0; "><img src="./img/content/attention.jpg" style="width: 26px;height: 26px;" alt="">
+                  <p>если учитесь - укажите год предполагаемого окончания</p>
+                
+                
+              </div>
+              <input type="text" name="year--end" id="year--end"
+                style="margin: 0px; padding: 0px; position: absolute; left: 0px; top: 0px; width: 0%; height: 0%; opacity: 0;">
+            <!-- </div> -->
           </div>
           <!-- year******************* -->
-<div class="ihher__wrapper button__add">
-          <button>+</button> <a href="./?added">Добавить учебное заведение</a></div>
+          <div class="ihher__wrapper button__add">
+            <button>+</button> <a href="./?added">Добавить учебное заведение</a>
+          </div>
 
         </div>
 
