@@ -2999,3 +2999,27 @@ font-size: 2em;
   justify-content: start;
   background-color: #fff;
 }
+.button__add button{
+border: 1px solid #ffdd00;
+color:#ffdd00;
+border-radius: 50%;
+padding: 0 4px;
+font: bold;
+font-size: 1em;
+margin-right: 7px;
+}
+.button__add a{
+  border-bottom: 1px dotted #ffdd00;
+  color:#ffdd00;
+  /* border-radius: 50%; */
+  padding: 3px 5px;
+  font: bold;
+  line-height: .95;
+  font-size: 1em;
+  }
+  .button__add:hover button,
+  .button__add:hover a{
+    color:white;
+    background-color: #7c8797;
+    opacity: 0.3;
+  }
