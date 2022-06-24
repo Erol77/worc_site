@@ -209,7 +209,7 @@ position: relative;
 	align-items: center;
 	justify-content: space-between;
 	display: flex;
-/* position: relative; */
+	flex-wrap: wrap;
 }
 
 /* .form_search {
@@ -241,7 +241,7 @@ position: relative;
 .select_item {
 	width: 250px;
 	padding-left: 10px;
-	/* max-width: 400px; */
+	max-width: 400px;
 	/* min-width: 270px; */
 }
 .checkselect,
@@ -410,15 +410,21 @@ select {
 	align-items: center;
 	justify-content: space-between;
 	display: flex;
+	flex-wrap: wrap;
+}
+.form_bottom_row:nth-child(2){
+	align-items: end;
+	/* justify-content:start; */
 }
 .datepicker_row {
 	background: url(../img/datepicker.png) no-repeat;
-	width: 330px;
+	width: 220px;
 /* height: 28px; */
 	padding: 0 10px 0 20px;
 	align-items: center;
 	justify-content: space-between;
 	display: flex;
+	flex-wrap: wrap;
 	position: relative;
     /* border: 1px solid #e3dcb2; */
 }
@@ -799,7 +805,7 @@ width: 385px;
 } 
 
 .form_bottom_row .select_item:nth-child(2){
-width: 300px;
+width: 320px;
 }
 
 

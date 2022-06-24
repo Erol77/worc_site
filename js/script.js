@@ -208,20 +208,24 @@ selectToDialog();
     
     
             if (checkedNum.length) {
-                checkedSel.textContent = name + ' (выбрано: ' + checkedNum.length + ')';
+                if(checkedNum.length==1){
+                    checkedSel.textContent = checkedNum[0].parentElement.textContent.trim();
+                }else{
+                checkedSel.textContent = name + ' (выбрано: ' + checkedNum.length + ')';}
                 checked.classList.add('form-control--selected');
                 // checkedSel.classList.add('form-control--selected');
                 if (closeBtn.closest('.hide')) {
                     closeBtn.style.right = -30 + 'px';
                     closeBtn.classList.remove('hide');
-                }
+                
     
                 checkedSel.parentElement.style.backgroundColor = '#fbf7e7';
                 // checkedSel.parentElement.style.borderRadius = '5px';
                 checkedSel.parentElement.style.border = '1px solid #e3dcb2'; //border-right-width: 1px;
-                checked.style.width = 91 + '%';
+                checked.style.width = checked.offsetWidth -32 + 'px';
                 // checked.style.after.right = 80+'%';
                 checked.style.border = 'none'; //border-right-width: 1px;
+            }
                 let data = name + ' (выбрано: ' + checkedNum.length + ')';
                 checkedNum.map(i => {
                     // console.log(i.parentElement.textContent)
@@ -237,7 +241,7 @@ selectToDialog();
                 checkedSel.textContent = name;
                 checkedSel.parentElement.parentElement.setAttribute('onmouseover', `toolTip('${name}')`);
                 checkedSel.parentElement.parentElement.setAttribute('onmouseout', `toolTip()`);
-                checked.style.width = 100 + '%';
+                // checked.style.width = 32 + '%';
                 if (checked.closest('.form-control--selected')) {/**/
                     // checked.classList.remove('form-control--selected');
                     closeDialog();
@@ -250,7 +254,8 @@ selectToDialog();
         });
         function closeDialog() {
             closeBtn.classList.add('hide');
-            checked.classList.remove('form-control--selected')
+            checked.classList.remove('form-control--selected');
+            checked.style.width = checked.offsetWidth + 32 + 'px';
             const clear = Array.from(checked.querySelectorAll('input[type="checkbox"]:checked'));
             clear.map(e => e.checked = false);
             checkedSel.parentElement.style.backgroundColor = '#fff';

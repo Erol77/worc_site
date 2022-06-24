@@ -133,7 +133,7 @@
 }
 
 .datepicker_row{
-    max-width: 630px;
+    max-width: 320px;
 }
 
 
@@ -149,7 +149,8 @@ float: right;
     /* border-radius: 50%; */
     /* background-color: #bbb; */
     /* color: #fff; */
-    padding: 4px 7px;
+    padding: 0 7px;
+    height: 100%;
     /* padding-bottom: 5px; */
     transition: 0.3s;
 z-index: 2;
@@ -163,7 +164,7 @@ line-height: 1.2rem;
 }
 
 .input-reset:hover {
-    background-color: #444;
+    background-color: #e3dcb2;
 }
 .xcalend2 .datepicer-apply,
 .select_item .apply {
