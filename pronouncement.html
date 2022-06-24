@@ -449,31 +449,48 @@
             <div class="work__end inner__wrapper">
               <p class="label">Окончание работы <span>*</span></p>
               <div class="work__wrap">
-                <input type="text" name="end--year" id="work__end--year"
-                  style="margin: 0px; padding: 0px; position: absolute; left: 0px; top: 0px; width: 0%; height: 0%; opacity: 0;">
+
 
                 <div class="select__beginning--month" id="end--month"></div>
                 <div class="select__beginning--year" id="end--year"></div>
-                <input type="text" name="end--month" id="work__end--month"
-                  style="margin: 0px; padding: 0px; position: absolute; left: 0px; top: 0px; width: 0%; height: 0%; opacity: 0;">
+
 
                 <div class="inp-checkbox">
-                  <input type="text" name="today" id="today">
+                  <input type="checkbox" name="today" id="today">
                   <label for="today"></label>
                 </div>
                 <p> По настоящее время</p>
+                <input type="text" name="end--month" id="work__end--month"
+                  style="margin: 0px; padding: 0px; position: absolute; left: 0px; top: 0px; width: 0%; height: 0%; opacity: 0;">
+                <input type="text" name="end--year" id="work__end--year"
+                  style="margin: 0px; padding: 0px; position: absolute; left: 0px; top: 0px; width: 0%; height: 0%; opacity: 0;">
               </div>
 
             </div>
 
             <div class="work__obligation inner__wrapper">
               <p class="label">Обязанности <span>*</span></p>
-              <input type="text" name="" id=""
+              <!-- <input type="text" name="obligation" id="obligation"
                 placeholder="Начните вводить должностные функции и ключевые навыки, чтобы получить больше приглашений от работодателей">
-              <button>+</button>
-              <div class="work__obligation--add">
-                <div class="work__obligation--item">
-                  <p>Ведение бухгалтерского учета</p><span>X</span>
+              <button>+</button> -->
+              <div class="inner__wrapper">
+                <div class="inp-search">
+<div class="text-obligation"><span>
+ </span>
+</div>
+<div id="textAreaWrap">
+  <textarea id="textArea" name="story"  cols="20" rows="2"></textarea>
+  <div id="placeholderDiv">Начните вводить должностные функции и ключевые навыки,<br> чтобы получить больше приглашений
+    от работодателей</div>
+</div>
+                  <input type="text"
+                    placeholder="">
+                  <button type="button" class="add-obligation"></button>
+                </div><button type="button" class="add-obligation">+</button>
+                <div class="work__obligation--add">
+                  <div class="work__obligation--item">
+                    <p>Ведение бухгалтерского учета</p><span>X</span>
+                  </div>
                 </div>
               </div>
             </div>
@@ -513,21 +530,21 @@
 
           <div class="wrapper category category-language">
             <h2>Знание языков:</h2>
-<div class="work__name inp-wrap">
-            <label for="">Язык</label>
-            <input type="text" name="" id=""></div>
-<div class="work__name inp-wrap">
-            <label for="">Уровень владения</label>
-            <input type="text" name="" id=""></div>
-<div class="work__name inp-wrap">
-            <button>+</button> <a href="http://">Добавить язык</a></div>
+            <div class="work__name inp-wrap">
+              <label for="">Язык</label>
+              <input type="text" name="" id=""></div>
+            <div class="work__name inp-wrap">
+              <label for="">Уровень владения</label>
+              <input type="text" name="" id=""></div>
+            <div class="work__name inp-wrap">
+              <button>+</button> <a href="http://">Добавить язык</a></div>
           </div>
           <!-- ********* -->
           <div class="wrapper category category-language">
             <h2>Ключевые навыки</h2>
-<div class="work__name inp-wrap">
-            <label for="">Укажите ключевые навыки</label>
-            <input type="text" name="" id="" placeholder="Начните вводить здесь"></div>
+            <div class="work__name inp-wrap">
+              <label for="">Укажите ключевые навыки</label>
+              <input type="text" name="" id="" placeholder="Начните вводить здесь"></div>
             <button></button>
             <button>+</button>
             <p>Adobe Photochop x</p>
@@ -535,46 +552,46 @@
 
           <div class="wrapper category category-about">
             <h2>О себе: <span>*</span></h2>
-<div class="work__name inp-wrap">
-            <input type="text" name="" id=""
-              placeholder="Чтобы побудить работодателя пригласить именно вас, укажите свои деловые качества и профессиональные навыки. Расскажите про ваши достижения, напишите чем вы можете быть полезны компании на этой должности.">
-            <p>Не указывайте в описании телефон или email. Для этого есть специальные поля.</p>
-            <h3>Дополнительные сведения:</h3>
-</div>
+            <div class="work__name inp-wrap">
+              <input type="text" name="" id=""
+                placeholder="Чтобы побудить работодателя пригласить именно вас, укажите свои деловые качества и профессиональные навыки. Расскажите про ваши достижения, напишите чем вы можете быть полезны компании на этой должности.">
+              <p>Не указывайте в описании телефон или email. Для этого есть специальные поля.</p>
+              <h3>Дополнительные сведения:</h3>
+            </div>
             <p>Укажите, что из перечисленного вы предпочитаете</p>
-<div class="work__name inp-wrap">
-            <p>Работа с ежедневной оплатой <span>*</span></p>
-            <input type="radio" name="" id=""><label for="">Да</label>
-            <input type="radio" name="" id=""><label for="">Нет</label>
+            <div class="work__name inp-wrap">
+              <p>Работа с ежедневной оплатой <span>*</span></p>
+              <input type="radio" name="" id=""><label for="">Да</label>
+              <input type="radio" name="" id=""><label for="">Нет</label>
 
-            <p>Работа без опыта <span>*</span></p>
-            <input type="radio" name="" id=""><label for="">Да</label>
-            <input type="radio" name="" id=""><label for="">Нет</label>
+              <p>Работа без опыта <span>*</span></p>
+              <input type="radio" name="" id=""><label for="">Да</label>
+              <input type="radio" name="" id=""><label for="">Нет</label>
 
-            <p>Работа для студентов <span>*</span></p>
-            <input type="radio" name="" id=""><label for="">Да</label>
-            <input type="radio" name="" id=""><label for="">Нет</label>
+              <p>Работа для студентов <span>*</span></p>
+              <input type="radio" name="" id=""><label for="">Да</label>
+              <input type="radio" name="" id=""><label for="">Нет</label>
 
-            <p>Работа для женщин <span>*</span></p>
-            <input type="radio" name="" id=""><label for="">Да</label>
-            <input type="radio" name="" id=""><label for="">Нет</label>
+              <p>Работа для женщин <span>*</span></p>
+              <input type="radio" name="" id=""><label for="">Да</label>
+              <input type="radio" name="" id=""><label for="">Нет</label>
 
-            <p>Работа для пенсионеров <span>*</span></p>
-            <input type="radio" name="" id=""><label for="">Да</label>
-            <input type="radio" name="" id=""><label for="">Нет</label>
+              <p>Работа для пенсионеров <span>*</span></p>
+              <input type="radio" name="" id=""><label for="">Да</label>
+              <input type="radio" name="" id=""><label for="">Нет</label>
 
-            <p>Работа с бесплатным питанием <span>*</span></p>
-            <input type="radio" name="" id=""><label for="">Да</label>
-            <input type="radio" name="" id=""><label for="">Нет</label>
+              <p>Работа с бесплатным питанием <span>*</span></p>
+              <input type="radio" name="" id=""><label for="">Да</label>
+              <input type="radio" name="" id=""><label for="">Нет</label>
 
-            <p>Работа на дому <span>*</span></p>
-            <input type="radio" name="" id=""><label for="">Да</label>
-            <input type="radio" name="" id=""><label for="">Нет</label>
+              <p>Работа на дому <span>*</span></p>
+              <input type="radio" name="" id=""><label for="">Да</label>
+              <input type="radio" name="" id=""><label for="">Нет</label>
 
-            <p>Работа с проживанием <span>*</span></p>
-            <input type="radio" name="" id=""><label for="">Да</label>
-            <input type="radio" name="" id=""><label for="">Нет</label>
-</div>
+              <p>Работа с проживанием <span>*</span></p>
+              <input type="radio" name="" id=""><label for="">Да</label>
+              <input type="radio" name="" id=""><label for="">Нет</label>
+            </div>
             <hr>
 
             <label for="">

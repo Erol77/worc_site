@@ -173,4 +173,37 @@ const selectEbdYear = new CustomSelect('#year--end', {
     ], // опции 
 });
 
+
+/*
+$('textarea').focus(function () {
+    if ($(this).val() === placeholder) {
+        $(this).attr('value', '');
+    }
+});
+
+$('textarea').blur(function () {
+    if ($(this).val() === '') {
+        $(this).attr('value', placeholder);
+    }
+});
+*/
+
+})
+function showToltip(select){
+document.querySelector(select).style.display='block'
+}
+
+var placeholder = 'Начните вводить должностные функции и ключевые навыки\nчтобы получить больше приглашений от работодателей';
+const textArea = document.getElementById('textArea')
+textArea.value = placeholder;
+
+textArea.addEventListener('focus', () => {
+   if (textArea.value === placeholder) {
+     textArea.value = '';
+   }
+});
+textArea.addEventListener('blur', () => {
+    if (textArea.value === '') {
+        textArea.value = placeholder;
+    }
 })
