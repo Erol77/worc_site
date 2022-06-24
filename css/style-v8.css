@@ -2876,13 +2876,17 @@ width: 50px;
   height: 55px;
   width: 500px;
   border-radius: 5px;
-  font-size: 1.2em;
+  font-size: 1em;
   /* margin-right: 25px; */
 }
 .category-college .work__name.inp-wrap label {
   width: 290px;
 }
 
+.work__name.inp-wrap{
+  width: 100%;
+  justify-content: start;
+}
 .work__wrap {
   width: 290px;
   display: flex;
