@@ -530,10 +530,7 @@ input::placeholder,
 textarea::placeholder {
   color: #665800;
 }
-textarea {
-  height: 116px;
-  padding-top: 18px;
-}
+
 .inp-wrap input::-webkit-inner-spin-button {
   display: none;
 }
@@ -2969,4 +2966,27 @@ width: 50px;
 
 #search-input:placeholder-shown {
    color: green;
+}
+
+textarea#textArea {
+    width: 400px;
+height: 60px;
+}
+
+#textAreaWrap .inp-search{
+width: 36px;
+border-bottom:1px solid #e3dcb2;
+border-top:1px solid #e3dcb2;
+height: 60px;
+}
+/* .find-obligation */
+.add-obligation{
+/* width: 36px; */
+border:1px solid #e3dcb2;
+background-color:#ffdd00;
+color:white;
+height: 60px;
+padding: 0 10px;
+border-radius:0 5px 5px 0;
+font-size: 2em;
 }
