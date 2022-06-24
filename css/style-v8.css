@@ -2667,6 +2667,7 @@ input[type="checkbox"]:checked + label span {
   justify-content: start;
   align-items: flex-start;
   align-content: flex-start;
+  background-color: #fff;
 }
 
 /* .category-language h3,
@@ -2962,18 +2963,26 @@ padding-right: 7px;
 }
 .work__obligation--item p,
 .work__obligation--item span{  
-  color:  rgba(102, 88, 0, 0.5);cursor: pointer;
+  color:  rgba(102, 88, 0, 0.5);
+  font-size: 0.9rem;
+  padding-left: 0.3rem;
 }
 
 .work__obligation--item:hover span{
-  color:  var(--bg-red);
-  
+  color:  var(--bg-red);  cursor: pointer;
 }
-
+.work__obligation--item:hover{
+  background-color: #ffdd00;
+}
+.work__obligation--item:hover p{
+  color:#000;
+}
 #search-input:placeholder-shown {
    color: green;
 }
-
+.category__language .inp-wrap .label{
+  width: 290px;
+}
 textarea#textArea {
     /* width: 400px; */
 height: 40px;
