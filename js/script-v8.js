@@ -200,10 +200,12 @@ textArea.value = placeholder;
 textArea.addEventListener('focus', () => {
    if (textArea.value === placeholder) {
      textArea.value = '';
+     textArea.style = 'font:inherit; color:#665800;';
    }
 });
 textArea.addEventListener('blur', () => {
     if (textArea.value === '') {
         textArea.value = placeholder;
+        textArea.style = 'font:none; rgba(102, 88, 0, 0.5);';
     }
 })
