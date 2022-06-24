@@ -599,7 +599,7 @@
         
         </div>
 
-        <div class="wrapper category category__about">
+        <div class="category category__about">
           <h2>О себе: <span>*</span></h2>
           <div class="work__name inp-wrap">
             <div class="text-obligation">
@@ -614,11 +614,23 @@
             <h3>Дополнительные сведения:</h3>
           </div>
           <p>Укажите, что из перечисленного вы предпочитаете</p>
-          <div class="work__name inp-wrap">
-            <p>Работа с ежедневной оплатой <span>*</span></p>
-            <input type="radio" name="" id=""><label for="">Да</label>
-            <input type="radio" name="" id=""><label for="">Нет</label>
+          <div class="work__name inp-wrap wrapper" >
 
+            <div class="wrapper">
+              <div class="inp-checkbox radio">
+                <input id="radio-6" type="radio" name="radio" value="6" checked>
+                <label for="radio-6"></label>
+              </div>Radio button 6
+    
+     </div>
+            <p>Работа с ежедневной оплатой <span>*</span></p>
+            <div class="inp-checkbox radio">
+            <input type="radio" name="work-salari" value="es" id="work-salari" checked>
+            <label for=""></label>Да
+       
+            <input type="radio" name="work-salari" value="no"
+            id="work-salari"><label for=""></label>Нет
+</div>
             <p>Работа без опыта <span>*</span></p>
             <input type="radio" name="" id=""><label for="">Да</label>
             <input type="radio" name="" id=""><label for="">Нет</label>
@@ -905,7 +917,7 @@
             <label for="radio-6"></label>
           </div>Radio button 6
 
-
+ </div>
           <div class="radio">
             <input id="radio-3" class="custom-radio" type="radio" name="radio" value="3">
             <label for="radio-3">Radio button 3</label>
@@ -915,7 +927,7 @@
             <input id="radio-4" class="custom-radio" type="radio" name="radio" value="4" disabled>
             <label for="radio-4">Radio disabled</label>
           </div>
-        </div>
+       
 
 
 
