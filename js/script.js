@@ -14,24 +14,24 @@ document.addEventListener('DOMContentLoaded', () => {
     //         };
     // }, 'data-delete', 'data-edit','data-modal'
     // const configUser = {
-        // attributes: true,
-        // childList: true,
-        // subtree: true,
-        // attributeFilter: ['data-value']
+    // attributes: true,
+    // childList: true,
+    // subtree: true,
+    // attributeFilter: ['data-value']
     //   };
     //   const callbackUser = function (mutationsList) {
-        // for (let mutation of mutationsList) {
-          // if (mutation.type === 'childList') {
-          //   modalUser()//          console.log('A child node has been added or removed.');
-          // }
-        //   console.log('A mutation.  ' + mutation);
-        //  selectToStatus();
-        //  selectToType();
-        //  selectToComment();
-        //  selectToDialog();
-        // }
+    // for (let mutation of mutationsList) {
+    // if (mutation.type === 'childList') {
+    //   modalUser()//          console.log('A child node has been added or removed.');
+    // }
+    //   console.log('A mutation.  ' + mutation);
+    //  selectToStatus();
+    //  selectToType();
+    //  selectToComment();
+    //  selectToDialog();
+    // }
     //   };
-// let mutationsList=[]
+    // let mutationsList=[]
     //   const observerUser = new MutationObserver(callbackUser);
     //   observerUser.observe(document.forms[0], configUser);
 
@@ -79,8 +79,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
     //     ], // опции
     // });
-//   const selectToType = () => addTextToTarget('#select-type .select__toggle', '.select__select-type');
-//   selectToType();
+    //   const selectToType = () => addTextToTarget('#select-type .select__toggle', '.select__select-type');
+    //   selectToType();
 
     const selectComment = new CustomSelect('#select-comment', {
         name: 'comment', // значение атрибута name у кнопки
@@ -93,8 +93,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
         ], // опции
     });
-const selectToComment = () => addTextToTarget('#select-comment .select__toggle', '.select__select-comment');
-selectToComment();
+    const selectToComment = () => addTextToTarget('#select-comment .select__toggle', '.select__select-comment');
+    selectToComment();
 
     const selectDialog = new CustomSelect('#select-dialog', {
         name: 'dialog', // значение атрибута name у кнопки
@@ -106,10 +106,10 @@ selectToComment();
 
         ], // опции
     });
-const selectToDialog = () => addTextToTarget('#select-dialog .select__toggle', '.select__select-dialog');
-selectToDialog();
+    const selectToDialog = () => addTextToTarget('#select-dialog .select__toggle', '.select__select-dialog');
+    selectToDialog();
     /****************end select */
-   
+
     /****************datepicker */
 
 
@@ -122,13 +122,16 @@ selectToDialog();
         }
         console.log(date, parseInt(date[1]) + '    ' + month.mo[parseInt(date[1]) - 1]);
         document.querySelector('#' + selector).value = date[0] + '  ' + month.mo[parseInt(date[1]) - 1] + '  ' + date[2];
-        if (typeof c === 'function') { datepickerClose() };
+        if (typeof c === 'function') {
+            datepickerClose()
+        };
     }
     const insertDate1 = (e) => insertDate('date-1', e);
     const insertDate2 = (e) => insertDate('date-2', e, datepickerClose());
-    insertDate1('27.11.2021'); insertDate2(new Date().toLocaleDateString())
+    insertDate1('27.11.2021');
+    insertDate2(new Date().toLocaleDateString())
 
-    
+
     xCal('datepicker1', {
         id: "date1",
         "class": "xcalend2",
@@ -176,153 +179,154 @@ selectToDialog();
     //document.querySelector(".open_popup").magnificPopup({removalDelay:300,type:"inline"});
 
     /****************** checked */
-    
+
     setChecked('#checkselect1');
 
     setChecked('#checkselect2', 'По возрасту');
     setChecked('#checkselect3', 'По региону(ам)/по городу(ам)');
-  setChecked('#checkselect-type', 'По типу добавления');
+    setChecked('#checkselect-type', 'По типу добавления');
 
-   
+
 
 });
 
 
 
-    //|| el.target.closest('#date2') && el.target.closest('td')  rgba(255,153,0,.2);
+//|| el.target.closest('#date2') && el.target.closest('td')  rgba(255,153,0,.2);
 
-      
-    function setChecked(target, name = 'По вакансии') {
 
-        var checked = document.querySelector(target),
-            closeBtn = checked.querySelector('.input-reset'),
-            checkedSel = checked.querySelector('.form-control option');
-        //.form-control--selected
-    
-        checked.addEventListener('click', () => {
-            var checkedNum = Array.from(checked.querySelectorAll('input[type="checkbox"]:checked'));
-    
-            // if(!checked.closest('form-control--selected')&&!closeBtn.closest('hide')){/**/
-            // closeBtn.classList.add('hide');}
-    
-    
-    
-            if (checkedNum.length) {
-                if(checkedNum.length==1){
-                    checkedSel.textContent = checkedNum[0].parentElement.textContent.trim();
-                }else{
-                checkedSel.textContent = name + ' (выбрано: ' + checkedNum.length + ')';}
-                checked.classList.add('form-control--selected');
-                // checkedSel.classList.add('form-control--selected');
-                if (closeBtn.closest('.hide')) {
-                    closeBtn.style.right = -30 + 'px';
-                    closeBtn.classList.remove('hide');
-                
-    
+function setChecked(target, name = 'По вакансии') {
+
+    var checked = document.querySelector(target),
+        closeBtn = checked.querySelector('.input-reset'),
+        checkedSel = checked.querySelector('.form-control option');
+    //.form-control--selected
+
+    checked.addEventListener('click', () => {
+        var checkedNum = Array.from(checked.querySelectorAll('input[type="checkbox"]:checked'));
+
+        // if(!checked.closest('form-control--selected')&&!closeBtn.closest('hide')){/**/
+        // closeBtn.classList.add('hide');}
+
+
+
+        if (checkedNum.length) {
+            if (checkedNum.length == 1) {
+                checkedSel.textContent = checkedNum[0].parentElement.textContent.trim();
+            } else {
+                checkedSel.textContent = name + ' (выбрано: ' + checkedNum.length + ')';
+            }
+            checked.classList.add('form-control--selected');
+            // checkedSel.classList.add('form-control--selected');
+            if (closeBtn.closest('.hide')) {
+                closeBtn.style.right = -30 + 'px';
+                closeBtn.classList.remove('hide');
+
+
                 checkedSel.parentElement.style.backgroundColor = 'rgba(255, 153,0, 0.2)';
                 // checkedSel.parentElement.style.borderRadius = '5px';
                 checkedSel.parentElement.style.border = '1px solid #e3dcb2'; //border-right-width: 1px;
-                checked.style.width = checked.offsetWidth -32 + 'px';
+                checked.style.width = checked.offsetWidth - 32 + 'px';
                 // checked.style.after.right = 80+'%';
                 checked.style.border = 'none'; //border-right-width: 1px;
             }
-                let data = name + ' (выбрано: ' + checkedNum.length + ')';
-                checkedNum.map(i => {
-                    // console.log(i.parentElement.textContent)
-                    data += i.parentElement.textContent.trim() + ', ';
-                });
-                checkedSel.setAttribute('data-text', data);
-                checkedSel.parentElement.parentElement.setAttribute('onmouseover', `toolTip('${data}')`);
-                checkedSel.parentElement.parentElement.setAttribute('onmouseout', `toolTip()`);
-                // checkedSel
-                // checkedSel.parentElement.parentElement.classList.add('hide__text');
-                checkedSel.parentElement.parentElement.setAttribute('data-show', 'text');
-            } else {
-                checkedSel.textContent = name;
-                checkedSel.parentElement.parentElement.setAttribute('onmouseover', `toolTip('${name}')`);
-                checkedSel.parentElement.parentElement.setAttribute('onmouseout', `toolTip()`);
-                // checked.style.width = 32 + '%';
-                if (checked.closest('.form-control--selected')) {/**/
-                    // checked.classList.remove('form-control--selected');
-                    closeDialog();
-                }
-            }
-            if (!checked.closest('.form-control--selected')) {/**/
-                closeBtn.classList.add('hide');
-            }
-    
-        });
-        function closeDialog() {
-            closeBtn.classList.add('hide');
-            checked.classList.remove('form-control--selected');
-            checked.style.width = checked.offsetWidth + 32 + 'px';
-            const clear = Array.from(checked.querySelectorAll('input[type="checkbox"]:checked'));
-            clear.map(e => e.checked = false);
-            checkedSel.parentElement.style.backgroundColor = '#fff';
-            // checkedSel.parentElement.style.borderRadius = '0px';
-            checked.style.border = ''; //border-right-width: 1px;
-            checkedSel.removeAttribute('data-text');
-    
-            // checkedSel.parentElement.parentElement.classList.remove('hide__text');
-            checkedSel.parentElement.parentElement.removeAttribute('data-show');
-    
-            checkedSel.parentElement.style.border = '';
-        }
-        closeBtn.addEventListener('click', closeDialog, false);
-    };
-    
-    
-    const checkselect = Array.from(document.querySelectorAll('.checkselect'));
-    const closeBtn = Array.from(document.querySelectorAll('.input-reset'));
-    const applyBtn = Array.from(document.querySelectorAll('.apply'));
-    // открыть чекбоксы
-    /*********************close to un enabled */
-    document.addEventListener('click', (e) => {
-        if (!e.target.closest('.checkselect')) {
-            document.querySelectorAll('.checkselect').forEach(select => {
-                select.classList.remove('open');
-                //   e.stopPropagation();
+            let data = name + ' (выбрано: ' + checkedNum.length + ')';
+            checkedNum.map(i => {
+                // console.log(i.parentElement.textContent)
+                data += i.parentElement.textContent.trim() + ', ';
             });
+            checkedSel.setAttribute('data-text', data);
+            checkedSel.parentElement.parentElement.setAttribute('onmouseover', `toolTip('${data}')`);
+            checkedSel.parentElement.parentElement.setAttribute('onmouseout', `toolTip()`);
+            // checkedSel
+            // checkedSel.parentElement.parentElement.classList.add('hide__text');
+            checkedSel.parentElement.parentElement.setAttribute('data-show', 'text');
+        } else {
+            checkedSel.textContent = name;
+            checkedSel.parentElement.parentElement.setAttribute('onmouseover', `toolTip('${name}')`);
+            checkedSel.parentElement.parentElement.setAttribute('onmouseout', `toolTip()`);
+            // checked.style.width = 32 + '%';
+            if (checked.closest('.form-control--selected')) {
+                /**/
+                // checked.classList.remove('form-control--selected');
+                closeDialog();
+            }
         }
-        e.stopPropagation();
+        if (!checked.closest('.form-control--selected')) {
+            /**/
+            closeBtn.classList.add('hide');
+        }
+
     });
-    
-    checkselect.map((e, i) => {
-    
-        e.addEventListener('click', function () {
-            this.classList.toggle('open');
-            applyBtn[i].classList.toggle('hide');
-            applyBtn[i].classList.toggle('show');
+
+    function closeDialog() {
+        closeBtn.classList.add('hide');
+        checked.classList.remove('form-control--selected');
+        checked.style.width = checked.offsetWidth + 32 + 'px';
+        const clear = Array.from(checked.querySelectorAll('input[type="checkbox"]:checked'));
+        clear.map(e => e.checked = false);
+        checkedSel.parentElement.style.backgroundColor = '#fff';
+        // checkedSel.parentElement.style.borderRadius = '0px';
+        checked.style.border = ''; //border-right-width: 1px;
+        checkedSel.removeAttribute('data-text');
+
+        // checkedSel.parentElement.parentElement.classList.remove('hide__text');
+        checkedSel.parentElement.parentElement.removeAttribute('data-show');
+
+        checkedSel.parentElement.style.border = '';
+    }
+    closeBtn.addEventListener('click', closeDialog, false);
+};
+
+
+const checkselect = Array.from(document.querySelectorAll('.checkselect'));
+const closeBtn = Array.from(document.querySelectorAll('.input-reset'));
+const applyBtn = Array.from(document.querySelectorAll('.apply'));
+// открыть чекбоксы
+/*********************close to un enabled */
+document.addEventListener('click', (e) => {
+    if (!e.target.closest('.checkselect')) {
+        document.querySelectorAll('.checkselect').forEach(select => {
+            select.classList.remove('open');
+            //   e.stopPropagation();
         });
-    
-        document.addEventListener('click', (el) => {
-            if (el.target === closeBtn[i]) {
+    }
+    e.stopPropagation();
+});
+
+checkselect.map((e, i) => {
+
+    e.addEventListener('click', function () {
+        this.classList.toggle('open');
+        applyBtn[i].classList.toggle('hide');
+        applyBtn[i].classList.toggle('show');
+    });
+
+    document.addEventListener('click', (el) => {
+        if (el.target === closeBtn[i]) {
+            closeBtn[i].classList.add('hide');
+            applyBtn[i].classList.add('hide');
+            applyBtn[i].classList.remove('show')
+            checkselect[i].classList.remove('open');
+            const clear = Array.from(checkselect[i].querySelectorAll('input[type="checkbox"]:checked'));
+            clear.map(e => e.checked = false);
+
+            if (el.target === checkselect[i] || el.target === applyBtn[i] || el.target.closest('.checkselect') === null) {
                 closeBtn[i].classList.add('hide');
                 applyBtn[i].classList.add('hide');
                 applyBtn[i].classList.remove('show')
                 checkselect[i].classList.remove('open');
-                const clear = Array.from(checkselect[i].querySelectorAll('input[type="checkbox"]:checked'));
-                clear.map(e => e.checked = false);
-    
-                if (el.target === checkselect[i] || el.target === applyBtn[i] || el.target.closest('.checkselect') === null) {
-                    closeBtn[i].classList.add('hide');
-                    applyBtn[i].classList.add('hide');
-                    applyBtn[i].classList.remove('show')
-                    checkselect[i].classList.remove('open');
-                    checkselect[i].style.display = 'none';
-                }
+                checkselect[i].style.display = 'none';
             }
-        });
-    
-        document.addEventListener('keydown', (e) => {
-            if (e.code === "Escape" && checkselect[i].classList.contains('open')) {
-                closeBtn[i].classList.add('hide');
-                applyBtn[i].classList.add('hide');
-                applyBtn[i].classList.remove('show')
-                checkselect[i].classList.remove('open');
-            }
-        });
+        }
     });
-    
-    
-    
+
+    document.addEventListener('keydown', (e) => {
+        if (e.code === "Escape" && checkselect[i].classList.contains('open')) {
+            closeBtn[i].classList.add('hide');
+            applyBtn[i].classList.add('hide');
+            applyBtn[i].classList.remove('show')
+            checkselect[i].classList.remove('open');
+        }
+    });
+});

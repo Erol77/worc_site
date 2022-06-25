@@ -166,7 +166,6 @@ line-height: 1.2rem;
 
 .input-reset:hover {
    background-color: rgba(255, 153,0, 0.3);
-/* opacity: 0.3; */
 }
 /* .input-reset:before {
     content: "";
@@ -298,3 +297,7 @@ color: #707070;
 /* div:focus {
     font-weight: bold;    -webkit-box-shadow: 0 2px (0,0,0,80%;
 } */
+/* ul.checkselect.form-control--selected{
+background-color: rgba(255, 153,0, 0.2);
+border-radius:0;
+}  */
