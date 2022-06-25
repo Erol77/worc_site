@@ -735,11 +735,22 @@ textarea::placeholder {
     rgb(244, 245, 246) 100%
   );
 }
-.inp-checkbox.radio label::after,.inp-checkbox.radio label::after, .inp-checkbox.radio label::before,
+.inp-checkbox.radio label::after, .inp-checkbox.radio label::before,
 input[type="radio"]:not(.buttons-item input) label,input[type="radio"]:checked:not(.buttons-item input) + label,
 input[type="radio"]:not(.buttons-item input) label::before {
   border-radius: 50%;
+
 }
+.inp-checkbox.radio label::before{
+width: 20px;
+height: 20px;
+}
+
+.inp-checkbox.radio label::after{
+width: 15px;
+height: 15px;
+}
+
 /***********************radio*******/
 .sort {
   margin-bottom: 18px;
@@ -2526,11 +2537,12 @@ select {
   background-color: #e3dcb2;
 }
 input[type="checkbox"]:checked + label,
-input[type="radio"]:checked + label,
+/* input[type="radio"]:checked + label, */
 .jq-selectbox li:hover,
 .jq-selectbox li.sel {
   background: #ffdd00;
 }
+
 .checkselect-popup fieldset {
   display: block;
   margin: 0;
@@ -2564,12 +2576,6 @@ input[type="radio"]:checked + label,
   z-index: 2;
 }
 
-input[type="checkbox"]:checked + label,
-input[type="radio"]:checked + label,
-.jq-selectbox li:hover,
-.jq-selectbox li.sel {
-  background: #ffdd00;
-}
 .checkselect-popup fieldset {
   display: block;
   margin: 0;
@@ -2971,6 +2977,9 @@ gap: 7px;
 grid-template-columns: 290px 30px 30px  30px 30px;
 justify-items: start;
 align-items:start;
+}
+.category__about--parameters.underworking{
+grid-template-columns: 310px 30px 50px  30px 30px;
 }
 
 .category__about--list{
