@@ -211,10 +211,26 @@ function setChecked(target, name = 'По вакансии') {
 
 
         if (checkedNum.length) {
+ let data = name + ' (выбрано: ' + checkedNum.length + ')';
+ checkedNum.map(i => {
+     // console.log(i.parentElement.textContent)
+     data += i.parentElement.textContent.trim() + ', ';
+ });  checkedSel.setAttribute('value', data);
+
             if (checkedNum.length == 1) {
                 checkedSel.textContent = checkedNum[0].parentElement.textContent.trim();
             } else {
+               
+
                 checkedSel.textContent = name + ' (выбрано: ' + checkedNum.length + ')';
+            checkedSel.setAttribute('data-text', data);
+          
+            checkedSel.parentElement.parentElement.setAttribute('onmouseover', `toolTip('${data}')`);
+            checkedSel.parentElement.parentElement.setAttribute('onmouseout', `toolTip()`);
+            // checkedSel
+            // checkedSel.parentElement.parentElement.classList.add('hide__text');
+            checkedSel.parentElement.parentElement.setAttribute('data-show', 'text');
+
             }
             checked.classList.add('form-control--selected');
             // checkedSel.classList.add('form-control--selected');
@@ -224,27 +240,16 @@ function setChecked(target, name = 'По вакансии') {
 
 
                 checkedSel.parentElement.style.backgroundColor = 'rgba(255, 153,0, 0.2)';
-                // checkedSel.parentElement.style.borderRadius = '5px';
+                checkedSel.parentElement.style.borderRadius = '0px';
                 checkedSel.parentElement.style.border = '1px solid #e3dcb2'; //border-right-width: 1px;
                 checked.style.width = checked.offsetWidth - 32 + 'px';
                 // checked.style.after.right = 80+'%';
                 checked.style.border = 'none'; //border-right-width: 1px;
             }
-            let data = name + ' (выбрано: ' + checkedNum.length + ')';
-            checkedNum.map(i => {
-                // console.log(i.parentElement.textContent)
-                data += i.parentElement.textContent.trim() + ', ';
-            });
-            checkedSel.setAttribute('data-text', data);
-            checkedSel.parentElement.parentElement.setAttribute('onmouseover', `toolTip('${data}')`);
-            checkedSel.parentElement.parentElement.setAttribute('onmouseout', `toolTip()`);
-            // checkedSel
-            // checkedSel.parentElement.parentElement.classList.add('hide__text');
-            checkedSel.parentElement.parentElement.setAttribute('data-show', 'text');
+          
         } else {
             checkedSel.textContent = name;
-            checkedSel.parentElement.parentElement.setAttribute('onmouseover', `toolTip('${name}')`);
-            checkedSel.parentElement.parentElement.setAttribute('onmouseout', `toolTip()`);
+
             // checked.style.width = 32 + '%';
             if (checked.closest('.form-control--selected')) {
                 /**/
@@ -262,11 +267,14 @@ function setChecked(target, name = 'По вакансии') {
     function closeDialog() {
         closeBtn.classList.add('hide');
         checked.classList.remove('form-control--selected');
+            checkedSel.parentElement.parentElement.setAttribute('onmouseover', `toolTip('${name}')`);
+            checkedSel.parentElement.parentElement.setAttribute('onmouseout', `toolTip()`);
+checkedSel.setAttribute('value', '');
         checked.style.width = checked.offsetWidth + 32 + 'px';
         const clear = Array.from(checked.querySelectorAll('input[type="checkbox"]:checked'));
         clear.map(e => e.checked = false);
         checkedSel.parentElement.style.backgroundColor = '#fff';
-        // checkedSel.parentElement.style.borderRadius = '0px';
+        checkedSel.parentElement.style.borderRadius = '4px';
         checked.style.border = ''; //border-right-width: 1px;
         checkedSel.removeAttribute('data-text');
 

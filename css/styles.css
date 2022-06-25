@@ -297,7 +297,8 @@ border:1px solid #9c9fa9;
 }		
 
 .checkselect-control:hover{
-opacity: 0.9;
+/* opacity: 0.9; */
+background-color: rgba(255, 153,0, 0.3);
 /* background-color:; */
 }
 .checkselect-control select,
@@ -305,14 +306,14 @@ opacity: 0.9;
 	background: #fff;
 	/* position: relative; */
 	/* display: inline-block; */
-	width: 99%;
+	width: 100%;
 	font-size: 14px;
 	line-height: 30px;
 	color: #000;
-	padding-left: 7px;
+	padding-left: 9px;
 	height: 30px;
-/* border-radius:5px; */
-margin-left:1px;
+border-radius:4px;
+/* margin-left:1px; */
 }
 .checkselect-over {
 	position: absolute;
@@ -324,7 +325,7 @@ margin-left:1px;
 }
 .checkselect-popup {
 	display: none;
-	margin: 0 -1px;
+	margin: 0 1px;
 	position: absolute;
 	top: 100%;
 	left: 0px; 
