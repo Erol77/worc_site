@@ -219,7 +219,7 @@ selectToDialog();
                     closeBtn.classList.remove('hide');
                 
     
-                checkedSel.parentElement.style.backgroundColor = '#fbf7e7';
+                checkedSel.parentElement.style.backgroundColor = 'rgba(255, 153,0, 0.2)';
                 // checkedSel.parentElement.style.borderRadius = '5px';
                 checkedSel.parentElement.style.border = '1px solid #e3dcb2'; //border-right-width: 1px;
                 checked.style.width = checked.offsetWidth -32 + 'px';
