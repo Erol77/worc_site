@@ -155,17 +155,23 @@ float: right;
     transition: 0.3s;
 z-index: 2;
 
-background-color: rgb(251, 247, 231);
+background-color: rgba(255, 153,0, 0.2);
 /* border-radius: 5px; */
 border: 1px solid rgb(227, 220, 178);
-color: #ffdd00;
+color: #ff9900;
 font-size: 1.5rem;
 line-height: 1.2rem;
+/* opacity: 0.2; */
 }
 
 .input-reset:hover {
-    background-color: #e3dcb2;
+   background-color: rgba(255, 153,0, 0.3);
+/* opacity: 0.3; */
 }
+/* .input-reset:before {
+    content: "";
+    color: #f90;
+} */
 .xcalend2 .datepicer-apply,
 .select_item .apply {
     margin-top: 10px;
