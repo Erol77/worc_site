@@ -2770,11 +2770,7 @@ width: 100%;
   /* flex-direction: row; */
   display: flex;
 }
-.contacts__message {
-  /* border-top: 1px solid #e3dcb2; */
-  /* padding-top: 25px; */
-  padding-bottom: 10px;
-}
+
 .wrapper.category h3,
 .category:first-child label,
 .category .label,
@@ -2795,11 +2791,7 @@ letter-spacing: 92%;
 .contacts__added--list,
 .contacts__message--list {
   display: grid;
-
   grid-template-columns: 40px 1fr;
- grid-template-rows: 40px 20px;
-  /* grid-template-rows: auto; */
-  /* row-gap: 4px; */
 }
 
 .category-parameters .inp-wrap input,
