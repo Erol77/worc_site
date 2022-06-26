@@ -2968,6 +2968,19 @@ gap:7px;
   margin-left: 10px;
   margin-right: 0;
 }
+
+.work__end.inner__wrapper p{
+font-weight: bold;
+}
+.work__obligation--add p{
+letter-spacing: -1px;
+font-size: 0.6rem;
+}
+.work__obligation--add span{
+/* letter-spacing: -1px; */
+font-size: 2rem;
+}
+
 .text-about,
 .text-obligation{
 height: 60px;
