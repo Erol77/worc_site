@@ -334,28 +334,30 @@
             <h2>Параметры</h2>
 
             <div class="parameters__schedule inp-wrap ">
-              <label for="schedule" class="label">График работы <span>*</span></label>
-              <input type="text" name="schedule" id="schedule" placeholder="---" required>
+              <h3 class="label">График работы <span>*</span></h3>
+              <input type="text" name="schedule" id="schedule" placeholder="&mdash;" required>
             </div>
             <div class="parameters__schedule inp-wrap ">
-              <label for="working-experience" class="label">Опыт работы <span>*</span></label>
-              <input type="text" name="working-experience" id="working-experience" placeholder="---" required>
+              <h3 class="label">Опыт работы <span>*</span></h3>
+              <input type="text" name="working-experience" id="working-experience" placeholder="&mdash;" required>
               <p>лет</p>
             </div>
 
-            <div class="parameters__seniority inp-wrap">
+            <div class="parameters__nationality inner__wrapper">
 
-              <label for="seniority" class="label">Стаж работы</label>
-              <input type="text" name="seniority" id="seniority">
+              <h3 class="label">Стаж работы</h3>
+
+              <div class="select__seniority" id="seniority"></div>
+              <input type="text" class="select__seniority--seniority" name="seniority" hidden>
               <p>лет</p>
             </div>
             <div class="parameters__education inner__wrapper">
-              <label class="label">Образование <span>*</span></label>
+              <h3 class="label">Образование <span>*</span></h3>
               <div class="select__education" id="education"></div><input name="education"
                 class="select__education--education" type="text" hidden>
             </div>
             <div class="parameters__gender inner__wrapper">
-              <label class="label">Пол <span>*</span></label>
+              <h3 class="label">Пол <span>*</span></h3>
               <!-- <input type="text" name="gender" id="gender" hidden> -->
               <div class="buttons">
                 <div class="buttons-item">
@@ -371,13 +373,13 @@
             <!-- <button>Мужской</button> <input type="button " name="">
               <button>Женский</button></div> -->
             <div class="parameters__age inp-wrap">
-              <label class="label">Возраст <span>*</span></label>
+              <h3 class="label">Возраст <span>*</span></h3>
               <input type="number" name="age" id="age">
               <p>лет</p>
             </div>
             <div class="parameters__secondment  inner__wrapper">
 
-              <p class="label">Готовность к командировкам <span>*</span></p>
+              <h3 class="label">Готовность к командировкам <span>*</span></h3>
               <div class="buttons">
                 <div class="buttons-item">
                   <input id="secondment-1" type="radio" name="secondment" value="Не готов" checked>
@@ -396,7 +398,7 @@
 
 
             <div class="parameters__removal inner__wrapper">
-              <p class="label">Переезд <span>*</span></p>
+              <h3 class="label">Переезд <span>*</span></h3>
               <div class="buttons">
                 <div class="buttons-item">
                   <input id="removal-1" type="radio" name="removal" value="Возможен">
@@ -409,33 +411,31 @@
               </div>
             </div>
             <div class="parameters__nationality inner__wrapper">
-              <p class="label">Гражданство <span>*</span></p>
+              <h3 class="label">Гражданство <span>*</span></h3>
 
               <div class="select__nationality" id="nationality"></div><input class="select__nationality" type="text"
                 hidden>
               <select class="select__select--nationality"
                 style="margin: 0px; padding: 0px; position: absolute; left: 0px; top: 0px; width: 0%; height: 0%; opacity: 0;">
-                <option>Гражданство</option>
+                <option>Гражданство:</option>
               </select>
             </div>
           </div>
           <h2 class="additional__title">Укажите дополнительные параметры и опции:</h2>
 
           <div class="wrapper category__work category ">
-            <h2>Место работы:</h2>
+            <h2>Место работы</h2>
             <div class="work__name inp-wrap">
-              <label for="work--name" class="label">
-                Название компании <span>*</span>
-              </label>
+              <h3 class="label">Название компании: <span>*</span></h3>
               <input type="text" name="work--name" id="work--name">
             </div>
             <div class="work__name inp-wrap">
 
-              <label class="label">Должность <span>*</span></label>
+              <h3 class="label">Должность: <span>*</span></h3>
               <input type="text" name="post">
             </div>
             <div class="work__beginning inner__wrapper">
-              <label class="label">Начало работы <span>*</span></label>
+              <h3 class="label">Начало работы: <span>*</span></h3>
               <div class="work__wrap">
                 <input type="text" name="beginning--year" id="work__beginning--year"
                   style="margin: 0px; padding: 0px; position: absolute; left: 0px; top: 0px; width: 0%; height: 0%; opacity: 0;">
@@ -448,7 +448,7 @@
             </div>
 
             <div class="work__end inner__wrapper">
-              <p class="label">Окончание работы <span>*</span></p>
+              <h3 class="label">Окончание работы: <span>*</span></h3>
               <div class="work__wrap">
 
 
@@ -456,7 +456,7 @@
                 <div class="select__beginning--year" id="end--year"></div>
 
 
-                <div class="inp-checkbox">
+                <div class="inp-checkbox--contacts">
                   <input type="checkbox" name="today" id="today">
                   <label for="today"></label>
                 </div>
@@ -470,7 +470,7 @@
             </div>
 
             <div class="work__obligation inner__wrapper">
-              <p class="label">Обязанности <span>*</span></p>
+              <h3 class="label">Обязанности: <span>*</span></h3>
               <!-- <input type="text" name="obligation" id="obligation"
                 placeholder="Начните вводить должностные функции и ключевые навыки, чтобы получить больше приглашений от работодателей">
               <button>+</button> ---- <div id="placeholderDiv">Начните вводить должностные функции и ключевые навыки,<br> чтобы получить
@@ -727,13 +727,13 @@
               </div>
             </div>
             <hr class="hr-line">
-<div class="inp-wrap">
-            <h4>Желаемая зарплата за месяц работы  <span>*</span></h4>
-            
-            <input type="text" name="" id="">
-            <button>Какую зарплату указать</button>
+            <div class="inp-wrap">
+              <h4>Желаемая зарплата за месяц работы <span>*</span></h4>
 
-</div>
+              <input type="text" name="" id="">
+              <button>Какую зарплату указать</button>
+
+            </div>
             <div class="category__about--parameters underworking">
               <h4> Вам нужна подработка? <span>*</span></h4>
               <div class="inp-checkbox radio"> <input type="radio" name="underworking" id="underworking-yes"
@@ -746,17 +746,18 @@
             </div>
 
             <hr>
-<div class="inp-wrap">
-           <h4>Фотографии <span>*</span></h4>
-              
-             <label for=""></label>
-            <input type="file" name="" id="">
-            <p>Допустимые форматы JPEG, JPG, PNG. Размер файла не более 5 Мб </p>
- <div class="box__title about" style="display: flex; padding: 13px 0; "><img src="./img/content/attention.jpg"
-     style="width: 26px;height: 26px;" alt="attention">
-   <p>Добавьте фотографии что бы получить в 3 раза больше просмотров</p>
- </div></div>
-           
+            <div class="inp-wrap">
+              <h4>Фотографии <span>*</span></h4>
+
+              <label for=""></label>
+              <input type="file" name="" id="">
+              <p>Допустимые форматы JPEG, JPG, PNG. Размер файла не более 5 Мб </p>
+              <div class="box__title about" style="display: flex; padding: 13px 0; "><img
+                  src="./img/content/attention.jpg" style="width: 26px;height: 26px;" alt="attention">
+                <p>Добавьте фотографии что бы получить в 3 раза больше просмотров</p>
+              </div>
+            </div>
+
           </div>
 
           <div class="wrapper category category-residence">

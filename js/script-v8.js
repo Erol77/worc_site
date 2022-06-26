@@ -83,7 +83,7 @@ document.addEventListener('DOMContentLoaded', () => {
             name: 'nationality', // значение атрибута name у кнопки  education
             targetValue: 'nationality', // значение по умолчанию
             options: [
-                ['nationality', '--'],
+                ['nationality', '&mdash;'],
                 ['russ', 'Русский'],
                 ['no russ', 'Не русский'],
 
@@ -94,7 +94,7 @@ document.addEventListener('DOMContentLoaded', () => {
             name: 'education', // значение атрибута name у кнопки  education
             targetValue: 'education', // значение по умолчанию
             options: [
-                ['education', '---'],
+                ['education', '&mdash;'],
                 ['no-education', 'без образования'],
                 ['scull', 'школа'],
 
@@ -106,8 +106,31 @@ document.addEventListener('DOMContentLoaded', () => {
         name: 'beginning--month', // значение атрибута name у кнопки  education
         targetValue: 'education', // значение по умолчанию
         options: [
-            ['education', '--'],
+            ['education', '&mdash;'],
             ['1', '01'], ['2', '02'], ['3', '03'], ['4', '04'], ['5', '05'], ['6', '06'], ['7', '07'], ['8', '08'], ['9', '09'], ['10', '10'], ['11', '11'], ['12', '12'],
+
+        ], // опции 
+    });
+
+
+
+    const selectSeniority = new CustomSelect('#seniority', {
+        name: 'seniority', // значение атрибута name у кнопки  education
+        targetValue: 'seniority', // значение по умолчанию
+        options: [
+            ['seniority', '&mdash;'],
+            ['1', '01'],
+            ['2', '02'],
+            ['3', '03'],
+            ['4', '04'],
+            ['5', '05'],
+            ['6', '06'],
+            ['7', '07'],
+            ['8', '08'],
+            ['9', '09'],
+            ['10', '10'],
+            ['11', '11'],
+            ['12', '12'],
 
         ], // опции 
     });
@@ -116,7 +139,7 @@ document.addEventListener('DOMContentLoaded', () => {
         name: 'beginning--year', // значение атрибута name у кнопки  education
         targetValue: 'education', // значение по умолчанию
         options: [
-            ['education', '--'],
+            ['education', '&mdash;'],
             ['1', '01'],
             ['2', '02'],
             ['3', '03'],
@@ -136,7 +159,7 @@ document.addEventListener('DOMContentLoaded', () => {
         name: 'end--month', // значение атрибута name у кнопки  education
         targetValue: 'education', // значение по умолчанию
         options: [
-            ['education', '--'],
+            ['education', '&mdash;'],
             ['1', '01'], ['2', '02'], ['3', '03'], ['4', '04'], ['5', '05'], ['6', '06'], ['7', '07'], ['8', '08'], ['9', '09'], ['10', '10'], ['11', '11'], ['12', '12'],
 
         ], // опции 
@@ -146,7 +169,7 @@ document.addEventListener('DOMContentLoaded', () => {
         name: 'end--year', // значение атрибута name у кнопки  education
         targetValue: 'education', // значение по умолчанию
         options: [
-            ['education', '--'],
+            ['education', '&mdash;'],
             ['1', '01'],
             ['2', '02'],
             ['3', '03'],
@@ -167,7 +190,7 @@ document.addEventListener('DOMContentLoaded', () => {
         name: 'year--end', // значение атрибута name у кнопки  education
         targetValue: 'education', // значение по умолчанию
         options: [
-            ['education', '--'],
+            ['education', '&mdash;'],
             ['1', '01'], ['2', '02'], ['3', '03'], ['4', '04'], ['5', '05'], ['6', '06'], ['7', '07'], ['8', '08'], ['9', '09'], ['10', '10'], ['11', '11'], ['12', '12'],
 
         ], // опции language
@@ -177,7 +200,7 @@ document.addEventListener('DOMContentLoaded', () => {
         name: 'language', // значение атрибута name у кнопки  education
         targetValue: 'language', // значение по умолчанию
         options: [
-            ['language', '--'],
+            ['language', '&mdash;'],
             ['1', 'Русский'], ['2', 'Французский'], ['3', 'Английский'], ['4', 'Немецкий'], ['5', 'Ты что полиглот'], ['6', '06'], ['7', '07'], ['8', '08'], ['9', '09'], ['10', '10'], ['11', '11'], ['12', '12'],
 
         ], // опции language
@@ -187,7 +210,7 @@ document.addEventListener('DOMContentLoaded', () => {
         name: 'languageCvalification', // значение атрибута name у кнопки  education
         targetValue: 'languageCvalification', // значение по умолчанию
         options: [
-            ['languageCvalification', '--'],
+            ['languageCvalification', '&mdash;'],
             ['1', 'Свободно читаю'], ['2', 'Свободно говорю'], ['3', 'Читаю с переводчиком'], ['4', 'Понимаю но говорить не могу'], ['5', 'Знаю такое название'], ['6', '06'], ['7', '07'], ['8', '08'], ['9', '09'], ['10', '10'], ['11', '11'], ['12', '12'],
 
         ], // опции language
