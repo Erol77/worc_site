@@ -161,7 +161,7 @@ opacity: 0.9;
 html * /* override x.xhtml.ru style */ 
 {
   scrollbar-width: thin;
-  scrollbar-color: #ec0303 #ffdd00;
+  scrollbar-color: #ffdd00 #fffce5;
 }
 
 *::-webkit-scrollbar,
@@ -171,16 +171,17 @@ html *::-webkit-scrollbar {
 }
 *::-webkit-scrollbar-track,
 html *::-webkit-scrollbar-track {
-  background: #ffdd00;
+  background: #fffce5;
 }
 *::-webkit-scrollbar-thumb,
 html *::-webkit-scrollbar-thumb {
-  background-color: #ec0303;
+  background-color: #ffdd00;
   border-radius: 50px;
-  border: 3px solid #ffdd00;
+  border: 3px solid #fffce5;
 }
 #select-category .select__toggle,
 #select-rubric .select__toggle{
-  font-size: 1.5rem;
+  font-size: 1.3rem;
+font-weight: bold;
 }
-/* .select__dropdown */
+/* #ec0303; .select__dropdown #ffdd00; */
