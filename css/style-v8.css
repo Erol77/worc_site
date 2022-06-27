@@ -3014,6 +3014,7 @@ font: inherit;
 width: 100%;
 height: 100%;
 text-align: left;
+padding-left: 20px;
 }
 .text-obligation textarea{
   font-weight: 400;
@@ -3022,9 +3023,10 @@ font-size: 0.9rem;
 
 }
 .text-about{
-height: 90px;
+height: 84px;
 width: 100%;
 border-radius:4px;
+margin-right: 28px;
 }
 .category__about{
 /* margin-bottom: 20px; */
@@ -3054,13 +3056,15 @@ width: 100%;
 padding-bottom: 0;
 }
 .category__about p{
-padding-bottom: 20px;
+padding-top: 5px;
 }
 .box__title.about{
-/* width: 300px; */
+width: 290px;
 /* margin-bottom: 20px; */
 height: 100%;
-flex-basis: 300px;
+flex-basis: unset;
+/* text-align: center; */
+vertical-align: middle;
 }
 .work__obligation.inner__wrapper .inner__wrapper .inp-search input{
 height: 70px;
