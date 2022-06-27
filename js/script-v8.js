@@ -272,7 +272,7 @@ function textAreaToPlaceholder(placeholder, selector) {
 }
 
 textAreaToPlaceholder(placeholder,'textArea');
-textAreaToPlaceholder('Начните вводить здесь','key-skills');
+// textAreaToPlaceholder('Начните вводить здесь','key-skills');
 let placeAbout = 'Чтобы побудить работодателя пригласить именно вас, укажите свои деловые качества и \nпрофессиональные навыки. Расскажите про ваши достижения, напишите чем вы можете быть \nполезны компании на этой должности.';
 
 textAreaToPlaceholder(placeAbout,'about');
