@@ -3183,3 +3183,28 @@ margin-top: 15px;
 .listing-category{
 padding: 40px;
 }
+
+.inner__wrapper.key__skills {
+  width: 585px;
+  height: 63px;
+}
+.inner__wrapper.key__skills input{
+  height: 49px;
+  width: 500px;
+}
+.inner__wrapper.key__skills .inp-search{
+  width: 50px;
+  height: 49px;
+  border-bottom:1px solid #e3dcb2;
+border-top:1px solid #e3dcb2;
+}
+
+.inner__wrapper.key__skills  .add-obligation {
+  width: 50px;
+  height: 49px;
+}
+.inner__wrapper.key__skills .inp-search .find-obligation{
+  top: 11px;
+  left: 0;
+  background-size:70%
+}
