@@ -3030,30 +3030,44 @@ margin-right: 28px;
 }
 .category__about{
 /* margin-bottom: 20px; */
-gap: 7px;
+/* gap: 7px; */
 font: inherit;
 }
-.category__about h2 , .category__about h3{
-padding: 10px 0;
+
+.category__about h2 , .category__about .title {
+padding: 10px 0 ;
+line-height: 35px;
 }
+.category__about .title {
+  padding-bottom: 0;
+}
+/* .category__about{
+  ma
+} */
 .category__about--parameters{
 display: grid;
 gap: 7px;
-grid-template-columns: 290px 30px 30px  30px 30px;
+grid-template-columns: 273px 33px 37px 34px 30px;
 justify-items: start;
 align-items:start;
 }
 .category__about--parameters.underworking{
-grid-template-columns: 310px 30px 50px  30px 30px;
+grid-template-columns: 286px 33px 55px 36px 30px;
+margin-top: 10px;
 }
 
 .category__about--list{
-/* gap: 40px; */
-width: 100%;
+/* gap: 40px;     */
+margin-top: 23px;
+width: 95%;
 }
 
-.category__about h3{
-padding-bottom: 0;
+/* .wrapper.category__about--list:nth-child(2){
+  grid-template-columns: 309px 33px 37px 34px 54px;
+} */
+.category__about .hr-line{
+  margin-top: 27px;
+  margin-bottom: 20px;
 }
 .category__about p{
 padding-top: 5px;
@@ -3081,9 +3095,11 @@ width: 50px;
 }
 .work__obligation--item{
 display: flex;
-background-color: rgba(251, 247, 231,0.6);
+/* background-color: rgba(251, 247, 231,0.6); rgb(255,242,157);*/
+background-color:  rgb(255,242,157);
 gap: 7px;
 padding-right: 7px;
+opacity: 0.5;
 }
 .work__obligation--item p,
 .work__obligation--item span{  
@@ -3097,6 +3113,7 @@ padding-right: 7px;
 }
 .work__obligation--item:hover{
   background-color: #ffdd00;
+  /* opacity: 1; */
 }
 .work__obligation--item:hover p{
   color:#000;
@@ -3125,7 +3142,8 @@ height: 66px;
 .add-obligation{
 /* width: 36px; */
 border:1px solid #e3dcb2;
-background-color:#ffdd00;
+background-color: rgb(255,242,157);
+
 color:white;
 height: 66px;
 padding: 0 10px;
@@ -3133,7 +3151,7 @@ border-radius:0 5px 5px 0;
 font-size: 2rem;
 }
 .add-obligation:hover{
-opacity: 0.7;
+background-color:#ffdd00;
 }
 
 .wrapper__rows{
@@ -3191,6 +3209,8 @@ padding: 40px;
 .inner__wrapper.key__skills input{
   height: 49px;
   width: 500px;
+  font-size: 1rem;
+    font-weight: 600;
 }
 .inner__wrapper.key__skills .inp-search{
   width: 50px;
@@ -3202,9 +3222,52 @@ border-top:1px solid #e3dcb2;
 .inner__wrapper.key__skills  .add-obligation {
   width: 50px;
   height: 49px;
+  padding-left: 15px;
 }
 .inner__wrapper.key__skills .inp-search .find-obligation{
   top: 11px;
   left: 0;
   background-size:70%
+}
+
+.desired__salari h3{
+  line-height: 20px;
+  width: 293px;
+}
+.desired__salari--item input{
+  border: none;
+  padding-top: 5px;
+  font-size: 1.1rem;
+}
+.desired__salari--item p{
+  padding: 0;
+}
+.desired__salari--item{
+  border: 1px solid #e3dcb2;
+  display: flex;
+  height: 50px;
+  width: 280px;
+  border-radius: 5px;
+  /* padding:  10px; */
+  align-items: center;
+  margin-top: 5px;
+  padding: 0 20px;
+  font-size: 1.2rem;
+}
+
+.desired__salari .button__add{
+  margin-left: 10px;
+  padding-top: 7px;
+}
+.foto__user label{
+
+  border: 2px solid red;
+  border-radius: 50%;
+  width: 80px;
+  height: 80px;
+}
+.foto__user input{
+  opacity: 0;
+  z-index: -10;
+  position: absolute;
 }

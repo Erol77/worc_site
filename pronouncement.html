@@ -598,11 +598,17 @@
                 <p>Ведение бухгалтерского учета</p><span>x</span>
               </div>
               <div class="work__obligation--item">
+                <p>Ведение бухгалтерского учета</p><span>x</span>
+              </div><div class="work__obligation--item">
+                <p>Ведение бухгалтерского учета</p><span>x</span>
+              </div><div class="work__obligation--item">
+                <p>Ведение бухгалтерского учета</p><span>x</span>
               </div>
+        
             </div>
           </div>
           <div class="category category__about">
-            <h2>О себе: <span>*</span></h2>
+            <h2>О себе <span>*</span></h2>
             <div class="work__name inp-wrap">
               <div class="text-about">
                 <textarea id="about" name="about" cols="30" rows="4" autocomplete="on"></textarea>
@@ -613,8 +619,8 @@
               </div>
 
             </div>
-            <h3>Дополнительные сведения:</h3>
-            <p>Укажите, что из перечисленного вы предпочитаете</p>
+            <h3 class="title">Дополнительные сведения о желаемой работе:</h3>
+            <h4 class="">Укажите, что из перечисленного вы предпочитаете</h4>
             <div class="wrapper category__about--list">
               <div class="inner__wrapper category__about--parameters">
 
@@ -716,15 +722,20 @@
               </div>
             </div>
             <hr class="hr-line">
-            <div class="inp-wrap">
-              <h4>Желаемая зарплата за месяц работы <span>*</span></h4>
-
-              <input type="text" name="" id="">
-              <button>Какую зарплату указать</button>
-
+            <div class="inp-wrap desired__salari">
+              <h3 class="">Желаемая зарплата<br> за месяц работы: <span>*</span></h3>
+<div class="desired__salari--item">
+  <p>oт</p>
+              <input type="number" name="desired-salari" >
+            <p>&#x20bd;</p>
+          </div>
+             
+              <div class="button__add">
+                <a href="&add">Какую зарплату указать</a>
+              </div>
             </div>
             <div class="category__about--parameters underworking">
-              <h4> Вам нужна подработка? <span>*</span></h4>
+              <h3> Вам нужна подработка? <span>*</span></h3>
               <div class="inp-checkbox radio"> <input type="radio" name="underworking" id="underworking-yes"
                   checked><label for="underworking-yes"></label></div><label for="underworking-yes">Да</label>
 
@@ -734,12 +745,12 @@
                   for="underworking-no"></label></div><label for="underworking-no">Нет</label>
             </div>
 
-            <hr>
-            <div class="inp-wrap">
-              <h4>Фотографии <span>*</span></h4>
+            <hr class="hr-line" style="margin-top: 5px;">
+            <div class="inner__wrapper foto__user">
+              <h3 class="label">Фотографии <span>*</span></h3>
 
-              <label for=""></label>
-              <input type="file" name="" id="">
+              <label for="img"><span></span><span></span></label>
+              <input type="file" name="img" class="foto__user--item" id="img">
               <p>Допустимые форматы JPEG, JPG, PNG. Размер файла не более 5 Мб </p>
               <div class="box__title about" style="display: flex; padding: 13px 0; "><img
                   src="./img/content/attention.jpg" style="width: 26px;height: 26px;" alt="attention">
