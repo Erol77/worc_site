@@ -615,7 +615,7 @@
               </div>
               <div class="box__title about" style="display: flex; padding: 18px 0; "><img
                   src="./img/content/attention.jpg" style="width: 26px;height: 26px;" alt="attention">
-                <p>Не указывайте в описании телефон или email. Для этого есть специальные поля.</p>
+                <p>Не указывайте в описании <br>телефон или email. Для этого есть специальные поля.</p>
               </div>
 
             </div>
@@ -747,12 +747,17 @@
 
             <hr class="hr-line" style="margin-top: 5px;">
             <div class="inner__wrapper foto__user">
-              <h3 class="label">Фотографии <span>*</span></h3>
+              <h3 class="label">Фотографии</h3>
 
-              <label for="img"><span></span><span></span></label>
+              <label for="img"><span class="foto__user--foto"><img src="./img/content/foto.png" width="50" alt="foto"></span><svg viewBox="0 0 9.15 18" width="18" height="18" class="arrow-icon foto__user--select">
+                <path fill="currentColor"
+                    d="M7.51 15.51a.63.63 0 0 1-.46-.19L1.18 9.46C1.06 9.34.99 9.17.99 9s.07-.34.19-.46l5.86-5.86c.25-.25.67-.25.92 0s.25.67 0 .92L2.56 9l5.4 5.4c.25.25.25.67 0 .92a.61.61 0 0 1-.45.19z">
+                </path>
+            </svg></label>
+
               <input type="file" name="img" class="foto__user--item" id="img">
-              <p>Допустимые форматы JPEG, JPG, PNG. Размер файла не более 5 Мб </p>
-              <div class="box__title about" style="display: flex; padding: 13px 0; "><img
+              <p class="foto__user--text">Допустимые форматы JPEG, JPG, PNG. Размер файла не более 5 Мб </p>
+              <div class="box__title" style="display: flex; padding: 13px 0; "><img
                   src="./img/content/attention.jpg" style="width: 26px;height: 26px;" alt="attention">
                 <p>Добавьте фотографии что бы получить в 3 раза больше просмотров</p>
               </div>
