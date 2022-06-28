@@ -3344,3 +3344,81 @@ left: 16px;
   right: -310px;
   height: 85px;
 }
+.test input[type=search] {
+	padding: 10px;
+	border: 1px solid red;
+	background: #CCFF00;
+	-webkit-appearance: none;
+}
+/* .test  */
+input[type=search] {
+	-webkit-appearance: none;
+	width: 175px; /* указываем размеры полю */
+	height: 29px;
+	border: none; 
+	/* background: url(../img/content/favourites.png);  */
+/* фоновая картинка для поля */
+	padding-left: 10px; /* внутренние отступы для красоты */
+	padding-right: 10px;
+	box-sizing: border-box; /* чтобы размеры поля были во всех браузерах одинаковыми (по умолчанию вебкиты с крестиком для очистки иначе рассчитывают размер, чем остальные браузеры) */
+	-moz-box-sizing: border-box; /* для FF, который не весь CSS3 осилил */
+}
+/* .test */
+ input[type="search"]:focus {
+	outline: none; /* по хорошему тут нужно прописать альтернативный фон */
+}
+/* .test+ */
+ input[type="search"]::-webkit-search-cancel-button { /* псевдо что-то, что отвечает за кнопку очистки */
+	-webkit-appearance: none; /* без сброса оформление не применится */
+	width: 17px; /* размеры кастомного крестика */
+	height: 16px;
+content:'&times;';
+	/* background: url(../img/delete.png);  */
+/* новый вид крестика */
+	margin-right: 2px; /* его даже можно позиционировать */
+	cursor: pointer; /* вот это не работает */
+}
+.city-field{
+/* display:inline; */
+position:relative;
+border: 1px solid rgb(227, 220, 178);
+border-radius: 4px;
+}
+.city-field input{
+border: none;
+}
+.city-field .close {
+position:absolute;
+padding:0 5px;
+right:10px;
+top: 8px;
+/* left: 0; */
+cursor: pointer;
+font: inherit;
+font-size: 1.5rem;
+}
+
+input[type="search"]::-webkit-search-decoration,
+input[type="search"]::-webkit-search-cancel-button,
+input[type="search"]::-webkit-search-results-button,
+input[type="search"]::-webkit-search-results-decoration {
+ /* display: none;*/
+}
+
+input[type="search"]::-ms-clear{
+  display: none;
+}
+
+.search {
+	display: inline-block;
+	position: relative;
+	padding-right: 25px;
+}
+.search__clear {
+	position: absolute;
+	right: 0;
+	top: 0;
+}
+.hidden {
+	visibility: hidden;
+}
