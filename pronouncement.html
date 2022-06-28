@@ -766,33 +766,38 @@
           </div>
 
           <div class="wrapper category category-residence">
-            <h2>Место продвижения</h2>
-            <label for="">
-              Регион/населенный пункт <span>*</span>
-            </label>
-            <input type="text" name="" id="">
 
-            <label for="">
-              Улица <span>*</span>
-            </label>
-            <input type="text" name="" id="">
-            <label for="">
-              Дом <span>*</span>
-            </label>
-            <input type="text" name="" id="">
+            <h2>Место проживания</h2>
+            <div class="work__name inp-wrap">
+            <h3 class="label">Регион/населенный пункт <span>*</span></h3>
+            <input type="text" name="citi" placeholder="Нижний Новгород">
+</div>
+<div class="work__name inp-wrap">
+            <h3 class="label">Улица <span>*</span></h3>
+            <input type="text" name="strit"></div>
 
-            <img src="" alt="">
+            <div class="work__name inp-wrap">
+            <h3 class="label">Дом <span>*</span></h3>
+            <input type="text" name="hous" ></div>
 
-            <label for="">
-              Район <span>*</span>
-            </label>
-            <input type="text" name="" id="" required>
-
-            <label for="">
+            <img src="./img/content/attention-min.jpg" alt="">
+            <div class="work__name inp-wrap">
+            <h3 class="label">Район <span>*</span></h3>
+            <input type="text" name=""  required></div>
+            <div class="work__name inp-wrap">
+            <h3 class="label">
               Рядом с вашим адресом есть метро?
-            </label>
-            <input type="radio" name="" id=""><label for="">Да</label>
-            <input type="radio" name="" id=""><label for="">Нет</label>
+            </h3>
+            <div class="inp-checkbox radio"><input type="radio" name="metro" value="metro-yes"
+              id="metro-yes"><label for="metro-yes"></label>
+          </div>
+          <p>Да</p>
+
+          <div class="inp-checkbox radio"><input type="radio" value="metro-no" name="metro"
+              id="metro-no" checked><label for="metro-no"></label>
+          </div>
+          <p>Нет</p>
+            </div>
 
           </div>
 
