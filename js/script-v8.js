@@ -276,3 +276,6 @@ textAreaToPlaceholder(placeholder,'textArea');
 let placeAbout = 'Чтобы побудить работодателя пригласить именно вас, укажите свои деловые качества и \nпрофессиональные навыки. Расскажите про ваши достижения, напишите чем вы можете быть \nполезны компании на этой должности.';
 
 textAreaToPlaceholder(placeAbout,'about');
+
+let btnClearToInp = [...document.querySelectorAll('.city-field')];
+btnClearToInp.map(i=>i.addEventListener())

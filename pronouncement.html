@@ -14,6 +14,7 @@
     <link rel="stylesheet" href="./fonts/stylesheet.css">
     <link rel="stylesheet" href="./css/custom-select.css">
     <!-- <link rel="stylesheet" href="./css/styles.css"> -->
+    <!-- <script defer src="https://api-maps.yandex.ru/2.1/?lang=ru_RU&amp;apikey=81f70a21-dfd9-4d2e-99c7-4372bf1c53b4" type="text/javascript"></script> -->
   </head>
 
   <body>
@@ -774,33 +775,62 @@
 
             <h2>Место проживания</h2>
             <div class="work__name inp-wrap">
-              <h3 class="label">Регион/населенный пункт <span>*</span></h3><label class="city-field" for="">
-              <input type="text" name="citi" placeholder="Введите город" value="Нижний Новгород">
-              <p class="close" onclick="this.previousElementSibling.value = ''">
-                &times;
-              </p></label>
+              <h3 class="label">Регион/населенный пункт <span>*</span></h3>
+              <label class="city-field" for="">
+                <input type="text" name="citi" placeholder="Введите город" value="Нижний Новгород">
+                <p class="close" onclick="this.previousElementSibling.value = ''">
+                  &times;
+                </p>
+              </label>
             </div>
             <div class="work__name inp-wrap">
               <h3 class="label">Улица <span>*</span></h3>
-              <input type="text" name="strit">
+
+              <label class="city-field" for="">
+                <input type="text" name="strit" placeholder="Введите улицу" value="Гоголя">
+                <p class="close" onclick="this.previousElementSibling.value = ''">
+                  &times;
+                </p>
+              </label>
             </div>
 
             <div class="work__name inp-wrap">
               <h3 class="label">Дом <span>*</span></h3>
-              <input type="text" name="hous">
+              <label class="city-field" for="">
+                <input type="text" name="hous" placeholder="Введите дом" value="5">
+                <p class="close" onclick="this.previousElementSibling.value = ''">
+                  &times;
+                </p>
+              </label>
             </div>
-            <input class="test" type="search" name="" id="">
-            <img src="./img/content/attention-min.jpg" alt="">
+            <!-- <input class="test" type="search" name="" id=""> -->
+            <!-- <img src="./img/content/attention-min.jpg" alt="" style="float: left;"> -->
+            <div style="position:relative;overflow:hidden;margin-left: 300px; width: 690px;height: 250px;"><a
+                href="https://yandex.ru/maps/org/kafe_stolovaya_shale/220234265111/?utm_medium=mapframe&utm_source=maps"
+                style="color:#eee;font-size:12px;position:absolute;top:0px;">Кафе-столовая Шале</a><a
+                href="https://yandex.ru/maps/16/yaroslavl/category/cafe/184106390/?utm_medium=mapframe&utm_source=maps"
+                style="color:#eee;font-size:12px;position:absolute;top:14px;">Кафе в Ярославле</a><a
+                href="https://yandex.ru/maps/16/yaroslavl/category/canteen/184106396/?utm_medium=mapframe&utm_source=maps"
+                style="color:#eee;font-size:12px;position:absolute;top:28px;">Столовая в Ярославле</a><iframe
+                src="https://yandex.ru/map-widget/v1/-/CCUNY0ENOD" width="690px" height="250" frameborder="1"
+                allowfullscreen="true" style="position:relative;"></iframe></div>
+            <!-- <div id="map"></div> -->
             <div class="work__name inp-wrap">
-              <h3 class="label">Район <span>*</span></h3>
-              <input type="text" name="" required>
+              <h3 class="label">Район:</h3>
+
+              <label class="city-field" for="">
+                <input type="text" name="district" placeholder="Введите район" value="">
+                <p class="close" onclick="this.previousElementSibling.value = ''">
+                  &times;
+                </p>
+              </label>
+
             </div>
-            <div class="work__name inp-wrap">
-              <h3 class="label">
-                Рядом с вашим адресом есть метро?
-              </h3>
-              <div class="inp-checkbox radio"><input type="radio" name="metro" value="metro-yes" id="metro-yes"><label
-                  for="metro-yes"></label>
+            <div class="work__name inp-wrap metro">
+              <h3 class="label">Рядом с вашим адресом <br>есть метро?</h3>
+              <div class="inp-checkbox radio"><input type="radio" name="metro" value="metro-yes" id="metro-yes">
+                <label for="metro-yes">
+                  </label>
               </div>
               <p>Да</p>
 
@@ -814,9 +844,22 @@
 
           <div class="wrapper category category-worker">
             <h2>Статус соискателя <span>*</span></h2>
-            <input type="radio" name="workfind" id=""><label for="">Безработный(ая) (Активно ищу работу</label>
-            <input type="radio" name="workfind" id=""><label for="">Работаю но открыт для предложений</label>
+
+            <div class="inner__wrapper">
+              <div class="inp-checkbox radio"><input type="radio" name="workfind" value="workfind-yes"
+                  id="workfind-yes"><label for="workfind-yes"></label>
+              </div>
+              <p>Безработный(ая) (Активно ищу работу)</p>
+            </div>
+            <div class="inner__wrapper">
+              <div class="inp-checkbox radio">
+                <input type="radio" value="workfind-no" name="workfind" id="workfind-no" checked> <label
+                  for="workfind-no"></label>
+              </div>
+              <p>Работаю но открыт для предложений</p>
+            </div>
           </div>
+
 
           <div class="wrapper category category-advertisement">
             <h2></h2>
@@ -1627,9 +1670,9 @@
     <script src="./js/custom-select.js"></script>
     <!-- <script src="./js/checkSelect.js"></script> -->
     <script src="./js/script-v8.js"></script>
+    <!-- <script src="./js/yamap.js"></script> -->
     <!-- <script src="./js/script.js"></script> -->
     <script>
-
     </script>
   </body>
 

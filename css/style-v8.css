@@ -3052,6 +3052,7 @@ grid-template-columns: 273px 33px 37px 34px 30px;
 justify-items: start;
 align-items:start;
 }
+.metro,
 .category__about--parameters.underworking{
 grid-template-columns: 286px 33px 55px 36px 30px;
 margin-top: 10px;
@@ -3383,22 +3384,29 @@ content:'&times;';
 position:relative;
 border: 1px solid rgb(227, 220, 178);
 border-radius: 4px;
+width: 690px;
 }
 .city-field input{
 border: none;
+padding-left: 30px;
+
 }
 .city-field .close {
 position:absolute;
 padding:0 5px;
-right:10px;
-top: 8px;
+right:13px;
+top: 3px;
 /* left: 0; */
 cursor: pointer;
 font: inherit;
-font-size: 1.5rem;
+font-size: 1.9rem;
 }
 
-input[type="search"]::-webkit-search-decoration,
+.city-field .close:hover {
+color:red;
+}
+
+/* input[type="search"]::-webkit-search-decoration,
 input[type="search"]::-webkit-search-cancel-button,
 input[type="search"]::-webkit-search-results-button,
 input[type="search"]::-webkit-search-results-decoration {
@@ -3407,9 +3415,9 @@ input[type="search"]::-webkit-search-results-decoration {
 
 input[type="search"]::-ms-clear{
   display: none;
-}
+} */
 
-.search {
+/* .search {
 	display: inline-block;
 	position: relative;
 	padding-right: 25px;
@@ -3421,4 +3429,18 @@ input[type="search"]::-ms-clear{
 }
 .hidden {
 	visibility: hidden;
+}
+
+.ya_map {
+	font-family: arial;
+	font-size: 12px;
+	color: #454545;
+}
+ 
+#map {
+	width: 660px;
+	height: 300px;
+} */
+.metro{
+margin-top: 14px;
 }
