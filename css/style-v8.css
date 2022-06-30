@@ -3526,3 +3526,22 @@ font-weight: bold;
 .no__labe{
   margin-left: 70px;
 }
+
+.stanndart__ads,
+.premium__ads,
+.premium__color__ads{
+  display: none;
+  margin-left: 20px;
+}
+
+#promotion-vip:checked ~ .premium__ads{
+  display: inline-block;
+}
+
+#promotion-no:checked ~ .stanndart__ads{
+  display: inline-block;
+}
+
+#promotion-premium:checked ~ .premium__color__ads{
+  display: inline-block;
+}
