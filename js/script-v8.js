@@ -277,5 +277,5 @@ let placeAbout = 'Чтобы побудить работодателя приг�
 
 textAreaToPlaceholder(placeAbout,'about');
 
-let btnClearToInp = [...document.querySelectorAll('.city-field')];
-btnClearToInp.map(i=>i.addEventListener())
+//let btnClearToInp = [...document.querySelectorAll('.city-field')];
+//btnClearToInp.map(i=>i.addEventListener())
