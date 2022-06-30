@@ -3530,18 +3530,13 @@ font-weight: bold;
 .stanndart__ads,
 .premium__ads,
 .premium__color__ads{
-  display: none;
+  /* display: none; */
   margin-left: 20px;
 }
-
-#promotion-vip:checked ~ .premium__ads{
-  display: inline-block;
-}
-
-#promotion-no:checked ~ .stanndart__ads{
-  display: inline-block;
-}
-
-#promotion-premium:checked ~ .premium__color__ads{
-  display: inline-block;
+input#promotion-premium:checked ~ div .premium__color__ads,
+#promotion-no:checked ~ div .stanndart__ads,
+#promotion-vip:checked ~ div  .premium__ads{
+  /* display: block; */
+  background-color: red;
+  border: 1px solid red;
 }
