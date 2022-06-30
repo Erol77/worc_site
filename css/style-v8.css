@@ -3456,6 +3456,7 @@ margin-top: 14px;
   /* justify-items: center;
   align-items: start;*/
   grid-gap: 60px; 
+  width: 100%;
 }
 /* .price__title--title {
   justify-self: center;
@@ -3471,4 +3472,19 @@ margin-top: 14px;
 .wrapper.category .price__title .price__title--name h3{
   text-align: center;
   width: 400px;
+}
+.price__list{
+  /* border-top: 1px solid red; */
+  border-bottom: 1px solid red;
+  align-items: center;
+  min-height: 70px;
+  margin-top: 0;
+}
+.price__list--item {
+  justify-self: center;
+  text-align: center;
+}
+.price__list--item span{
+  color: #665800;
+  font-size: 0.6rem;
 }
