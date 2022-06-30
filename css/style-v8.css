@@ -3444,3 +3444,30 @@ input[type="search"]::-ms-clear{
 .metro{
 margin-top: 14px;
 }
+.category__price h2{
+  font-size: 1.5rem;
+  font-weight: bolder;
+}
+.price__title{
+  margin-top: 20px;
+  display: grid;
+  grid-template-columns: 420px 1fr 1fr 1fr;
+  /* justify-items: center;
+  align-items: start;*/
+  grid-gap: 60px; 
+}
+/* .price__title--title {
+  justify-self: center;
+} */
+.wrapper.category .price__title .price__title--title  h3{
+  width: 150px;
+  justify-self: center;
+  line-height: 1.8rem;
+}
+.price__title--title{
+  text-align: center;
+}
+.wrapper.category .price__title .price__title--name h3{
+  text-align: center;
+  width: 400px;
+}
