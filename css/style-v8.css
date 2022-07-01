@@ -3534,6 +3534,17 @@ font-weight: bold;
   display: none;
   margin-left: 20px;
 }
+
+.placement__ads{
+  justify-content: end;
+  width: 100%;
+  margin-top: 20px;
+  align-items: flex-start;
+  gap: 20px;  text-align: end;
+}
+.wrapper.category .placement__ads h3{
+  width: unset;
+}
 /* .promotion-premium:checked ~ div .premium__color__ads,
 .promotion-no:checked ~ div .stanndart__ads,
 .promotion-vip:checked ~ div  .premium__ads{
