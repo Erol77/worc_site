@@ -3545,6 +3545,26 @@ font-weight: bold;
 .wrapper.category .placement__ads h3{
   width: unset;
 }
+
+/* .price__list--name.inner__wrapper .inp-checkbox label::after, .inp-checkbox label::before{
+  border-radius: 2px;
+} */
+.price__list--name.inner__wrapper .inp-checkbox:not(.radio) label::after{
+  width: 12px;
+  height: 12px;
+  border-radius: 2px;
+}
+.price__list--name.inner__wrapper .inp-checkbox:not(.radio) label::before {
+border-radius: 2px ;
+}
+ .inp-checkbox input:checked ~ label::before{
+  /* border-radius: 2px; */
+  border-color: #fd0;
+  }
+  .inp-checkbox:not(.radio) input:checked ~ label::before{
+    border-radius: 2px;
+    /* border-color: #fd0; */
+    }
 /* .promotion-premium:checked ~ div .premium__color__ads,
 .promotion-no:checked ~ div .stanndart__ads,
 .promotion-vip:checked ~ div  .premium__ads{
