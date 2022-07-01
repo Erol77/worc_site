@@ -208,7 +208,7 @@ th {
 }
 body {
   min-height: 100vh;
-  color: #000;
+  /* color: #000; */
   display: -webkit-box;
   display: -webkit-flex;
   display: -moz-box;
@@ -2746,6 +2746,7 @@ letter-spacing:-0.5px;
 
 .wrapper.category .inp-checkbox {
   margin-right: 15px;
+  margin-left: 15px;
 }
 .contacts__added--list,
 .contacts__message--list {
