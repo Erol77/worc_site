@@ -3528,11 +3528,9 @@ font-weight: bold;
 }
 
 .stanndart__ads,
-.premium__ads
-/* .premium__color__ads */
-{
+.premium__ads{
   display: none;
-  margin-left: 20px;
+  margin-left: 40px;
 }
 
 .placement__ads{
