@@ -230,6 +230,47 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
     */
+   let totalPrice=15+100, radioValue=100;
+
+   const categoryPrice = document.querySelector('.category__price');
+   const radioChecked = [...categoryPrice.querySelectorAll('[name=promotion]')],
+   typeAds= [...categoryPrice.querySelectorAll('[data-ads]')];
+
+   categoryPrice.addEventListener('change',(e)=>{
+    if(e.target.type === 'checkbox'){
+        console.log(e.target.name+'   '+ e.target.type+'    '+e.target.value +'  '+ totalPrice)
+        if(e.target.checked){
+            totalPrice += +e.target.value
+        } else{
+            totalPrice -= +e.target.value
+        }   console.log( totalPrice)    
+    }
+    if(e.target.type === 'radio'){
+        totalPrice +=  +e.target.value-radioValue;
+        radioValue =  +e.target.value;
+    }
+    if(e.target.name === 'promotion'){
+        typeAds.map(i=>{
+            // console.log(e.target.id + '   id  ' +i.dataset.ads )
+        if(i.dataset.ads === e.target.id ){
+            i.style.display='block'
+        }else{i.style.display='none'}
+    })
+    console.log( totalPrice)
+       
+    }
+   })
+ 
+//    radioChecked.forEach((i,item,array)=>{ console.log(i+'   '+radioChecked[item]) 
+//     i.addEventListener('change',(item)=>{
+//         //  console.log(item.target.value + '    ' + item.target.className+'   '+item.target.checked+'    ') 
+//          /**
+//           * promotion-no    promotion-no
+// script-v8.js:239 promotion-vip    promotion-vip
+// script-v8.js:239 promotion-premium    promotion-premium
+//           */
+//     })
+//    })
 
 })
 function showToltip(select) {

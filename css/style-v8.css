@@ -3528,15 +3528,16 @@ font-weight: bold;
 }
 
 .stanndart__ads,
-.premium__ads,
-.premium__color__ads{
-  /* display: none; */
+.premium__ads
+/* .premium__color__ads */
+{
+  display: none;
   margin-left: 20px;
 }
-input#promotion-premium:checked ~ div .premium__color__ads,
-#promotion-no:checked ~ div .stanndart__ads,
-#promotion-vip:checked ~ div  .premium__ads{
-  /* display: block; */
+/* .promotion-premium:checked ~ div .premium__color__ads,
+.promotion-no:checked ~ div .stanndart__ads,
+.promotion-vip:checked ~ div  .premium__ads{
+  display: block;
   background-color: red;
   border: 1px solid red;
-}
+} */

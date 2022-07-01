@@ -876,16 +876,16 @@
             <div class="price__list--name inner__wrapper">
 
               <div class="inp-checkbox radio">
-                <input type="radio" value="promotion-no" name="promotion" id="promotion-no"> <label
-                  for="promotion-no"></label>
+                <input class="promotion-no" type="radio" value="0" name="promotion" id="stanndart"> <label
+                  for="stanndart"></label>
               </div>
 
               <div class="price__list--text no__labe">
-                 <p>Без продвижения</p>
+                <p>Без продвижения</p>
                 <p>0 ₽</p>
               </div>
-             
-              
+
+
 
             </div>
             <div class="price__list--item">--
@@ -902,8 +902,8 @@
             <div class="price__list--name inner__wrapper">
 
               <div class="inp-checkbox radio">
-                <input type="radio" value="promotion-vip" name="promotion" id="promotion-vip"> <label
-                  for="promotion-vip"></label>
+                <input class="promotion-vip" type="radio" value="40" name="promotion" id="premium"> <label
+                  for="premium"></label>
               </div>
               <img src="./img/content/favourites.png" width="50px" height="50px" alt="">
               <div class="price__list--text">
@@ -911,7 +911,8 @@
                 <p><span class="old-price">800 ₽ </span> Скидка 95% - <span class="new-price">40 ₽</span></p>
                 <p>x20 раз</p>
                 <div class="button__add">
-                <a href="">Подробнее о VIP-объявлениях</a></div>
+                  <a href="">Подробнее о VIP-объявлениях</a>
+                </div>
               </div>
 
             </div>
@@ -931,8 +932,8 @@
           <div class="price__list">
             <div class="price__list--name inner__wrapper">
               <div class="inp-checkbox radio">
-                <input type="radio" value="promotion-premium" name="promotion" id="promotion-premium" checked> <label
-                  for="promotion-premium"></label>
+                <input class="promotion-premium" type="radio" value="100" name="promotion"
+                  id="premium&color" checked> <label for="premium&color"></label>
               </div>
 
               <img src="./img/content/medal.png" width="50px" height="50px" alt="">
@@ -941,7 +942,8 @@
                 <p><span class="old-price">2000 ₽ </span> Скидка 95% - <span class="new-price">100 ₽</span></p>
                 <p>x20 раз</p>
                 <div class="button__add">
-                <a href="">Подробнее об премиум-объявлениях</a></div>
+                  <a href="">Подробнее об премиум-объявлениях</a>
+                </div>
               </div>
             </div>
             <div class="price__list--item">
@@ -954,258 +956,105 @@
               <p>7 раз</p> <span>каждые 24 часа</span>
             </div>
           </div>
-          <div class="stanndart__ads">
-<img src="./img/content/standart.jpg" class="" width="80%" alt="standart"></div>
-<div class="premium__ads">
-<img src="./img/content/premiumNoAkcent.jpg" class="" width="80%" alt="premium not akcent"></div>
-<div class="premium__color__ads">
-<img src="./img/content/premium.jpg" width="80%" class="" alt="premium highlighter"></div>
+          <div>
+            <img src="./img/content/standart.jpg" class="stanndart__ads" data-ads="stanndart" width="80%"
+              alt="standart ADS">
 
-<div class="price__list">
-  <div class="price__list--name inner__wrapper">
-    <div class="inp-checkbox">
-      <input type="checkbox" name="xxl" id="xxl" checked>
-      <label for="xxl"></label>
-    </div>
+            <img src="./img/content/premiumNoAkcent.jpg" class="premium__ads" data-ads="premium" width="80%"
+              alt="premium ADS">
 
+            <img src="./img/content/premium.jpg" width="80%" class="premium__color__ads" data-ads="premium&color"
+              alt="premium highlighter ADS">
+          </div>
 
-    <img src="./img/content/XXLtoCart.png" width="50px" height="50px" alt="">
-    <div class="price__list--text">
-      <p>Сделать XXL объявление</p>
-      <p><span class="old-price">300 ₽ </span> Скидка 95% - <span class="new-price">15 ₽</span></p>
-      <p>В 2 раза больше просмотров</p>
-      <div class="button__add">
-      <a href="">Подробнее о XXL объявлении</a></div>
-    </div>
-  </div>
-</div>
+          <div class="price__list">
+            <div class="price__list--name inner__wrapper">
+              <div class="inp-checkbox">
+                <input type="checkbox" name="xxl" id="xxl" checked value="15">
+                <label for="xxl"></label>
+              </div>
 
 
-<div class="price__list">
-  <div class="price__list--name inner__wrapper">
-    <div class="inp-checkbox">
-      <input type="checkbox" name="color" id="color">
-      <label for="color"></label>
-    </div>
-
-    <img src="./img/content/highlighter.png" width="50px" height="50px" alt="">
-    <div class="price__list--text">
-      <p>Выделить объявление цветом</p>
-      <p><span class="old-price">600 ₽ </span> Скидка 95% - <span class="new-price">30 ₽</span></p>
-      <p>В 4 раза больше просмотров!</p>
-      <div class="button__add">
-      <a href="">Подробнее о выделении объявления</a></div>
-    </div>
-  </div>
-
- 
-</div>
-
-
-<div class="price__list">
-  <div class="price__list--name inner__wrapper">
-    <div class="inp-checkbox">
-      <input type="checkbox" name="up" id="up">
-      <label for="up"></label>
-    </div>
-
-    <img src="./img/content/rocket.png" width="50px" height="50px" alt="">
-    <div class="price__list--text">
-      <p>Поднять объявление в поиске</p>
-      <p>50 ₽</p>
-      <p>В 2 раза больше просмотров!</p>
-      <div class="button__add">
-      <a href="">Подробнее о поднятиях объявления</a></div>
-    </div>
-  </div>
-  <div class="price__list--item">
-    <p>Цена</p>
-    <span>50</span>
-  </div>
-  <div class="price__list--item">
-    <p>Кол-во</p>
-    <div class="count">
-      <button>-</button>
-      <span>10</span>
-      <button>+</button>
-    </div>
-  </div>
-  <div class="price__list--item">
-    <p>Сумма</p> <span>4000</span>
-  </div>
-</div>
-
-        </div>
-
-
-
-
-
-
-
-
-        <div class="wrapper category category-advertisement">
-          <h2>Сделайте объявление более заметным!</h2>
-
-          <div class="advertisement-title top">
-            <div class="price__title--title">
-              <h3>Название услуги</h3>
-            </div>
-            <div class="price__title--title">
-              <h3>Блок "Премиум"</h3>
-              <p>Желтый фон</p>
-            </div>
-            <div class="price__title--title">
-              <h3>Блок "VIP"</h3>
-              <P>Зеленый фон</P>
-            </div>
-            <div class="price__title--title">
-              <p>Первое место <br> в результатах <br> поиска</p>
+              <img src="./img/content/XXLtoCart.png" width="50px" height="50px" alt="">
+              <div class="price__list--text">
+                <p>Сделать XXL объявление</p>
+                <p><span class="old-price">300 ₽ </span> Скидка 95% - <span class="new-price">15 ₽</span></p>
+                <p>В 2 раза больше просмотров</p>
+                <div class="button__add">
+                  <a href="">Подробнее о XXL объявлении</a>
+                </div>
+              </div>
             </div>
           </div>
-          <div class="advertisement-text">
-            <div class="">
-              <p></p>
-            </div>
-            <div class="">
-              <p></p>
-            </div>
-            <div class="">
-              <p></p>
-            </div>
-          </div>
-          <div class="advertisement-item">
-            <input type="radio" name="" id="">
-            <img src="" alt="">
-            <p></p>
-            <span></span>
 
 
-            <div class="">
-              <p></p>
+          <div class="price__list">
+            <div class="price__list--name inner__wrapper">
+              <div class="inp-checkbox">
+                <input type="checkbox" name="color" id="color" value="30">
+                <label for="color"></label>
+              </div>
+
+              <img src="./img/content/highlighter.png" width="50px" height="50px" alt="">
+              <div class="price__list--text">
+                <p>Выделить объявление цветом</p>
+                <p><span class="old-price">600 ₽ </span> Скидка 95% - <span class="new-price">30 ₽</span></p>
+                <p>В 4 раза больше просмотров!</p>
+                <div class="button__add">
+                  <a href="">Подробнее о выделении объявления</a>
+                </div>
+              </div>
             </div>
-            <div class="">
-              <p></p>
+
+
+          </div>
+
+
+          <div class="price__list">
+            <div class="price__list--name inner__wrapper">
+              <div class="inp-checkbox">
+                <input type="checkbox" name="up" id="up" value="50">
+                <label for="up"></label>
+              </div>
+
+              <img src="./img/content/rocket.png" width="50px" height="50px" alt="">
+              <div class="price__list--text">
+                <p>Поднять объявление в поиске</p>
+                <p>50 ₽</p>
+                <p>В 2 раза больше просмотров!</p>
+                <div class="button__add">
+                  <a href="">Подробнее о поднятиях объявления</a>
+                </div>
+              </div>
             </div>
-            <div class="">
-              <p></p>
+            <div class="price__list--item">
+              <p>Цена</p>
+              <span>50</span>
+            </div>
+            <div class="price__list--item">
+              <p>Кол-во</p>
+              <div class="count">
+                <button>-</button>
+                <span>10</span>
+                <button>+</button>
+              </div>
+            </div>
+            <div class="price__list--item">
+              <p>Сумма</p> <span>4000</span>
             </div>
           </div>
+
+
 
           <div class="advertisement-item">
-            <input type="radio" name="" id="">
-            <img src="" alt="">
-            <p></p>
-            <p><span></span><span></span></p>
-            <p></p>
-            <p></p>
-            <a href=""></a>
-
-            <div class="">
-              <p></p>
-            </div>
-            <div class="">
-              <p></p>
-            </div>
-            <div class="">
-              <p></p>
-            </div>
-            <div class="">
-              <p></p>
-            </div>
-          </div>
-
-          <div class="advertisement-item">
-            <input type="radio" name="" id="">
-            <img src="" alt="">
-            <p></p>
-            <p><span></span><span></span></p>
-            <p></p>
-            <p></p>
-            <a href=""></a>
-
-            <div class="">
-              <p></p>
-            </div>
-            <div class="">
-              <p></p>
-            </div>
-            <div class="">
-              <p></p>
-            </div>
-            <div class="">
-              <p></p>
-            </div>
-          </div>
-
-          <div class="advertisement-item">
-            <input type="radio" name="" id="">
-            <img src="" alt="">
-            <p></p>
-            <p><span></span><span></span></p>
-            <p></p>
-            <p></p>
-            <a href=""></a>
-
-            <div class="">
-              <p></p>
-            </div>
-            <div class="">
-              <p></p>
-            </div>
-            <div class="">
-              <p></p>
-            </div>
-            <div class="">
-              <p></p>
-            </div>
-          </div>
-
-          <div class="premium">
-            <img src="" alt="">
-          </div>
-
-          <div class="advertisement-item">
-            <input type="checkbox" name="" id="">
-            <img src="" alt="">
-            <p></p>
-            <p><span></span><span></span></p>
-            <p></p>
-            <p></p>
-            <a href=""></a>
-          </div>
-
-          <div class="advertisement-item">
-            <input type="checkbox" name="" id="">
-            <img src="" alt="">
-            <p></p>
-            <p><span></span><span></span></p>
-            <p></p>
-            <p></p>
-            <a href=""></a>
-          </div>
-
-          <div class="advertisement-item">
-            <input type="checkbox" name="" id="">
-            <img src="" alt="">
-            <p></p>
-            <p><span></span><span></span></p>
-            <p></p>
-            <p></p>
-            <a href=""></a>
-            <div class="price"></div>
-            <div class="element"></div>
-            <div class="total__price"></div>
-          </div>
-          <div class="advertisement-item">
-            <p></p>
+            <p class="placement__ads--price">400 ₽</p>
             <p></p>
             <p></p>
             <div class="">
-              <p>Продвижение "XXL" 300р. скидка 95%</p>
-              <p>Продвижение "XXL" 300р. скидка 95%</p>
-              <p>Продвижение "XXL" 300р. скидка 95%</p>
-              <p>Продвижение "XXL" 300р. скидка 95%</p>
+              <p class="placement__ads--price">Рзмещение объявления 400р. скидка 95%</p>
+              <p>Блок продвижения "Премиум" 2000р. скидка 95%</p>
+              <p>Продвижение "Поднять объявление" 50р. скидка 0%</p>
+              <p>Продвижение "Выделить" 600р. скидка 95%</p>
               <p>Продвижение "XXL" 300р. скидка 95%</p>
               <h3>Итого:</h3>
               <p><span>1000p.</span></p>
@@ -1219,15 +1068,34 @@
               <p>30 р.</p>
               <p>15 р.</p>
               <h3>527 p.</h3>
+              <div class="bonuses">
+                <input type="text" name="bonuses">
+              </div>
 
               <div class="total"><span>-527 p.</span></div>
               <h4>0 p.</h4>
             </div>
-
           </div>
           <div class="advertisement-item">
             <p>Услуги продвижения действуют в течении 7 дней</p><span></span> <button>Продолжить</button>
           </div>
+
+
+        </div>
+
+
+
+
+
+
+
+
+        <div class="wrapper category category-advertisement">
+
+
+
+
+          
 
 
         </div>
