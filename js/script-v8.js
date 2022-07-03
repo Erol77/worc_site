@@ -66,6 +66,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
         ], // опции
     });
+
     function addTextToTarget(selector, target) {
         const data = document.querySelector(selector);
         let text = document.querySelector(target);
@@ -76,30 +77,43 @@ document.addEventListener('DOMContentLoaded', () => {
     const selectToRubric = () => addTextToTarget('#select-rubric .select__toggle', '.type-category__item');
     // selectToRubric();
     const selectCategory = new CustomSelect('#select-category');
-    // const selectToCategory = () => addTextToTarget('#select-category .select__toggle', '.select__select-category');
+    // const selectToCategory = () => addTextToTarget('#select-category .select__toggle', '.select__select-category'); schedule
+    const selectSchedule = new CustomSelect('#schedule', {
+        name: 'schedule', // значение атрибута name у кнопки  education
+        targetValue: 'schedule', // значение по умолчанию
+        options: [
+            ['schedule', '&mdash;'],
+            ['shift method', 'Вахтовый метод'],
+            ['incomplete day', 'Неполный день'],
+            ['full day', 'Полный день'],
+            ['free schedule', 'Свободный график'],
+            ['shift schedule', 'Сменный график'],
+            ['remote work', 'Удаленная работа'],
 
-    const selectNationality = new CustomSelect('#nationality',
-        {
-            name: 'nationality', // значение атрибута name у кнопки  education
-            targetValue: 'nationality', // значение по умолчанию
-            options: [
-                ['nationality', '&mdash;'],
-                ['russ', 'Русский'],
-                ['no russ', 'Не русский'],
+        ], // опции 
+    });
 
-            ], // опции 
-        });
-    const selectEducation = new CustomSelect('#education',
-        {
-            name: 'education', // значение атрибута name у кнопки  education
-            targetValue: 'education', // значение по умолчанию
-            options: [
-                ['education', '&mdash;'],
-                ['no-education', 'без образования'],
-                ['scull', 'школа'],
 
-            ], // опции 
-        });
+    const selectNationality = new CustomSelect('#nationality', {
+        name: 'nationality', // значение атрибута name у кнопки  education
+        targetValue: 'nationality', // значение по умолчанию
+        options: [
+            ['nationality', '&mdash;'],
+            ['russ', 'Русский'],
+            ['no russ', 'Не русский'],
+
+        ], // опции 
+    });
+    const selectEducation = new CustomSelect('#education', {
+        name: 'education', // значение атрибута name у кнопки  education
+        targetValue: 'education', // значение по умолчанию
+        options: [
+            ['education', '&mdash;'],
+            ['no-education', 'без образования'],
+            ['scull', 'школа'],
+
+        ], // опции 
+    });
     addTextToTarget('#education .select__toggle', '.select__education--education');
 
     const selectMonth = new CustomSelect('#beginning--month', {
@@ -107,18 +121,6 @@ document.addEventListener('DOMContentLoaded', () => {
         targetValue: 'education', // значение по умолчанию
         options: [
             ['education', '&mdash;'],
-            ['1', '01'], ['2', '02'], ['3', '03'], ['4', '04'], ['5', '05'], ['6', '06'], ['7', '07'], ['8', '08'], ['9', '09'], ['10', '10'], ['11', '11'], ['12', '12'],
-
-        ], // опции 
-    });
-
-
-
-    const selectSeniority = new CustomSelect('#seniority', {
-        name: 'seniority', // значение атрибута name у кнопки  education
-        targetValue: 'seniority', // значение по умолчанию
-        options: [
-            ['seniority', '&mdash;'],
             ['1', '01'],
             ['2', '02'],
             ['3', '03'],
@@ -131,6 +133,48 @@ document.addEventListener('DOMContentLoaded', () => {
             ['10', '10'],
             ['11', '11'],
             ['12', '12'],
+
+        ], // опции 
+    });
+const ageInput = document.getElementById('age');
+
+    const selectAge = new CustomSelect('#age__', {
+        name: 'age', // значение атрибута name у кнопки  education
+        targetValue: 'age', // значение по умолчанию
+        options: [
+            ['age', '&mdash;'],
+            ['18', '18'],
+ ['19', '19'],
+           ['20', '20'], ['21', '21'], ['22', '22'], ['23', '23'], ['24', '24'], ['25', '25'], ['26', '26'], ['27', '27'], ['28', '28'], ['29', '29'],
+            ['30', '30'], ['31', '31'], ['32', '32'], ['33', '33'], ['34', '34'], ['35', '35'], ['36', '36'], ['37', '37'], ['38', '38'], ['39', '39'], 
+        
+        ], // опции 
+    });
+ageInput.addEventListener('click', ()=>{
+console.log(selectAge._elRoot, '   ', selectAge._elToggle, '   ', selectAge._onClickFn, '   ', selectAge)
+// selectAge._onClickFn.call()
+// selectAge._elRoot.className.add('select_show')
+//select_show
+})
+
+    const selectSeniority = new CustomSelect('#seniority', {
+        name: 'seniority', // значение атрибута name у кнопки  education
+        targetValue: 'seniority', // значение по умолчанию
+        options: [
+            ['seniority', '&mdash;'],
+            ['21', 'Без опыта'],
+            ['1', '1'],
+            ['2', '2'],
+            ['3', '3'],
+            ['4', '4'],
+            ['5', '5'],
+            ['6', '6'],
+            ['7', '7'],
+            ['8', '8'],
+            ['9', '9'],
+            ['10', '10'],
+            ['15', '15'],
+            ['20', '20'],
 
         ], // опции 
     });
@@ -160,7 +204,18 @@ document.addEventListener('DOMContentLoaded', () => {
         targetValue: 'education', // значение по умолчанию
         options: [
             ['education', '&mdash;'],
-            ['1', '01'], ['2', '02'], ['3', '03'], ['4', '04'], ['5', '05'], ['6', '06'], ['7', '07'], ['8', '08'], ['9', '09'], ['10', '10'], ['11', '11'], ['12', '12'],
+            ['1', '01'],
+            ['2', '02'],
+            ['3', '03'],
+            ['4', '04'],
+            ['5', '05'],
+            ['6', '06'],
+            ['7', '07'],
+            ['8', '08'],
+            ['9', '09'],
+            ['10', '10'],
+            ['11', '11'],
+            ['12', '12'],
 
         ], // опции 
     });
@@ -191,7 +246,18 @@ document.addEventListener('DOMContentLoaded', () => {
         targetValue: 'education', // значение по умолчанию
         options: [
             ['education', '&mdash;'],
-            ['1', '01'], ['2', '02'], ['3', '03'], ['4', '04'], ['5', '05'], ['6', '06'], ['7', '07'], ['8', '08'], ['9', '09'], ['10', '10'], ['11', '11'], ['12', '12'],
+            ['1', '01'],
+            ['2', '02'],
+            ['3', '03'],
+            ['4', '04'],
+            ['5', '05'],
+            ['6', '06'],
+            ['7', '07'],
+            ['8', '08'],
+            ['9', '09'],
+            ['10', '10'],
+            ['11', '11'],
+            ['12', '12'],
 
         ], // опции language
     });
@@ -201,7 +267,18 @@ document.addEventListener('DOMContentLoaded', () => {
         targetValue: 'language', // значение по умолчанию
         options: [
             ['language', '&mdash;'],
-            ['1', 'Русский'], ['2', 'Французский'], ['3', 'Английский'], ['4', 'Немецкий'], ['5', 'Ты что полиглот'], ['6', '06'], ['7', '07'], ['8', '08'], ['9', '09'], ['10', '10'], ['11', '11'], ['12', '12'],
+            ['1', 'Русский'],
+            ['2', 'Французский'],
+            ['3', 'Английский'],
+            ['4', 'Немецкий'],
+            ['5', 'Ты что полиглот'],
+            ['6', '06'],
+            ['7', '07'],
+            ['8', '08'],
+            ['9', '09'],
+            ['10', '10'],
+            ['11', '11'],
+            ['12', '12'],
 
         ], // опции language
     });
@@ -211,7 +288,18 @@ document.addEventListener('DOMContentLoaded', () => {
         targetValue: 'languageCvalification', // значение по умолчанию
         options: [
             ['languageCvalification', '&mdash;'],
-            ['1', 'Свободно читаю'], ['2', 'Свободно говорю'], ['3', 'Читаю с переводчиком'], ['4', 'Понимаю но говорить не могу'], ['5', 'Знаю такое название'], ['6', '06'], ['7', '07'], ['8', '08'], ['9', '09'], ['10', '10'], ['11', '11'], ['12', '12'],
+            ['1', 'Свободно читаю'],
+            ['2', 'Свободно говорю'],
+            ['3', 'Читаю с переводчиком'],
+            ['4', 'Понимаю но говорить не могу'],
+            ['5', 'Знаю такое название'],
+            ['6', '06'],
+            ['7', '07'],
+            ['8', '08'],
+            ['9', '09'],
+            ['10', '10'],
+            ['11', '11'],
+            ['12', '12'],
 
         ], // опции language
     });
@@ -230,54 +318,59 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
     */
-   let totalPrice=15+100, radioValue=100;
+    let totalPrice = 15 + 100,
+        radioValue = 100;
 
-   const categoryPrice = document.querySelector('.category__price');
-   const radioChecked = [...categoryPrice.querySelectorAll('[name=promotion]')],
-   typeAds= [...categoryPrice.querySelectorAll('[data-ads]')];
+    const categoryPrice = document.querySelector('.category__price');
+    const radioChecked = [...categoryPrice.querySelectorAll('[name=promotion]')],
+        typeAds = [...categoryPrice.querySelectorAll('[data-ads]')];
 
-   categoryPrice.addEventListener('change',(e)=>{
-    if(e.target.type === 'checkbox'){
-        console.log(e.target.name+'   '+ e.target.type+'    '+e.target.value +'  '+ totalPrice)
-        if(e.target.checked){
-            totalPrice += +e.target.value
-        } else{
-            totalPrice -= +e.target.value
-        }   console.log( totalPrice)    
-    }
-    if(e.target.type === 'radio'){
-        totalPrice +=  +e.target.value-radioValue;
-        radioValue =  +e.target.value;
-    }
-    if(e.target.name === 'promotion'){
-        typeAds.map(i=>{
-            // console.log(e.target.id + '   id  ' +i.dataset.ads )
-        if(i.dataset.ads === e.target.id ){
-            i.style.display='block'
-        }else{i.style.display='none'}
+    categoryPrice.addEventListener('change', (e) => {
+        if (e.target.type === 'checkbox') {
+            console.log(e.target.name + '   ' + e.target.type + '    ' + e.target.value + '  ' + totalPrice)
+            if (e.target.checked) {
+                totalPrice += +e.target.value
+            } else {
+                totalPrice -= +e.target.value
+            }
+            console.log(totalPrice)
+        }
+        if (e.target.type === 'radio') {
+            totalPrice += +e.target.value - radioValue;
+            radioValue = +e.target.value;
+        }
+        if (e.target.name === 'promotion') {
+            typeAds.map(i => {
+                // console.log(e.target.id + '   id  ' +i.dataset.ads )
+                if (i.dataset.ads === e.target.id) {
+                    i.style.display = 'block'
+                } else {
+                    i.style.display = 'none'
+                }
+            })
+            console.log(totalPrice)
+
+        }
     })
-    console.log( totalPrice)
-       
-    }
-   })
- 
-//    radioChecked.forEach((i,item,array)=>{ console.log(i+'   '+radioChecked[item]) 
-//     i.addEventListener('change',(item)=>{
-//         //  console.log(item.target.value + '    ' + item.target.className+'   '+item.target.checked+'    ') 
-//          /**
-//           * promotion-no    promotion-no
-// script-v8.js:239 promotion-vip    promotion-vip
-// script-v8.js:239 promotion-premium    promotion-premium
-//           */
-//     })
-//    })
+
+    //    radioChecked.forEach((i,item,array)=>{ console.log(i+'   '+radioChecked[item]) 
+    //     i.addEventListener('change',(item)=>{
+    //         //  console.log(item.target.value + '    ' + item.target.className+'   '+item.target.checked+'    ') 
+    //          /**
+    //           * promotion-no    promotion-no
+    // script-v8.js:239 promotion-vip    promotion-vip
+    // script-v8.js:239 promotion-premium    promotion-premium
+    //           */
+    //     })
+    //    })
 
 })
+
 function showToltip(select) {
     document.querySelector(select).style.display = 'block'
 }
 
- var placeholder = 'Начните вводить должностные функции и ключевые навыки\nчтобы получить больше приглашений от работодателей';
+var placeholder = 'Начните вводить должностные функции и ключевые навыки\nчтобы получить больше приглашений от работодателей';
 // const textArea = document.getElementById('textArea')
 // textArea.value = placeholder;
 
@@ -312,11 +405,11 @@ function textAreaToPlaceholder(placeholder, selector) {
     })
 }
 
-textAreaToPlaceholder(placeholder,'textArea');
+textAreaToPlaceholder(placeholder, 'textArea');
 // textAreaToPlaceholder('Начните вводить здесь','key-skills');
 let placeAbout = 'Чтобы побудить работодателя пригласить именно вас, укажите свои деловые качества и \nпрофессиональные навыки. Расскажите про ваши достижения, напишите чем вы можете быть \nполезны компании на этой должности.';
 
-textAreaToPlaceholder(placeAbout,'about');
+textAreaToPlaceholder(placeAbout, 'about');
 
 //let btnClearToInp = [...document.querySelectorAll('.city-field')];
 //btnClearToInp.map(i=>i.addEventListener())

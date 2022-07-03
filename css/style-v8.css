@@ -3571,3 +3571,25 @@ border-radius: 2px ;
   background-color: red;
   border: 1px solid red;
 } */
+.select__age__input{
+position: relative;
+}
+div#age__{
+position: absolute;
+    width: 323px;
+top: 18px;
+
+}
+div#age__ .select__toggle{
+/* height: 50px; */
+z-index: -1;
+}
+input#age {
+border: 1px solid #e3dcb2;
+}
+
+.select__age__input span{
+    color: #665800;
+    height: 50px;
+    padding-left: 10px;
+}
