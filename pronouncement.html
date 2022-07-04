@@ -1048,20 +1048,20 @@
               <div class="price__list--item">
                 <p>Кол-во</p>
                 <div class="count inner__wrapper">
-                  <button onclick="this.nextElementSibling.stepDown();return false;">-</button>
-<input type="number" min="0" max="100" value="10">
-                  <!-- <span><input type="number" name="coll" value="10"></span> -->
-                  <button onclick="this.previousElementSibling.stepUp(); return false;">+</button>
+                  <button >-</button>
+                         <input type="number" min="0" max="100" value="8">
+                  <!-- onclick="this.nextElementSibling.stepDown();"<span><input type="number" name="coll" onclick="this.previousElementSibling.stepUp();value="10"></span> return false;-->
+                  <button  >+</button>
                 </div>
               </div>
               <div class="price__list--item">
-                <p>Сумма</p> <span>4000</span>
+                <p>Сумма</p> <span class="count__raise">4000</span>
               </div>
             </div>
 
 
 
-            <div class="placement__ads inner__wrapper">
+            <div class="placement__ads inner__wrapper cost__calculation">
 
               <div class="">
                 <p class="placement__ads--price">Рзмещение объявления 400р. скидка 95%</p>
@@ -1071,25 +1071,25 @@
                 <p>Продвижение "XXL" 300р. скидка 95%</p>
                 <h3>Итого:</h3>
                 <div class="available__bonuses inner__wrapper">
-                  <p>Доступные бонусы </p><span>1000p.</span>
+                  <p>Доступные бонусы </p><span class="bonuses__available">1000p.</span>
                   <p> Укажите сколько вы хотите списать</p>
                 </div>
                 <h3>Итого с учетом бонусов</h3>
 
               </div>
-              <div class="">
-                <p>20 р.</p>
-                <p>100 р.</p>
-                <p>50 р.</p>
-                <p>30 р.</p>
-                <p>15 р.</p>
-                <h3>527 p.</h3>
+              <div class="cost__calculation">
+                <p class="cost__calculation--ads">20 р.</p>
+                <p class="cost__calculation--premium">100 р.</p>
+                <p class="cost__calculation--raise">50 р.</p>
+                <p class="cost__calculation--highlight">30 р.</p>
+                <p class="cost__calculation--xxl">15 р.</p>
+                <h3 class="cost__calculation--pretotal">527 p.</h3>
                 <div class="bonuses">
-                  <span>-527 p.</span>
+                  <span class="bonuses__write">-527 p.</span>
                 </div>
 
 
-                <h3>0 p.</h3>
+                <h3 class="cost__calculation--total">0 p.</h3>
               </div>
 
 
@@ -1097,7 +1097,7 @@
             </div>
             <div class="placement__ads inner__wrapper">
               <div class="advertisement-item">
-                <p>Услуги продвижения действуют в течении 7 дней</p><span></span> <button>Продолжить</button>
+                <p>Услуги продвижения действуют в течении 7 дней</p><span></span> <button type="submit">Продолжить</button>
               </div>
 
             </div>

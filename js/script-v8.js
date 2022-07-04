@@ -323,7 +323,23 @@ console.log(selectAge._elRoot, '   ', selectAge._elToggle, '   ', selectAge._onC
 
     const categoryPrice = document.querySelector('.category__price');
     const radioChecked = [...categoryPrice.querySelectorAll('[name=promotion]')],
+    countRaise=categoryPrice.querySelector('.count'),
+    countRaiseBtn= [...countRaise.querySelectorAll('button')],
+    collCount = countRaise.querySelector('input'),
+    totalCount=categoryPrice.querySelector('.count__raise'),
         typeAds = [...categoryPrice.querySelectorAll('[data-ads]')];
+        console.log(countRaiseBtn[0])
+totalCount.textContent=collCount.value *50;
+countRaise.addEventListener('change',(e)=>{
+    e.preventDefault();
+    totalCount.textContent=collCount.value *50;})//input
+    countRaiseBtn[0].addEventListener('click',(e)=>{
+        e.preventDefault(); 
+        --collCount.value ;
+        totalCount.textContent=collCount.value *50;})
+        countRaiseBtn[1].addEventListener('click',(e)=>{e.preventDefault();
+            ++collCount.value;
+            totalCount.textContent=collCount.value *50;})
 
     categoryPrice.addEventListener('change', (e) => {
         if (e.target.type === 'checkbox') {
@@ -348,6 +364,7 @@ console.log(selectAge._elRoot, '   ', selectAge._elToggle, '   ', selectAge._onC
                     i.style.display = 'none'
                 }
             })
+            
             console.log(totalPrice)
 
         }
