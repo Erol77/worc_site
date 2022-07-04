@@ -323,6 +323,8 @@ console.log(selectAge._elRoot, '   ', selectAge._elToggle, '   ', selectAge._onC
 
     const categoryPrice = document.querySelector('.category__price');
     const radioChecked = [...categoryPrice.querySelectorAll('[name=promotion]')],
+    costItem = categoryPrice.querySelector('.cost__calculation--item'),
+    costName = categoryPrice.querySelector('.cost__calculation--name'),
     countRaise=categoryPrice.querySelector('.count'),
     countRaiseBtn= [...countRaise.querySelectorAll('button')],
     collCount = countRaise.querySelector('input'),
@@ -354,6 +356,10 @@ countRaise.addEventListener('change',(e)=>{
         if (e.target.type === 'radio') {
             totalPrice += +e.target.value - radioValue;
             radioValue = +e.target.value;
+            
+            if(e.target.id ==='premium&color'){costItem.textContent=100+' р.';costName.textContent = 'Блок продвижения "Премиум" 2000р. скидка 95%'}
+            if(e.target.id ==='premium'){costItem.textContent=40+" р.";costName.textContent = 'Блок продвижения "VIP" 800р. скидка 95%'}
+            if(e.target.id ==='standard'){costItem.textContent=0+" р.";costName.textContent = 'Блок продвижения "Без продвижения"'}
         }
         if (e.target.name === 'promotion') {
             typeAds.map(i => {
